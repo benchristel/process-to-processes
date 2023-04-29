@@ -1,0 +1,6 @@
+#!/bin/sh
+bunx http-server -p 3000 docs & (
+  sleep 1
+  xdg-open http://localhost:3000
+)
+wait

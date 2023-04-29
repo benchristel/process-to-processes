@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Misconception: Abstraction Is About Hiding Details From the User</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: hsl(36, 83%, 85%);
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="quality.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="maps.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="misconception-abstraction-is-about-hiding-details-from-the-user">Misconception: Abstraction Is About Hiding Details From the User</h1>
+<p>A good abstraction hides details from the <em>implementer</em>. Poor abstractions hide from the user what they really need to know, while
+forcing the implementer to know about the all the messy details of the users&#39; needs.</p>
+<p>It is precisely the hiding of details from the implementer that makes abstractions reusable. If the implementation knows about the details of a specific use case, that implies it is coupled to that use case and can&#39;t easily be repurposed.</p>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="quality.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="maps.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>

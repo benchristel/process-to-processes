@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Should You Read This Book?</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: hsl(36, 83%, 85%);
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="what-to-expect.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="should-you-read-this-book">Should You Read This Book?</h1>
+<p>You should read at least some part of this book if you are involved in any way in the creation of software.</p>
+<p>You should read <a href="../programming-alone">Part I</a> if you write or test computer programs.</p>
+<p>You should read <a href="../programming-with-others">Part II</a> if you are a programmer working with other programmers.</p>
+<p>You should read <a href="../programming-with-others">Part II</a> if you are a manager.</p>
+<p>You should read <a href="../user-interfaces">Part III</a> if you are a designer, or a programmer involved in the creation of user interfaces.</p>
+<p>You should read <a href="../tao">Part IV</a> once you&#39;ve mastered the rest of the book.</p>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="what-to-expect.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>

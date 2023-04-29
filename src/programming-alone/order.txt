@@ -1,0 +1,5 @@
+smells
+refactorings
+
+!unspecified
+foundational-concepts

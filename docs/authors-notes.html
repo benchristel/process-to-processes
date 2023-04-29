@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Author's Notes to Himself</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: hsl(36, 83%, 85%);
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="index.html">Home</a><a href="index.html">Up</a><a href="tao/index.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="the-authors-notes-to-himself">The Author&#39;s Notes to Himself</h1>
+<p>Don&#39;t write complete paragraphs yet. It will only prove a waste of time when you inevitably realize what you&#39;ve forgotten and have to refactor things to incorporate the new material.</p>
+<p>Before you write complete sentences, you should prime the pump by reading Raymond, or Gabriel, or Knuth, or García-Molina.</p>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="index.html">Home</a><a href="index.html">Up</a><a href="tao/index.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>

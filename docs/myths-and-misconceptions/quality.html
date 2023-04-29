@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Misconception: Quality Is All in Your Head</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: hsl(36, 83%, 85%);
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="work.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="abstraction.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="misconception-quality-is-all-in-your-head">Misconception: Quality Is All in Your Head</h1>
+<p>It&#39;s often said that beauty is in the eye of the beholder. My response to that is: &quot;yes; in the eye, not in the mind.&quot;</p>
+<p>The ultimate metrics of software quality are &quot;does it help its users?&quot; and &quot;does it do what the users expect?&quot;
+Because users of software all have slightly different needs and expectations, it is not possible to gauge quality with certainty unless you involve users. However, there are some useful proxies for these ultimate metrics, and the proxies
+are all objective, in the sense that different people should obtain the same measurement for them.</p>
+<ul>
+<li>Jakob&#39;s Law?</li>
+<li>information architecture</li>
+<li>cohesion</li>
+<li>shallow hierarchy</li>
+<li>levels of scale</li>
+<li>orthogonality</li>
+<li>linearity</li>
+</ul>
+<h2 id="misconception-only-quantities-can-be-objective">Misconception: Only Quantities can be Objective</h2>
+<p>A related misconception is that the only numeric measurements can be considered objective.</p>
+<p>Qualities can be measured objectively too, by <em>comparing alternatives</em>. For example,
+imagine two programs which are functionally equivalent, but one is clear and self-explanatory and the other is spaghetti.
+If you show these two programs to a dozen programmers and ask them to rate which one they&#39;d rather work on, you&#39;re likely to get a statistically significant signal that one of these programs is <em>higher quality</em> than the other—even though you have not identified any way to assign a numeric quality &quot;score&quot; to a program in isolation. For a thorough exposition of the kinds of results that can be obtained by this comparative method, see <em>The Nature of Order</em> by Christopher Alexander.</p>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="work.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="abstraction.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>

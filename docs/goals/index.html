@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Goals</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: hsl(36, 83%, 85%);
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="../index.html">Up</a><a href="../about-this-book/what-to-expect.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="../myths-and-misconceptions/index.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="goals">Goals</h1>
+<p>Our civilization depends on an immensely complex and interdependent web of software systems. The complexity of modern software has few analogues, but the biosphere is a pretty good one.</p>
+<p>We want our softwre to support human life, health, and happiness. Does it?</p>
+<p>We&#39;ve seen that the health of the biosphere can be damaged by human activity, and that this has repercussions for human life and health. The health of the infosphere might be similarly threatened. The risk is likely not existential for the human species as a whole; if software were to disappear, many of us would carry on, though the transition wouldn&#39;t be pretty.</p>
+<ul>
+<li>reduce suffering</li>
+<li>so much suffering could be prevented if more people knew patterns for designing and 
+building software systems that played to the strengths of the materials (code and people) and minimized their weaknesses.</li>
+<li>it doesn&#39;t take more time or effort to build better software. it doesn&#39;t take superhuman discipline or focus. it just takes different knowledge and the willingness to apply it.</li>
+</ul>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="../index.html">Up</a><a href="../about-this-book/what-to-expect.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="../myths-and-misconceptions/index.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>
