@@ -16,9 +16,6 @@ is an excellent vehicle for comparing various approaches to programming.
 
 ## Which Part of This Book Should You Read?
 
-Don't skip the introductory chapter on [Myths and
-Misconceptions](../myths-and-misconceptions). Once you've read that...
-
 You should read [Part I](../programming-alone) if you write or test computer programs.
 
 You should read [Part II](../programming-with-others) if you are a programmer working with other programmers.
