@@ -2,7 +2,7 @@ luck.html
 about-this-book
 goals
 myths-and-misconceptions
-programming-alone
-programming-with-others
+programming
+working-with-others
 user-interfaces
 tao
