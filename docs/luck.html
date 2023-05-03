@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Preface: The Lucky Programmer</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: hsl(36, 83%, 85%);
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article {
+				margin: 0 16px;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="about-this-book/index.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="preface-the-lucky-programmer">Preface: The Lucky Programmer</h1>
+<p>Some programmers are <em>lucky</em>.</p>
+<p>They rarely have to use a debugger. Their code just works.</p>
+<p>When someone reports a bug in their code, they already seem to know how to fix it.</p>
+<p>They make unusual design choices, and can&#39;t quite explain why. But somehow, as if by coincidence, their choices pay off.</p>
+<p><em>as if they could predict the future.</em></p>
+<p>Their work doesn&#39;t look difficult—their code changes are simple, like something anyone could do.</p>
+<p>They never seem to tackle big problems. They go around solving trivial little
+problems.</p>
+<p>But when they&#39;re done, the solution to the big problem is only 5 lines.</p>
+<h2 id="how-do-programmers-become-lucky">How Do Programmers Become Lucky?</h2>
+<p>Programmers are not born lucky. They become lucky through continuous practice and reflection. Their luck is something they make for themselves.</p>
+<p>They&#39;re humble enough to not assume they know the answer, so they can see things as they are.</p>
+<p>Working with things as they are, letting them take their natural shape, is how you become lucky.</p>
+<p>When you let the code take its natural shape, you don&#39;t need to force it into shape.</p>
+<p>When you know how things will naturally unfold, there are fewer unpleasant surprises.</p>
+<p>You prevent problems simply by not creating ways for problems to happen.</p>
+<h2 id="code">Code</h2>
+<p>Lucky programmers&#39; code looks very precise.</p>
+<p>Its concepts are crisply defined, laser-focused.</p>
+<p>It cuts like a razor.</p>
+<p>But it is fluid, graceful. Try to kill it with a failing test, and it dances out of the way.</p>
+<p>A little wriggle, and the test passes.</p>
+<h2 id="i-am-a-lucky-programmer">I Am a Lucky Programmer</h2>
+<p>And I want you to be one, too.</p>
+<p>I don&#39;t know of a book that teaches this.</p>
+<p>That&#39;s why I&#39;m writing this one.</p>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="about-this-book/index.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>

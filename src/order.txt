@@ -1,3 +1,4 @@
+luck.html
 about-this-book
 goals
 myths-and-misconceptions

@@ -12,7 +12,7 @@ JavaScript_](https://eloquentjavascript.net/).
 
 The examples in this book are in TypeScript. Because it is a multi-paradigm
 language, and because it allows but does not require static types, TypeScript
-is an excellent vehicle for comparing various approaches.
+is an excellent vehicle for comparing various approaches to programming.
 
 ## Which Part of This Book Should You Read?
 
