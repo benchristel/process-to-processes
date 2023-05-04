@@ -14,9 +14,10 @@ The takeaway from all this is that different syntaxes help different people at d
 
 ## Simplifying Syntax in Any Language
 
-No matter your skill level or language preference, there are a few things you can do to make your programs _objectively_ easier for humans (and possibly machines) to parse.
+No matter your skill level or language preference, there are a few things you can do to make your programs objectively easier for humans (and possibly machines) to parse.
 
 - lighten the left branch
 - unnest
 - optimize breadth-first scanning
 - shorten lines
+- symmetrize

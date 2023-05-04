@@ -1,5 +1,2 @@
-smells
-refactorings
-
-!unspecified
+syntax
 foundational-concepts

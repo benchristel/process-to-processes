@@ -1,7 +1,5 @@
-smells
-refactorings
+syntax
+foundational-concepts
 
 !unspecified
-foundational-concepts
 quality
-syntax
