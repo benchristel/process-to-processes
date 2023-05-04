@@ -9,6 +9,8 @@ There are, of course, many topics in software development that are best learned 
 - Stuff your coworkers probably _won't_ teach you—perhaps because it seems nitpicky or pedantic to point it out, or because it's entangled with so many other concepts that they're not sure where to begin.
 - Stuff your coworkers probably _can't_ teach you, because they never learned it themselves. Test-driven development and type-driven design are likely to fall into this category.
 
+Reading this book will give you new ways of looking at your programs. You'll learn to head off many potential problems before they impact production. You'll be able to explain to your teammates why you make the technical choices you do. And you will gain—and this is perhaps the most important thing—you will gain a deep and abiding sense of connection to your work, and to the scientific and technological community out of which our discipline has grown.
+
 Unlike many other resources on software design, this book avoids moralizing. I reject the idea that buggy software, poor-quality code, etc. are due to programmers' moral failings, immaturity, or stubbornness. I believe that most people want to do the right thing—though the rightest thing they know how to do may still be ineffective. I've seen firsthand that even a team with the best of intentions can produce a bug-ridden mess that has to be thrown away after a year of development. I've _been_ the programmer who writes the bug-ridden mess. I've also been the programmer who [goes back to that mess five years later and fixes it](https://github.com/gavmor/dunmanifestin/compare/3dd7afc9f582ad86e5f3828784a75375b81b56b2...431c1c2f7dbdfbe6833f6654ec4abdc6d8703212). The problems in our industry are due to lack of skill, not lack of will—which I think is an optimistic take, because skills can be learned.
 
 This book is divided into four parts.
@@ -17,10 +19,6 @@ This book is divided into four parts.
 - _**Part II: Working With Others**_ explores how to maintain and build human relationships around software once the initial level of trust is earned. It describes communication patterns and team dynamics that are good for the whole system—people _and_ code, employees _and_ customers.
 - _**Part III: User Interfaces**_ discusses the principles behind user interface design. There is a shortage of UI and UX designers in the software industry of 2023, and programmers are often called upon to make design decisions. This part of the book tries to ensure that the designs we produce will be comfortable and straightforward to use for the people who have to use them.
 - _**Part IV: The Tao of Software Development**_ goes back to the original software consultant's manual, the _Dào Dé Jīng_, or "Book of the Way and Virtue", written 2500 years ago in China by an unknown author. While the details of software have changed much in the last two millennia, people have stayed approximately the same, so there is plenty of applicable wisdom in this venerable text. In this part of the book, we'll see that even the humblest aspects of programming contain profound insights into the nature of our universe and ourselves. The practical and the mystical will be fused, as if by lightning.
-
-This book covers holistic architectural concerns, nitty-gritty details, and everything in between. It starts with high-level philosophy and goals, and then zooms in to show how the philosophy motivates specific structures in the code.
-
-Reading this book will give you new ways of looking at your programs. You'll learn to head off many potential problems before they impact production. You'll be able to explain to your teammates why you make the technical choices you do. And you will gain—and this is perhaps the most important thing—you will gain a deep and abiding sense of connection to your work, and to the scientific and technological community out of which our discipline has grown.
 
 ## Note on Technologies
 
