@@ -1,5 +1,6 @@
 luck.html
 about-this-book
+prolegomena
 goals
 myths-and-misconceptions
 programming
