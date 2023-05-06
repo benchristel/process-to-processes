@@ -1,6 +1,6 @@
 # Should You Read This Book?
 
-You should read at least some part of this book if you are a programmer or
+You're most likely to find this book useful if you are a programmer or
 other technical practitioner working in the software industry, and have at
 least a year or so of industry experience.
 

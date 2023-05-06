@@ -32,6 +32,20 @@
 			article h1 {
 				font-size: 200%;
 			}
+			figure {
+				background: white;
+				border: 1px solid #888;
+				display: table;
+				margin: 1em auto;
+				padding: 1em;
+				text-align: center;
+			}
+			figure img {
+				border-bottom: 1px solid #888;
+			}
+			figcaption {
+				font-size: 14px;
+			}
 		</style>
 	</head>
 	<body>
@@ -47,13 +61,30 @@
 
 		<article>
 			<h1 id="about-this-book">About This Book</h1>
-<p>Software engineering is a joyful, social activity. It is also an intellectual activity, of course—but you already knew that.</p>
+<p>At its best, software engineering is a joyful, social activity. It is also an intellectual activity, of course—but you already knew that.</p>
 <p>My first purpose in writing this book is to show you that writing bug-free, efficient, maintainable software does <em>not</em> have to be a bureaucratic, soul-deadening exercise. To make really high-quality software, and do so sustainably, necessarily involves the most human (some would say the most &quot;childlike&quot;) parts of ourselves: enthusiasm, kindness, wonder, and even the possibility of grief.</p>
 <p>My second purpose is to give you a map, a compass, and most importantly, confidence, as you set out to explore the vast and varied territory of our field. This book can&#39;t hope to cover everything, and it contains many pointers to other resources. But it will introduce you to many foundational concepts, and give you a framework on which to hang other ideas. And you&#39;ll need those other ideas: while there are many good ways to do things, there is no one &quot;right&quot; way, and we are all still very much in the process of figuring out how this &quot;software&quot; thing works. You&#39;ll be able to explain to your teammates why you make the technical choices you do. And you will gain—and this is perhaps the most important thing—you will gain a deep and abiding sense of connection to your work, and to the scientific and technological community out of which our discipline has grown.</p>
 <p>My third purpose, related to the first two, is to give you &quot;eyes and hands&quot; to see and shape the software you work on. Reading this book will give you new ways of looking at your programs. Those &quot;views&quot; will give you insight into how your programs fit together at an architectural level, enabling you to identify and fix many potential problems before they impact production. This book will also equip you with a set of mental tools for shaping the systems you work on. That&#39;s &quot;tools&quot;, not &quot;rules&quot;: software-making is context-sensitive work, and requires constant adaptation. I&#39;m quite skeptical of simplistic &quot;best practices&quot;; rather, I prefer to cultivate a diverse set of skills and mental models, and use those to find the best way forward in each circumstance.</p>
-<p>Unlike many other resources on software engineering, this book avoids moralizing. I reject the idea that buggy software, poor-quality code, etc. are due to programmers&#39; moral failings, immaturity, or stubbornness. I believe that most people want to do the right thing—though the rightest thing they know how to do may still be ineffective. I&#39;ve seen firsthand that even a team with the best of intentions can produce a bug-ridden mess that has to be thrown away after a year of development. I&#39;ve <em>been</em> the programmer who writes the bug-ridden mess. I&#39;ve also been the programmer who <a href="https://github.com/gavmor/dunmanifestin/compare/3dd7afc9f582ad86e5f3828784a75375b81b56b2...431c1c2f7dbdfbe6833f6654ec4abdc6d8703212">goes back to that mess five years later and fixes it</a>. The problems in our industry are due to lack of skill, not lack of will—which I think is an optimistic take, because skills can be learned.</p>
+<p>Unlike many other resources on software engineering, this book avoids moralizing. I reject the idea that buggy software, poor-quality code, etc. are due to programmers&#39; moral failings, immaturity, or stubbornness. I believe that most people want to do the right thing—though the rightest thing they know how to do may still be ineffective. I&#39;ve seen firsthand that even a team with the best of intentions, who want to do things &quot;the right way&quot;, can produce a bug-ridden mess that has to be thrown away after a year of development. I myself have made more messes than I care to count, in spite of my efforts to keep code clean and readable. But I&#39;ve also, at least once, <a href="https://github.com/gavmor/dunmanifestin/compare/3dd7afc9f582ad86e5f3828784a75375b81b56b2...431c1c2f7dbdfbe6833f6654ec4abdc6d8703212">gone back to my mess five years later and fixed it</a>. What changed in those five years? Not my motivation, nor my ideals. Only my skills. The problems in our industry are due to lack of skill, not lack of will—which I think is an optimistic take, because skills can be learned.</p>
+<h2 id="buzzwords">Buzzwords</h2>
+<p>&quot;Enough with the hifalutin&#39; ideals, BEN&quot; I hear you saying. &quot;I need a list of the buzzwords this book covers, so I can tell my boss why I&#39;m submitting an expense report for $0 to read an HTML page&quot;. Very well, I hear you.</p>
+<p>In no particular order:</p>
+<ul>
+<li>Test-driven development</li>
+<li>Evolutionary design</li>
+<li>Refactoring</li>
+<li>The Unix Philosophy</li>
+<li>Type-driven design</li>
+<li>Software quality</li>
+<li>Software architecture</li>
+<li>Agile software development</li>
+<li>User interface design / visual design</li>
+<li>User experience design</li>
+<li>Philosophy</li>
+</ul>
 <h2 id="contents">Contents</h2>
-<p>This prelude is followed by a collection of &quot;prolegomena&quot;, or &quot;first things to read&quot;. These contain important meta-information about how to interpret the rest of the book, which is divided into four parts:</p>
+<p>This prelude is followed by a collection of &quot;prolegomena&quot;, or &quot;first things to read&quot;. These contain important meta-information about how to interpret the rest of the book.</p>
+<p>The rest of the book is divided into four parts:</p>
 <ul>
 <li><em><strong>Part I: Programming</strong></em> is about, well, programming—which in my book includes software design, testing, architecture, documentation—everything required to write bug-free, maintainable code on a budget. <em>Programming</em> is the first part of the book because it&#39;s the foundation of everything we do. Our job, ultimately, boils down to getting computers to do what we want in a way that doesn&#39;t cost a fortune. Although software design is, <a href="https://tidyfirst.substack.com/p/coming-soon">as Kent Beck points out</a>, an exercise in human relationships, relationships are founded on trust. Programmers earn trust by reliably delivering working software.</li>
 <li><em><strong>Part II: Working With Others</strong></em> explores how to maintain and build human relationships around software once the initial level of trust is earned. It describes communication patterns and team dynamics that are good for the whole system—people <em>and</em> code, employees <em>and</em> customers.</li>
