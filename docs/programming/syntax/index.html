@@ -55,10 +55,94 @@
 <p>The takeaway from all this is that different syntaxes help different people at different times. Whether you&#39;re a senior engineer who thinks entirely in design patterns and couldn&#39;t care less about syntax, or a junior engineer who hates semicolons, try to empathize with the other side and see the tradeoffs you make for what they are.</p>
 <h2 id="simplifying-syntax-in-any-language">Simplifying Syntax in Any Language</h2>
 <p>No matter your skill level or language preference, there are a few things you can do to make your programs objectively easier for humans (and possibly machines) to parse.</p>
+<h3 id="lighten-the-left-branch">Lighten the Left Branch</h3>
+<p>Example 1: object properties</p>
+<p>Before:</p>
+<pre><code class="language-js">// CONFUSING!!
+const options = {
+  includePaths: [
+    &quot;foo/bar.js&quot;,
+    &quot;baz.js&quot;,
+    &quot;src/js/mech/fneen.js&quot;,
+    &quot;src/whoa.js&quot;,
+    // ... imagine a screenful of lines here
+    &quot;hello.js&quot;,
+  ],
+  compileTo: &quot;es2017&quot;,
+}
+</code></pre>
+<p>Moving <code>compileTo</code> to the top makes it visually clearer that <code>compileTo</code> and <code>includePath</code> are properties of the same object, because they&#39;re now right next to each other. All the identifiers (<code>options</code>, <code>compileTo</code>, and <code>includePaths</code>) now fit on screen at the same time.</p>
+<pre><code class="language-js">// BETTER!
+const options = {
+  compileTo: &quot;es2017&quot;,
+  includePaths: [
+    &quot;foo/bar.js&quot;,
+    &quot;baz.js&quot;,
+    &quot;src/js/mech/fneen.js&quot;,
+    &quot;src/whoa.js&quot;,
+    // ... imagine a screenful of lines here
+    &quot;hello.js&quot;,
+  ],
+}
+</code></pre>
+<p>Example 2: function arguments</p>
+<pre><code class="language-js">// CONFUSING!!
+compile(
+  {
+    compileTo: &quot;es2017&quot;,
+    includePaths: [
+      &quot;foo/bar.js&quot;,
+      &quot;baz.js&quot;,
+      &quot;src/js/mech/fneen.js&quot;,
+      &quot;src/whoa.js&quot;,
+      // ... imagine a screenful of lines here
+      &quot;hello.js&quot;,
+    ],
+  },
+  input,
+)
+</code></pre>
+<pre><code class="language-js">// BETTER!
+compile(input, {
+  compileTo: &quot;es2017&quot;,
+  includePaths: [
+    &quot;foo/bar.js&quot;,
+    &quot;baz.js&quot;,
+    &quot;src/js/mech/fneen.js&quot;,
+    &quot;src/whoa.js&quot;,
+    // ... imagine a screenful of lines here
+    &quot;hello.js&quot;,
+  ],
+})
+</code></pre>
+<h3 id="flatten-nesting">Flatten Nesting</h3>
+<p>Example 1: replacing <code>else</code> with a guard clause</p>
+<h3 id="flatten-center-embedded-structures">Flatten Center-Embedded Structures</h3>
+<pre><code class="language-js">readFile(Path.join(&quot;/&quot;, removePrefix(path, &quot;src&quot;), filename), &quot;utf-8&quot;)
+</code></pre>
+<pre><code class="language-js">pipeline(
+  path,
+  removePrefix(&quot;src&quot;),
+  prefixPath(&quot;/&quot;),
+  suffixPath(filename),
+  readFileAs(&quot;utf-8&quot;),
+)
+</code></pre>
+<h3 id="optimize-breadth-first-scanning">Optimize Breadth-First Scanning</h3>
+<p>Before:</p>
+<pre><code class="language-js">if (something) {
+  return &quot;that&quot;
+}
+return &quot;this&quot;
+</code></pre>
+<p>After:</p>
+<pre><code>if (something) {
+  return &quot;that&quot;
+} else {
+  return &quot;this&quot;
+}
+</code></pre>
 <ul>
-<li>lighten the left branch</li>
-<li>unnest</li>
-<li>optimize breadth-first scanning</li>
 <li>shorten lines</li>
 <li>symmetrize</li>
 </ul>

@@ -16,8 +16,119 @@ The takeaway from all this is that different syntaxes help different people at d
 
 No matter your skill level or language preference, there are a few things you can do to make your programs objectively easier for humans (and possibly machines) to parse.
 
-- lighten the left branch
-- unnest
-- optimize breadth-first scanning
+### Lighten the Left Branch
+
+Example 1: object properties
+
+Before:
+
+```js
+// CONFUSING!!
+const options = {
+  includePaths: [
+    "foo/bar.js",
+    "baz.js",
+    "src/js/mech/fneen.js",
+    "src/whoa.js",
+    // ... imagine a screenful of lines here
+    "hello.js",
+  ],
+  compileTo: "es2017",
+}
+```
+
+Moving `compileTo` to the top makes it visually clearer that `compileTo` and `includePath` are properties of the same object, because they're now right next to each other. All the identifiers (`options`, `compileTo`, and `includePaths`) now fit on screen at the same time.
+
+```js
+// BETTER!
+const options = {
+  compileTo: "es2017",
+  includePaths: [
+    "foo/bar.js",
+    "baz.js",
+    "src/js/mech/fneen.js",
+    "src/whoa.js",
+    // ... imagine a screenful of lines here
+    "hello.js",
+  ],
+}
+```
+
+Example 2: function arguments
+
+```js
+// CONFUSING!!
+compile(
+  {
+    compileTo: "es2017",
+    includePaths: [
+      "foo/bar.js",
+      "baz.js",
+      "src/js/mech/fneen.js",
+      "src/whoa.js",
+      // ... imagine a screenful of lines here
+      "hello.js",
+    ],
+  },
+  input,
+)
+```
+
+```js
+// BETTER!
+compile(input, {
+  compileTo: "es2017",
+  includePaths: [
+    "foo/bar.js",
+    "baz.js",
+    "src/js/mech/fneen.js",
+    "src/whoa.js",
+    // ... imagine a screenful of lines here
+    "hello.js",
+  ],
+})
+```
+
+### Flatten Nesting
+
+Example 1: replacing `else` with a guard clause
+
+### Flatten Center-Embedded Structures
+
+```js
+readFile(Path.join("/", removePrefix(path, "src"), filename), "utf-8")
+```
+
+```js
+pipeline(
+  path,
+  removePrefix("src"),
+  prefixPath("/"),
+  suffixPath(filename),
+  readFileAs("utf-8"),
+)
+```
+
+### Optimize Breadth-First Scanning
+
+Before:
+
+```js
+if (something) {
+  return "that"
+}
+return "this"
+```
+
+After:
+
+```
+if (something) {
+  return "that"
+} else {
+  return "this"
+}
+```
+
 - shorten lines
 - symmetrize
