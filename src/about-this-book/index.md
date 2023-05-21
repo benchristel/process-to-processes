@@ -9,9 +9,9 @@ What makes some software good and other software bad? This book seeks to explore
 Software development occurs within a complex system of many interacting sub-structures. These sub-structures include companies, office buildings, departments, teams, computers, people, business processes, services, code modules, and many other types of structure.
 The software development system has a kind of life of its own: it comes into being, grows, persists for a time, and eventually "dies" or disappears. While the system lives, it can be "healthy" or "unhealthy". Most of us have worked in unhealthy software development systems at some point in our careers. We know how these systems feel from the inside: there is disorder, miscommunication, blame, panic, firefighting. People distrust and micromanage each other. Projects get roadblocked; some teams are overloaded with work while others are stuck waiting for them with nothing to do. The code is usually an unintelligible, buggy nightmare.
 
-A lucky few, though, have worked in very healthy systems and have seen firsthand the excellent work that these systems can produce. My thesis, which I explore in detail in this book, is that **only a healthy system is capable of producing good software. If we want to make good software, we first need to create a healthy system.**
+A lucky few, though, have worked in healthy systems and have seen firsthand the excellent work that these systems can produce. My thesis, which I explore in detail in this book, is that **only a healthy system is capable of producing good software. If we want to make good software, we first need to create a healthy system.**
 
-In my own career, I have been very lucky to work in some of the healthiest systems in the software industry. I've seen firsthand what software development looks like when it is working well. I've also had my share of failures, and have learned at least as much from those as I did from the successes.
+In my own career, I have been lucky to work in some of the healthiest systems in the software industry. I've seen firsthand what software development looks like when it is working well. I've also had my share of failures, and have learned at least as much from those as I did from the successes.
 
 ## The Role of Individuals
 
@@ -62,7 +62,7 @@ My perspective on most of the above topics differs from that of the industry at 
 
 In particular, test-driven development, object-oriented programming, functional programming, and static typing are likely to be sore points for many programmers. Believe me, I've felt the pain that comes from the misapplication of these techniques, and I don't want you to have to repeat my mistakes. Accordingly, my approach is cautious and pragmatic, and I am not religious about any of the ideas I present. My guiding principle (lifted from Pivotal Software) is "do what works". My goal is not to tie you down with "rules" about how to write code, but to give you a curated, versatile set of tools that you can adapt to your own context.
 
-Indeed, I see the primary role of this book as being to curate what has come before. Very few of the ideas in this book originate with me. Most of them are venerable ideas from the annals of software engineering, filtered through my own experience working on real codebases totaling millions of lines.
+Indeed, I see the primary role of this book as being to curate what has come before. Few of the ideas in this book originate with me. Most of them are venerable ideas from the annals of software engineering, filtered through my own experience working on real codebases totaling millions of lines.
 
 ## Contents
 
