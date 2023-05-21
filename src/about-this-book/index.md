@@ -15,7 +15,7 @@ In my own career, I have been very lucky to work in some of the healthiest syste
 
 ## The Role of Individuals
 
-If the quality of our software depends to such a great extent on the health of the whole development system, can individual programmers do anything to improve the software? I think they certainly can.
+If the quality of our software depends to such a great extent on the health of the whole development system, can individual programmers do anything to improve it? I think they can.
 
 In a healthy system, programmers have a certain degree of autonomy. Managers set a direction and a budget, listen to the programmers' feedback about what will fit within the budget, and then let the programmers loose and trust them to do their best work. The key word there is "trust". Programmers and managers have to trust each other. In order for trust to be genuine, it must be earned. The way that programmers earn trust is by reliably delivering high-quality work within a budget. Doing that, and balancing all the human and technical factors in play, takes a great deal of skill and expertise.<!--A system where trust is given but not earned will be weakened, as managers learn to accept sub-par quality and programmers never get feedback about which skills they could improve.-->
 
@@ -30,29 +30,39 @@ I had the opportunity to work briefly with a few of the client's programmers dur
 - They were paid about a quarter of what I was. They said that a typical salary for a programmer in Germany at that time was 30,000 euros per year.
 - They were much better at programming than I was. Their code had a straightforward lucidity that I've only encountered a few times in my career.
 
-I should clarify that the consultancy I worked for prided itself on its ability to produce high-quality code that our clients would be able to carry forward. We saw ourselves as the cutting edge of software development. Individually, we all cared deeply about our craft and tried to continuously improve it through practices like pair programming and retrospectives. To suddenly encounter _actually_ good code, in the work of these German engineers who were paid like menial laborers, was a humbling wake-up call. I knew I had to up my game.
+I should clarify that the consultancy I worked for prided itself on its presumed ability to produce high-quality code that our clients would be able to carry forward. We saw ourselves as the cutting edge of software development. Individually, we all cared deeply about our craft and tried to continuously improve it through practices like pair programming and retrospectives. To suddenly encounter _actually_ good code, in the work of these German engineers who were paid like menial laborers, was a humbling wake-up call. I knew I had to up my game.
 
-Unfortunately, the wake-up call came too late. Our contract with the German client ended on (understandably) lukewarm terms. We failed to close the next and only lead in our pipeline, and a few months later our office was disbanded. (Amazingly—and I don't know if this was charity or business savviness—no one got laid off. We all had the opportunity to move to other, internal projects.)
+Unfortunately, the wake-up call came too late. Our contract with the German client ended on (understandably) lukewarm terms. We failed to close the next and only lead in our pipeline, and a few months later our office was disbanded. (Amazingly—and I don't know if this was charity or business savviness—no one got laid off. We all had the opportunity to move to other, internal projects within the parent company.)
 
 I am an optimist. I believe that we all, deep down, want to do our best work. We all want our work to create joy and not create suffering. The problems in our industry are due to lack of skill, not lack of will—which I think is an optimistic take, because skills can be learned.
 
-## Buzzwords
+## Software Development Skills
 
-"Enough with the hifalutin' ideals, BEN" I hear you saying. "I need a list of the buzzwords this book covers, so I can tell my boss why I'm submitting an expense report for $0 to read an HTML page". Very well, I hear you.
+Computer science and software engineering are both vast fields of study. In order to build our skills effectively, we need to prioritize, and learn the most important things first. While I think every technique and every bit of knowledge can be valuable in the right context, techniques vary in the amount of value they provide and the variety of contexts in which they're appropriate. Though the scope of this book is ambitious, it is not an encyclopedia. It focuses on the techniques and ideas that I believe have the highest value and broadest applicability.
 
-In no particular order:
+The high-level ideas this book covers are (in no particular order):
 
 - Test-driven development
+- Incremental development
 - Evolutionary design
+- Functional Programming
+- Object-Oriented Programming
 - Refactoring
 - The Unix Philosophy
 - Type-driven design
-- Software quality
-- Software architecture
-- Agile software development
 - User interface design / visual design
 - User experience design
-- Philosophy
+- Systems Thinking
+
+In general, these extremely broad topics are woven throughout the book. For example, "The Unix Philosophy" is not isolated to a single chapter. Instead, I mostly teach these topics by example: After showing specific techniques and code snippets, I tie them back to the larger ideas.
+
+### Only the good parts
+
+My perspective on most of the above topics differs from that of the industry at large. If you've learned about some of these topics from another source and convinced yourself that they're not worth your time, I'd urge you to give this book a chance anyway.
+
+In particular, test-driven development, object-oriented programming, functional programming, and static typing are likely to be sore points for many programmers. Believe me, I've felt the pain that comes from the misapplication of these techniques, and I don't want you to have to repeat my mistakes. Accordingly, my approach is cautious and pragmatic, and I am not religious about any of the ideas I present. My guiding principle (lifted from Pivotal Software) is "do what works". My goal is not to tie you down with "rules" about how to write code, but to give you a curated, versatile set of tools that you can adapt to your own context.
+
+Indeed, I see the primary role of this book as being to curate what has come before. Very few of the ideas in this book originate with me. Most of them are venerable ideas from the annals of software engineering, filtered through my own experience working on real codebases totaling millions of lines.
 
 ## Contents
 
@@ -75,7 +85,7 @@ The exception is "foundational" technologies, like Unix, `bash`, `git`, SQL data
 
 There's no hard line between "foundational" and "non-foundational" technologies, though—it's a spectrum. Use your own judgement about what to spend time learning.
 
-There's one technology dependency I couldn't avoid—the programming language I use for code examples. For that, I chose TypeScript. TypeScript is a superset of JavaScript that introduces a static type system. Because JavaScript is a multi-paradigm language that can run on both client and server, and because TypeScript enables but does not require static type safety, TypeScript is an ideal vehicle for comparing different approaches to programming. TypeScript also happens to be rapidly growing in popularity as of this writing—though it hasn't yet overtaken JavaScript, which has maintained its position as the most widely-used language (according to [polls of StackOverflow users](https://insights.stackoverflow.com/survey/2020#most-popular-technologies)) for the last decade.
+There's one technology dependency I couldn't avoid—the programming language I use for code examples. In this book, I use both JavaScript and TypeScript. TypeScript is a superset of JavaScript that introduces a static type system. Because JavaScript is a multi-paradigm language that can run on both client and server, and because TypeScript enables but does not require static type safety, these languages are an ideal vehicle for comparing different approaches to programming. TypeScript also happens to be rapidly growing in popularity as of this writing—though it hasn't yet overtaken JavaScript, which has maintained its position as the most widely-used language (according to [polls of StackOverflow users](https://insights.stackoverflow.com/survey/2020#most-popular-technologies)) for the last decade.
 
 ## About the Author
 
