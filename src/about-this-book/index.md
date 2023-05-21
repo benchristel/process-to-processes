@@ -23,12 +23,12 @@ So, the health of the system rests on trust, and trust rests on programmers' exp
 
 Some other resources on software engineering seem to assume that buggy software, poor-quality code, etc. are due to programmers' moral failings: their immaturity, laziness, or resistance to change. This idea I wholeheartedly reject. I believe that most people want to do their best work and to do the right thing—though the rightest thing they know how to do may still be ineffective.
 
-One of my own experiences may be instructive here. The consultancy I was working for took on a project for a Fortune Global 50 company based in Germany. The project had many challenges, both social and technical, but the thing that ultimately killed it was the quality of our code. After we'd worked on the product (a phone app) for almost a year, we had something that was working and releasable, and we handed it off to the client. Unfortunately, the programmers at the client company found they couldn't understand or improve our code, and they ended up throwing all of it away and rewriting it.
+One of my own experiences may be instructive here. In 2015, the consultancy I was working for took on a project for a Fortune Global 50 company based in Germany. The project had many challenges, both social and technical, but the thing that ultimately killed it was the quality of our code. After working on the product (a phone app) for almost a year, we handed it off to the client. Unfortunately, the programmers at the client company found they couldn't understand or improve our code, and they ended up throwing all of it away and rewriting it.
 
 I had the opportunity to work briefly with a few of the client's programmers during the handoff, and I learned two relevant facts about them:
 
-- They were paid about a quarter of what I was. They said that a typical salary for a programmer in Germany at that time (2016) was 30,000 euros per year.
-- They were much better at programming than I was. Their code had a clarity, a straightforward lucidity, that I've only encountered a few times in my career.
+- They were paid about a quarter of what I was. They said that a typical salary for a programmer in Germany at that time was 30,000 euros per year.
+- They were much better at programming than I was. Their code had a straightforward lucidity that I've only encountered a few times in my career.
 
 I should clarify that the consultancy I worked for prided itself on its ability to produce high-quality code that our clients would be able to carry forward. We saw ourselves as the cutting edge of software development. Individually, we all cared deeply about our craft and tried to continuously improve it through practices like pair programming and retrospectives. To suddenly encounter _actually_ good code, in the work of these German engineers who were paid like menial laborers, was a humbling wake-up call. I knew I had to up my game.
 
