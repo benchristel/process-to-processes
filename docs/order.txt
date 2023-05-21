@@ -11,3 +11,4 @@ tao
 
 !unspecified
 authors-notes.html
+goal.html
