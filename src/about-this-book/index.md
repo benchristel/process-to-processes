@@ -19,7 +19,7 @@ If the quality of our software depends to such a great extent on the health of t
 
 In a healthy system, programmers have a certain degree of autonomy. Managers set a direction and a budget, listen to the programmers' feedback about what will fit within the budget, and then let the programmers loose and trust them to do their best work. The key word there is "trust". Programmers and managers have to trust each other. In order for trust to be genuine, it must be earned. The way that programmers earn trust is by reliably delivering high-quality work within a budget. Doing that, and balancing all the human and technical factors in play, takes a great deal of skill and expertise.<!--A system where trust is given but not earned will be weakened, as managers learn to accept sub-par quality and programmers never get feedback about which skills they could improve.-->
 
-So, the health of the system rests on trust, and trust rests on programmers' expertise. In order for the system to be truly healthy, programmers must be experts. They have to continuously improve their skills and practices.
+So, the health of the system rests on trust, and trust rests on programmers' expertise. In order for the system to be truly healthy, we, the programmers, must be experts. We have to continuously improve our skills and practices. That's where this book comes in.
 
 Some other resources on software engineering seem to assume that buggy software, poor-quality code, etc. are due to programmers' moral failings: their immaturity, laziness, or resistance to change. This idea I wholeheartedly reject. I believe that most people want to do their best work and to do the right thing—though the rightest thing they know how to do may still be ineffective.
 
