@@ -58,10 +58,10 @@
 	<body>
 		<nav>
 			<div>
-				<a href="../../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
+				<a href="../../index.html">Home</a><a href="index.html">Up</a><a href="dependency.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="effects.html" class="mdsite-next-link">Next</a>
+				<a href="../quality/index.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<hr/>
@@ -73,32 +73,10 @@
 <p>A software process is the running instantion of a program. Programs are static data: bytes of code written to a file. Processes, by contrast, are dynamic, mercurial; real and yet intangible. In the same way that sheet music comes to life when an orchestra performs it, a program comes to life by directing the movements of a process.</p>
 <pre><code>program : computer : process :: sheet music : orchestra : concert
 </code></pre>
-<p>On a macOS or Linux system, you can list the currently running processes by running <code>ps aux</code> at a terminal.</p>
 <p>A single program may give rise to many independent processes. If you have <code>node</code> installed on your computer, you can see that this is true by opening several terminal windows and running <code>node</code> in each one. Each time you run <code>node</code>, you get a JavaScript interpreter where you can type JavaScript statements and have them execute. These interpreters are independent. For example, variables that you define in one don&#39;t affect the others. The reason this is so is that each invocation of <code>node</code> produces a new process with its own <em>state</em>, its own memory of the things that have happened to it. Throughout all of this, the <em>program</em> <code>node</code> is unaffected. The 86 million or so bytes in its file will remain unchanged no matter how many times you run it (though of course, they <em>will</em> change if you upgrade it). </p>
-<p>Some modern operating systems, notably macOS, obscure the difference between programs and processes, by making <em>applications</em> the primary user-facing concept. The operating system&#39;s user interface doesn&#39;t let you run multiple instances of an app simultaneously. However, this restriction is superficial: a matter of policy, not a limitation of the underlying mechanism, which is still &quot;everything is a process&quot;. If you try hard enough, you can run e.g. multiple instances of Firefox on macOS.</p>
+<p>Some modern operating systems, notably macOS, obscure the difference between programs and processes, by making <em>applications</em> the primary user-facing concept. The operating system&#39;s user interface doesn&#39;t let you run multiple instances of an app simultaneously. However, this restriction is superficial: a matter of policy, not a limitation of the underlying mechanism, which is still &quot;everything is a process&quot;. If you try hard enough, you can run e.g. multiple instances of Google Chrome on macOS.</p>
 <h2 id="a-definition-of-process">A Definition of &quot;Process&quot;</h2>
-<p>Operating system processes are quite complicated due to features like shared memory and threads. When writing JavaScript, though, we don&#39;t have to think about these complications. We can reason about our software processes in a more abstract way. In this section, we will refine a definition of &quot;process&quot; that is a suitable description of the life of a running JavaScript program. Incidentally, we can base this simpler definition of &quot;process&quot; on the concept of a Turing machine, which is perhaps <em>the</em> foundational concept of all of computer science. So we&#39;re on fairly solid ground here.</p>
-<h3 id="turing-machines">Turing Machines</h3>
-<p>TODO: definition of Turing machine</p>
-<p>A system that is capable of simulating a Turing machine is said to be <em>Turing complete</em>, and is provably capable of computing anything that can be computed. In reality, <em>no</em> system can ever be Turing complete, because true Turing completeness requires infinite memory. In practice, though, we usually hand-wave this away and refer to systems as Turing complete if they <em>would</em> be so given infinite memory and perfectly reliable hardware.</p>
-<h3 id="an-aside-on-turing-completeness">An Aside on Turing Completeness</h3>
-<p>When I first learned about Turing completeness, the concept bothered me because it seemed to have little relationship to the <em>practical</em> capabilities of a system. For example, one of my teachers mentioned that SQL is Turing complete. &quot;Does that mean you can write graphical user interfaces in SQL?&quot; I wondered. The answer to this question, frustratingly, turns out to be &quot;it depends, but in general, no, because the environments in which SQL code runs (e.g. databases) don&#39;t provide any facilities for creating windows or graphical widgets&quot;. I didn&#39;t fully understand how this could be. <em>Computers</em> can create graphical user interfaces, clearly. SQL is Turing complete, so it can compute anything that can be computed. Why can&#39;t it do everything a computer can do? Why can&#39;t it create a GUI?</p>
-<p>The distinction I was missing was that between <em>computation</em>, which occurs within a process, and <em>effects</em>, which are enabled by the <em>environment</em> where the process runs. We&#39;ll explore this distinction in much more detail in later chapters, but for now, note the following properties of Turing machines:</p>
-<ul>
-<li>Turing machines get all their input in the form of symbols on the tape, and all the input must be on the tape when the machine starts. Turing machines can&#39;t, for instance, call web services or prompt a user for input. In fact, Turing machines have no concept of users, web services, or any other real-world entities—not even computers—because they are purely abstract, mathematical objects. The &quot;tape&quot; of a Turing machine is a convenient metaphor.</li>
-<li>Turing machines produce all their output as symbols on the tape, too. There is no <code>console.log</code> or graphical display on a Turing machine. To read the result of a computation from the tape, you simply have to know where to look, and what the symbols mean.</li>
-</ul>
-<h3 id="deterministic-processes">Deterministic Processes</h3>
-<p>A <em>deterministic process</em> is a sequence of <em>states</em>, defined by an initial state, S<sub>0</sub>, and an <em>algorithm</em> that obtains the (n+1)<sup>th</sup> state, S<sub>n+1</sub>, from the n<sup>th</sup> state, S<sub>n</sub>. Each state is a <em>value</em>, which you can think of as a bundle of information—or, if you like, as a data structure. The sequence of states in a deterministic process is infinite. A deterministic process is said to <em>halt</em> if it ends with one state repeating infinitely (note that if a state appears twice consecutively, it will repeat forever after that). If the process eventually repeats some sequence of states with length &gt; 1 (i.e. enters a nontrivial infinite loop), we say it <em>crashes</em>.</p>
-<p>The following TypeScript function evolves a deterministic process until it halts, by repeatedly calling <code>next</code> on the current state to obtain the next state.</p>
-<pre><code class="language-ts">function evolve&lt;State&gt;(initialState: State, next: (s: State) =&gt; State): State {
-  let state = initialState
-  while (!equal(state, next(state))) {
-    state = next(state)
-  }
-  return state
-}
-</code></pre>
+<p>Operating system processes are quite complicated due to features like shared memory and threads. When writing JavaScript, though, we don&#39;t have to think about these complications. Throughout the rest of this book, we will refine a definition of &quot;process&quot; that is a suitable description of the life of a running JavaScript program.</p>
 <!--
 But what exactly *is* a process? We have an intuitive notion of what a *development process* is, abstracted from examples like Scrum, Extreme Programming, and Waterfall. A development process tells you what steps to follow to make software. We also use the word "process" to mean the running instantiation of a _program_. We can list the running *processes* on a macOS or Linux computer using the `ps aux` command. Is there some notion of a process that is general enough to cover both of these senses of the word? I think there is.
 
@@ -175,10 +153,10 @@ The definition doesn't perfectly apply to software processes because the state o
 		<hr/>
 		<nav>
 			<div>
-				<a href="../../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
+				<a href="../../index.html">Home</a><a href="index.html">Up</a><a href="dependency.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="effects.html" class="mdsite-next-link">Next</a>
+				<a href="../quality/index.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<script>
