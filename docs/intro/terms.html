@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Note on Terminology</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: #f8dfb9;
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article {
+				margin: 0 16px;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+			figure {
+				float: right;
+				background: #eee;
+				border: 1px solid #888;
+				display: table;
+				padding: 0 1em;
+				text-align: center;
+			}
+			img {
+				display: block;
+				background: white;
+				border: 1px solid #ccc;
+				margin: 0 auto;
+			}
+			figcaption {
+				font-size: 14px;
+				margin: 1em 0;
+			}
+			nav, hr, h1, h2, h3, h4, h5, h6 {
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="models.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="note-on-terminology">Note on Terminology</h1>
+<p>I use a lot of technical terms in this book, and where possible I define them precisely. I think my definitions are useful, and they generally align with the way these terms are commonly used in 2023. However, not everyone uses these terms in exactly the way I do. In some cases, my efforts to define a term <em>precisely</em> have taken the definition in a surprising direction, and I often follow that trail wherever it leads. It usually leads somewhere interesting.</p>
+<p>As you discuss the ideas in this book with other programmers, you may find that you disagree with them. When this happens, you should always stop and figure out how each of you defines the terms you both are using. I&#39;ve found that many apparent disagreements are simply the result of people using the same word to mean different things. Once you understand each other&#39;s terms, you may find that you agree on more things than you thought you did.</p>
+<p>Sometimes, the other person will cling to their definition and insist that it is the &quot;right&quot; one. When this happens, don&#39;t fight over whose definition is better. Usually, the best way to handle this situation is to try to use their terminology to explain your ideas. If you feel the need to use one of your own <em>concepts</em>, but the word you typically use for it means something different to them, make up a new word. As a friend of mine once put it, &quot;I don&#39;t care what we call it, but we need a word for this idea. Call it &#39;banana&#39; if you want.&quot;</p>
+<p>The great thing about human language is that it is almost infinitely flexible. I take advantage of that flexibility, and so can you.</p>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="models.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>

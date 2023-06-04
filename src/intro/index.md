@@ -1,4 +1,4 @@
-# About This Book
+# Introduction
 
 Working on well-made software is both a fascinating intellectual puzzle and a joyful, social activity. Working on poorly-made software feels bewildering, frustrating, and alienating. Good software makes its users and programmers feel confident and competent. Bad software gaslights the people who interact with it, making them feel like they're stupid or losing their minds.
 

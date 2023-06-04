@@ -1,4 +1,4 @@
-about-this-book
+intro
 prolegomena
 programming
 working-with-others
