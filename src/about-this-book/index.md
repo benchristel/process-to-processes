@@ -23,6 +23,7 @@ So, the health of the system rests on trust, and trust rests on programmers' exp
 
 Some other resources on software engineering seem to assume that buggy software, poor-quality code, etc. are due to programmers' moral failings: their immaturity, laziness, or resistance to change. This idea I wholeheartedly reject. I believe that most people want to do their best work and to do the right thing—though the rightest thing they know how to do may still be ineffective.
 
+<!--
 One of my own experiences may be instructive here. In 2015, the consultancy I was working for took on a project for a Fortune Global 50 company based in Germany. The project had many challenges, both social and technical, but the thing that ultimately killed it was the quality of our code. After working on the product (a phone app) for almost a year, we handed it off to the client. Unfortunately, the programmers at the client company found they couldn't understand or improve our code, and they ended up throwing all of it away and rewriting it.
 
 I had the opportunity to work briefly with a few of the client's programmers during the handoff, and I learned two relevant facts about them:
@@ -33,8 +34,10 @@ I had the opportunity to work briefly with a few of the client's programmers dur
 I should clarify that the consultancy I worked for prided itself on its presumed ability to produce high-quality code that our clients would be able to carry forward. We saw ourselves as the cutting edge of software development. Individually, we all cared deeply about our craft and tried to continuously improve it through practices like pair programming and retrospectives. To suddenly encounter _actually_ good code, in the work of these German engineers who were paid like menial laborers, was a humbling wake-up call. I knew I had to up my game.
 
 Unfortunately, the wake-up call came too late. Our contract with the German client ended on (understandably) lukewarm terms. We failed to close the next and only lead in our pipeline, and a few months later our office was disbanded. (Amazingly—and I don't know if this was charity or business savviness—no one got laid off. We all had the opportunity to move to other, internal projects within the parent company.)
+-->
 
 I am an optimist. I believe that we all, deep down, want to do our best work. We all want our work to create joy and not create suffering. The problems in our industry are due to lack of skill, not lack of will—which I think is an optimistic take, because skills can be learned.
+
 
 ## Software Development Skills
 
@@ -60,9 +63,11 @@ In general, these extremely broad topics are woven throughout the book. For exam
 
 My perspective on most of the above topics differs from that of the industry at large. If you've learned about some of these topics from another source and convinced yourself that they're not worth your time, I'd urge you to give this book a chance anyway.
 
-In particular, test-driven development, object-oriented programming, functional programming, and static typing are likely to be sore points for many programmers. Believe me, I've felt the pain that comes from the misapplication of these techniques, and I don't want you to have to repeat my mistakes. Accordingly, my approach is cautious and pragmatic, and I am not religious about any of the ideas I present. My guiding principle (lifted from Pivotal Software) is "do what works". My goal is not to tie you down with "rules" about how to write code, but to give you a curated, versatile set of tools that you can adapt to your own context.
+In particular, test-driven development, object-oriented programming, functional programming, and static type checking are likely to be sore points for many programmers. Believe me, I've felt the pain that comes from the misapplication of these techniques, and I don't want you to have to repeat my mistakes. Accordingly, my approach is cautious and pragmatic, and I am not religious about any of the ideas I present. <!--My guiding principle (lifted from Pivotal Software) is "do what works".--> My goal is not to tie you down with "rules" about how to write code, but to give you a curated, versatile set of tools that you can adapt to your own context.
 
+<!--
 Indeed, I see the primary role of this book as being to curate what has come before. Few of the ideas in this book originate with me. Most of them are venerable ideas from the annals of software engineering, filtered through my own experience working on real codebases totaling millions of lines.
+-->
 
 ## Contents
 

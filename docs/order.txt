@@ -1,14 +1,10 @@
-luck.html
-summaries
 about-this-book
 prolegomena
-goals
-myths-and-misconceptions
 programming
 working-with-others
 user-interfaces
 tao
+authors-notes.html
 
 !unspecified
-authors-notes.html
 goal.html

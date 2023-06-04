@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Introduction</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: #f8dfb9;
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article {
+				margin: 0 16px;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+			figure {
+				float: right;
+				background: #eee;
+				border: 1px solid #888;
+				display: table;
+				padding: 0 1em;
+				text-align: center;
+			}
+			img {
+				display: block;
+				background: white;
+				border: 1px solid #ccc;
+				margin: 0 auto;
+			}
+			figcaption {
+				font-size: 14px;
+				margin: 1em 0;
+			}
+			nav, hr, h1, h2, h3, h4, h5, h6 {
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="../prolegomena/index.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="introduction">Introduction</h1>
+<p>Our goal is to write software that has no bugs and is easy to change.</p>
+<p>Wouldn&#39;t it be wonderful if our software could tell us right away when it had a problem? If it could tell us when it had a bug, or wasn&#39;t going to be easy to change? Consider, for a moment, what that would mean.</p>
+<p>It would mean that we&#39;d never ship a bug to production, because as soon as we wrote the bug we&#39;d know it was there. We&#39;d never have to debug—we could just undo our last 5 seconds of work to get back to </p>
+<p>If we want to write software that has no bugs and is easy to change, our first step should be to become more aware of our mistakes. That is, if we do something that introduces a bug or makes the software harder to change, we&#39;d like to know about it.</p>
+<p>It would be nice if we could write our software in such a way that it detects mistakes in its own code, automatically.</p>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="../prolegomena/index.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>

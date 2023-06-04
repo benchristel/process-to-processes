@@ -58,10 +58,10 @@
 	<body>
 		<nav>
 			<div>
-				<a href="../index.html">Home</a><a href="../index.html">Up</a><a href="../summaries/256.html" class="mdsite-prev-link">Prev</a>
+				<a href="../index.html">Home</a><a href="../index.html">Up</a><a href="../index.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="../prolegomena/index.html" class="mdsite-next-link">Next</a>
+				<a href="intro.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<hr/>
@@ -80,14 +80,19 @@ The software development system has a kind of life of its own: it comes into bei
 <p>In a healthy system, programmers have a certain degree of autonomy. Managers set a direction and a budget, listen to the programmers&#39; feedback about what will fit within the budget, and then let the programmers loose and trust them to do their best work. The key word there is &quot;trust&quot;. Programmers and managers have to trust each other. In order for trust to be genuine, it must be earned. The way that programmers earn trust is by reliably delivering high-quality work within a budget. Doing that, and balancing all the human and technical factors in play, takes a great deal of skill and expertise.<!--A system where trust is given but not earned will be weakened, as managers learn to accept sub-par quality and programmers never get feedback about which skills they could improve.--></p>
 <p>So, the health of the system rests on trust, and trust rests on programmers&#39; expertise. In order for the system to be truly healthy, we, the programmers, must be experts. We have to continuously improve our skills and practices. That&#39;s where this book comes in.</p>
 <p>Some other resources on software engineering seem to assume that buggy software, poor-quality code, etc. are due to programmers&#39; moral failings: their immaturity, laziness, or resistance to change. This idea I wholeheartedly reject. I believe that most people want to do their best work and to do the right thing—though the rightest thing they know how to do may still be ineffective.</p>
-<p>One of my own experiences may be instructive here. In 2015, the consultancy I was working for took on a project for a Fortune Global 50 company based in Germany. The project had many challenges, both social and technical, but the thing that ultimately killed it was the quality of our code. After working on the product (a phone app) for almost a year, we handed it off to the client. Unfortunately, the programmers at the client company found they couldn&#39;t understand or improve our code, and they ended up throwing all of it away and rewriting it.</p>
-<p>I had the opportunity to work briefly with a few of the client&#39;s programmers during the handoff, and I learned two relevant facts about them:</p>
-<ul>
-<li>They were paid about a quarter of what I was. They said that a typical salary for a programmer in Germany at that time was 30,000 euros per year.</li>
-<li>They were much better at programming than I was. Their code had a straightforward lucidity that I&#39;ve only encountered a few times in my career.</li>
-</ul>
-<p>I should clarify that the consultancy I worked for prided itself on its presumed ability to produce high-quality code that our clients would be able to carry forward. We saw ourselves as the cutting edge of software development. Individually, we all cared deeply about our craft and tried to continuously improve it through practices like pair programming and retrospectives. To suddenly encounter <em>actually</em> good code, in the work of these German engineers who were paid like menial laborers, was a humbling wake-up call. I knew I had to up my game.</p>
-<p>Unfortunately, the wake-up call came too late. Our contract with the German client ended on (understandably) lukewarm terms. We failed to close the next and only lead in our pipeline, and a few months later our office was disbanded. (Amazingly—and I don&#39;t know if this was charity or business savviness—no one got laid off. We all had the opportunity to move to other, internal projects within the parent company.)</p>
+<!--
+One of my own experiences may be instructive here. In 2015, the consultancy I was working for took on a project for a Fortune Global 50 company based in Germany. The project had many challenges, both social and technical, but the thing that ultimately killed it was the quality of our code. After working on the product (a phone app) for almost a year, we handed it off to the client. Unfortunately, the programmers at the client company found they couldn't understand or improve our code, and they ended up throwing all of it away and rewriting it.
+
+I had the opportunity to work briefly with a few of the client's programmers during the handoff, and I learned two relevant facts about them:
+
+- They were paid about a quarter of what I was. They said that a typical salary for a programmer in Germany at that time was 30,000 euros per year.
+- They were much better at programming than I was. Their code had a straightforward lucidity that I've only encountered a few times in my career.
+
+I should clarify that the consultancy I worked for prided itself on its presumed ability to produce high-quality code that our clients would be able to carry forward. We saw ourselves as the cutting edge of software development. Individually, we all cared deeply about our craft and tried to continuously improve it through practices like pair programming and retrospectives. To suddenly encounter _actually_ good code, in the work of these German engineers who were paid like menial laborers, was a humbling wake-up call. I knew I had to up my game.
+
+Unfortunately, the wake-up call came too late. Our contract with the German client ended on (understandably) lukewarm terms. We failed to close the next and only lead in our pipeline, and a few months later our office was disbanded. (Amazingly—and I don't know if this was charity or business savviness—no one got laid off. We all had the opportunity to move to other, internal projects within the parent company.)
+-->
+
 <p>I am an optimist. I believe that we all, deep down, want to do our best work. We all want our work to create joy and not create suffering. The problems in our industry are due to lack of skill, not lack of will—which I think is an optimistic take, because skills can be learned.</p>
 <h2 id="software-development-skills">Software Development Skills</h2>
 <p>Computer science and software engineering are both vast fields of study. In order to build our skills effectively, we need to prioritize, and learn the most important things first. While I think every technique and every bit of knowledge can be valuable in the right context, techniques vary in the amount of value they provide and the variety of contexts in which they&#39;re appropriate. Though the scope of this book is ambitious, it is not an encyclopedia. It focuses on the techniques and ideas that I believe have the highest value and broadest applicability.</p>
@@ -108,8 +113,11 @@ The software development system has a kind of life of its own: it comes into bei
 <p>In general, these extremely broad topics are woven throughout the book. For example, &quot;The Unix Philosophy&quot; is not isolated to a single chapter. Instead, I mostly teach these topics by example: After showing specific techniques and code snippets, I tie them back to the larger ideas.</p>
 <h3 id="only-the-good-parts">Only the good parts</h3>
 <p>My perspective on most of the above topics differs from that of the industry at large. If you&#39;ve learned about some of these topics from another source and convinced yourself that they&#39;re not worth your time, I&#39;d urge you to give this book a chance anyway.</p>
-<p>In particular, test-driven development, object-oriented programming, functional programming, and static typing are likely to be sore points for many programmers. Believe me, I&#39;ve felt the pain that comes from the misapplication of these techniques, and I don&#39;t want you to have to repeat my mistakes. Accordingly, my approach is cautious and pragmatic, and I am not religious about any of the ideas I present. My guiding principle (lifted from Pivotal Software) is &quot;do what works&quot;. My goal is not to tie you down with &quot;rules&quot; about how to write code, but to give you a curated, versatile set of tools that you can adapt to your own context.</p>
-<p>Indeed, I see the primary role of this book as being to curate what has come before. Few of the ideas in this book originate with me. Most of them are venerable ideas from the annals of software engineering, filtered through my own experience working on real codebases totaling millions of lines.</p>
+<p>In particular, test-driven development, object-oriented programming, functional programming, and static type checking are likely to be sore points for many programmers. Believe me, I&#39;ve felt the pain that comes from the misapplication of these techniques, and I don&#39;t want you to have to repeat my mistakes. Accordingly, my approach is cautious and pragmatic, and I am not religious about any of the ideas I present. <!--My guiding principle (lifted from Pivotal Software) is "do what works".--> My goal is not to tie you down with &quot;rules&quot; about how to write code, but to give you a curated, versatile set of tools that you can adapt to your own context.</p>
+<!--
+Indeed, I see the primary role of this book as being to curate what has come before. Few of the ideas in this book originate with me. Most of them are venerable ideas from the annals of software engineering, filtered through my own experience working on real codebases totaling millions of lines.
+-->
+
 <h2 id="contents">Contents</h2>
 <p>This prelude is followed by a collection of &quot;prolegomena&quot;, or &quot;first things to read&quot;. These contain important meta-information about how to interpret the rest of the book.</p>
 <p>The rest of the book is divided into four parts:</p>
@@ -132,10 +140,10 @@ The software development system has a kind of life of its own: it comes into bei
 		<hr/>
 		<nav>
 			<div>
-				<a href="../index.html">Home</a><a href="../index.html">Up</a><a href="../summaries/256.html" class="mdsite-prev-link">Prev</a>
+				<a href="../index.html">Home</a><a href="../index.html">Up</a><a href="../index.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="../prolegomena/index.html" class="mdsite-next-link">Next</a>
+				<a href="intro.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<script>
