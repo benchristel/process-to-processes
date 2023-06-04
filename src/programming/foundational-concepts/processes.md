@@ -4,7 +4,7 @@ The title of this book, _Process to Processes_, refers to the twin facts that 1)
 
 ## Software Processes
 
-A software process is the running instantion of a program. Programs are static data: bytes of code written to a file. Processes, by contrast, are dynamic, mercurial; real and yet intangible. In the same way that sheet music comes to life when an orchestra performs it, a program comes to life by directing the movements of a process.
+A software process is the running instantiation of a program. Programs are static data: bytes of code written to a file. Processes, by contrast, are dynamic, mercurial; real and yet intangible. In the same way that sheet music comes to life when an orchestra performs it, a program comes to life by directing the movements of a process.
 
 ```
 program : computer : process :: sheet music : orchestra : concert
