@@ -1,55 +1,64 @@
-# Process and Processes
+# What is a Process?
 
-The title of this book, _Process to Processes_, refers to the twin facts that 1) all software is developed by some kind of _process_, and 2) the ultimate result of software development is a set of running _processes_ on one or more computers. Processes are the beginning and the end of software development, and they often show up in the middle, too. I will refer to the first type of process as a _development process_, and to the second type of process as a _software process_.
+In this book, I use the word _process_ to mean "a sequence of changes to some part of the world". We'll call the part of the world that a process changes the _state_ of the process. Each change, or _step_, enacted by a process takes the current state and transforms it—often just a tiny bit—to get to the next state in the sequence. Though each change may be small, a long sequence of such changes can produce intricate structures or perform complex calculations.
+
+Processes are interesting and useful because they give us a way to carry out very complex tasks with limited computational or mental resources. The machinery that performs each step tends to be restricted in some dimension: perhaps it has limited built-in memory, or a limited amount of time to perform each step. Perhaps the machinery is divided up into many parts that each act on a corresponding part of the state, and can only communicate with each other in limited ways. By recording information in the state for later use, the machinery is enabled to do its job.
+
+Processes are everywhere. One everyday example of a process is pen and paper arithmetic. Most of us don't have the mental machinery to be able to multiply two ten-digit numbers in our heads, but by writing down the problem and performing a series of mechanical _steps_ on that written _state_, we can reliably solve such problems.
+
+Another example of a process is baking bread. When kneading dough, in particular, there is feedback from the dough to the baker; the process of kneading cannot be done insensitively if you want the result to be good. You need to assess the texture of the dough at every step, and continue adding flour just until the texture is right.
+
+In both of these examples, note the key fact that the current state of the process informs the next step. This idea—that the state feeds back into the development of the process—is common to all processes.
 
 ## Software Processes
 
 A software process is the running instantiation of a program. Programs are static data: bytes of code written to a file. Processes, by contrast, are dynamic, mercurial; real and yet intangible. In the same way that sheet music comes to life when an orchestra performs it, a program comes to life by directing the movements of a process.
 
 ```
-program : computer : process :: sheet music : orchestra : concert
+   program     : computer  : process
+:: sheet music : orchestra : concert
 ```
 
-On a macOS or Linux system, you can list the currently running processes by running `ps aux` at a terminal.
+On a macOS or Linux system, you can list the currently running processes by running `ps aux` at a terminal. A new process is created every time you run a program. For example, if you run `node` to start a JavaScript REPL, that creates a process. A single program can give rise to multiple concurrent processes. For example, if you open multiple terminal windows, you can run `node` in each one. The program `node` is unaffected by this; it remains, unchanging, on disk. The several _processes_ instantiated from the program are identified (by the operating system) by different process IDs (PIDs), each associated with an independent _state_. The operating system arranges things so that each process's state evolves according to the rules of its program. (Note: this model of how processes work is extremely simplified, but it is adequate for the purposes of writing JavaScript.)
 
-A single program may give rise to many independent processes. If you have `node` installed on your computer, you can see that this is true by opening several terminal windows and running `node` in each one. Each time you run `node`, you get a JavaScript interpreter where you can type JavaScript statements and have them execute. These interpreters are independent. For example, variables that you define in one don't affect the others. The reason this is so is that each invocation of `node` produces a new process with its own _state_, its own memory of the things that have happened to it. Throughout all of this, the _program_ `node` is unaffected. The 86 million or so bytes in its file will remain unchanged no matter how many times you run it (though of course, they _will_ change if you upgrade it). 
+The preceding paragraph describes what I'll call _operating system processes_, but the abstract idea of a _software process_ is more general. OS processes are _Turing complete_, so an OS process can simulate any number of other processes—it can even simulate a whole operating system! We can think of `node` as being just such a process simulator. `node` processes can perform any number of tasks, from serving web requests to compiling TypeScript, by reading in the source code of a JavaScript program and then "simulating" the evolution of a process instantiated from that program. I put "simulating" in quotes because these "simulated" processes can do quite real and useful work!
 
-Some modern operating systems, notably macOS, obscure the difference between programs and processes, by making _applications_ the primary user-facing concept. The operating system's user interface doesn't let you run multiple instances of an app simultaneously. However, this restriction is superficial: a matter of policy, not a limitation of the underlying mechanism, which is still "everything is a process". If you try hard enough, you can run e.g. multiple instances of Firefox on macOS.
+We can go one level further, and create our own simulated processes within a JavaScript process. The mechanism JavaScript provides for this is _generator functions_. Here is an example of a generator function:
 
-## A Definition of "Process"
-
-Operating system processes are quite complicated due to features like shared memory and threads. When writing JavaScript, though, we don't have to think about these complications. We can reason about our software processes in a more abstract way. In this section, we will refine a definition of "process" that is a suitable description of the life of a running JavaScript program. Incidentally, we can base this simpler definition of "process" on the concept of a Turing machine, which is perhaps *the* foundational concept of all of computer science. So we're on fairly solid ground here.
-
-### Turing Machines
-
-TODO: definition of Turing machine
-
-A system that is capable of simulating a Turing machine is said to be _Turing complete_, and is provably capable of computing anything that can be computed. In reality, _no_ system can ever be Turing complete, because true Turing completeness requires infinite memory. In practice, though, we usually hand-wave this away and refer to systems as Turing complete if they _would_ be so given infinite memory and perfectly reliable hardware.
-
-### An Aside on Turing Completeness
-
-When I first learned about Turing completeness, the concept bothered me because it seemed to have little relationship to the *practical* capabilities of a system. For example, one of my teachers mentioned that SQL is Turing complete. "Does that mean you can write graphical user interfaces in SQL?" I wondered. The answer to this question, frustratingly, turns out to be "it depends, but in general, no, because the environments in which SQL code runs (e.g. databases) don't provide any facilities for creating windows or graphical widgets". I didn't fully understand how this could be. _Computers_ can create graphical user interfaces, clearly. SQL is Turing complete, so it can compute anything that can be computed. Why can't it do everything a computer can do? Why can't it create a GUI?
-
-The distinction I was missing was that between _computation_, which occurs within a process, and _effects_, which are enabled by the _environment_ where the process runs. We'll explore this distinction in much more detail in later chapters, but for now, note the following properties of Turing machines:
-
-- Turing machines get all their input in the form of symbols on the tape, and all the input must be on the tape when the machine starts. Turing machines can't, for instance, call web services or prompt a user for input. In fact, Turing machines have no concept of users, web services, or any other real-world entities—not even computers—because they are purely abstract, mathematical objects. The "tape" of a Turing machine is a convenient metaphor.
-- Turing machines produce all their output as symbols on the tape, too. There is no `console.log` or graphical display on a Turing machine. To read the result of a computation from the tape, you simply have to know where to look, and what the symbols mean.
-
-### Deterministic Processes
-
-A *deterministic process* is a sequence of _states_, defined by an initial state, S<sub>0</sub>, and an _algorithm_ that obtains the (n+1)<sup>th</sup> state, S<sub>n+1</sub>, from the n<sup>th</sup> state, S<sub>n</sub>. Each state is a _value_, which you can think of as a bundle of information—or, if you like, as a data structure. The sequence of states in a deterministic process is infinite. A deterministic process is said to _halt_ if it ends with one state repeating infinitely (note that if a state appears twice consecutively, it will repeat forever after that). If the process eventually repeats some sequence of states with length > 1 (i.e. enters a nontrivial infinite loop), we say it _crashes_.
-
-The following TypeScript function evolves a deterministic process until it halts, by repeatedly calling `next` on the current state to obtain the next state.
-
-```ts
-function evolve<State>(initialState: State, next: (s: State) => State): State {
-  let state = initialState
-  while (!equal(state, next(state))) {
-    state = next(state)
+```js
+function *greetForever() {
+  let n = 0
+  while (true) {
+    console.log("Hello, world " + n + "!")
+    n++
+    yield
   }
-  return state
 }
 ```
+
+The `*` before the function name makes `greetForever` a generator function. If we call `greetForever`, it does not enter an infinite loop, but simply returns a process-like object that JavaScript calls a `Generator`.
+
+```js
+const process = greetForever()
+```
+
+How do we actually run this process? We can call the `next()` method on it:
+
+```js
+process.next()
+```
+
+This causes the generator function to run until execution reaches a `yield` statement. Once a `yield` statement is reached, the process pauses execution, and the call to `next()` returns.
+
+The visible effect of calling `process.next()` is that it logs `Hello, world 0!`. Internally, it also increments the `n` variable (part of the process's _state_). If we call `next()` again, it will log `Hello, world 1!`, and so on.
+
+There is more to learn about generator functions in JavaScript, but it can wait for future chapters.
+
+## Deterministic Processes
+
+## Process to Processes
+
+The title of this book, _Process to Processes_, refers to the twin facts that 1) all software is developed by some kind of _process_, and 2) the ultimate result of software development is a set of running _processes_ on one or more computers. Processes are the beginning and the end of software development, and they often show up in the middle, too. I will refer to the first type of process as a _development process_, and to the second type of process as a _software process_.
 
 <!--
 But what exactly *is* a process? We have an intuitive notion of what a *development process* is, abstracted from examples like Scrum, Extreme Programming, and Waterfall. A development process tells you what steps to follow to make software. We also use the word "process" to mean the running instantiation of a _program_. We can list the running *processes* on a macOS or Linux computer using the `ps aux` command. Is there some notion of a process that is general enough to cover both of these senses of the word? I think there is.
