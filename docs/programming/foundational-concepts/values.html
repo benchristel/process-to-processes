@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Values and Objects</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: #f8dfb9;
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article {
+				margin: 0 16px;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+			figure {
+				float: right;
+				background: #eee;
+				border: 1px solid #888;
+				display: table;
+				padding: 0 1em;
+				text-align: center;
+			}
+			img {
+				display: block;
+				background: white;
+				border: 1px solid #ccc;
+				margin: 0 auto;
+			}
+			figcaption {
+				font-size: 14px;
+				margin: 1em 0;
+			}
+			nav, hr, h1, h2, h3, h4, h5, h6 {
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="../../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="processes.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="values-and-objects">Values and Objects</h1>
+<p>Consider JavaScript.</p>
+<p>In JavaScript, a number like <code>3</code> is a <em>value</em>. So is a string like <code>&quot;Hello, world&quot;</code>.
+So are <code>true</code>, <code>false</code>, <code>null</code>, and <code>undefined</code>.</p>
+<p>To be a value, a thing must have two properties:</p>
+<ol>
+<li>Values must be immutable; after we create it we aren&#39;t allowed to change it. Note
+  that we&#39;re talking about <em>values</em> and not <em>variables</em>. In the following code,
+  we reassign a new value to the variable <code>a</code>, but no values are mutated:</li>
+</ol>
+<pre><code class="language-js">let a = 1
+let b = 2
+let c = a
+a = a + b
+</code></pre>
+<p>  After the <code>a = a + b</code> statement, the variable <code>a</code> refers to the value <code>3</code>. But that&#39;s
+  not because we somehow turned <code>1</code> into <code>3</code>, but because we assigned a whole new value
+  to <code>a</code>. The value of <code>c</code> is still <code>1</code> after the reassignment.</p>
+<ol start="2">
+<li>Values must be comparable to other values for equality. Two values that contain
+  the same information must compare equal; values that contain different information
+  must compare unequal. In JavaScript, we can use <code>===</code>, or its negation <code>!==</code>, to compare values.</li>
+</ol>
+<pre><code class="language-js">1 === 1        // true
+1 !== 2        // true
+true === true  // true
+false !== true // true
+1 !== true     // true
+null === null  // true
+&quot;hi&quot; === &quot;hi&quot;  // true
+&quot;hi&quot; !== &quot;bye&quot; // true
+</code></pre>
+<h2 id="objects">Objects</h2>
+<p>Not everything is a value in JavaScript. Some things are <em>objects</em>. Objects differ from
+values in that they are mutable:</p>
+<pre><code class="language-js">let obj = {a: 1}
+obj.a = 2
+obj.a === 2 // true
+</code></pre>
+<p>The statement &quot;x is mutable&quot; only makes sense if x has an <em>identity</em> that links together its
+various &quot;versions&quot;. Whenever an <em>object literal</em> like <code>{}</code> or <code>{a: 1}</code> is evaluated in JavaScript, a new object is created with its own identity.</p>
+<p>Because objects are mutable, it doesn&#39;t make sense to compare objects the same way we
+compare values. Two objects that hold the same information might not be equal according
+to <code>===</code>.</p>
+<pre><code class="language-js">let first  = {a: 1}
+let second = {a: 1}
+first !== second // true
+first === first  // true
+</code></pre>
+<p>The <code>===</code> operator compares objects by <em>identity</em>.</p>
+<h2 id="are-arrays-objects">Are Arrays Objects?</h2>
+<p>In JavaScript, the word &quot;object&quot; is often used to refer to the type of thing you&#39;d
+create by writing curly braces with properties in between. Technically, arrays
+are also objects.</p>
+<pre><code class="language-js">typeof Array === &quot;object&quot; // true
+</code></pre>
+<p>Arrays are mutable in JavaScript, and are compared by identity when you use <code>===</code> on them,
+so according to the definition above, they are objects.</p>
+<p>To avoid sowing confusion, I will refer to entities created with the <code>{}</code> syntax as <em>plain old JavaScript objects</em> or <em>POJOs</em> throughout the rest of this book. I will use the term &quot;object&quot;
+to mean any mutable entity, but if I&#39;m referring specifically to an array I will call it an array. To do otherwise would just be confusing.</p>
+<h2 id="viewing-pojos-and-arrays-as-values">Viewing POJOs and Arrays as Values</h2>
+<p>In many programming languages, the equivalents of POJOs and arrays are values, not mutable objects. This is often very convenient. It would be nice if we could say:</p>
+<pre><code>// this is wishful thinking
+let a = {a: 1}
+let b = {a: 1}
+a === b
+</code></pre>
+<p>and have <code>a === b</code> evaluate to <code>true</code>. Having to think about object identity makes reasoning about our programs more complicated. Whenever we mutate an object, we have to think &quot;is some other code holding a reference to this object? Will that code still do what we want if we change the object?&quot;</p>
+<p>Although POJOs and arrays are not technically values, I will be treating them as if they are throughout most of this book. We can treat POJOs and arrays as if they are values if we
+accept the following constraints:</p>
+<ul>
+<li>Once we have created a POJO or array, we promise ourselves not to mutate it.</li>
+<li>When we compare POJOs or arrays, we always do so with an <code>equals</code> function that recursively compares their contents. We don&#39;t use <code>===</code> on POJOs or arrays.</li>
+</ul>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="../../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="processes.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>
