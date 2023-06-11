@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Values and Objects</title>
+		<title>Values: Data, and Objects</title>
 		<style>
 			@media screen {
 			  body {
@@ -67,80 +67,94 @@
 		<hr/>
 
 		<article>
-			<h1 id="values-and-objects">Values and Objects</h1>
-<p>Consider JavaScript.</p>
-<p>In JavaScript, a number like <code>3</code> is a <em>value</em>. So is a string like <code>&quot;Hello, world&quot;</code>.
-So are <code>true</code>, <code>false</code>, <code>null</code>, and <code>undefined</code>.</p>
-<p>To be a value, a thing must have two properties:</p>
-<ol>
-<li>Values must be immutable; after we create it we aren&#39;t allowed to change it. Note
-  that we&#39;re talking about <em>values</em> and not <em>variables</em>. In the following code,
-  we reassign a new value to the variable <code>a</code>, but no values are mutated:</li>
-</ol>
-<pre><code class="language-js">let a = 1
-let b = 2
-let c = a
-a = a + b
+			<h1 id="values-data-and-objects">Values: Data, and Objects</h1>
+<p>In JavaScript (and TypeScript), the things that we can assign to variables are called <em>values</em>. Numbers, strings, arrays, objects, and functions are all types of values.</p>
+<p>Some values are <em>mutable</em> (changeable), and some are <em>immutable</em>. To see the difference, consider the following code:</p>
+<pre><code class="language-js">let a = [&quot;sun&quot;, &quot;stars&quot;]
 </code></pre>
-<p>  After the <code>a = a + b</code> statement, the variable <code>a</code> refers to the value <code>3</code>. But that&#39;s
-  not because we somehow turned <code>1</code> into <code>3</code>, but because we assigned a whole new value
-  to <code>a</code>. The value of <code>c</code> is still <code>1</code> after the reassignment.</p>
-<ol start="2">
-<li>Values must be comparable to other values for equality. Two values that contain
-  the same information must compare equal; values that contain different information
-  must compare unequal. In JavaScript, we can use <code>===</code>, or its negation <code>!==</code>, to compare values.</li>
-</ol>
-<pre><code class="language-js">1 === 1        // true
-1 !== 2        // true
-true === true  // true
-false !== true // true
-1 !== true     // true
-null === null  // true
-&quot;hi&quot; === &quot;hi&quot;  // true
-&quot;hi&quot; !== &quot;bye&quot; // true
+<p>If we want to change the value that <code>a</code> refers to, we can of course assign a new value to the variable, with a statement like <code>a = [&quot;duck pond&quot;]</code>. But because JavaScript arrays are mutable, we can also change the &quot;meaning&quot; of <code>a</code> without using the <code>=</code> operator.</p>
+<pre><code class="language-js">console.log(a) // prints [&quot;sun&quot;, &quot;stars&quot;]
+a.push(&quot;moon&quot;)
+console.log(a) // prints [&quot;sun&quot;, &quot;stars&quot;, &quot;moon&quot;]
 </code></pre>
-<h2 id="objects">Objects</h2>
-<p>Not everything is a value in JavaScript. Some things are <em>objects</em>. Objects differ from
-values in that they are mutable:</p>
-<pre><code class="language-js">let obj = {a: 1}
-obj.a = 2
-obj.a === 2 // true
+<p>Calling <code>push</code> changes what <code>console.log(a)</code> prints.</p>
+<p>Strings, on the other hand, are immutable. When a variable refers to an immutable value like a string, we cannot change the meaning of that variable unless we use <code>=</code> to explicitly reassign it. Merely calling a method on the value won&#39;t change it, as we can see below:</p>
+<pre><code class="language-js">let s = &quot;forest leaves&quot;
+console.log(s) // prints &quot;forest leaves&quot;
+s.toUpperCase()
+console.log(s) // prints &quot;forest leaves&quot;
 </code></pre>
-<p>The statement &quot;x is mutable&quot; only makes sense if x has an <em>identity</em> that links together its
-various &quot;versions&quot;. Whenever an <em>object literal</em> like <code>{}</code> or <code>{a: 1}</code> is evaluated in JavaScript, a new object is created with its own identity.</p>
-<p>Because objects are mutable, it doesn&#39;t make sense to compare objects the same way we
-compare values. Two objects that hold the same information might not be equal according
-to <code>===</code>.</p>
-<pre><code class="language-js">let first  = {a: 1}
-let second = {a: 1}
-first !== second // true
-first === first  // true
+<p>The <code>toUpperCase</code> method returns a new string; it doesn&#39;t (and can&#39;t) modify the existing one. If we want to change the meaning of the variable <code>s</code>, we need to assign it a new value with <code>=</code>:</p>
+<pre><code class="language-js">s = s.toUpperCase()
+console.log(s) // prints &quot;FOREST LEAVES&quot;
 </code></pre>
-<p>The <code>===</code> operator compares objects by <em>identity</em>.</p>
-<h2 id="are-arrays-objects">Are Arrays Objects?</h2>
-<p>In JavaScript, the word &quot;object&quot; is often used to refer to the type of thing you&#39;d
-create by writing curly braces with properties in between. Technically, arrays
-are also objects.</p>
-<pre><code class="language-js">typeof Array === &quot;object&quot; // true
+<h2 id="advantages-of-immutability">Advantages of Immutability</h2>
+<p>In the example above where we mutated an array with <code>.push()</code>, it was pretty obvious what we were doing. However, consider the following:</p>
+<pre><code class="language-js">let a = [&quot;sun&quot;, &quot;moon&quot;]
+someComplicatedFunctionYourCoworkerWrote(a)
+console.log(a) // What will this print?
 </code></pre>
-<p>Arrays are mutable in JavaScript, and are compared by identity when you use <code>===</code> on them,
-so according to the definition above, they are objects.</p>
-<p>To avoid sowing confusion, I will refer to entities created with the <code>{}</code> syntax as <em>plain old JavaScript objects</em> or <em>POJOs</em> throughout the rest of this book. I will use the term &quot;object&quot;
-to mean any mutable entity, but if I&#39;m referring specifically to an array I will call it an array. To do otherwise would just be confusing.</p>
-<h2 id="viewing-pojos-and-arrays-as-values">Viewing POJOs and Arrays as Values</h2>
-<p>In many programming languages, the equivalents of POJOs and arrays are values, not mutable objects. This is often very convenient. It would be nice if we could say:</p>
-<pre><code>// this is wishful thinking
-let a = {a: 1}
-let b = {a: 1}
-a === b
+<p>What will this code print? It depends on whether <code>someComplicatedFunctionYourCoworkerWrote</code> mutates the array passed to it. When our values are mutable, it can be quite hard to tell what code will do, because mutation can be hidden under layers of function calls.</p>
+<p>If, on the other hand, we are using strings or other immutable values, our code becomes much more predictable:</p>
+<pre><code class="language-js">let s = &quot;sun and moon&quot;
+anotherComplicatedFunction(s)
+console.log(s) // prints &quot;sun and moon&quot;
 </code></pre>
-<p>and have <code>a === b</code> evaluate to <code>true</code>. Having to think about object identity makes reasoning about our programs more complicated. Whenever we mutate an object, we have to think &quot;is some other code holding a reference to this object? Will that code still do what we want if we change the object?&quot;</p>
-<p>Although POJOs and arrays are not technically values, I will be treating them as if they are throughout most of this book. We can treat POJOs and arrays as if they are values if we
-accept the following constraints:</p>
-<ul>
-<li>Once we have created a POJO or array, we promise ourselves not to mutate it.</li>
-<li>When we compare POJOs or arrays, we always do so with an <code>equals</code> function that recursively compares their contents. We don&#39;t use <code>===</code> on POJOs or arrays.</li>
-</ul>
+<p>Immutability also helps ensure that we don&#39;t create bugs when we refactor code. Consider the following:</p>
+<pre><code class="language-js">function getUsername(user) {
+  return user.username || &quot;guest&quot;
+}
+</code></pre>
+<p>Because the string <code>guest</code> is immutable, we are free to extract it to a constant. We don&#39;t have
+to worry that the caller of this function might mutate the value it returns and thus change the default username.</p>
+<pre><code class="language-js">const defaultUsername = &quot;guest&quot;
+function getUsername(user) {
+  return user.username || defaultUsername
+}
+</code></pre>
+<p>If, on the other hand, we&#39;re returning a mutable value like an array, things are different:</p>
+<pre><code class="language-js">function getEmailAddresses(user) {
+  return user.emails || []
+}
+</code></pre>
+<p>Here, we&#39;re returning an empty array of emails if <code>user.emails</code> is null or undefined. If the caller mutates the array we return, that&#39;s their business; it won&#39;t affect subsequent calls to <code>getEmailAddresses</code>. However, if we extract a constant...</p>
+<pre><code class="language-js">const none = []
+function getEmailAddresses(user) {
+  return user.emails || none
+}
+</code></pre>
+<p>Now we&#39;re returning the same array each time <code>getEmailAddresses</code> is called with a user whose <code>emails</code> property is null. If our caller adds an item to the returned array, it will change the meaning of <code>none</code> and affect every subsequent call to <code>getEmailAddresses</code>! Not only that, but the results of <em>previous</em> calls may be affected if those return values are still referenced somewhere. This type of bug is called <em>spooky action at a distance</em>, and the thought that it might happen in your code ought to scare you. Bugs like this are often extremely hard to track down and fix.</p>
+<!--
+If `anotherComplicatedFunction` needs to transform the value passed to it, it can simply return the updated value:
+
+```js
+let s = "sun and moon"
+s = anotherComplicatedFunction(s)
+console.log(s)
+```
+-->
+
+<h2 id="choosing-immutability">Choosing Immutability</h2>
+<p>We just saw that immutability has benefits: you can see exactly when the meaning of each variable changes, and you don&#39;t have to worry about &quot;spooky action at a distance&quot; bugs. But it&#39;s not practical to restrict ourselves to using inherently immutable values like strings and numbers. We have to be able to use arrays and objects to program effectively.</p>
+<p>In order to get the benefits of immutability, we can simply promise ourselves not to mutate arrays and objects. If we trust each other to adhere to this policy, we can make simplifying assumptions when reading the code. For example, we can assume that functions won&#39;t mutate arrays or objects passed into them.</p>
+<p>You might wonder if you shouldn&#39;t rather choose a programming language that enforces immutability, like Elm or Haskell. I actually recommend against this. Mutability can be extremely useful if approached in a structured and careful way. So in my view, it&#39;s actually preferable to have a cultural prohibition against mutability that is relaxed in specific circumstances. If you don&#39;t trust your coworkers to keep their promise not to mutate things, you have bigger problems than your choice of programming language. In future chapters, I&#39;ll talk about how to use mutable values without sacrificing comprehensibility.</p>
+<h2 id="objects-and-data">Objects and Data</h2>
+<p>In functional programming, the word <em>data</em> is used to refer to immutable values of any kind. In this book, I&#39;ll stretch the term slightly to cover any values, including objects and arrays, that we&#39;re choosing to <em>treat</em> as immutable.</p>
+<p>The word <em>object</em> presents difficulty, because there is an entire programming paradigm, <em>object-oriented programming</em> (OOP), that relies substantially on mutability and assumes that at least some values are mutable. OOP attempts to make mutation more comprehensible by requiring all requests to read or update mutable state to go through <em>methods</em>. Methods are like functions attached to an object, which are responsible for keeping the object&#39;s state consistent and exposing only as much information as callers need. In the rest of this book, I will use the word <em>object</em> to refer to a mutable OOP-style object, and the term <em>plain old JavaScript object</em> (POJO) to refer to data created with the <code>{}</code> syntax, like <code>{foo: &quot;bar&quot;}</code>.</p>
+<p>Here is a handy taxonomy:</p>
+<pre><code>values
+- objects (mutable)
+- functions
+- data (immutable)
+  - POJOs
+  - arrays
+  - strings
+  - numbers
+  - booleans
+  - `null`
+  - `undefined`
+  - ...
+</code></pre>
 		</article>
 
 		<hr/>
