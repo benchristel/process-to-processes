@@ -1,4 +1,4 @@
-# Values: Data, and Objects
+# Values: Data and Objects
 
 In JavaScript (and TypeScript), the things that we can assign to variables are called _values_. Numbers, strings, arrays, objects, and functions are all types of values.
 
