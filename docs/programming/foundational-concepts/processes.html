@@ -103,11 +103,12 @@ showDate()
 </code></pre>
 <p>The purpose of this program is to display the current date and time on an HTML page. We can only simulate this process in our heads at a very abstract level, by imagining potential times that it might display and what they would look like on a computer screen. Whereas the mental process for the <code>caesarCipher</code> function could proceed very concretely, and produce actual knowledge, our mental process for <code>showDate</code> cannot produce the knowledge or the effect that the program would produce when run on a computer. That is, we can&#39;t pluck knowledge of the current time out of thin air, nor can we telekinetically project text into our web browser. Thus, the process of mentally simulating this program is fundamentally incommensurate with the process produced by running it on a computer.</p>
 <p>It seems that there are two types of processes:</p>
-<ul>
+<ol>
 <li>Those that can produce their intended result when carried out mentally.</li>
 <li>Those that can&#39;t.</li>
-</ul>
-<p>What causes a process to belong to one or the other of these categories? </p>
+</ol>
+<p>What causes a process to belong to one or the other of these categories? Processes of the first type deal only with <em>symbol manipulation</em>, while processes of the second type need computer <em>hardware</em> to do their job. For example, the <code>showDate</code> program is only useful if our computer has a display and an internal clock.</p>
+<p>I will call proceses of the first type (and their corresponding programs) <em>symbolic</em>, and processes and programs of the second type <em>effectful</em>.</p>
 <!--
 
 The processes listed by `ps aux` are what I'll call _operating system processes_; the abstract idea of a _software process_ is more general. Operating system processes are _Turing complete_, so an OS process can simulate any number of other processes—it can even simulate a whole operating system! We can think of `node` as being just such a process simulator. `node` processes can perform any number of tasks, from serving web requests to compiling TypeScript, by reading in the source code of a JavaScript program and then "simulating" the evolution of a process instantiated from that program. I put "simulating" in quotes because these "simulated" processes can do quite real and useful work!

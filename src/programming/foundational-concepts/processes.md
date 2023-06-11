@@ -54,10 +54,12 @@ The purpose of this program is to display the current date and time on an HTML p
 
 It seems that there are two types of processes:
 
-- Those that can produce their intended result when carried out mentally.
-- Those that can't.
+1. Those that can produce their intended result when carried out mentally.
+2. Those that can't.
 
-What causes a process to belong to one or the other of these categories? 
+What causes a process to belong to one or the other of these categories? Processes of the first type deal only with _symbol manipulation_, while processes of the second type need computer _hardware_ to do their job. For example, the `showDate` program is only useful if our computer has a display and an internal clock.
+
+I will call proceses of the first type (and their corresponding programs) _symbolic_, and processes and programs of the second type _effectful_.
 
 <!--
 
