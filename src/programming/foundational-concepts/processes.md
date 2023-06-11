@@ -21,7 +21,47 @@ A software process is the running instantiation of a program. Programs are stati
 
 On a macOS or Linux system, you can list the currently running processes by running `ps aux` at a terminal. A new process is created every time you run a program. For example, if you run `node` to start a JavaScript REPL, that creates a process. A single program can give rise to multiple concurrent processes. For example, if you open multiple terminal windows, you can run `node` in each one. The program `node` is unaffected by this; it remains, unchanging, on disk. The several _processes_ instantiated from the program are identified (by the operating system) by different process IDs (PIDs), each associated with an independent _state_. The operating system arranges things so that each process's state evolves according to the rules of its program. (Note: this model of how processes work is extremely simplified, but it is adequate for the purposes of writing JavaScript.)
 
-The preceding paragraph describes what I'll call _operating system processes_, but the abstract idea of a _software process_ is more general. OS processes are _Turing complete_, so an OS process can simulate any number of other processes—it can even simulate a whole operating system! We can think of `node` as being just such a process simulator. `node` processes can perform any number of tasks, from serving web requests to compiling TypeScript, by reading in the source code of a JavaScript program and then "simulating" the evolution of a process instantiated from that program. I put "simulating" in quotes because these "simulated" processes can do quite real and useful work!
+One way to understand code is to "simulate", in our heads, the process it produces. I put "simulate" in quotes because this "simulation" _is_ a real computational process. A mental process can perform useful computational work just as a silicon-based one can, as we can see in the following example:
+
+```js
+const plain  = "abcdefghijklmnopqrstuvwxyz"
+const cipher = "nopqrstuvwxyzabcdefghijklm"
+
+function caesarCipher(s) {
+  let result = ""
+  for (const char of s) {
+    result += cipher[plain.indexOf(char)] ?? char
+  }
+  return result
+}
+
+let deciphered = caesarCipher("terng junyr")
+```
+
+If you can simulate in your head (or on paper) the process of running this code, you will obtain the knowledge of what the ciphertext `"terng junyr"` means, just as well as if you had run the program on a computer. The mental process is _equivalent_ to the computerized one—though it is quite a bit less efficient.
+
+This is not true for every program, however. Consider this one:
+
+```js
+function showDate() {
+  document.write(new Date())
+}
+
+showDate()
+```
+
+The purpose of this program is to display the current date and time on an HTML page. We can only simulate this process in our heads at a very abstract level, by imagining potential times that it might display and what they would look like on a computer screen. Whereas the mental process for the `caesarCipher` function could proceed very concretely, and produce actual knowledge, our mental process for `showDate` cannot produce the knowledge or the effect that the program would produce when run on a computer. That is, we can't pluck knowledge of the current time out of thin air, nor can we telekinetically project text into our web browser. Thus, the process of mentally simulating this program is fundamentally incommensurate with the process produced by running it on a computer.
+
+It seems that there are two types of processes:
+
+- Those that can produce their intended result when carried out mentally.
+- Those that can't.
+
+What causes a process to belong to one or the other of these categories? 
+
+<!--
+
+The processes listed by `ps aux` are what I'll call _operating system processes_; the abstract idea of a _software process_ is more general. Operating system processes are _Turing complete_, so an OS process can simulate any number of other processes—it can even simulate a whole operating system! We can think of `node` as being just such a process simulator. `node` processes can perform any number of tasks, from serving web requests to compiling TypeScript, by reading in the source code of a JavaScript program and then "simulating" the evolution of a process instantiated from that program. I put "simulating" in quotes because these "simulated" processes can do quite real and useful work!
 
 We can go one level further, and create our own simulated processes within a JavaScript process. The mechanism JavaScript provides for this is _generator functions_. Here is an example of a generator function:
 
