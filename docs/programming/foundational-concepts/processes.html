@@ -91,9 +91,9 @@ function caesarCipher(s) {
   return result
 }
 
-let deciphered = caesarCipher(&quot;terng junyr&quot;)
+let deciphered = caesarCipher(&quot;terng juvgr junyr&quot;)
 </code></pre>
-<p>If you can simulate in your head (or on paper) the process of running this code, you will obtain the knowledge of what the ciphertext <code>&quot;terng junyr&quot;</code> means, just as well as if you had run the program on a computer. The mental process is <em>equivalent</em> to the computerized one—though it is quite a bit less efficient.</p>
+<p>If you can simulate in your head (or on paper) the process of running this code, you will obtain the knowledge of what the ciphertext <code>&quot;terng juvgr junyr&quot;</code> means, just as well as if you had run the program on a computer. The mental process is <em>equivalent</em> to the computerized one—though it is quite a bit less efficient.</p>
 <p>This is not true for every program, however. Consider this one:</p>
 <pre><code class="language-js">function showDate() {
   document.write(new Date())
@@ -101,14 +101,79 @@ let deciphered = caesarCipher(&quot;terng junyr&quot;)
 
 showDate()
 </code></pre>
-<p>The purpose of this program is to display the current date and time on an HTML page. We can only simulate this process in our heads at a very abstract level, by imagining potential times that it might display and what they would look like on a computer screen. Whereas the mental process for the <code>caesarCipher</code> function could proceed very concretely, and produce actual knowledge, our mental process for <code>showDate</code> cannot produce the knowledge or the effect that the program would produce when run on a computer. That is, we can&#39;t pluck knowledge of the current time out of thin air, nor can we telekinetically project text into our web browser. Thus, the process of mentally simulating this program is fundamentally incommensurate with the process produced by running it on a computer.</p>
+<p>The purpose of this program is to display the current date and time on an HTML page. We can only simulate this process in our heads at a very abstract level, by imagining potential times that it might display and what they would look like on a computer screen. Whereas the mental process for the <code>caesarCipher</code> function could proceed very concretely, and produce actual knowledge, our mental process for <code>showDate</code> cannot produce the knowledge or the effect that the program would produce when run on a computer. We can&#39;t pluck knowledge of the current time out of thin air, nor can we telekinetically project text into our web browser. Thus, the process of mentally simulating this program is fundamentally incommensurate with the process produced by running it on a computer.</p>
 <p>It seems that there are two types of processes:</p>
 <ol>
 <li>Those that can produce their intended result when carried out mentally.</li>
 <li>Those that can&#39;t.</li>
 </ol>
 <p>What causes a process to belong to one or the other of these categories? Processes of the first type deal only with <em>symbol manipulation</em>, while processes of the second type need computer <em>hardware</em> to do their job. For example, the <code>showDate</code> program is only useful if our computer has a display and an internal clock.</p>
-<p>I will call proceses of the first type (and their corresponding programs) <em>symbolic</em>, and processes and programs of the second type <em>effectful</em>.</p>
+<p>I will call proceses of the first type (and their corresponding programs) <em>symbolic</em>. I&#39;ll call processes and programs of the second type <em>effectful</em>, because they have <em>effects</em> on (and are affected by) the outside world via the computer&#39;s hardware. Examples of <em>effects</em> include:</p>
+<ul>
+<li>reading or writing a file</li>
+<li>displaying text or graphics</li>
+<li>receiving input from a mouse, keyboard, touchscreen, camera, or other device</li>
+<li>making network calls, e.g. HTTP requests</li>
+<li>communicating with other processes</li>
+<li>getting the current time</li>
+<li>generating random numbers</li>
+<li>waiting or sleeping</li>
+</ul>
+<h2 id="effectful-code-is-hard-to-reason-about">Effectful Code Is Hard to Reason About</h2>
+<p>Consider the fact that, as programmers, we often &quot;run code in our heads&quot; to figure out what it will do when run on a computer. This is much easier to do for portions of the program that are purely symbolic. The following NodeJS program illustrates the kinds of issues that can happen in effectful code:</p>
+<pre><code class="language-js">import * as fs from &quot;node:fs/promises&quot;
+
+async function writeToUniquelyNamedFile(text) {
+  const id = await fs.readFile(&quot;next-id&quot;, {encoding: &quot;utf-8&quot;})
+    .then(parseInt)
+    .catch(() =&gt; 0) // Default the ID to 0 if the next-id file doesn&#39;t exist
+
+  await Promise.all([
+    fs.writeFile(String(id), text, {encoding: &quot;utf-8&quot;}),
+    fs.writeFile(&quot;next-id&quot;, String(id + 1), {encoding: &quot;utf-8&quot;}),
+  ])
+}
+
+const strings = [
+  &quot;Hello, world!&quot;,
+  &quot;Tea and cookies&quot;,
+  &quot;Walrus-feeding time&quot;,
+]
+
+for (const s of strings) {
+  await writeToUniquelyNamedFile(s)
+}
+</code></pre>
+<p>This program defines a function <code>writeToUniquelyNamedFile</code> that attempts to generate unique
+filenames by incrementing an ID stored in a file. As written, the program (mostly) works as intended. However, problems arise when someone tries to make the program more efficient by doing the writes concurrently. Imagine this hypothetical do-gooder changes the final stanza of the program from this:</p>
+<pre><code class="language-js">for (const s of strings) {
+  await writeToUniquelyNamedFile(s)
+}
+</code></pre>
+<p>to this:</p>
+<pre><code class="language-js">await Promise.all(strings.map(writeToUniquelyNamedFile))
+</code></pre>
+<p>Now the program is broken; each call to <code>writeToUniquelyNamedFile</code> will now read the <em>same</em> ID from the <code>next-id</code> file, and the writes will clobber each other.</p>
+<p>You might say that this problem is due to the combination of concurrency and state, not effects <em>per se</em>. However, because JavaScript is single-threaded, concurrency and state are a much less volatile combination than they are in multi-threaded languages. The following code, which keeps track of the next ID using an in-process variable, works regardless of whether the writes happen serially or in parallel:</p>
+<pre><code class="language-js">import * as fs from &quot;node:fs/promises&quot;
+
+let nextId = 0
+
+async function writeToUniquelyNamedFile(text) {
+  await fs.writeFile(String(nextId++), text, {encoding: &quot;utf-8&quot;})
+}
+
+const strings = [
+  &quot;Hello, world!&quot;,
+  &quot;Tea and cookies&quot;,
+  &quot;Walrus-feeding time&quot;,
+]
+
+await Promise.all(strings.map(writeToUniquelyNamedFile))
+</code></pre>
+<p>When we read effectful code, we have to think about not only the state of <em>our</em> process, but the state of the hardware, the OS, and the other processes with which ours communicates. When our programs are complex, this gets very tricky!</p>
+<h2 id="symbolic-code-is-easier-to-test">Symbolic Code Is Easier to Test</h2>
+<h2 id="symbolic-code-is-easier-to-reuse">Symbolic Code Is Easier to Reuse</h2>
 <!--
 
 The processes listed by `ps aux` are what I'll call _operating system processes_; the abstract idea of a _software process_ is more general. Operating system processes are _Turing complete_, so an OS process can simulate any number of other processes—it can even simulate a whole operating system! We can think of `node` as being just such a process simulator. `node` processes can perform any number of tasks, from serving web requests to compiling TypeScript, by reading in the source code of a JavaScript program and then "simulating" the evolution of a process instantiated from that program. I put "simulating" in quotes because these "simulated" processes can do quite real and useful work!

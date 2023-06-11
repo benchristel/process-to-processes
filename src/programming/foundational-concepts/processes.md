@@ -35,10 +35,10 @@ function caesarCipher(s) {
   return result
 }
 
-let deciphered = caesarCipher("terng junyr")
+let deciphered = caesarCipher("terng juvgr junyr")
 ```
 
-If you can simulate in your head (or on paper) the process of running this code, you will obtain the knowledge of what the ciphertext `"terng junyr"` means, just as well as if you had run the program on a computer. The mental process is _equivalent_ to the computerized one—though it is quite a bit less efficient.
+If you can simulate in your head (or on paper) the process of running this code, you will obtain the knowledge of what the ciphertext `"terng juvgr junyr"` means, just as well as if you had run the program on a computer. The mental process is _equivalent_ to the computerized one—though it is quite a bit less efficient.
 
 This is not true for every program, however. Consider this one:
 
@@ -50,7 +50,7 @@ function showDate() {
 showDate()
 ```
 
-The purpose of this program is to display the current date and time on an HTML page. We can only simulate this process in our heads at a very abstract level, by imagining potential times that it might display and what they would look like on a computer screen. Whereas the mental process for the `caesarCipher` function could proceed very concretely, and produce actual knowledge, our mental process for `showDate` cannot produce the knowledge or the effect that the program would produce when run on a computer. That is, we can't pluck knowledge of the current time out of thin air, nor can we telekinetically project text into our web browser. Thus, the process of mentally simulating this program is fundamentally incommensurate with the process produced by running it on a computer.
+The purpose of this program is to display the current date and time on an HTML page. We can only simulate this process in our heads at a very abstract level, by imagining potential times that it might display and what they would look like on a computer screen. Whereas the mental process for the `caesarCipher` function could proceed very concretely, and produce actual knowledge, our mental process for `showDate` cannot produce the knowledge or the effect that the program would produce when run on a computer. We can't pluck knowledge of the current time out of thin air, nor can we telekinetically project text into our web browser. Thus, the process of mentally simulating this program is fundamentally incommensurate with the process produced by running it on a computer.
 
 It seems that there are two types of processes:
 
@@ -59,7 +59,90 @@ It seems that there are two types of processes:
 
 What causes a process to belong to one or the other of these categories? Processes of the first type deal only with _symbol manipulation_, while processes of the second type need computer _hardware_ to do their job. For example, the `showDate` program is only useful if our computer has a display and an internal clock.
 
-I will call proceses of the first type (and their corresponding programs) _symbolic_, and processes and programs of the second type _effectful_.
+I will call proceses of the first type (and their corresponding programs) _symbolic_. I'll call processes and programs of the second type _effectful_, because they have _effects_ on (and are affected by) the outside world via the computer's hardware. Examples of _effects_ include:
+
+- reading or writing a file
+- displaying text or graphics
+- receiving input from a mouse, keyboard, touchscreen, camera, or other device
+- making network calls, e.g. HTTP requests
+- communicating with other processes
+- getting the current time
+- generating random numbers
+- waiting or sleeping
+
+## Effectful Code Is Hard to Reason About
+
+Consider the fact that, as programmers, we often "run code in our heads" to figure out what it will do when run on a computer. This is much easier to do for portions of the program that are purely symbolic. The following NodeJS program illustrates the kinds of issues that can happen in effectful code:
+
+```js
+import * as fs from "node:fs/promises"
+
+async function writeToUniquelyNamedFile(text) {
+  const id = await fs.readFile("next-id", {encoding: "utf-8"})
+    .then(parseInt)
+    .catch(() => 0) // Default the ID to 0 if the next-id file doesn't exist
+
+  await Promise.all([
+    fs.writeFile(String(id), text, {encoding: "utf-8"}),
+    fs.writeFile("next-id", String(id + 1), {encoding: "utf-8"}),
+  ])
+}
+
+const strings = [
+  "Hello, world!",
+  "Tea and cookies",
+  "Walrus-feeding time",
+]
+
+for (const s of strings) {
+  await writeToUniquelyNamedFile(s)
+}
+```
+
+This program defines a function `writeToUniquelyNamedFile` that attempts to generate unique
+filenames by incrementing an ID stored in a file. As written, the program (mostly) works as intended. However, problems arise when someone tries to make the program more efficient by doing the writes concurrently. Imagine this hypothetical do-gooder changes the final stanza of the program from this:
+
+```js
+for (const s of strings) {
+  await writeToUniquelyNamedFile(s)
+}
+```
+
+to this:
+
+```js
+await Promise.all(strings.map(writeToUniquelyNamedFile))
+```
+
+Now the program is broken; each call to `writeToUniquelyNamedFile` will now read the _same_ ID from the `next-id` file, and the writes will clobber each other.
+
+You might say that this problem is due to the combination of concurrency and state, not effects _per se_. However, because JavaScript is single-threaded, concurrency and state are a much less volatile combination than they are in multi-threaded languages. The following code, which keeps track of the next ID using an in-process variable, works regardless of whether the writes happen serially or in parallel:
+
+```js
+import * as fs from "node:fs/promises"
+
+let nextId = 0
+
+async function writeToUniquelyNamedFile(text) {
+  await fs.writeFile(String(nextId++), text, {encoding: "utf-8"})
+}
+
+const strings = [
+  "Hello, world!",
+  "Tea and cookies",
+  "Walrus-feeding time",
+]
+
+await Promise.all(strings.map(writeToUniquelyNamedFile))
+```
+
+When we read effectful code, we have to think about not only the state of _our_ process, but the state of the hardware, the OS, and the other processes with which ours communicates. When our programs are complex, this gets very tricky!
+
+## Symbolic Code Is Easier to Test
+
+## Symbolic Code Is Easier to Reuse
+
+
 
 <!--
 
