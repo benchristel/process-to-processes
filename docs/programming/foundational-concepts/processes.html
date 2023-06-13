@@ -68,7 +68,7 @@
 
 		<article>
 			<h1 id="what-is-a-process">What is a Process?</h1>
-<p>In this book, I use the word <em>process</em> to mean &quot;a sequence of changes to some part of the world&quot;. We&#39;ll call the part of the world that a process changes the <em>state</em> of the process. Each change, or <em>step</em>, enacted by a process takes the current state and transforms it—often just a tiny bit—to get to the next state in the sequence. Though each change may be small, a long sequence of such changes can produce intricate structures or perform complex calculations.</p>
+<p>In this book, I use the word <em>process</em> to mean &quot;a sequence of changes to some part of the world, that proceeds according to invariant rules&quot;. We&#39;ll call the part of the world that a process changes the <em>state</em> of the process. The rules that a process follows to get from one state to the next I&#39;ll call a <em>program</em>. Each <em>step</em> in a program takes the current state of the process and transforms it—often just a tiny bit—to get to the next state. Though each step may be small, a long sequence of steps can produce intricate structures or perform complex calculations.</p>
 <p>Processes are interesting and useful because they give us a way to carry out very complex tasks with limited computational or mental resources. The machinery that performs each step tends to be restricted in some dimension: perhaps it has limited built-in memory, or a limited amount of time to perform each step. Perhaps the machinery is divided up into many parts that each act on a corresponding part of the state, and can only communicate with each other in limited ways. By recording information in the state for later use, the machinery is enabled to do its job.</p>
 <p>Processes are everywhere. One everyday example of a process is pen and paper arithmetic. Most of us don&#39;t have the mental machinery to be able to multiply two ten-digit numbers in our heads, but by writing down the problem and performing a series of mechanical <em>steps</em> on that written <em>state</em>, we can reliably solve such problems.</p>
 <p>Another example of a process is baking bread. When kneading dough, in particular, there is feedback from the dough to the baker; the process of kneading cannot be done insensitively if you want the result to be good. You need to assess the texture of the dough at every step, and continue adding flour just until the texture is right.</p>
@@ -101,7 +101,7 @@ let deciphered = caesarCipher(&quot;terng juvgr junyr&quot;)
 
 showDate()
 </code></pre>
-<p>The purpose of this program is to display the current date and time on an HTML page. We can only simulate this process in our heads at a very abstract level, by imagining potential times that it might display and what they would look like on a computer screen. Whereas the mental process for the <code>caesarCipher</code> function could proceed very concretely, and produce actual knowledge, our mental process for <code>showDate</code> cannot produce the knowledge or the effect that the program would produce when run on a computer. We can&#39;t pluck knowledge of the current time out of thin air, nor can we telekinetically project text into our web browser. Thus, the process of mentally simulating this program is fundamentally incommensurate with the process produced by running it on a computer.</p>
+<p>The purpose of this program is to display the current date and time on an HTML page. We can only simulate its process in our heads at a very abstract level, by imagining potential times that it might display and what they would look like on a computer screen. Whereas the mental process for the <code>caesarCipher</code> function could proceed very concretely, and produce actual knowledge, our mental process for <code>showDate</code> cannot produce the knowledge or the effect that the program would produce when run on a computer. We can&#39;t pluck knowledge of the current time out of thin air, nor can we telekinetically project text into our web browser. Thus, the process of mentally simulating this program is fundamentally incommensurate with the process produced by running it on a computer.</p>
 <p>It seems that there are two types of processes:</p>
 <ol>
 <li>Those that can produce their intended result when carried out mentally.</li>
@@ -113,67 +113,111 @@ showDate()
 <li>reading or writing a file</li>
 <li>displaying text or graphics</li>
 <li>receiving input from a mouse, keyboard, touchscreen, camera, or other device</li>
+<li>controlling a robot</li>
 <li>making network calls, e.g. HTTP requests</li>
 <li>communicating with other processes</li>
 <li>getting the current time</li>
 <li>generating random numbers</li>
 <li>waiting or sleeping</li>
 </ul>
-<h2 id="effectful-code-is-hard-to-reason-about">Effectful Code Is Hard to Reason About</h2>
-<p>Consider the fact that, as programmers, we often &quot;run code in our heads&quot; to figure out what it will do when run on a computer. This is much easier to do for portions of the program that are purely symbolic. The following NodeJS program illustrates the kinds of issues that can happen in effectful code:</p>
-<pre><code class="language-js">import * as fs from &quot;node:fs/promises&quot;
+<h2 id="symbolic-code-works-the-same-everywhere">Symbolic Code Works The Same Everywhere</h2>
+<p>The great thing about purely symbolic code is that it does the same thing everywhere, every time.
+Symbolic processes aren&#39;t dependent on the operating system version, the state of the user&#39;s files, the current time or timezone, or services running on some other computer (a.k.a. &quot;the cloud&quot;). There are no
+&quot;works on my machine&quot; bugs in purely symbolic code.</p>
+<p>Consider the following fragment of a NodeJS program, which reads a config file if it exists, and creates it if not.</p>
+<pre><code class="language-js">// TODO: fix pseudocode
+const configFilename = &quot;.myconfig&quot;
+function readConfig() {
+  fs.exists(configFilename).then(() =&gt; {
+    return fs.readFile(configFilename, &quot;utf-8&quot;)
+  }).catch(() =&gt; {
+    return fs.writeFile(configFilename, defaultConfig, &quot;utf-8&quot;)
+      .then(() =&gt; defaultConfig)
+  })
+}
+</code></pre>
+<p>This handles two of the possible cases, but leaves out many others. What if <code>.myconfig</code> is a directory, not a regular file? What if it exists, but isn&#39;t readable? What if the file doesn&#39;t exist, and the user doesn&#39;t have write permissions for the directory in which this program would be created?</p>
+<p>While these edge cases might be rare, they are likely to create frustration for users and programmers alike. When users encounter such issues, their experience will simply be that the program &quot;doesn&#39;t work&quot;. Programmers fielding bug reports probably won&#39;t be able to reproduce the bug on their machine. Everyone suffers.</p>
+<p>Consider an alternative design where the program reads its configuration through command line arguments instead of a file:</p>
+<pre><code class="language-js">function readConfig() {
+  return process.argv.slice(2)
+}
+</code></pre>
+<p>This code is purely symbolic: If you pass the same command-line arguments, the program&#39;s configuration will be the same, on any system. This code avoids the &quot;works on my machine&quot; bug.</p>
+<p>You might argue that command-line arguments provide a worse user experience than a config file. While this depends on the situation and the user, there are certainly cases where I would agree with this criticism. The idea I&#39;d like you to take away from this chapter is not &quot;effects are evil&quot; but &quot;effects have risks and costs&quot;. It&#39;s up to you and your team to weigh the risk and cost of an effect against the benefit, and treat effectful code with the extra care it deserves.</p>
+<h2 id="symbolic-code-is-easier-to-test">Symbolic Code Is Easier to Test</h2>
+<h2 id="symbolic-code-is-easier-to-reuse">Symbolic Code Is Easier to Reuse</h2>
+<!--
+## Effectful Code Is Hard to Reason About
+
+Consider the fact that, as programmers, we often "run code in our heads" to figure out what it will do when run on a computer. This is much easier to do for portions of the program that are purely symbolic. The following NodeJS program illustrates the kinds of issues that can happen in effectful code:
+
+```js
+import * as fs from "node:fs/promises"
 
 async function writeToUniquelyNamedFile(text) {
-  const id = await fs.readFile(&quot;next-id&quot;, {encoding: &quot;utf-8&quot;})
+  const id = await fs.readFile("next-id", {encoding: "utf-8"})
     .then(parseInt)
-    .catch(() =&gt; 0) // Default the ID to 0 if the next-id file doesn&#39;t exist
+    .catch(() => 0) // Default the ID to 0 if the next-id file doesn't exist
 
   await Promise.all([
-    fs.writeFile(String(id), text, {encoding: &quot;utf-8&quot;}),
-    fs.writeFile(&quot;next-id&quot;, String(id + 1), {encoding: &quot;utf-8&quot;}),
+    fs.writeFile(String(id), text, {encoding: "utf-8"}),
+    fs.writeFile("next-id", String(id + 1), {encoding: "utf-8"}),
   ])
 }
 
 const strings = [
-  &quot;Hello, world!&quot;,
-  &quot;Tea and cookies&quot;,
-  &quot;Walrus-feeding time&quot;,
+  "Hello, world!",
+  "Tea and cookies",
+  "Walrus-feeding time",
 ]
 
 for (const s of strings) {
   await writeToUniquelyNamedFile(s)
 }
-</code></pre>
-<p>This program defines a function <code>writeToUniquelyNamedFile</code> that attempts to generate unique
-filenames by incrementing an ID stored in a file. As written, the program (mostly) works as intended. However, problems arise when someone tries to make the program more efficient by doing the writes concurrently. Imagine this hypothetical do-gooder changes the final stanza of the program from this:</p>
-<pre><code class="language-js">for (const s of strings) {
+```
+
+This program defines a function `writeToUniquelyNamedFile` that attempts to generate unique
+filenames by incrementing an ID that is itself stored in a file. As written, the program (mostly) works as intended. However, problems arise if we try to make the program more efficient by doing the writes concurrently. Suppose we change the final stanza of the program from this:
+
+```js
+for (const s of strings) {
   await writeToUniquelyNamedFile(s)
 }
-</code></pre>
-<p>to this:</p>
-<pre><code class="language-js">await Promise.all(strings.map(writeToUniquelyNamedFile))
-</code></pre>
-<p>Now the program is broken; each call to <code>writeToUniquelyNamedFile</code> will now read the <em>same</em> ID from the <code>next-id</code> file, and the writes will clobber each other.</p>
-<p>You might say that this problem is due to the combination of concurrency and state, not effects <em>per se</em>. However, because JavaScript is single-threaded, concurrency and state are a much less volatile combination than they are in multi-threaded languages. The following code, which keeps track of the next ID using an in-process variable, works regardless of whether the writes happen serially or in parallel:</p>
-<pre><code class="language-js">import * as fs from &quot;node:fs/promises&quot;
+```
+
+to this:
+
+```js
+await Promise.all(strings.map(writeToUniquelyNamedFile))
+```
+
+Now the program is broken; each call to `writeToUniquelyNamedFile` will now read the _same_ ID from the `next-id` file, and the writes will clobber each other.
+
+You might say that this problem is due to the combination of concurrency and state, not effects _per se_. However, because JavaScript is single-threaded, concurrency and state are a much less volatile combination than they are in multi-threaded languages. The following code, which keeps track of the next ID using an in-process variable, works regardless of whether the writes happen serially or in parallel:
+
+```js
+import * as fs from "node:fs/promises"
 
 let nextId = 0
 
 async function writeToUniquelyNamedFile(text) {
-  await fs.writeFile(String(nextId++), text, {encoding: &quot;utf-8&quot;})
+  await fs.writeFile(String(nextId++), text, {encoding: "utf-8"})
 }
 
 const strings = [
-  &quot;Hello, world!&quot;,
-  &quot;Tea and cookies&quot;,
-  &quot;Walrus-feeding time&quot;,
+  "Hello, world!",
+  "Tea and cookies",
+  "Walrus-feeding time",
 ]
 
 await Promise.all(strings.map(writeToUniquelyNamedFile))
-</code></pre>
-<p>When we read effectful code, we have to think about not only the state of <em>our</em> process, but the state of the hardware, the OS, and the other processes with which ours communicates. When our programs are complex, this gets very tricky!</p>
-<h2 id="symbolic-code-is-easier-to-test">Symbolic Code Is Easier to Test</h2>
-<h2 id="symbolic-code-is-easier-to-reuse">Symbolic Code Is Easier to Reuse</h2>
+```
+
+When we read effectful code, we have to think about not only the state of _our_ process, but the state of the hardware, the OS, and the other processes with which ours communicates. When our programs are complex, this gets very tricky!
+
+
+
 <!--
 
 The processes listed by `ps aux` are what I'll call _operating system processes_; the abstract idea of a _software process_ is more general. Operating system processes are _Turing complete_, so an OS process can simulate any number of other processes—it can even simulate a whole operating system! We can think of `node` as being just such a process simulator. `node` processes can perform any number of tasks, from serving web requests to compiling TypeScript, by reading in the source code of a JavaScript program and then "simulating" the evolution of a process instantiated from that program. I put "simulating" in quotes because these "simulated" processes can do quite real and useful work!

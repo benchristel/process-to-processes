@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Glossary</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: #f8dfb9;
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article {
+				margin: 0 16px;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+			figure {
+				float: right;
+				background: #eee;
+				border: 1px solid #888;
+				display: table;
+				padding: 0 1em;
+				text-align: center;
+			}
+			img {
+				display: block;
+				background: white;
+				border: 1px solid #ccc;
+				margin: 0 auto;
+			}
+			figcaption {
+				font-size: 14px;
+				margin: 1em 0;
+			}
+			nav, hr, h1, h2, h3, h4, h5, h6 {
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="index.html">Home</a><a href="index.html">Up</a><a href="goal.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="glossary">Glossary</h1>
+<ul>
+<li>Process: a sequence of changes to some part of the world, that proceeds according to invariant rules.<ul>
+<li>Software process: the running instantiation of a computer program. a process that runs on a computer and is governed by a computer program.</li>
+<li>Development process: a process in which people make software.</li>
+</ul>
+</li>
+<li>Symbolic: (of a process, program, function, block of code, etc.) dealing only with symbol manipulation; lacking <em>effects</em>. A symbolic process can produce its intended result when run mentally or with pen and paper. Contrast <em>effectful</em>.</li>
+<li>Effect: an interaction between a software process and the outside world. Effects are dependent on machine-specific hardware. Examples include:<ul>
+<li>reading or writing a file</li>
+<li>displaying text or graphics</li>
+<li>receiving input from a mouse, keyboard, touchscreen, camera, or other device</li>
+<li>controlling a robot</li>
+<li>making network calls, e.g. HTTP requests</li>
+<li>communicating with other processes</li>
+<li>getting the current time</li>
+<li>generating random numbers</li>
+<li>waiting or sleeping</li>
+</ul>
+</li>
+<li>Effectful: (of a process, program, function, block of code, etc.) having effects.</li>
+<li>Program: the set of rules and algorithms from which a <em>process</em> is created.</li>
+</ul>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="index.html">Home</a><a href="index.html">Up</a><a href="goal.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>

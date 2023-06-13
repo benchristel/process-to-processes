@@ -1,6 +1,6 @@
 # What is a Process?
 
-In this book, I use the word _process_ to mean "a sequence of changes to some part of the world". We'll call the part of the world that a process changes the _state_ of the process. Each change, or _step_, enacted by a process takes the current state and transforms it—often just a tiny bit—to get to the next state in the sequence. Though each change may be small, a long sequence of such changes can produce intricate structures or perform complex calculations.
+In this book, I use the word _process_ to mean "a sequence of changes to some part of the world, that proceeds according to invariant rules". We'll call the part of the world that a process changes the _state_ of the process. The rules that a process follows to get from one state to the next I'll call a _program_. Each _step_ in a program takes the current state of the process and transforms it—often just a tiny bit—to get to the next state. Though each step may be small, a long sequence of steps can produce intricate structures or perform complex calculations.
 
 Processes are interesting and useful because they give us a way to carry out very complex tasks with limited computational or mental resources. The machinery that performs each step tends to be restricted in some dimension: perhaps it has limited built-in memory, or a limited amount of time to perform each step. Perhaps the machinery is divided up into many parts that each act on a corresponding part of the state, and can only communicate with each other in limited ways. By recording information in the state for later use, the machinery is enabled to do its job.
 
@@ -50,7 +50,7 @@ function showDate() {
 showDate()
 ```
 
-The purpose of this program is to display the current date and time on an HTML page. We can only simulate this process in our heads at a very abstract level, by imagining potential times that it might display and what they would look like on a computer screen. Whereas the mental process for the `caesarCipher` function could proceed very concretely, and produce actual knowledge, our mental process for `showDate` cannot produce the knowledge or the effect that the program would produce when run on a computer. We can't pluck knowledge of the current time out of thin air, nor can we telekinetically project text into our web browser. Thus, the process of mentally simulating this program is fundamentally incommensurate with the process produced by running it on a computer.
+The purpose of this program is to display the current date and time on an HTML page. We can only simulate its process in our heads at a very abstract level, by imagining potential times that it might display and what they would look like on a computer screen. Whereas the mental process for the `caesarCipher` function could proceed very concretely, and produce actual knowledge, our mental process for `showDate` cannot produce the knowledge or the effect that the program would produce when run on a computer. We can't pluck knowledge of the current time out of thin air, nor can we telekinetically project text into our web browser. Thus, the process of mentally simulating this program is fundamentally incommensurate with the process produced by running it on a computer.
 
 It seems that there are two types of processes:
 
@@ -64,12 +64,55 @@ I will call proceses of the first type (and their corresponding programs) _symbo
 - reading or writing a file
 - displaying text or graphics
 - receiving input from a mouse, keyboard, touchscreen, camera, or other device
+- controlling a robot
 - making network calls, e.g. HTTP requests
 - communicating with other processes
 - getting the current time
 - generating random numbers
 - waiting or sleeping
 
+## Symbolic Code Works The Same Everywhere
+
+The great thing about purely symbolic code is that it does the same thing everywhere, every time.
+Symbolic processes aren't dependent on the operating system version, the state of the user's files, the current time or timezone, or services running on some other computer (a.k.a. "the cloud"). There are no
+"works on my machine" bugs in purely symbolic code.
+
+Consider the following fragment of a NodeJS program, which reads a config file if it exists, and creates it if not.
+
+```js
+// TODO: fix pseudocode
+const configFilename = ".myconfig"
+function readConfig() {
+  fs.exists(configFilename).then(() => {
+    return fs.readFile(configFilename, "utf-8")
+  }).catch(() => {
+    return fs.writeFile(configFilename, defaultConfig, "utf-8")
+      .then(() => defaultConfig)
+  })
+}
+```
+
+This handles two of the possible cases, but leaves out many others. What if `.myconfig` is a directory, not a regular file? What if it exists, but isn't readable? What if the file doesn't exist, and the user doesn't have write permissions for the directory in which this program would be created?
+
+While these edge cases might be rare, they are likely to create frustration for users and programmers alike. When users encounter such issues, their experience will simply be that the program "doesn't work". Programmers fielding bug reports probably won't be able to reproduce the bug on their machine. Everyone suffers.
+
+Consider an alternative design where the program reads its configuration through command line arguments instead of a file:
+
+```js
+function readConfig() {
+  return process.argv.slice(2)
+}
+```
+
+This code is purely symbolic: If you pass the same command-line arguments, the program's configuration will be the same, on any system. This code avoids the "works on my machine" bug.
+
+You might argue that command-line arguments provide a worse user experience than a config file. While this depends on the situation and the user, there are certainly cases where I would agree with this criticism. The idea I'd like you to take away from this chapter is not "effects are evil" but "effects have risks and costs". It's up to you and your team to weigh the risk and cost of an effect against the benefit, and treat effectful code with the extra care it deserves.
+
+## Symbolic Code Is Easier to Test
+
+## Symbolic Code Is Easier to Reuse
+
+<!--
 ## Effectful Code Is Hard to Reason About
 
 Consider the fact that, as programmers, we often "run code in our heads" to figure out what it will do when run on a computer. This is much easier to do for portions of the program that are purely symbolic. The following NodeJS program illustrates the kinds of issues that can happen in effectful code:
@@ -100,7 +143,7 @@ for (const s of strings) {
 ```
 
 This program defines a function `writeToUniquelyNamedFile` that attempts to generate unique
-filenames by incrementing an ID stored in a file. As written, the program (mostly) works as intended. However, problems arise when someone tries to make the program more efficient by doing the writes concurrently. Imagine this hypothetical do-gooder changes the final stanza of the program from this:
+filenames by incrementing an ID that is itself stored in a file. As written, the program (mostly) works as intended. However, problems arise if we try to make the program more efficient by doing the writes concurrently. Suppose we change the final stanza of the program from this:
 
 ```js
 for (const s of strings) {
@@ -137,10 +180,6 @@ await Promise.all(strings.map(writeToUniquelyNamedFile))
 ```
 
 When we read effectful code, we have to think about not only the state of _our_ process, but the state of the hardware, the OS, and the other processes with which ours communicates. When our programs are complex, this gets very tricky!
-
-## Symbolic Code Is Easier to Test
-
-## Symbolic Code Is Easier to Reuse
 
 
 
