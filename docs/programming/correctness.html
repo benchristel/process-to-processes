@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Correctness</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: #f8dfb9;
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article {
+				margin: 0 16px;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+			figure {
+				float: right;
+				background: #eee;
+				border: 1px solid #888;
+				display: table;
+				padding: 0 1em;
+				text-align: center;
+			}
+			img {
+				display: block;
+				background: white;
+				border: 1px solid #ccc;
+				margin: 0 auto;
+			}
+			figcaption {
+				font-size: 14px;
+				margin: 1em 0;
+			}
+			nav, hr, h1, h2, h3, h4, h5, h6 {
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="foundational-concepts/dependency.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="good-code.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="correctness">Correctness</h1>
+<blockquote>
+<p>Set aside &quot;correctness&quot; (a meaningless term if I’ve ever heard one). Don’t worry about &quot;working software&quot;. Instead think about the question on our minds as we write code, the question we had from our first moment of coding, and that we still ask as we do our jobs today: is the software doing what I expect?</p>
+<p>—<a href="https://naildrivin5.com/blog/2022/09/06/actual-reasons-to-use-tdd.html">David Bryant Copeland, &quot;Actual Reasons to Use TDD&quot;</a></p>
+</blockquote>
+<p>When I refer to &quot;correctness&quot; in this book, I don&#39;t mean correctness according to some external standard. Correct code, as far as I&#39;m concerned, is code that does what you meant it to do. If we&#39;re confining our view of programming to the act of typing code into a computer, that&#39;s really the best we can hope to achieve.</p>
+<p>Consider the following code. Is it correct?</p>
+<pre><code class="language-ts">const alphabetizedWords: string[] = [...words].sort()
+</code></pre>
+<p>At first glance, it looks like not much could go wrong here. The problem, if there is one, lies in the fact that <code>sort()</code> compares strings based only on the numeric codes for each character. If the strings contain uppercase characters, or accented letters, the words won&#39;t be alphabetized the way a dictionary would alphabetize them. And what if the words use non-Latin alphabets, like Greek or Cyrillic? What about Chinese?</p>
+<p>Is the program wrong, then? It depends on what it needs to do. Maybe the programmer who wrote this code knew it would only need to handle lowercase English words for the foreseeable future. Maybe they weighed the cost of writing a more sophisticated sort function against the benefits of doing so, and decided it wasn&#39;t worth it. Maybe they just didn&#39;t think about what would happen when <code>words</code> contains uppercase or accented characters.</p>
+<p>Perhaps their decision was right, and perhaps it was wrong. We can&#39;t know without knowing the context in which this line of code will be used. But put yourself in this hypothetical programmer&#39;s shoes for the moment. Is there anything they could have done, given the knowledge that they had at the time, to improve this code? Assume they are very technically competent and have an encyclopedic knowledge of JavaScript.</p>
+<ul>
+<li>If they believed the program would only need to handle lowercase English words, then they made the best decision they could with the knowledge they had at the time.</li>
+<li>If they weighed the cost/benefit tradeoffs of a more sophisticated sort and came to the conclusion that the cost outweighed the benefit, then they made the best decision given the knowledge they had at the time.</li>
+<li>If they simply weren&#39;t considering the possibility that <code>words</code> might contain uppercase or accented characters, then this is the best code they could have written given the information that they had.</li>
+</ul>
+<p>This code might do what users need, or it might not. But if it doesn&#39;t, it&#39;s hard to fault the programming technique of the person who wrote it.</p>
+<p>Now let&#39;s look at an example of code that is definitely incorrect according to the definition above.</p>
+<pre><code class="language-js">const numbers = numericStrings.map(parseInt)
+</code></pre>
+<p>It&#39;s clear what the programmer was trying to do here: they have an array of strings that represent numbers in decimal, like <code>&quot;1234&quot;</code>, and they want to convert that to an array of number values. Unfortunately, this code is completely wrong. It does not do what the programmer intended if <code>numericStrings</code> contains more than one value, because <code>parseInt</code> takes the <em>base</em> of the number representation as its second argument (so that you can parse binary, octal, or hexadecimal numbers), and <code>map</code> passes the array index to its callback as the second parameter. So if <code>numericStrings</code> contains <code>[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]</code>, <code>parseInt</code> receives the following sequence of calls:</p>
+<pre><code class="language-js">parseInt(&quot;1&quot;, 0) // -&gt; 1   (since 0 is not a valid base, this defaults to decimal)
+parseInt(&quot;2&quot;, 1) // -&gt; NaN
+parseInt(&quot;3&quot;, 2) // -&gt; NaN
+</code></pre>
+<p>The programmer intended to parse an array of strings, but the code they wrote doesn&#39;t do that.</p>
+<p>The above example is a bit of a strawman, since <code>.map(parseInt)</code> is a notorious JavaScript gotcha. Here&#39;s an example that is much closer to something I&#39;ve seen in real code:</p>
+<pre><code class="language-ts">type Transaction = {amount: null | number}
+
+function refundAll(transactions: Transaction[]) {
+  let i = 0
+  while (i &lt; transactions.length) {
+    if (transactions[i].amount == null) {
+      continue
+    }
+
+    refund(transactions[i].amount)
+    i++
+  }
+}
+</code></pre>
+<p>Here, it&#39;s also fairly clear what the programmer was trying to do. They have an array of <code>transactions</code>, some of which have a null <code>amount</code>. They want to <code>refund</code> each non-null <code>amount</code>.</p>
+<p>Unfortunately, this function will loop infinitely if any of the amounts is null. Perhaps null amounts are rare—if so, this code might work almost all of the time. However, it clearly does not do what the programmer intended.</p>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="foundational-concepts/dependency.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="good-code.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>
