@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Good Code</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: #f8dfb9;
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article {
+				margin: 0 16px;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+			figure {
+				float: right;
+				background: #eee;
+				border: 1px solid #888;
+				display: table;
+				padding: 0 1em;
+				text-align: center;
+			}
+			img {
+				display: block;
+				background: white;
+				border: 1px solid #ccc;
+				margin: 0 auto;
+			}
+			figcaption {
+				font-size: 14px;
+				margin: 1em 0;
+			}
+			nav, hr, h1, h2, h3, h4, h5, h6 {
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="foundational-concepts/dependency.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="../working-with-others/index.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="good-code">Good Code</h1>
+<p>We all want to do our best work. We all want our work to create joy and not create suffering. For those of us who are programmers, this starts with writing &quot;good code&quot;.</p>
+<p>Everyone has a slightly different idea of what &quot;good code&quot; is, and I encourage you to develop your own. By way of offering inspiration, though, here is my definition.</p>
+<p>Good code is:</p>
+<ul>
+<li>Correct: it does what its programmers intended.</li>
+<li>Clear: The programmers&#39; intentions, and the fact that the code adheres to them, must be clear.</li>
+<li>Trustworthy: The code&#39;s labeling (e.g. function names) should be so straightforward that most programmers using the code never have to look at its internals. The label tells them all they need to know.</li>
+<li>Repairable: good code has &quot;seams&quot; where you can pull it apart, to repair, replace, or upgrade just one piece of it. Repairability goes hand in hand with reusability: a module that can be isolated from the rest of its program for repair can also, quite possibly, be used in other contexts—perhaps in entirely different programs.</li>
+<li>Performant: it is as efficient as it needs to be to satisfy its users</li>
+</ul>
+<p>All of the above qualities can be bought, and organizations sometimes pay huge amounts of money to obtain them. But that&#39;s neither practical nor necessary. The point of this book is to show you how to get these qualities in a way that is...</p>
+<ul>
+<li>Sustainable: the immediate marginal cost of quality is low, and the increase in quality quickly pays for itself by reducing the cost of further development. In my experience, it usually takes mere hours for the techniques in this book to pay for themselves.</li>
+</ul>
+<blockquote>
+<p>The price of reliability is the pursuit of the utmost simplicity. It is a price which the very rich find most hard to pay.</p>
+<p>—C. A. R. Hoare</p>
+</blockquote>
+<p>Economic sustainability is not the only consideration, though; we also have to consider the <em>psychological</em> sustainability of working on the code. Techniques that require a high level of discipline to be effective are not psychologically sustainable. Everyone has &quot;off&quot; days, and most of us can&#39;t call in sick whenever we&#39;re feeling scatterbrained. If working on the system demands constant vigilance, the code will slowly but surely degrade, until it becomes a quagmire.</p>
+<p>The surest bulwark against psychological unsustainability is joy. Working on the code should make us feel confident, competent, and in control. Good code makes us feel more connected to our work and to each other.</p>
+<blockquote>
+<p>Making wholeness heals the maker.</p>
+<p>—Christopher Alexander</p>
+</blockquote>
+<p>In the chapters that follow, I will discuss each of the qualities of good code in turn, and provide techniques for obtaining them.</p>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="foundational-concepts/dependency.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="../working-with-others/index.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>
