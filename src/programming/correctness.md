@@ -1,5 +1,5 @@
 # Correctness
-
+<!--
 Consider the process that a typical software organization goes through to design new software:
 
 1. First, user research: Observations of potential users are distilled into use cases or needs.
@@ -33,15 +33,36 @@ Step 6b is the crucial step, the risky step, and the one this book can teach you
 Even in the healthiest organizations I've worked in—the ones where people generally trusted each other completely, and communication was clear and open—buggy software got released, and the value of products was delayed or diminished, because of mistakes in 6b. There was very little the organizations could do about this except offer the programmers generous professional development budgets (which usually didn't get spent).
 
 ## What is "Correctness"?
+-->
 
-It's hard for people to agree on what constitutes "correct" software. Users might think of correct software as software that meets their needs and works the way they expect. More technocratically-minded people might insist that correctness is the degree to which software conforms to some formal specification.
+I have a simple definition of "correct code": it's code that does what you meant it to do.
 
-For programmers, both of these views of correctness are distractions. We can't know exactly what users want, and there's usually no formal spec for what we're doing.
+It's hard for people to agree on what constitutes "correct" software. Users might think of correct software as software that meets their needs and works the way they expect. But every user wants something slightly different. More technocratically-minded people might insist that correctness is the degree to which software conforms to some formal specification.
+
+For programmers, both of these views of correctness are distractions. We can't know exactly what users want, and there's usually no formal spec for what we're making. We need a practical view of correctness that can guide our actions moment by moment toward good outcomes.
 
 > Set aside "correctness" (a meaningless term if I’ve ever heard one). Don’t worry about "working software". Instead think about the question on our minds as we write code, the question we had from our first moment of coding, and that we still ask as we do our jobs today: is the software doing what I expect?
 >
 > —[David Bryant Copeland, "Actual Reasons to Use TDD"](https://naildrivin5.com/blog/2022/09/06/actual-reasons-to-use-tdd.html)
 
+As programmers, we can't directly ensure that the software we create is valuable, useful, or desirable. For better or for worse, we're not usually responsible for decisions at that level. What we _are_ responsible for is making sure the computers actually do what we imagined them doing when we wrote the code. That is, we're responsible for faithfully translating our organization's _intent_ into _software_.
+
+## Ensuring Correctness
+
+If we want to make sure our code is doing what we meant it to do, there are a couple strategies we can apply:
+
+- Reading the code
+- Running the code
+
+Code can be "read" by people (think pair-programming, code review, or other inspections) or machines (via linters and typecheckers). All of these activities are forms of _static analysis_.
+
+Static analysis has limits. [Rice's theorem](https://en.wikipedia.org/wiki/Rice%27s_theorem) states that all non-trivial semantic properties of programs are undecidable; that is, it's not possible to write a program that can look at arbitrarily-structured code and reliably determine whether it has some desired correctness property. Consider the halting problem as a particular case: it's not even possible to write a program that reliably determines whether another program will enter an infinite loop.
+
+Therefore, we also generally have to run our programs to gain confidence that they are working—i.e. we have to _test_ them. Testing, like static analysis, can be manual or automated.
+
+Specific techniques for static analysis and testing are the focus of a large portion of this book.
+
+<!--
 When I refer to "correctness" in this book, I don't mean correctness according to some external standard. Correct code, as far as I'm concerned, is code that does what you meant it to do. If we're confining our view of programming to the act of typing code into a computer, that's really the best we can hope to achieve.
 
 Of course, even if software does what we intended, it still might not be useful or valuable. But if our software _does not_ do what we intend, it almost certainly has problems. In a way, "software that does what you intend" seems like a pretty low bar for quality—but I don't think it is. It is a bar that most teams today consistently fail to reach.
@@ -116,3 +137,4 @@ By using these two techniques, you can find and fix code that doesn't do what yo
 
 The upcoming chapter on [[clarity]] gives an overview of how to make code easier to read, understand, and even prove things about. Here I'll give a brief overview of the second technique for obtaining knowledge: running the code, i.e. _testing_.
 
+-->

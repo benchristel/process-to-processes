@@ -1,4 +1,4 @@
-## Testing
+# Testing
 
 I define _software testing_ as "the art of running code to find out what it does". There are many different types of software testing with varying benefits and costs. I divide software testing into four overarching branches:
 
