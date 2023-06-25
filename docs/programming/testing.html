@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>testing.html</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: #f8dfb9;
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article {
+				margin: 0 16px;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+			figure {
+				float: right;
+				background: #eee;
+				border: 1px solid #888;
+				display: table;
+				padding: 0 1em;
+				text-align: center;
+			}
+			img {
+				display: block;
+				background: white;
+				border: 1px solid #ccc;
+				margin: 0 auto;
+			}
+			figcaption {
+				font-size: 14px;
+				margin: 1em 0;
+			}
+			nav, hr, h1, h2, h3, h4, h5, h6 {
+				clear: both;
+			}
+			blockquote {
+				border: 3px double #f80;
+				box-shadow: inset 1.5em 0 0 -1em #f804;
+				background-color: #fff8;
+				margin-left: 1.5em;
+				padding: 0.5em 2em;
+				font-style: italic;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="creation-and-destruction.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="../working-with-others/index.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h2 id="testing">Testing</h2>
+<p>I define <em>software testing</em> as &quot;the art of running code to find out what it does&quot;. There are many different types of software testing with varying benefits and costs. I divide software testing into four overarching branches:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Informal</th>
+<th>Formal</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Manual</td>
+<td>Exploratory testing; poking around a dev environment</td>
+<td>Traditional QA with a test plan</td>
+</tr>
+<tr>
+<td>Automated</td>
+<td>Testing scripts</td>
+<td>&quot;Tests&quot;</td>
+</tr>
+</tbody></table>
+<p>A formal test specifies the expected output of the code being tested, and unambiguously signals pass or fail. An informal test relies on human observation and judgement to determine if the software&#39;s behavior is acceptable.</p>
+<p>A manual test requires some amount of human interaction with the software while the tests are in progress. An automated test runs, start to finish, with no intervention needed.</p>
+<p>These days, when programmers refer to &quot;tests&quot;, they&#39;re usually talking about <em>formal automated tests</em>. This category includes unit tests, integration tests, system tests, end-to-end tests, smoke tests, and acceptance tests.</p>
+<p>However, not all formal automated tests are created equal. Some tests are cheap to create, run very fast, and reliably indicate the presence or absence of a particular bug. Other tests are difficult to write, take a long time to run, and fail unpredictably, often for no apparent reason. Most programmers use the term <em>unit test</em> to refer to the fastest, most reliable tests they typically write. They refer to the slower, less reliable tests by some other name.</p>
+<p>Some types of testing give us additional benefits, too—often, for little or no extra cost—and so naturally these are the types of testing we should prefer. We get the most benefit, and the most <em>different kinds</em> of benefits, from formal automated tests, with informal manual testing being a close second. Formal manual testing and informal automated testing should be avoided.</p>
+<p>Suppose we&#39;re on a software project where all testing is manual. What are the benefits of automating that testing?</p>
+<p>If we record our expectations in machine-executable form—as _formal automated tests_—then the tests also provide a record of exactly what our intentions were.</p>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="creation-and-destruction.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="../working-with-others/index.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>

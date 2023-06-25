@@ -53,15 +53,23 @@
 			nav, hr, h1, h2, h3, h4, h5, h6 {
 				clear: both;
 			}
+			blockquote {
+				border: 3px double #f80;
+				box-shadow: inset 1.5em 0 0 -1em #f804;
+				background-color: #fff8;
+				margin-left: 1.5em;
+				padding: 0.5em 2em;
+				font-style: italic;
+			}
 		</style>
 	</head>
 	<body>
 		<nav>
 			<div>
-				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="creation-and-destruction.html" class="mdsite-prev-link">Prev</a>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="foundational-concepts/dependency.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="../working-with-others/index.html" class="mdsite-next-link">Next</a>
+				<a href="correctness.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<hr/>
@@ -72,11 +80,11 @@
 <p>Everyone has a slightly different idea of what &quot;good code&quot; is, and I encourage you to develop your own. By way of offering inspiration, though, here is my definition.</p>
 <p>Good code is:</p>
 <ul>
-<li>Correct: it does what its programmers intended.</li>
+<li><a href="correctness.html">Correct</a>: it does what its programmers intended.</li>
 <li>Clear: The programmers&#39; intentions, and the fact that the code adheres to them, must be clear.</li>
 <li>Trustworthy: The code&#39;s labeling (e.g. function names) should be so straightforward that most programmers using the code never have to look at its internals. The label tells them all they need to know.</li>
 <li>Repairable: good code has &quot;seams&quot; where you can pull it apart, to repair, replace, or upgrade just one piece of it. Repairability goes hand in hand with reusability: a module that can be isolated from the rest of its program for repair can also, quite possibly, be used in other contexts—perhaps in entirely different programs.</li>
-<li>Performant: it is as efficient as it needs to be to satisfy its users</li>
+<li>Performant: it is as efficient as it needs to be to satisfy its users.</li>
 </ul>
 <p>All of the above qualities can be bought, and organizations sometimes pay huge amounts of money to obtain them. But that&#39;s neither practical nor necessary. The point of this book is to show you how to get these qualities in a way that is...</p>
 <ul>
@@ -98,10 +106,10 @@
 		<hr/>
 		<nav>
 			<div>
-				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="creation-and-destruction.html" class="mdsite-prev-link">Prev</a>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="foundational-concepts/dependency.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="../working-with-others/index.html" class="mdsite-next-link">Next</a>
+				<a href="correctness.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<script>

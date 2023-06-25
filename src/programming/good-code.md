@@ -6,11 +6,11 @@ Everyone has a slightly different idea of what "good code" is, and I encourage y
 
 Good code is:
 
-- Correct: it does what its programmers intended.
+- [Correct](correctness.html): it does what its programmers intended.
 - Clear: The programmers' intentions, and the fact that the code adheres to them, must be clear.
 - Trustworthy: The code's labeling (e.g. function names) should be so straightforward that most programmers using the code never have to look at its internals. The label tells them all they need to know.
 - Repairable: good code has "seams" where you can pull it apart, to repair, replace, or upgrade just one piece of it. Repairability goes hand in hand with reusability: a module that can be isolated from the rest of its program for repair can also, quite possibly, be used in other contexts—perhaps in entirely different programs.
-- Performant: it is as efficient as it needs to be to satisfy its users
+- Performant: it is as efficient as it needs to be to satisfy its users.
 
 All of the above qualities can be bought, and organizations sometimes pay huge amounts of money to obtain them. But that's neither practical nor necessary. The point of this book is to show you how to get these qualities in a way that is...
 

@@ -1,6 +1,7 @@
 foundational-concepts
+good-code.html
+correctness.html
 
 !unspecified
-correctness.html
 creation-and-destruction.html
-good-code.html
+testing.html

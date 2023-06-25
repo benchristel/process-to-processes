@@ -1,4 +1,6 @@
 foundational-concepts
+good-code.html
+correctness.html
 
 !unspecified
 quality
