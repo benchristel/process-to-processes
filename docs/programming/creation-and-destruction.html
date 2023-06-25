@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Creation and Destruction</title>
+		<style>
+			@media screen {
+			  body {
+					background-color: #f8dfb9;
+				}	
+			}
+			nav {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			nav > div {
+				flex-grow: 0;
+			}
+			nav a {
+				display: inline-block;
+				padding: 0 0.5em 0.5ex;
+			}
+			nav a + a {
+				border-left: 1px solid black;
+			}
+			nav a:hover {
+				background: #0001;
+			}
+			article {
+				margin: 0 16px;
+			}
+			article h1 {
+				font-size: 200%;
+			}
+			figure {
+				float: right;
+				background: #eee;
+				border: 1px solid #888;
+				display: table;
+				padding: 0 1em;
+				text-align: center;
+			}
+			img {
+				display: block;
+				background: white;
+				border: 1px solid #ccc;
+				margin: 0 auto;
+			}
+			figcaption {
+				font-size: 14px;
+				margin: 1em 0;
+			}
+			nav, hr, h1, h2, h3, h4, h5, h6 {
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="correctness.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="good-code.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<hr/>
+
+		<article>
+			<h1 id="creation-and-destruction">Creation and Destruction</h1>
+<p>There are two great pleasures in programming: writing pristine, new, <em>greenfield</em> code, and deleting code. The opportunity to create or destroy is treasured because it is rare. Most of the time, we&#39;re not creating or destroying, but <em>changing</em> code—making small modifications in the innards of an existing program.</p>
+<p>It is possible to build more creation and destruction into our software-making process, in a few ways:</p>
+<ul>
+<li><p>We can add new functionality to a program by putting it in a new module, and calling it from an existing module, instead of building it directly into old code.</p>
+</li>
+<li><p>If our modules are sufficiently small and single-purpose, it is more likely that c</p>
+</li>
+</ul>
+<p>I like to view programs as immutable data structures. We can conceptualize changes to a program as throwing away the old program and creating a new one, which is a copy of the old but with a few small modifications. Still, this isn&#39;t very satisfying—it certainly doesn&#39;t feel like we&#39;re deleting a bunch of code and writing it afresh when we change an existing program.</p>
+<p>The problem is that the changes we make are small compared to the pieces of the program (functions, classes, or modules) in which they&#39;re embedded. When changes are e</p>
+		</article>
+
+		<hr/>
+		<nav>
+			<div>
+				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="correctness.html" class="mdsite-prev-link">Prev</a>
+			</div>
+			<div>
+				<a href="good-code.html" class="mdsite-next-link">Next</a>
+			</div>
+		</nav>
+		<script>
+document.onkeydown = (e) => {
+	switch (e.key) {
+		case "ArrowRight":
+		  document.querySelector(".mdsite-next-link")?.click()
+			break;
+		case "ArrowLeft":
+			document.querySelector(".mdsite-prev-link")?.click()
+			break;
+	}
+}
+
+		</script>
+	</body>
+</html>

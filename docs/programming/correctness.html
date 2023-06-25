@@ -61,7 +61,7 @@
 				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="foundational-concepts/dependency.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="good-code.html" class="mdsite-next-link">Next</a>
+				<a href="creation-and-destruction.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<hr/>
@@ -82,7 +82,7 @@
 <ul>
 <li>If they believed the program would only need to handle lowercase English words, then they made the best decision they could with the knowledge they had at the time.</li>
 <li>If they weighed the cost/benefit tradeoffs of a more sophisticated sort and came to the conclusion that the cost outweighed the benefit, then they made the best decision given the knowledge they had at the time.</li>
-<li>If they simply weren&#39;t considering the possibility that <code>words</code> might contain uppercase or accented characters, then this is the best code they could have written given the information that they had.</li>
+<li>If they simply didn&#39;t know that <code>words</code> might contain uppercase or accented characters, then this is the best code they could have written given the information that they had.</li>
 </ul>
 <p>This code might do what users need, or it might not. But if it doesn&#39;t, it&#39;s hard to fault the programming technique of the person who wrote it.</p>
 <p>Now let&#39;s look at an example of code that is definitely incorrect according to the definition above.</p>
@@ -110,7 +110,44 @@ function refundAll(transactions: Transaction[]) {
 }
 </code></pre>
 <p>Here, it&#39;s also fairly clear what the programmer was trying to do. They have an array of <code>transactions</code>, some of which have a null <code>amount</code>. They want to <code>refund</code> each non-null <code>amount</code>.</p>
-<p>Unfortunately, this function will loop infinitely if any of the amounts is null. Perhaps null amounts are rare—if so, this code might work almost all of the time. However, it clearly does not do what the programmer intended.</p>
+<p>Unfortunately, this function will loop infinitely if any of the amounts is null. Perhaps null amounts are rare—if so, this code might work almost all of the time. However, its infinite looping behavior is clearly not what the programmer intended.</p>
+<h2 id="improving-correctness">Improving Correctness</h2>
+<p>You might quibble that the correctness problems outlined above are <em>also</em> due to the programmer having incomplete knowledge at the time they wrote the code, and that therefore there is nothing the programmer could have done differently. However, I contend that there is a major difference between these examples and the word-alphabetizing program we saw earlier.</p>
+<p>In the word-alphabetizing program, the knowledge the programmer was missing was <em>outside</em> the code. In the <code>parseInt</code> and <code>transactions</code> examples, the knowledge could be obtained from the code itself, by either:</p>
+<ul>
+<li>reading it</li>
+<li>running it</li>
+</ul>
+<p>By using these two techniques, you can find and fix code that doesn&#39;t do what you or your teammates intended, <em>before</em> it reaches production and affects users.</p>
+<p>The upcoming chapter on <a href="clarity.html">clarity</a> gives an overview of how to make code easier to read, understand, and even prove things about. Here I&#39;ll give a brief overview of the second technique for obtaining knowledge: running the code, i.e. <em>testing</em>.</p>
+<h2 id="testing">Testing</h2>
+<p>I define <em>software testing</em> as &quot;the art of running code to find out what it does&quot;. There are many different types of software testing with varying benefits and costs. I divide software testing into four overarching branches:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Informal</th>
+<th>Formal</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Manual</td>
+<td>Exploratory testing; poking around a dev environment</td>
+<td>Traditional QA with a test plan</td>
+</tr>
+<tr>
+<td>Automated</td>
+<td>Testing scripts</td>
+<td>&quot;Tests&quot;</td>
+</tr>
+</tbody></table>
+<p>A formal test specifies the expected output of the code being tested, and unambiguously signals pass or fail. An informal test relies on human observation and judgement to determine if the software&#39;s behavior is acceptable.</p>
+<p>A manual test requires some amount of human interaction with the software while the tests are in progress. An automated test runs, start to finish, with no intervention needed.</p>
+<p>These days, when programmers refer to &quot;tests&quot;, they&#39;re usually talking about <em>formal automated tests</em>. This category includes unit tests, integration tests, system tests, end-to-end tests, smoke tests, and acceptance tests.</p>
+<p>However, not all formal automated tests are created equal. Some tests are cheap to create, run very fast, and reliably indicate the presence or absence of a particular bug. Other tests are difficult to write, take a long time to run, and fail unpredictably, often for no apparent reason. Most programmers use the term <em>unit test</em> to refer to the fastest, most reliable tests they typically write. They refer to the slower, less reliable tests by some other name.</p>
+<p>Some types of testing give us additional benefits, too—often, for little or no extra cost—and so naturally these are the types of testing we should prefer. We get the most benefit, and the most <em>different kinds</em> of benefits, from formal automated tests, with informal manual testing being a close second. Formal manual testing and informal automated testing should be avoided.</p>
+<p>Suppose we&#39;re on a software project where all testing is manual. What are the benefits of automating that testing?</p>
+<p>If we record our expectations in machine-executable form—as _formal automated tests_—then the tests also provide a record of exactly what our intentions were.</p>
 		</article>
 
 		<hr/>
@@ -119,7 +156,7 @@ function refundAll(transactions: Transaction[]) {
 				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="foundational-concepts/dependency.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="good-code.html" class="mdsite-next-link">Next</a>
+				<a href="creation-and-destruction.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<script>

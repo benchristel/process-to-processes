@@ -2,4 +2,5 @@ foundational-concepts
 
 !unspecified
 correctness.html
+creation-and-destruction.html
 good-code.html
