@@ -1,51 +1,18 @@
 # Correctness
-<!--
-Consider the process that a typical software organization goes through to design new software:
-
-1. First, user research: Observations of potential users are distilled into use cases or needs.
-2. Then, user needs are translated into product requirements.
-3. A product manager translates the product requirements into features.
-4. A designer crafts the user experience and user interface of each feature.
-5. A summary of all this information is handed over to the programmers, often in the form of a _user story_.
-6. The programmers translate their understanding of the user story into code.
-7. Computers translate that code into a set of running processes, which hopefully do what the users wanted.
-
-Every step of this process is essentially a translation from one form of information to another, and has to be carried out with care lest we introduce mistakes. Mistakes in any one of these steps will feed into the subsequent steps, and could diminish the value of the resulting product.
-
-However, as programmers, we don't have direct control over most of the steps. In most cases, the only step we really control is step 6: translating user stories into code.
-
-There are really two parts to step 6, which I'll call 6a and 6b:
-
-6a. Programmers make sure they've understood the user story, by asking the other participants in the process to clarify anything they're unsure about.
-
-6b. Programmers translate their improved understanding into code.
-
-Problems in 6a are not, in my experience, usually caused by lack of skill or knowledge. The success or failure of 6a is determined by the degree of interpersonal trust on the team and the programmer's humility or pride. In order to ask clarifying questions, you have to:
-
-- Recognize when you're unsure about something.
-- Be willing to admit what you don't know.
-- Trust that the other person will not think less of you for asking a question.
-
-Step 6a is not, therefore, something this book is likely to be able to help you with. Improving 6a means improving your relationship with yourself and with the other people on your team.
-
-Step 6b is the crucial step, the risky step, and the one this book can teach you to do better. Step 6b has a unique property: it is the moment at which the information in the software design pipeline gets translated into a form that only the programmers can understand. If mistakes occur in the earlier steps, organizations have mechanisms for compensating. For example, they can encourage more communication between designers and product managers and programmers, closer contact with users and the support team, realignment of efforts with the company's mission, faster iteration, more feedback between the steps, etc. This is possible because the communication between these steps is in human language. The moment the information is translated into code, it disappears from the view of everyone but the programmers. While almost anyone in the organization can help out with the previous steps (or at least offer a perspective), step 6b is a battle that programmers must fight alone.
-
-Even in the healthiest organizations I've worked in—the ones where people generally trusted each other completely, and communication was clear and open—buggy software got released, and the value of products was delayed or diminished, because of mistakes in 6b. There was very little the organizations could do about this except offer the programmers generous professional development budgets (which usually didn't get spent).
-
-## What is "Correctness"?
--->
 
 I have a simple definition of "correct code": it's code that does what you meant it to do.
 
-It's hard for people to agree on what constitutes "correct" software. Users might think of correct software as software that meets their needs and works the way they expect. But every user wants something slightly different. More technocratically-minded people might insist that correctness is the degree to which software conforms to some formal specification.
+It's hard for people to agree on what constitutes "correct" software. Users might define it as software that meets their needs and works the way they expect. But every user wants something slightly different. More technocratically-minded people might insist that correctness is the degree to which software conforms to some formal specification.
 
 For programmers, both of these views of correctness are distractions. We can't know exactly what users want, and there's usually no formal spec for what we're making. We need a practical view of correctness that can guide our actions moment by moment toward good outcomes.
 
-> Set aside "correctness" (a meaningless term if I’ve ever heard one). Don’t worry about "working software". Instead think about the question on our minds as we write code, the question we had from our first moment of coding, and that we still ask as we do our jobs today: is the software doing what I expect?
+"Code that does what you meant it to do" isn't the same thing as "good software", but it's clearly a prerequisite. If I write some code and it _doesn't_ do what I meant, something's very likely amiss.
+
+> Set aside "correctness" [...] Instead think about the question on our minds as we write code, the question we had from our first moment of coding, and that we still ask as we do our jobs today: is the software doing what I expect?
 >
 > —[David Bryant Copeland, "Actual Reasons to Use TDD"](https://naildrivin5.com/blog/2022/09/06/actual-reasons-to-use-tdd.html)
 
-As programmers, we can't directly ensure that the software we create is valuable, useful, or desirable. For better or for worse, we're not usually responsible for decisions at that level. What we _are_ responsible for is making sure the computers actually do what we imagined them doing when we wrote the code. That is, we're responsible for faithfully translating our organization's _intent_ into _software_.
+As programmers, we can't directly ensure that the software we create is valuable, useful, or desirable. For better or for worse, we're not usually responsible for decisions at that level. What we _are_ responsible for is understanding the software in our clients' imaginations, and then faithfully translating that imagined behavior into code.
 
 ## Ensuring Correctness
 
