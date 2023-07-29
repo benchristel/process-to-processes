@@ -8,15 +8,15 @@ Good code is code that works for the needs of today, and is easy to build on to 
 
 - [Correct](correctness.html): The code does what its programmers intended.
   - includes functional correctness, maybe performance?
-- [Economical](economy.html): The code doesn't cost too much to develop, release, or run.
-  - Inexpensive: the code is easy and cheap to improve.
-  - Fast: it is as efficient as it needs to be to satisfy its users.
-  - [Trustworthy](trustworthiness.html): The code's correctness and performance characteristics are easy to verify. If we don't trust our code, we'll take longer to release it, which has an opportunity cost.
+- [Trustworthy](trustworthiness.html): The code's correctness and performance characteristics are easy to verify. If we don't trust our code, we'll take longer to release it, which has an opportunity cost.
     - [Clear](clarity.html): It is obvious from reading the code that it does what it's supposed to do.
     - [Simple](simplicity.html): Every conditional, loop, and mutable variable is demonstrably necessary.
     - [Testable](testability.html): It is easy to confirm empirically that the code does what it's supposed to, by running it.
     - [Provable](provability.html): Desirable properties of the code can be proved by formal methods. Typechecking is one common way of proving things about code.
     - [Abstract](abstraction.html): Once we understand what a named piece of code does, we can compress our mental representation of it into a form that is easy to recall and manipulate. We don't have to think about the internals of the code every time we use it.
+- [Economical](economy.html): The code doesn't cost too much to develop, release, or run.
+  - Inexpensive: the code is easy and cheap to improve.
+  - Fast: it is as efficient as it needs to be to satisfy its users.
 - [Sustainable](sustainability.html): Good code doesn't impede the organization from accomplishing its goals. In particular, good code doesn't impede its own further development. The biggest threat to the sustained health of code is its programmers. If the programmers stop caring about the code, they will stop caring _for_ it. Therefore, sustainability is largely about maintaining a healthy relationship between programmers and code. To that end, the code must be...
   - [Comfortable](comfort.html): The code is simply nice to work with. It puts the reader at ease, because it isn't grandiose, dogmatic, or overly clever. It seems not to care what you think of it, and it isn't trying to be anything it doesn't need to be. It is, in other words, constrained only by what really matters: the users' needs, the programmers' human strengths and weaknesses, and the development tools available.
   - [Tinkerable](repairability.html): Good code has "seams" where you can pull it apart, to repair, replace, or upgrade just one piece of it. A good system lets you see into its internal state, so you can easily diagnose problems. Good code is like a delightful and satisfying puzzle that you can take apart and put back together again and again.
