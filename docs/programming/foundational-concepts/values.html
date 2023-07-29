@@ -78,60 +78,50 @@
 			<h1 id="values-data-and-objects">Values: Data and Objects</h1>
 <p>In JavaScript (and TypeScript), the things that we can assign to variables are called <em>values</em>. Numbers, strings, arrays, objects, and functions are all types of values.</p>
 <p>Some values are <em>mutable</em> (changeable), and some are <em>immutable</em>. To see the difference, consider the following code:</p>
-<pre><code class="language-js">let a = [&quot;sun&quot;, &quot;stars&quot;]
-</code></pre>
-<p>If we want to change the value that <code>a</code> refers to, we can of course assign a new value to the variable, with a statement like <code>a = [&quot;duck pond&quot;]</code>. But because JavaScript arrays are mutable, we can also change the &quot;meaning&quot; of <code>a</code> without using the <code>=</code> operator.</p>
-<pre><code class="language-js">console.log(a) // prints [&quot;sun&quot;, &quot;stars&quot;]
-a.push(&quot;moon&quot;)
-console.log(a) // prints [&quot;sun&quot;, &quot;stars&quot;, &quot;moon&quot;]
-</code></pre>
-<p>Calling <code>push</code> changes what <code>console.log(a)</code> prints.</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">let</span> a = [<span class="hljs-string">&quot;sun&quot;</span>, <span class="hljs-string">&quot;stars&quot;</span>]
+</code></pre><p>If we want to change the value that <code>a</code> refers to, we can of course assign a new value to the variable, with a statement like <code>a = [&quot;duck pond&quot;]</code>. But because JavaScript arrays are mutable, we can also change the &quot;meaning&quot; of <code>a</code> without using the <code>=</code> operator.</p>
+<pre><code class="hljs language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a) <span class="hljs-comment">// prints [&quot;sun&quot;, &quot;stars&quot;]</span>
+a.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;moon&quot;</span>)
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a) <span class="hljs-comment">// prints [&quot;sun&quot;, &quot;stars&quot;, &quot;moon&quot;]</span>
+</code></pre><p>Calling <code>push</code> changes what <code>console.log(a)</code> prints.</p>
 <p>Strings, on the other hand, are immutable. When a variable refers to an immutable value like a string, we cannot change the meaning of that variable unless we use <code>=</code> to explicitly reassign it. Merely calling a method on the value won&#39;t change it, as we can see below:</p>
-<pre><code class="language-js">let s = &quot;forest leaves&quot;
-console.log(s) // prints &quot;forest leaves&quot;
-s.toUpperCase()
-console.log(s) // prints &quot;forest leaves&quot;
-</code></pre>
-<p>The <code>toUpperCase</code> method returns a new string; it doesn&#39;t (and can&#39;t) modify the existing one. If we want to change the meaning of the variable <code>s</code>, we need to assign it a new value with <code>=</code>:</p>
-<pre><code class="language-js">s = s.toUpperCase()
-console.log(s) // prints &quot;FOREST LEAVES&quot;
-</code></pre>
-<h2 id="advantages-of-immutability">Advantages of Immutability</h2>
+<pre><code class="hljs language-js"><span class="hljs-keyword">let</span> s = <span class="hljs-string">&quot;forest leaves&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(s) <span class="hljs-comment">// prints &quot;forest leaves&quot;</span>
+s.<span class="hljs-title function_">toUpperCase</span>()
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(s) <span class="hljs-comment">// prints &quot;forest leaves&quot;</span>
+</code></pre><p>The <code>toUpperCase</code> method returns a new string; it doesn&#39;t (and can&#39;t) modify the existing one. If we want to change the meaning of the variable <code>s</code>, we need to assign it a new value with <code>=</code>:</p>
+<pre><code class="hljs language-js">s = s.<span class="hljs-title function_">toUpperCase</span>()
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(s) <span class="hljs-comment">// prints &quot;FOREST LEAVES&quot;</span>
+</code></pre><h2 id="advantages-of-immutability">Advantages of Immutability</h2>
 <p>In the example above where we mutated an array with <code>.push()</code>, it was pretty obvious what we were doing. However, consider the following:</p>
-<pre><code class="language-js">let a = [&quot;sun&quot;, &quot;moon&quot;]
-someComplicatedFunctionYourCoworkerWrote(a)
-console.log(a) // What will this print?
-</code></pre>
-<p>What will this code print? It depends on whether <code>someComplicatedFunctionYourCoworkerWrote</code> mutates the array passed to it. When our values are mutable, it can be quite hard to tell what code will do, because mutation can be hidden under layers of function calls.</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">let</span> a = [<span class="hljs-string">&quot;sun&quot;</span>, <span class="hljs-string">&quot;moon&quot;</span>]
+<span class="hljs-title function_">someComplicatedFunctionYourCoworkerWrote</span>(a)
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a) <span class="hljs-comment">// What will this print?</span>
+</code></pre><p>What will this code print? It depends on whether <code>someComplicatedFunctionYourCoworkerWrote</code> mutates the array passed to it. When our values are mutable, it can be quite hard to tell what code will do, because mutation can be hidden under layers of function calls.</p>
 <p>If, on the other hand, we are using strings or other immutable values, our code becomes much more predictable:</p>
-<pre><code class="language-js">let s = &quot;sun and moon&quot;
-anotherComplicatedFunction(s)
-console.log(s) // prints &quot;sun and moon&quot;
-</code></pre>
-<p>Immutability also helps ensure that we don&#39;t create bugs when we refactor code. Consider the following:</p>
-<pre><code class="language-js">function getUsername(user) {
-  return user.username || &quot;guest&quot;
+<pre><code class="hljs language-js"><span class="hljs-keyword">let</span> s = <span class="hljs-string">&quot;sun and moon&quot;</span>
+<span class="hljs-title function_">anotherComplicatedFunction</span>(s)
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(s) <span class="hljs-comment">// prints &quot;sun and moon&quot;</span>
+</code></pre><p>Immutability also helps ensure that we don&#39;t create bugs when we refactor code. Consider the following:</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getUsername</span>(<span class="hljs-params">user</span>) {
+  <span class="hljs-keyword">return</span> user.<span class="hljs-property">username</span> || <span class="hljs-string">&quot;guest&quot;</span>
 }
-</code></pre>
-<p>Because the string <code>guest</code> is immutable, we are free to extract it to a constant. We don&#39;t have
+</code></pre><p>Because the string <code>guest</code> is immutable, we are free to extract it to a constant. We don&#39;t have
 to worry that the caller of this function might mutate the value it returns and thus change the default username.</p>
-<pre><code class="language-js">const defaultUsername = &quot;guest&quot;
-function getUsername(user) {
-  return user.username || defaultUsername
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> defaultUsername = <span class="hljs-string">&quot;guest&quot;</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">getUsername</span>(<span class="hljs-params">user</span>) {
+  <span class="hljs-keyword">return</span> user.<span class="hljs-property">username</span> || defaultUsername
 }
-</code></pre>
-<p>If, on the other hand, we&#39;re returning a mutable value like an array, things are different:</p>
-<pre><code class="language-js">function getEmailAddresses(user) {
-  return user.emails || []
+</code></pre><p>If, on the other hand, we&#39;re returning a mutable value like an array, things are different:</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getEmailAddresses</span>(<span class="hljs-params">user</span>) {
+  <span class="hljs-keyword">return</span> user.<span class="hljs-property">emails</span> || []
 }
-</code></pre>
-<p>Here, we&#39;re returning an empty array of emails if <code>user.emails</code> is null or undefined. If the caller mutates the array we return, that&#39;s their business; it won&#39;t affect subsequent calls to <code>getEmailAddresses</code>. However, if we extract a constant...</p>
-<pre><code class="language-js">const none = []
-function getEmailAddresses(user) {
-  return user.emails || none
+</code></pre><p>Here, we&#39;re returning an empty array of emails if <code>user.emails</code> is null or undefined. If the caller mutates the array we return, that&#39;s their business; it won&#39;t affect subsequent calls to <code>getEmailAddresses</code>. However, if we extract a constant...</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> none = []
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">getEmailAddresses</span>(<span class="hljs-params">user</span>) {
+  <span class="hljs-keyword">return</span> user.<span class="hljs-property">emails</span> || none
 }
-</code></pre>
-<p>Now we&#39;re returning the same array each time <code>getEmailAddresses</code> is called with a user whose <code>emails</code> property is null. If our caller adds an item to the returned array, it will change the meaning of <code>none</code> and affect every subsequent call to <code>getEmailAddresses</code>! Not only that, but the results of <em>previous</em> calls may be affected if those return values are still referenced somewhere. This type of bug is called <em>spooky action at a distance</em>, and the thought that it might happen in your code ought to scare you. Bugs like this are often extremely hard to track down and fix.</p>
+</code></pre><p>Now we&#39;re returning the same array each time <code>getEmailAddresses</code> is called with a user whose <code>emails</code> property is null. If our caller adds an item to the returned array, it will change the meaning of <code>none</code> and affect every subsequent call to <code>getEmailAddresses</code>! Not only that, but the results of <em>previous</em> calls may be affected if those return values are still referenced somewhere. This type of bug is called <em>spooky action at a distance</em>, and the thought that it might happen in your code ought to scare you. Bugs like this are often extremely hard to track down and fix.</p>
 <!--
 If `anotherComplicatedFunction` needs to transform the value passed to it, it can simply return the updated value:
 

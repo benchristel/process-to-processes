@@ -69,7 +69,7 @@
 				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="good-code.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="testing.html" class="mdsite-next-link">Next</a>
+				<a href="clarity.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<hr/>
@@ -128,8 +128,9 @@ Even in the healthiest organizations I've worked in—the ones where people gene
 </ul>
 <p>Code can be &quot;read&quot; by people (think pair-programming, code review, or other inspections) or machines (via linters and typecheckers). All of these activities are forms of <em>static analysis</em>.</p>
 <p>Static analysis has limits. <a href="https://en.wikipedia.org/wiki/Rice%27s_theorem">Rice&#39;s theorem</a> states that all non-trivial semantic properties of programs are undecidable; that is, it&#39;s not possible to write a program that can look at arbitrarily-structured code and reliably determine whether it has some desired correctness property. Consider the halting problem as a particular case: it&#39;s not even possible to write a program that reliably determines whether another program will enter an infinite loop.</p>
-<p>Therefore, we also generally have to run our programs to gain confidence that they are working—i.e. we have to <em>test</em> them. Testing, like static analysis, can be manual or automated.</p>
-<p>Specific techniques for static analysis and testing are the focus of a large portion of this book.</p>
+<p>Therefore, we also generally have to run our programs to gain confidence that they are working—i.e. we have to <em>test</em> them.</p>
+<p>Testing, though, relies on reading the code to know where the error-prone parts are, and get a sense of when we&#39;ve covered all the cases. Therefore, our ability to test relies on our ability to read and understand the code.</p>
+<p>We can&#39;t hope to understand code by reading it unless the code is <em>clear</em>. The next section discusses this important property of good code.</p>
 <!--
 When I refer to "correctness" in this book, I don't mean correctness according to some external standard. Correct code, as far as I'm concerned, is code that does what you meant it to do. If we're confining our view of programming to the act of typing code into a computer, that's really the best we can hope to achieve.
 
@@ -214,7 +215,7 @@ The upcoming chapter on [[clarity]] gives an overview of how to make code easier
 				<a href="../index.html">Home</a><a href="index.html">Up</a><a href="good-code.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="testing.html" class="mdsite-next-link">Next</a>
+				<a href="clarity.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<script>

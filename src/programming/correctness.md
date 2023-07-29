@@ -58,9 +58,11 @@ Code can be "read" by people (think pair-programming, code review, or other insp
 
 Static analysis has limits. [Rice's theorem](https://en.wikipedia.org/wiki/Rice%27s_theorem) states that all non-trivial semantic properties of programs are undecidable; that is, it's not possible to write a program that can look at arbitrarily-structured code and reliably determine whether it has some desired correctness property. Consider the halting problem as a particular case: it's not even possible to write a program that reliably determines whether another program will enter an infinite loop.
 
-Therefore, we also generally have to run our programs to gain confidence that they are working—i.e. we have to _test_ them. Testing, like static analysis, can be manual or automated.
+Therefore, we also generally have to run our programs to gain confidence that they are working—i.e. we have to _test_ them.
 
-Specific techniques for static analysis and testing are the focus of a large portion of this book.
+Testing, though, relies on reading the code to know where the error-prone parts are, and get a sense of when we've covered all the cases. Therefore, our ability to test relies on our ability to read and understand the code.
+
+We can't hope to understand code by reading it unless the code is _clear_. The next section discusses this important property of good code.
 
 <!--
 When I refer to "correctness" in this book, I don't mean correctness according to some external standard. Correct code, as far as I'm concerned, is code that does what you meant it to do. If we're confining our view of programming to the act of typing code into a computer, that's really the best we can hope to achieve.

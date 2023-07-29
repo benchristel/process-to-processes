@@ -85,31 +85,28 @@
 <p>A software process is the running instantiation of a program. Programs are static data: bytes of code written to a file. Processes, by contrast, are dynamic, mercurial; real and yet intangible. In the same way that sheet music comes to life when an orchestra performs it, a program comes to life by directing the movements of a process.</p>
 <pre><code>   program     : computer  : process
 :: sheet music : orchestra : concert
-</code></pre>
-<p>On a macOS or Linux system, you can list the currently running processes by running <code>ps aux</code> at a terminal. A new process is created every time you run a program. For example, if you run <code>node</code> to start a JavaScript REPL, that creates a process. A single program can give rise to multiple concurrent processes. For example, if you open multiple terminal windows, you can run <code>node</code> in each one. The program <code>node</code> is unaffected by this; it remains, unchanging, on disk. The several <em>processes</em> instantiated from the program are identified (by the operating system) by different process IDs (PIDs), each associated with an independent <em>state</em>. The operating system arranges things so that each process&#39;s state evolves according to the rules of its program. (Note: this model of how processes work is extremely simplified, but it is adequate for the purposes of writing JavaScript.)</p>
+</code></pre><p>On a macOS or Linux system, you can list the currently running processes by running <code>ps aux</code> at a terminal. A new process is created every time you run a program. For example, if you run <code>node</code> to start a JavaScript REPL, that creates a process. A single program can give rise to multiple concurrent processes. For example, if you open multiple terminal windows, you can run <code>node</code> in each one. The program <code>node</code> is unaffected by this; it remains, unchanging, on disk. The several <em>processes</em> instantiated from the program are identified (by the operating system) by different process IDs (PIDs), each associated with an independent <em>state</em>. The operating system arranges things so that each process&#39;s state evolves according to the rules of its program. (Note: this model of how processes work is extremely simplified, but it is adequate for the purposes of writing JavaScript.)</p>
 <p>One way to understand code is to &quot;simulate&quot;, in our heads, the process it produces. I put &quot;simulate&quot; in quotes because this &quot;simulation&quot; <em>is</em> a real computational process. A mental process can perform useful computational work just as a silicon-based one can, as we can see in the following example:</p>
-<pre><code class="language-js">const plain  = &quot;abcdefghijklmnopqrstuvwxyz&quot;
-const cipher = &quot;nopqrstuvwxyzabcdefghijklm&quot;
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> plain  = <span class="hljs-string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>
+<span class="hljs-keyword">const</span> cipher = <span class="hljs-string">&quot;nopqrstuvwxyzabcdefghijklm&quot;</span>
 
-function caesarCipher(s) {
-  let result = &quot;&quot;
-  for (const char of s) {
-    result += cipher[plain.indexOf(char)] ?? char
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">caesarCipher</span>(<span class="hljs-params">s</span>) {
+  <span class="hljs-keyword">let</span> result = <span class="hljs-string">&quot;&quot;</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> char <span class="hljs-keyword">of</span> s) {
+    result += cipher[plain.<span class="hljs-title function_">indexOf</span>(char)] ?? char
   }
-  return result
+  <span class="hljs-keyword">return</span> result
 }
 
-let deciphered = caesarCipher(&quot;terng juvgr junyr&quot;)
-</code></pre>
-<p>If you can simulate in your head (or on paper) the process of running this code, you will obtain the knowledge of what the ciphertext <code>&quot;terng juvgr junyr&quot;</code> means, just as well as if you had run the program on a computer. The mental process is <em>equivalent</em> to the computerized one—though it is quite a bit less efficient.</p>
+<span class="hljs-keyword">let</span> deciphered = <span class="hljs-title function_">caesarCipher</span>(<span class="hljs-string">&quot;terng juvgr junyr&quot;</span>)
+</code></pre><p>If you can simulate in your head (or on paper) the process of running this code, you will obtain the knowledge of what the ciphertext <code>&quot;terng juvgr junyr&quot;</code> means, just as well as if you had run the program on a computer. The mental process is <em>equivalent</em> to the computerized one—though it is quite a bit less efficient.</p>
 <p>This is not true for every program, however. Consider this one:</p>
-<pre><code class="language-js">function showDate() {
-  document.write(new Date())
+<pre><code class="hljs language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">showDate</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>())
 }
 
-showDate()
-</code></pre>
-<p>The purpose of this program is to display the current date and time on an HTML page. We can only simulate its process in our heads at a very abstract level, by imagining potential times that it might display and what they would look like on a computer screen. Whereas the mental process for the <code>caesarCipher</code> function could proceed very concretely, and produce actual knowledge, our mental process for <code>showDate</code> cannot produce the knowledge or the effect that the program would produce when run on a computer. We can&#39;t pluck knowledge of the current time out of thin air, nor can we telekinetically project text into our web browser. Thus, the process of mentally simulating this program is fundamentally incommensurate with the process produced by running it on a computer.</p>
+<span class="hljs-title function_">showDate</span>()
+</code></pre><p>The purpose of this program is to display the current date and time on an HTML page. We can only simulate its process in our heads at a very abstract level, by imagining potential times that it might display and what they would look like on a computer screen. Whereas the mental process for the <code>caesarCipher</code> function could proceed very concretely, and produce actual knowledge, our mental process for <code>showDate</code> cannot produce the knowledge or the effect that the program would produce when run on a computer. We can&#39;t pluck knowledge of the current time out of thin air, nor can we telekinetically project text into our web browser. Thus, the process of mentally simulating this program is fundamentally incommensurate with the process produced by running it on a computer.</p>
 <p>It seems that there are two types of processes:</p>
 <ol>
 <li>Those that can produce their intended result when carried out mentally.</li>
@@ -133,25 +130,23 @@ showDate()
 Symbolic processes aren&#39;t dependent on the operating system version, the state of the user&#39;s files, the current time or timezone, or services running on some other computer (a.k.a. &quot;the cloud&quot;). There are no
 &quot;works on my machine&quot; bugs in purely symbolic code.</p>
 <p>Consider the following fragment of a NodeJS program, which reads a config file if it exists, and creates it if not.</p>
-<pre><code class="language-js">// TODO: fix pseudocode
-const configFilename = &quot;.myconfig&quot;
-function readConfig() {
-  fs.exists(configFilename).then(() =&gt; {
-    return fs.readFile(configFilename, &quot;utf-8&quot;)
-  }).catch(() =&gt; {
-    return fs.writeFile(configFilename, defaultConfig, &quot;utf-8&quot;)
-      .then(() =&gt; defaultConfig)
+<pre><code class="hljs language-js"><span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> fix pseudocode</span>
+<span class="hljs-keyword">const</span> configFilename = <span class="hljs-string">&quot;.myconfig&quot;</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">readConfig</span>(<span class="hljs-params"></span>) {
+  fs.<span class="hljs-title function_">exists</span>(configFilename).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">return</span> fs.<span class="hljs-title function_">readFile</span>(configFilename, <span class="hljs-string">&quot;utf-8&quot;</span>)
+  }).<span class="hljs-title function_">catch</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">return</span> fs.<span class="hljs-title function_">writeFile</span>(configFilename, defaultConfig, <span class="hljs-string">&quot;utf-8&quot;</span>)
+      .<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> defaultConfig)
   })
 }
-</code></pre>
-<p>This handles two of the possible cases, but leaves out many others. What if <code>.myconfig</code> is a directory, not a regular file? What if it exists, but isn&#39;t readable? What if the file doesn&#39;t exist, and the user doesn&#39;t have write permissions for the directory in which this program would be created?</p>
+</code></pre><p>This handles two of the possible cases, but leaves out many others. What if <code>.myconfig</code> is a directory, not a regular file? What if it exists, but isn&#39;t readable? What if the file doesn&#39;t exist, and the user doesn&#39;t have write permissions for the directory in which this program would be created?</p>
 <p>While these edge cases might be rare, they are likely to create frustration for users and programmers alike. When users encounter such issues, their experience will simply be that the program &quot;doesn&#39;t work&quot;. Programmers fielding bug reports probably won&#39;t be able to reproduce the bug on their machine. Everyone suffers.</p>
 <p>Consider an alternative design where the program reads its configuration through command line arguments instead of a file:</p>
-<pre><code class="language-js">function readConfig() {
-  return process.argv.slice(2)
+<pre><code class="hljs language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">readConfig</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">return</span> process.<span class="hljs-property">argv</span>.<span class="hljs-title function_">slice</span>(<span class="hljs-number">2</span>)
 }
-</code></pre>
-<p>This code is purely symbolic: If you pass the same command-line arguments, the program&#39;s configuration will be the same, on any system. This code avoids the &quot;works on my machine&quot; bug.</p>
+</code></pre><p>This code is purely symbolic: If you pass the same command-line arguments, the program&#39;s configuration will be the same, on any system. This code avoids the &quot;works on my machine&quot; bug.</p>
 <p>You might argue that command-line arguments provide a worse user experience than a config file. While this depends on the situation and the user, there are certainly cases where I would agree with this criticism. The idea I&#39;d like you to take away from this chapter is not &quot;effects are evil&quot; but &quot;effects have risks and costs&quot;. It&#39;s up to you and your team to weigh the risk and cost of an effect against the benefit, and treat effectful code with the extra care it deserves.</p>
 <h2 id="symbolic-code-is-easier-to-test">Symbolic Code Is Easier to Test</h2>
 <h2 id="symbolic-code-is-easier-to-reuse">Symbolic Code Is Easier to Reuse</h2>
