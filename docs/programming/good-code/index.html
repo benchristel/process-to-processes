@@ -80,28 +80,35 @@
 <p>Everyone has a slightly different idea of what &quot;good code&quot; is, and I encourage you to develop your own. By way of offering inspiration, though, here is my definition.</p>
 <p>Good code is code that works for the needs of today, and is easy to build on to meet the needs of tomorrow. Specifically, good code is:</p>
 <ul>
-<li><a href="correctness.html">Correct</a>: it does what its programmers intended.<ul>
+<li><a href="correctness.html">Correct</a>: The code does what its programmers intended.<ul>
 <li>includes functional correctness, maybe performance?</li>
 </ul>
 </li>
-<li><a href="economy.html">Economical</a>: it doesn&#39;t cost too much to develop, release, or run.<ul>
-<li>development time</li>
-<li>execution time - as efficient as it needs to be to satisfy its users.</li>
-<li><a href="trustworthiness.html">Trustworthy</a>: its correctness and performance characteristics are easy to verify. If our code isn&#39;t trustworthy, we&#39;ll take longer to release it, which has an opportunity cost.</li>
+<li><a href="economy.html">Economical</a>: The code doesn&#39;t cost too much to develop, release, or run.<ul>
+<li>Inexpensive: the code is easy and cheap to improve.</li>
+<li>Fast: it is as efficient as it needs to be to satisfy its users.</li>
+<li><a href="trustworthiness.html">Trustworthy</a>: The code&#39;s correctness and performance characteristics are easy to verify. If our code isn&#39;t trustworthy, we&#39;ll take longer to release it, which has an opportunity cost.<ul>
+<li><a href="clarity.html">Clear</a>: It is obvious from reading the code that it does what it&#39;s supposed to do.</li>
+<li><a href="simplicity.html">Simple</a>: Every conditional, loop, and mutable variable is demonstrably necessary.</li>
+<li><a href="testability.html">Testable</a>: It is easy to confirm empirically that the code does what it&#39;s supposed to, by running it.</li>
+<li><a href="provability.html">Provable</a>: Desirable properties of the code can be proved by formal methods. Typechecking is one common way of proving things about code.</li>
+<li><a href="abstraction.html">Abstract</a>: Once we understand what a named piece of code does, we can compress our mental representation of it into a form that is easy to recall and manipulate. We don&#39;t have to think about the internals of the code every time we use it.</li>
 </ul>
 </li>
-<li><a href="sustainability.html">Sustainable</a>: it doesn&#39;t impede the organization from accomplishing its goals. In particular, good code doesn&#39;t impede its own further development.<ul>
-<li><a href="comfort.html">Comfortable</a>: it is simply nice to work with and live in. It seems at ease in its own skin, and isn&#39;t trying to be anything it doesn&#39;t need to be. Concretely, that means it is constrained only by what really matters: the users&#39; needs, the programmers&#39; human strengths and weaknesses, and the development tools available.</li>
-<li><a href="repairability.html">Repairable</a>: good code has &quot;seams&quot; where you can pull it apart, to repair, replace, or upgrade just one piece of it.</li>
-<li><a href="#">Educational</a>: it helps maintain its own quality by being exemplary. Good code is merely unsurprising, but great code can teach you something new about how to solve a problem.</li>
 </ul>
 </li>
-<li><a href="mutual-benefit.html">Mutually beneficial</a>: it has positive externalities, conveying benefit to all the people and systems it touches.<ul>
+<li><a href="sustainability.html">Sustainable</a>: The code doesn&#39;t impede the organization from accomplishing its goals. In particular, good code doesn&#39;t impede its own further development.<ul>
+<li><a href="comfort.html">Comfortable</a>: The code is simply nice to work with and live in. It seems at ease in its own skin, and isn&#39;t trying to be anything it doesn&#39;t need to be. Concretely, that means it is constrained only by what really matters: the users&#39; needs, the programmers&#39; human strengths and weaknesses, and the development tools available.</li>
+<li><a href="repairability.html">Repairable</a>: Good code has &quot;seams&quot; where you can pull it apart, to repair, replace, or upgrade just one piece of it. A good system lets you see into its internal state, so you can easily diagnose problems.</li>
+<li><a href="#">Educational</a>: Good code helps maintain its own quality by being exemplary. Code that is merely <em>good</em> is just unsurprising, but great code can teach you something new about how to solve a problem. &quot;You know you are working on clean code when each routine you read turns out to be pretty much what you expected. You can call it beautiful code when the code also makes it look like the language was made for the problem.&quot; —Ward Cunningham</li>
+</ul>
+</li>
+<li><a href="mutual-benefit.html">Mutually beneficial</a>: Good code has positive externalities, conveying benefit to all the people and systems it touches.<ul>
 <li><a href="reusability.html">Reusable</a>: Repairability and trustworthiness produce reusability. A module that can be isolated from the rest of its program for repair can also, quite possibly, be used in other contexts—perhaps in entirely different programs.</li>
 </ul>
 </li>
 </ul>
-<p>This list of qualities isn&#39;t meant to be exhaustive, and the items in it aren&#39;t necessarily orthogonal.</p>
+<p>This list of qualities isn&#39;t meant to be exhaustive, and the items in it aren&#39;t necessarily orthogonal. For example, you might argue that clarity and testability contribute more to sustainability than to economy. And I might agree with you. All of these qualities are interrelated.</p>
 <p>In the chapters that follow, we&#39;ll explore these qualities, and ways we might obtain them, in more detail.</p>
 		</article>
 
