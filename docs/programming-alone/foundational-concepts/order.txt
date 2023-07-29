@@ -1,7 +1,0 @@
-processes.html
-effects.html
-behavior.html
-quality.html
-bugs.html
-centers.html
-dependency.html

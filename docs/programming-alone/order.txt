@@ -1,6 +1,0 @@
-smells
-refactorings
-
-!unspecified
-foundational-concepts
-quality

@@ -5,3 +5,7 @@ working-with-others
 user-interfaces
 tao
 authors-notes.html
+
+!unspecified
+glossary.html
+goal.html
