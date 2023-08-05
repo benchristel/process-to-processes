@@ -39,6 +39,26 @@ all branching, iteration, and state
 (except, of course, what you actually need.)
 (You may find you don't need much.)
 
+Divide and conquer
+is the strategy of both the novice and the master
+but their approaches are very different.
+
+The novice begins by chopping the problem
+first into large pieces, then finer and finer.
+The pieces form a bewildering puzzle.
+He hacks until his face is red and his knife is dull.
+
+The master looks at the problem from every angle.
+Then she simply lays the pieces side by side.
+There seems to be no need to cut, no need for a knife.
+The problem flakes apart like perfectly-cooked fish.
+There is something eternal in the solution,
+as if it had always been there.
+
+I want to write code like <em>that</em>—
+Code that resounds with one clear note.
+It is an ideal, rarely attained.
+
 If you are leading a tiger,
 keep the leash tight.
 Hold danger close—that way, you know where it is.
