@@ -33,6 +33,7 @@ Delete the code at your earliest convenience.
 The knowledge lives on in the whispers of the grass.
 
 Simplicity is the antidote to stupidity.
+Therefore, shun complexity.
 Delete all conditionals, loops, and variables,
 all branching, iteration, and state
 (except, of course, what you actually need.)
