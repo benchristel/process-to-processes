@@ -21,7 +21,7 @@ In a healthy system, programmers have a certain degree of autonomy. Managers set
 
 So, the health of the system rests on trust, and trust rests on programmers' expertise. In order for the system to be truly healthy, we, the programmers, must be experts. We have to continuously improve our skills and practices. That's where this book comes in.
 
-Some other resources on software engineering seem to assume that buggy software, poor-quality code, etc. are due to programmers' moral failings: their immaturity, laziness, or resistance to change. This idea I wholeheartedly reject. I believe that most people want to do their best work and to do the right thing—though the rightest thing they know how to do may still be ineffective.
+Some other resources on software engineering seem to assume that buggy software, poor-quality code, etc. are due to programmers' moral failings: their immaturity, laziness, or resistance to change. This idea I wholeheartedly reject. I believe that most people want to do their best work and to do the right thing—though the rightest thing they know how to do may still be ineffective. The way to make software better is not to will ourselves to "be more professional," whatever that means. Instead, we should be building up our expertise so that we can make the computers do what we want, every time, with no fuss, slop, or panic.
 
 <!--
 One of my own experiences may be instructive here. In 2015, the consultancy I was working for took on a project for a Fortune Global 50 company based in Germany. The project had many challenges, both social and technical, but the thing that ultimately killed it was the quality of our code. After working on the product (a phone app) for almost a year, we handed it off to the client. Unfortunately, the programmers at the client company found they couldn't understand or improve our code, and they ended up throwing all of it away and rewriting it.
@@ -36,8 +36,7 @@ I should clarify that the consultancy I worked for prided itself on its presumed
 Unfortunately, the wake-up call came too late. Our contract with the German client ended on (understandably) lukewarm terms. We failed to close the next and only lead in our pipeline, and a few months later our office was disbanded. (Amazingly—and I don't know if this was charity or business savviness—no one got laid off. We all had the opportunity to move to other, internal projects within the parent company.)
 -->
 
-I am an optimist. I believe that we all, deep down, want to do our best work. We all want our work to create joy and not create suffering. The problems in our industry are due to lack of skill, not lack of will—which I think is an optimistic take, because skills can be learned.
-
+I believe that we all, deep down, want to do our best work. We all want our work to create joy and not create suffering. The problems in our industry are due to lack of skill, not lack of will—which I think is an optimistic take, because skills can be learned.
 
 ## Software Development Skills
 
@@ -67,6 +66,15 @@ In particular, test-driven development, object-oriented programming, functional 
 
 <!--
 Indeed, I see the primary role of this book as being to curate what has come before. Few of the ideas in this book originate with me. Most of them are venerable ideas from the annals of software engineering, filtered through my own experience working on real codebases totaling millions of lines.
+
+## The Role of Management
+
+Above, I wrote about the responsibility of individual programmers to the organization: to reliably deliver working software within a budget. Managers, too, have responsibilities both to their team and to the wider organization.
+
+Day-to-day, a manager's primary purpose is to shield their team from corporate bullshit. So what if your company has new leadership, new values, a new direction, new policies, or a new name? Unless these changes impinge on _what the software is supposed to do_, they do not concern programmers one iota. The programmers' full attention must be focused on keeping the development system healthy, and continuously making changes to the software to bring it closer to its desired state. Everything else is a distraction.
+
+Managers must also be concerned with the health of the software development system, because this often cannot be maintained by programmers alone, without support from the wider organization. Suppose, for example, that the programmers don't have an easy way to try out their changes in a "staging" environment before releasing them to production. They'd like to set up such a staging environment, but in order to do so, they need to rent computing resources (e.g. virtual machines) from a vendor. Getting these resources likely involves many people outside the team.
+
 -->
 
 ## Contents

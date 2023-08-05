@@ -1,3 +1,4 @@
+proem.html
 intro
 prolegomena
 programming
