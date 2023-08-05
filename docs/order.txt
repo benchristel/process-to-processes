@@ -8,4 +8,3 @@ authors-notes.html
 
 !unspecified
 glossary.html
-goal.html
