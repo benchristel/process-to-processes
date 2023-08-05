@@ -30,6 +30,7 @@ Learning is the work.
 Code is merely the husk of learning.
 Cast off the husk and save the kernel.
 Delete the code at your earliest convenience.
+The knowledge lives on in the whispers of the grass.
 
 Simplicity is the antidote to stupidity.
 Delete all conditionals, loops, and variables,
