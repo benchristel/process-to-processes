@@ -1,6 +1,5 @@
 foundational-concepts
 
 !unspecified
-clarity.html
 good-code
 testing.html

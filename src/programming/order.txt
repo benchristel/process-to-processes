@@ -1,7 +1,5 @@
 foundational-concepts
 
 !unspecified
-clarity.html
-creation-and-destruction.html
 good-code
 testing.html
