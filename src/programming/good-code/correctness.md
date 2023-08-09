@@ -4,30 +4,44 @@ I have a simple definition of "correct code": it's code that does what you meant
 
 It's hard for people to agree on what constitutes "correct" software. Users might define it as software that meets their needs and works the way they expect. But every user wants something slightly different. More technocratically-minded people might insist that correctness is the degree to which software conforms to some formal specification.
 
-For programmers, both of these views of correctness are distractions. We can't know exactly what users want, and there's usually no formal spec for what we're making. We need a practical view of correctness that can guide our actions moment by moment toward good outcomes.
+For most programmers, both of these views of correctness are distractions. We can't know exactly what users want, and there's usually no formal spec for what we're making. We need a practical view of correctness that can guide our actions moment by moment toward good outcomes.
 
-"Code that does what you meant it to do" isn't the same thing as "good software", but it's clearly a prerequisite. If I write some code and it _doesn't_ do what I meant, something's very likely amiss.
+"Code that does what you meant it to do" is such a view. It isn't the same thing as "good software", but it's clearly a prerequisite. If I write some code and it _doesn't_ do what I meant, something's very likely to go amiss in the resulting product.
 
 > Set aside "correctness" [...] Instead think about the question on our minds as we write code, the question we had from our first moment of coding, and that we still ask as we do our jobs today: is the software doing what I expect?
 >
 > —[David Bryant Copeland, "Actual Reasons to Use TDD"](https://naildrivin5.com/blog/2022/09/06/actual-reasons-to-use-tdd.html)
 
-As programmers, we can't directly ensure that the software we create is valuable, useful, or desirable. For better or for worse, we're not usually responsible for decisions at that level. What we _are_ responsible for is understanding the software in our clients' imaginations, and then faithfully translating that imagined behavior into code.
+As programmers, we can't directly ensure that the software we create is valuable, useful, or desirable. For better or for worse, we're not usually responsible for decisions at that level. What we _are_ responsible for is making sure that the software's actual behavior matches our current best understanding of what our clients want.
 
 ## Ensuring Correctness
 
-If we want to make sure our code is doing what we meant it to do, there are a couple strategies we can apply:
+Our two main techniques for ensuring that code does what we meant it to do are:
 
 - Reading the code
 - Running the code
 
-Code can be "read" by people (think pair-programming, code review, or other inspections) or machines (via linters and typecheckers). All of these activities are forms of _static analysis_.
+Code can be read by people (e.g. during programming or code review) or it can be "read" by machines (e.g. linters and typecheckers). In each of these cases, the task being performed is a type of _static analysis_.
 
-Static analysis has limits. [Rice's theorem](https://en.wikipedia.org/wiki/Rice%27s_theorem) states that all non-trivial semantic properties of programs are undecidable; that is, it's not possible to write a program that can look at arbitrarily-structured code and reliably determine whether it has some desired correctness property. Consider the halting problem as a particular case: it's not even possible to write a program that reliably determines whether another program will enter an infinite loop.
+Static analysis has limits. [Rice's theorem](https://en.wikipedia.org/wiki/Rice%27s_theorem) states that all non-trivial semantic properties of programs are undecidable; that is, it's not possible to write a program that can look at arbitrarily-structured code and reliably determine whether it has some desired correctness property. Consider the halting problem as a particular case: given an arbitrary program, it's not possible for an algorithm to reliably determine whether it contains an infinite loop.
 
-Therefore, we also generally have to run our programs to gain confidence that they are working—i.e. we have to _test_ them.
+You might think that human beings, by virtue of not being driven by simple algorithms, might be able to overcome the limits of static analysis, and (for example) solve the halting problem. But they can't. While humans are more complex than any (current) computer, the limits on computation posed by Rice's theorem are mathematical, not merely practical—that is, they apply to _all_ systems that compute, no matter how complex. So unless you want to claim that humans can perform an infinite amount of computation in a finite time, you have to conclude that we're not going to solve the halting problem anytime soon.
 
-Testing, though, relies on reading the code to know where the error-prone parts are, and get a sense of when we've covered all the cases. Therefore, our ability to test relies on our ability to read and understand the code.
+The limits of static analysis mean that we can't rely on it alone. We generally have to run our programs to gain confidence that they are working—i.e. we have to _test_ them.
+
+Unfortunately, testing, too, has limits. As Edsger Dijkstra put it, testing "can be used to show the presence of bugs, but never to show their absence." While a test can demonstrate that a bug exists, no feasible amount of testing can prove a program bug-free, since bugs might always be hiding in the combinations of inputs we haven't tested.
+
+Effective testing relies on our ability to read and understand the code.
+Inspecting the code being tested gives us a basis for believing that testing we've performed is sufficient to describe the code's behavior—for example, a five-line function is unlikely to need hundreds of tests to get all the bugs out. Effective testing relies on our ability to read the code and see how each part of it corresponds to some wrinkle of its behavior. Reading the code gives us a sense of where the error-prone parts are, thus where to focus our testing. By reading the code, we can also get a sense of when our tests have covered all the cases. Therefore, our ability to test relies on our ability to read and understand the code.
+
+Typechecking and testing complement each other, so to get the best possible picture of our code's correctness we need to use both. Typecheckers can prove definitively that we haven't made certain types of common mistakes, like forgetting a `return` keyword or treating a string as if it's a number. Testing can show that our code does what we wanted it to do in at least a small set of cases. Here is one way of thinking about the difference:
+
+- Types prove that **the code "always does something"** —that is, it won't throw a type error at runtime because a value was used improperly.
+- Tests prove that **the code sometimes does the right thing**.
+
+Neither of these statements, or even both together, can prove code correct, but it should be clear that both are useful statements to be able to make. We want to be sure these statements are true of our code.
+
+
 
 We can't hope to understand code by reading it unless the code is _clear_. The next section discusses this important property of good code.
 
