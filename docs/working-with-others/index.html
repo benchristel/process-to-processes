@@ -3,30 +3,43 @@
 	<head>
 		<title>Part II: Working With Others</title>
 		<style>
+			* {
+				box-sizing: border-box;
+			}
+			html, body {
+				margin: 0;
+				padding: 0;
+			}
 			@media screen {
 			  body {
 					background-color: #f4e8d0;
 					max-width: 700px;
-					margin: 8px auto;
+					margin: 0 auto;
 				}
 			}
-			nav {
+			.navbar {
+				padding: 8px 0;
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
-			}
-			nav > div {
-				flex-grow: 0;
+				flex-wrap: wrap;
 			}
 			nav a {
 				display: inline-block;
-				padding: 0 0.5em 0.5ex;
+				white-space: nowrap;
 			}
-			nav a + a {
+			nav a.mdsite-prev-link,
+			nav a.mdsite-next-link {
+				padding: 0 0.5em;
+			}
+			nav a.mdsite-prev-link + a {
 				border-left: 1px solid black;
 			}
-			nav a:hover {
-				background: #0001;
+			.mdsite-breadcrumb > a:not(:last-child)::after {
+				display: inline-block;
+				padding: 0 0.5em 0 0.2em;
+				color: #000;
+				content: "/";
 			}
 			article {
 				margin: 0 16px;
@@ -62,23 +75,18 @@
 				padding: 0.5em 2em;
 				background: #fff4;
 				font-style: italic;
-				/* box-shadow: inset 1.5em 0 0 -1em #f804;
-				background-color: #fff8;
-				margin-left: 1.5em;
-				
-				font-style: italic; */
 			}
 		</style>
 	</head>
 	<body>
-		<nav>
+		<div class="navbar">
 			<div>
-				<a href="../index.html">Home</a><a href="../index.html">Up</a><a href="../programming/testing.html" class="mdsite-prev-link">Prev</a>
+				<nav aria-label="Breadcrumb" class="mdsite-breadcrumb"><a href="../index.html">Process to Processes</a></nav>
 			</div>
-			<div>
-				<a href="estimates.html" class="mdsite-next-link">Next</a>
-			</div>
-		</nav>
+			<nav>
+				<a href="../programming/testing.html" class="mdsite-prev-link">Prev</a><a href="estimates.html" class="mdsite-next-link">Next</a>
+			</nav>
+		</div>
 		<hr/>
 
 		<article>
@@ -87,14 +95,13 @@
 		</article>
 
 		<hr/>
-		<nav>
+		<div class="navbar">
 			<div>
-				<a href="../index.html">Home</a><a href="../index.html">Up</a><a href="../programming/testing.html" class="mdsite-prev-link">Prev</a>
 			</div>
-			<div>
-				<a href="estimates.html" class="mdsite-next-link">Next</a>
-			</div>
-		</nav>
+			<nav>
+				<a href="../programming/testing.html" class="mdsite-prev-link">Prev</a><a href="estimates.html" class="mdsite-next-link">Next</a>
+			</nav>
+		</div>
 		<script>
 document.onkeydown = (e) => {
 	switch (e.key) {
