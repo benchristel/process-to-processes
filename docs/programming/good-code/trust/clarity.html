@@ -73,10 +73,10 @@
 	<body>
 		<nav>
 			<div>
-				<a href="../../index.html">Home</a><a href="index.html">Up</a><a href="correctness.html" class="mdsite-prev-link">Prev</a>
+				<a href="../../../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="economy.html" class="mdsite-next-link">Next</a>
+				<a href="../economy.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<hr/>
@@ -96,7 +96,8 @@
 <li>Variable and function names.</li>
 <li>Comments.</li>
 </ul>
-<p>However, the most powerful way to make code communicate intent is to make it <a href="simplicity.html">simple</a>. People have different definitions of what &quot;simple&quot; code is, but I have a very specific definition in mind. In simple code, every conditional, iteration statement (e.g. loop), and variable is there for a demonstrable reason. None of them can be eliminated without rendering the code incorrect.</p>
+<p>However, the most powerful way to make code communicate intent is to make it <a href="simplicity.html">simple</a>. People have different definitions of what &quot;simple&quot; code is, but I have a very specific definition in mind. In simple code, every conditional, iteration statement (e.g. loop), and variable is there for a demonstrable reason—preferably actually demonstrated by a test. None of them can be eliminated without rendering the code incorrect.</p>
+<p>Some programmers seem to believe that making code simple means eliminating abstractions—that is, minimizing the number of function and class definitions. While I think that reducing abstraction is sometimes the right move, that&#39;s not what I mean by simplicity. The question of whether a given abstraction hurts or helps the code as a whole is separate from simplicity.</p>
 <!--
 
 ```js
@@ -122,35 +123,48 @@ describe("hasAVowel", () => {
   // ...
 })
 ```
--->
-<h2 id="assessing-correctness">Assessing Correctness</h2>
-<p>More subtly, code can make it obvious by its structure that certain undesirable states or behaviors are in fact impossible. Consider the following two snippets of code:</p>
-<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> messages = [<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;goodbye&quot;</span>]
-<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>
-<span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
-  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(messages[i])
+
+## Assessing Correctness
+
+
+
+More subtly, code can make it obvious by its structure that certain undesirable states or behaviors are in fact impossible. Consider the following two snippets of code:
+
+```js
+const messages = ["hello", "goodbye"]
+let i = 0
+while (true) {
+  console.log(messages[i])
   i++
-  <span class="hljs-keyword">if</span> (i === messages.<span class="hljs-property">length</span>) {
-    <span class="hljs-keyword">break</span>
+  if (i === messages.length) {
+    break
   }
 }
-</code></pre><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> messages = [<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;goodbye&quot;</span>]
-<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; messages.<span class="hljs-property">length</span>; i++) {
-  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(messages[i])
+```
+
+```js
+const messages = ["hello", "goodbye"]
+for (i = 0; i < messages.length; i++) {
+  console.log(messages[i])
 }
-</code></pre><p>These examples do the same thing, but it&#39;s more obvious that the <code>for</code> loop is guaranteed to terminate.</p>
-<p>In TypeScript, we can craft types to precisely describe the possible values that a variable might hold. More on this in future chapters.</p>
+```
+
+These examples do the same thing, but it's more obvious that the `for` loop is guaranteed to terminate.
+
+In TypeScript, we can craft types to precisely describe the possible values that a variable might hold. More on this in future chapters.
+-->
+
 <h2 id="limitations-of-clarity">Limitations of Clarity</h2>
-<p>Clear code is easier to read, but in large codebases, the ability to read the code is not sufficient to ensure that we can change it . We don&#39;t have <em>time</em> to read all the code; we need code that lets us avoid reading as much of it as possible. The quality of code that makes this tenable is <em>abstractness</em>, which will be explored in the next chapter.</p>
+<p>Clarity makes code easier to read, but in large codebases, it&#39;s not enough. We don&#39;t have <em>time</em> to read all the code; we need code that lets us avoid reading as much of it as possible. The quality of code that makes this tenable is <em>abstractness</em>, which will be explored in the next chapter.</p>
 		</article>
 
 		<hr/>
 		<nav>
 			<div>
-				<a href="../../index.html">Home</a><a href="index.html">Up</a><a href="correctness.html" class="mdsite-prev-link">Prev</a>
+				<a href="../../../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="economy.html" class="mdsite-next-link">Next</a>
+				<a href="../economy.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<script>

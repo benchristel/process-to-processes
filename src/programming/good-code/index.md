@@ -9,11 +9,11 @@ Good code is code that works for the needs of today, and is easy to build on to 
 - [Correct](correctness.html): The code does what its programmers intended.
   - includes functional correctness, maybe performance?
 - Trustworthy: The code's correctness and performance characteristics are easy to verify. If we don't trust our code, we'll take longer to release it, which has an opportunity cost.
-    - [Clear](clarity.html): It is obvious from reading the code that it does what it's supposed to do.
-    - [Simple](simplicity.html): Every conditional, loop, and mutable variable is demonstrably necessary.
-    - [Testable](testability.html): It is easy to confirm empirically that the code does what it's supposed to, by running it.
-    - [Provable](provability.html): Desirable properties of the code can be proved by formal methods. Typechecking is one common way of proving things about code.
-    - [Abstract](abstraction.html): Once we understand what a named piece of code does, we can compress our mental representation of it into a form that is easy to recall and manipulate. We don't have to think about the internals of the code every time we use it.
+    - [Clear](trust/clarity.html): It is obvious from reading the code that it does what it's supposed to do.
+    - [Abstract](trust/abstraction.html): Once we understand what a named piece of code does, we can compress our mental representation of it into a form that is easy to recall and manipulate. We don't have to think about the internals of the code every time we use it.
+    <!-- - [Simple](simplicity.html): Every conditional, loop, and mutable variable is demonstrably necessary. -->
+    - [Testable](trust/testability.html): It is easy to confirm empirically that the code does what it's supposed to, by running it.
+    - [Provable](trust/provability.html): Desirable properties of the code can be proved by formal methods. Typechecking is one common way of proving things about code.
 - [Economical](economy.html): The code doesn't cost too much to develop, release, or run.
   - Inexpensive: the code is easy and cheap to improve.
   - Fast: it is as efficient as it needs to be to satisfy its users.

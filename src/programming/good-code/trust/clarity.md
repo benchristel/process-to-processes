@@ -7,7 +7,7 @@ Code is clear when:
 
 Clarity is, in theory, orthogonal to correctness. It's possible for code to be clear but not correct, or correct but not clear. However, the two qualities are often found together, because when code is clear it's much easier to make it correct.
 
-## Communicating Intent
+## Simplicity
 
 Code can help us understand its author's intent in many different ways. The most commonly cited are:
 
@@ -15,8 +15,9 @@ Code can help us understand its author's intent in many different ways. The most
 - Variable and function names.
 - Comments.
 
-However, the most powerful way to make code communicate intent is to make it [simple](simplicity.html). People have different definitions of what "simple" code is, but I have a very specific definition in mind. In simple code, every line does something useful. I often read functions where much of the code can be deleted without affecting the function's behavior.
+However, the most powerful way to make code communicate intent is to make it [simple](simplicity.html). People have different definitions of what "simple" code is, but I have a very specific definition in mind. In simple code, every conditional, iteration statement (e.g. loop), and variable is there for a demonstrable reason—preferably actually demonstrated by a test. None of them can be eliminated without rendering the code incorrect.
 
+Some programmers seem to believe that making code simple means eliminating abstractions—that is, minimizing the number of function and class definitions. While I think that reducing abstraction is sometimes the right move, that's not what I mean by simplicity. The question of whether a given abstraction hurts or helps the code as a whole is separate from simplicity.
 <!--
 
 ```js
@@ -42,7 +43,7 @@ describe("hasAVowel", () => {
   // ...
 })
 ```
--->
+
 ## Assessing Correctness
 
 
@@ -71,7 +72,8 @@ for (i = 0; i < messages.length; i++) {
 These examples do the same thing, but it's more obvious that the `for` loop is guaranteed to terminate.
 
 In TypeScript, we can craft types to precisely describe the possible values that a variable might hold. More on this in future chapters.
+-->
 
 ## Limitations of Clarity
 
-Clear code is easier to read, but in large codebases, the ability to read the code is not sufficient. We don't have _time_ to read all the code; we need code that lets us avoid reading as much of it as possible. The quality of code that makes this tenable is _trustworthiness_, which will be explored in the next chapter.
+Clarity makes code easier to read, but in large codebases, it's not enough. We don't have _time_ to read all the code; we need code that lets us avoid reading as much of it as possible. The quality of code that makes this tenable is _abstractness_, which will be explored in the next chapter.

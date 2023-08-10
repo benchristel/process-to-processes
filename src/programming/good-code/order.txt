@@ -1,5 +1,5 @@
 correctness.html
-clarity.html
+trust
 economy.html
 sustainability
 mutual-benefit

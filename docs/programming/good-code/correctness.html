@@ -76,7 +76,7 @@
 				<a href="../../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="clarity.html" class="mdsite-next-link">Next</a>
+				<a href="trust/index.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<hr/>
@@ -92,26 +92,43 @@
 <p>—<a href="https://naildrivin5.com/blog/2022/09/06/actual-reasons-to-use-tdd.html">David Bryant Copeland, &quot;Actual Reasons to Use TDD&quot;</a></p>
 </blockquote>
 <p>As programmers, we can&#39;t directly ensure that the software we create is valuable, useful, or desirable. For better or for worse, we&#39;re not usually responsible for decisions at that level. What we <em>are</em> responsible for is making sure that the software&#39;s actual behavior matches our current best understanding of what our clients want.</p>
-<h2 id="ensuring-correctness">Ensuring Correctness</h2>
-<p>Our two main techniques for ensuring that code does what we meant it to do are:</p>
+<h2 id="assessing-correctness">Assessing Correctness</h2>
+<p>There are a few strategies we can employ to determine whether our code works as we intended:</p>
 <ul>
-<li>Reading the code</li>
-<li>Running the code</li>
+<li>Reading the code to understand it holistically</li>
+<li>Running the code, i.e. testing it</li>
+<li>Proving things about the code, e.g. typechecking it</li>
 </ul>
-<p>Code can be read by people (e.g. during programming or code review) or it can be &quot;read&quot; by machines (e.g. linters and typecheckers). In each of these cases, the task being performed is a type of <em>static analysis</em>.</p>
-<p>Static analysis has limits. <a href="https://en.wikipedia.org/wiki/Rice%27s_theorem">Rice&#39;s theorem</a> states that all non-trivial semantic properties of programs are undecidable; that is, it&#39;s not possible to write a program that can look at arbitrarily-structured code and reliably determine whether it has some desired correctness property. Consider the halting problem as a particular case: given an arbitrary program, it&#39;s not possible for an algorithm to reliably determine whether it contains an infinite loop.</p>
-<p>You might think that human beings, by virtue of not being driven by simple algorithms, might be able to overcome the limits of static analysis, and (for example) solve the halting problem. But they can&#39;t. While humans are more complex than any (current) computer, the limits on computation posed by Rice&#39;s theorem are mathematical, not merely practical—that is, they apply to <em>all</em> systems that compute, no matter how complex. So unless you want to claim that humans can perform an infinite amount of computation in a finite time, you have to conclude that we&#39;re not going to solve the halting problem anytime soon.</p>
-<p>The limits of static analysis mean that we can&#39;t rely on it alone. We generally have to run our programs to gain confidence that they are working—i.e. we have to <em>test</em> them.</p>
-<p>Unfortunately, testing, too, has limits. As Edsger Dijkstra put it, testing &quot;can be used to show the presence of bugs, but never to show their absence.&quot; While a test can demonstrate that a bug exists, no feasible amount of testing can prove a program bug-free, since bugs might always be hiding in the combinations of inputs we haven&#39;t tested.</p>
-<p>Effective testing relies on our ability to read and understand the code.
-Inspecting the code being tested gives us a basis for believing that testing we&#39;ve performed is sufficient to describe the code&#39;s behavior—for example, a five-line function is unlikely to need hundreds of tests to get all the bugs out. Effective testing relies on our ability to read the code and see how each part of it corresponds to some wrinkle of its behavior. Reading the code gives us a sense of where the error-prone parts are, thus where to focus our testing. By reading the code, we can also get a sense of when our tests have covered all the cases. Therefore, our ability to test relies on our ability to read and understand the code.</p>
-<p>Typechecking and testing complement each other, so to get the best possible picture of our code&#39;s correctness we need to use both. Typecheckers can prove definitively that we haven&#39;t made certain types of common mistakes, like forgetting a <code>return</code> keyword or treating a string as if it&#39;s a number. Testing can show that our code does what we wanted it to do in at least a small set of cases. Here is one way of thinking about the difference:</p>
-<ul>
-<li>Types prove that <strong>the code &quot;always does something&quot;</strong> —that is, it won&#39;t throw a type error at runtime because a value was used improperly.</li>
-<li>Tests prove that <strong>the code sometimes does the right thing</strong>.</li>
-</ul>
-<p>Neither of these statements, or even both together, can prove code correct, but it should be clear that both are useful statements to be able to make. We want to be sure these statements are true of our code.</p>
-<p>We can&#39;t hope to understand code by reading it unless the code is <em>clear</em>. The next section discusses this important property of good code.</p>
+<p>I call these <em>confidence-building strategies</em> because while they can&#39;t guarantee that code is 100% correct, they <em>can</em> point out problems. If we diligently apply all the confidence-building strategies and don&#39;t find problems, that gives us grounds for believing that the code might actually be correct.</p>
+<p>The effectiveness of each of the confidence-building strategies depends on the shape of the code. A given program behavior can be encoded in many different ways, and different encodings have different readability, testability, and provability properties. A big part of what distinguishes &quot;good code&quot; from &quot;bad code&quot; is whether each bit of code has readability, testability, and provability in the right proportions to give its makers confidence in the whole system.</p>
+<p>Code that makes it easy to gain confidence in its correctness is <em>trustworthy</em>. In the following section, I&#39;ll describe the properties of trustworthy code in more detail.</p>
+<!--
+Each of these 
+
+Code can be read by people (e.g. during programming or code review) or it can be "read" by machines (e.g. linters and typecheckers). In each of these cases, the task being performed is a type of _static analysis_.
+
+Static analysis has limits. [Rice's theorem](https://en.wikipedia.org/wiki/Rice%27s_theorem) states that all non-trivial semantic properties of programs are undecidable; that is, it's not possible to write a program that can look at arbitrarily-structured code and reliably determine whether it has some desired correctness property. Consider the halting problem as a particular case: given an arbitrary program, it's not possible for an algorithm to reliably determine whether it contains an infinite loop.
+
+You might think that human beings, by virtue of not being driven by simple algorithms, might be able to overcome the limits of static analysis, and (for example) solve the halting problem. But they can't. While humans are more complex than any (current) computer, the limits on computation posed by Rice's theorem are mathematical, not merely practical—that is, they apply to _all_ systems that compute, no matter how complex. So unless you want to claim that humans can perform an infinite amount of computation in a finite time, you have to conclude that we're not going to solve the halting problem anytime soon.
+
+The limits of static analysis mean that we can't rely on it alone. We generally have to run our programs to gain confidence that they are working—i.e. we have to _test_ them.
+
+Unfortunately, testing, too, has limits. As Edsger Dijkstra put it, testing "can be used to show the presence of bugs, but never to show their absence." While a test can demonstrate that a bug exists, no feasible amount of testing can prove a program bug-free, since bugs might always be hiding in the combinations of inputs we haven't tested.
+
+Effective testing relies on our ability to read and understand the code.
+Inspecting the code being tested gives us a basis for believing that testing we've performed is sufficient to describe the code's behavior—for example, a five-line function is unlikely to need hundreds of tests to get all the bugs out. Effective testing relies on our ability to read the code and see how each part of it corresponds to some wrinkle of its behavior. Reading the code gives us a sense of where the error-prone parts are, thus where to focus our testing. By reading the code, we can also get a sense of when our tests have covered all the cases. Therefore, our ability to test relies on our ability to read and understand the code.
+
+Typechecking and testing complement each other, so to get the best possible picture of our code's correctness we need to use both. Typecheckers can prove definitively that we haven't made certain types of common mistakes, like forgetting a `return` keyword or treating a string as if it's a number. Testing can show that our code does what we wanted it to do in at least a small set of cases. Here is one way of thinking about the difference:
+
+- Types prove that **the code "always does something"** —that is, it won't throw a type error at runtime because a value was used improperly.
+- Tests prove that **the code sometimes does the right thing**.
+
+Neither of these statements, or even both together, can prove code correct, but it should be clear that both are useful statements to be able to make. We want to be sure these statements are true of our code.
+
+
+
+We can't hope to understand code by reading it unless the code is _clear_. The next section discusses this important property of good code.
+
 <!--
 When I refer to "correctness" in this book, I don't mean correctness according to some external standard. Correct code, as far as I'm concerned, is code that does what you meant it to do. If we're confining our view of programming to the act of typing code into a computer, that's really the best we can hope to achieve.
 
@@ -196,7 +213,7 @@ The upcoming chapter on [[clarity]] gives an overview of how to make code easier
 				<a href="../../index.html">Home</a><a href="index.html">Up</a><a href="index.html" class="mdsite-prev-link">Prev</a>
 			</div>
 			<div>
-				<a href="clarity.html" class="mdsite-next-link">Next</a>
+				<a href="trust/index.html" class="mdsite-next-link">Next</a>
 			</div>
 		</nav>
 		<script>

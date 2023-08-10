@@ -14,12 +14,23 @@ For most programmers, both of these views of correctness are distractions. We ca
 
 As programmers, we can't directly ensure that the software we create is valuable, useful, or desirable. For better or for worse, we're not usually responsible for decisions at that level. What we _are_ responsible for is making sure that the software's actual behavior matches our current best understanding of what our clients want.
 
-## Ensuring Correctness
+## Assessing Correctness
 
-Our two main techniques for ensuring that code does what we meant it to do are:
+There are a few strategies we can employ to determine whether our code works as we intended:
 
-- Reading the code
-- Running the code
+- Reading the code to understand it holistically
+- Running the code, i.e. testing it
+- Proving things about the code, e.g. typechecking it
+
+I call these _confidence-building strategies_ because while they can't guarantee that code is 100% correct, they _can_ point out problems. If we diligently apply all the confidence-building strategies and don't find problems, that gives us grounds for believing that the code might actually be correct.
+
+The effectiveness of each of the confidence-building strategies depends on the shape of the code. A given program behavior can be encoded in many different ways, and different encodings have different readability, testability, and provability properties. A big part of what distinguishes "good code" from "bad code" is whether each bit of code has readability, testability, and provability in the right proportions to give its makers confidence in the whole system.
+
+Code that makes it easy to gain confidence in its correctness is _trustworthy_. In the following section, I'll describe the properties of trustworthy code in more detail.
+
+
+<!--
+Each of these 
 
 Code can be read by people (e.g. during programming or code review) or it can be "read" by machines (e.g. linters and typecheckers). In each of these cases, the task being performed is a type of _static analysis_.
 
