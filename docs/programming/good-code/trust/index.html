@@ -15,6 +15,7 @@
 					background-color: #f4e8d0;
 					max-width: 700px;
 					margin: 0 auto;
+					overflow-y: scroll;
 				}
 			}
 			.navbar {
@@ -22,19 +23,23 @@
 				flex-direction: row;
 				justify-content: space-between;
 				flex-wrap: wrap;
+				padding: 0 0.5em;
 			}
 			nav a {
 				display: inline-block;
 				padding: 0.6em 0;
 				white-space: nowrap;
 			}
-			nav a.mdsite-prev-link + a:before {
+			nav > .divider {
+				display: none;
+			}
+			nav > .divider:not(:first-child):not(:last-child) {
 				display: inline-block;
 				content: "";
 				vertical-align: middle;
 				height: 20px;
-				border-left: 1px solid black;
 				margin: 0 0.5em;
+				border-left: 1px solid black;
 			}
 			.mdsite-breadcrumb > a:not(:last-child)::after {
 				display: inline-block;
@@ -85,7 +90,7 @@
 				<nav aria-label="Breadcrumb" class="mdsite-breadcrumb"><a href="../../../index.html">Process to Processes</a><a href="../../index.html">Part I: Programming</a><a href="../index.html">Good Code</a></nav>
 			</div>
 			<nav>
-				<a href="../correctness.html" class="mdsite-prev-link">Prev</a><a href="clarity.html" class="mdsite-next-link">Next</a>
+				<a href="../correctness.html" class="mdsite-prev-link">Prev</a><div class="divider"></div><a href="clarity.html" class="mdsite-next-link">Next</a>
 			</nav>
 		</div>
 		<hr/>
@@ -94,6 +99,7 @@
 			<h1 id="trustworthiness">Trustworthiness</h1>
 <p>A system is <strong>trustworthy</strong> if it gives us a rational basis for believing in its correctness. Code can have several properties that make it more trustworthy:</p>
 <p><ul><li><a href="clarity.html">Clarity</a></li></ul></p>
+<p>True trust requires caution.</p>
 <p>If someone emails you out of the blue and offers you ten million dollars in exchange for a small favor, you probably won&#39;t trust them—even though, in the best case scenario, you stand to gain ten million bucks. To assess the trustworthiness of a system, we have to consider not only what might go right but also what might go wrong. This principle applies to code as well as spam emails.</p>
 <p>I often read buggy code where it&#39;s clear that the programmer did not consider what might go wrong—because if they had, they would have spotted and removed the bug.</p>
 <p>The ability to spot bugs is not an innate skill and cannot be gained by simply willing yourself to do better. One effective way to learn to spot bugs is to become an expert tester.</p>
@@ -104,7 +110,7 @@
 			<div>
 			</div>
 			<nav>
-				<a href="../correctness.html" class="mdsite-prev-link">Prev</a><a href="clarity.html" class="mdsite-next-link">Next</a>
+				<a href="../correctness.html" class="mdsite-prev-link">Prev</a><div class="divider"></div><a href="clarity.html" class="mdsite-next-link">Next</a>
 			</nav>
 		</div>
 		<script>

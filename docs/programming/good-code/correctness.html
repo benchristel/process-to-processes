@@ -15,6 +15,7 @@
 					background-color: #f4e8d0;
 					max-width: 700px;
 					margin: 0 auto;
+					overflow-y: scroll;
 				}
 			}
 			.navbar {
@@ -22,19 +23,23 @@
 				flex-direction: row;
 				justify-content: space-between;
 				flex-wrap: wrap;
+				padding: 0 0.5em;
 			}
 			nav a {
 				display: inline-block;
 				padding: 0.6em 0;
 				white-space: nowrap;
 			}
-			nav a.mdsite-prev-link + a:before {
+			nav > .divider {
+				display: none;
+			}
+			nav > .divider:not(:first-child):not(:last-child) {
 				display: inline-block;
 				content: "";
 				vertical-align: middle;
 				height: 20px;
-				border-left: 1px solid black;
 				margin: 0 0.5em;
+				border-left: 1px solid black;
 			}
 			.mdsite-breadcrumb > a:not(:last-child)::after {
 				display: inline-block;
@@ -85,7 +90,7 @@
 				<nav aria-label="Breadcrumb" class="mdsite-breadcrumb"><a href="../../index.html">Process to Processes</a><a href="../index.html">Part I: Programming</a><a href="index.html">Good Code</a></nav>
 			</div>
 			<nav>
-				<a href="index.html" class="mdsite-prev-link">Prev</a><a href="trust/index.html" class="mdsite-next-link">Next</a>
+				<a href="index.html" class="mdsite-prev-link">Prev</a><div class="divider"></div><a href="trust/index.html" class="mdsite-next-link">Next</a>
 			</nav>
 		</div>
 		<hr/>
@@ -221,7 +226,7 @@ The upcoming chapter on [[clarity]] gives an overview of how to make code easier
 			<div>
 			</div>
 			<nav>
-				<a href="index.html" class="mdsite-prev-link">Prev</a><a href="trust/index.html" class="mdsite-next-link">Next</a>
+				<a href="index.html" class="mdsite-prev-link">Prev</a><div class="divider"></div><a href="trust/index.html" class="mdsite-next-link">Next</a>
 			</nav>
 		</div>
 		<script>
