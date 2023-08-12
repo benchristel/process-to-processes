@@ -11,13 +11,13 @@ Clarity is, in theory, orthogonal to correctness. It's possible for code to be c
 
 Code can help us understand its author's intent in many different ways. The most commonly cited are:
 
-- Unit tests. Tests document, in machine-executable form, the possible inputs to the code that the author anticipated. They also verify that the code's output in response to those inputs is what the author wanted.
 - Variable and function names.
 - Comments.
+- Unit tests. Tests document, in machine-executable form, the possible inputs to the code that the author anticipated. They also verify that the code's output in response to those inputs is what the author wanted.
 
-However, the most powerful way to make code communicate intent is to make it [simple](simplicity.html). People have different definitions of what "simple" code is, but I have a very specific definition in mind. In simple code, every conditional, iteration statement (e.g. loop), and variable is there for a demonstrable reason—preferably actually demonstrated by a test. None of them can be eliminated without rendering the code incorrect.
+However, the most powerful way to make code communicate intent is to make it [simple](simplicity.html). People have different definitions of what "simple" code is, but I have a very specific definition in mind. In simple code, every conditional, iteration statement (e.g. loop), and mutable variable or value is there for a demonstrable reason—preferably actually demonstrated by a test. None of these "complications" can be eliminated without rendering the code incorrect.
 
-Some programmers seem to believe that making code simple means eliminating abstractions—that is, minimizing the number of function and class definitions. While I think that reducing abstraction is sometimes the right move, that's not what I mean by simplicity. The question of whether a given abstraction hurts or helps the code as a whole is separate from simplicity.
+Some programmers seem to believe that simplifying code means eliminating abstractions—that is, minimizing the number of function and class definitions. While I think that reducing abstraction is sometimes the right move, that's not what I mean by simplicity. The question of whether a given abstraction hurts or helps the code as a whole is separate from simplicity.
 <!--
 
 ```js
@@ -76,4 +76,4 @@ In TypeScript, we can craft types to precisely describe the possible values that
 
 ## Limitations of Clarity
 
-Clarity makes code easier to read, but in large codebases, it's not enough. We don't have _time_ to read all the code; we need code that lets us avoid reading as much of it as possible. The quality of code that makes this tenable is _abstractness_, which will be explored in the next chapter.
+Clarity makes code easier to read, but in large codebases, it's not enough. We don't have time to read all the code, so we need code that can be safely used without being read. The quality of code that makes this tenable is _abstractness_, which will be explored in the next chapter.

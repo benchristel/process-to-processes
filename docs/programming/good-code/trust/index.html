@@ -98,11 +98,18 @@
 		<article>
 			<h1 id="trustworthiness">Trustworthiness</h1>
 <p>A system is <strong>trustworthy</strong> if it gives us a rational basis for believing in its correctness. Code can have several properties that make it more trustworthy:</p>
-<p><ul><li><a href="clarity.html">Clarity</a></li></ul></p>
-<p>True trust requires caution.</p>
+<p><ul><li><a href="clarity.html">Clarity</a></li><li><a href="abstractness.html">Abstractness</a></li><li><a href="testability.html">Testability</a></li><li><a href="provability.html">Provability</a></li></ul></p>
+<p>True trust requires caution. That is, trust implies the possibility of distrust.</p>
 <p>If someone emails you out of the blue and offers you ten million dollars in exchange for a small favor, you probably won&#39;t trust them—even though, in the best case scenario, you stand to gain ten million bucks. To assess the trustworthiness of a system, we have to consider not only what might go right but also what might go wrong. This principle applies to code as well as spam emails.</p>
 <p>I often read buggy code where it&#39;s clear that the programmer did not consider what might go wrong—because if they had, they would have spotted and removed the bug.</p>
 <p>The ability to spot bugs is not an innate skill and cannot be gained by simply willing yourself to do better. One effective way to learn to spot bugs is to become an expert tester.</p>
+<h2 id="do-we-need-trustworthy-code">Do we need trustworthy code?</h2>
+<p>If we don&#39;t trust our code, we&#39;ll be afraid to release it. That fear manifests in many ways—among them, a demand for lengthy QA passes. That has both a monetary cost (paying QA testers) and an opportunity cost (delaying revenue from the new software).</p>
+<p>I sometimes see programmers take the attitude that they don&#39;t need to be good at finding bugs because QA will do it. And they may be right—but I&#39;d ask whether long QA cycles are really the most cost-effective way to ensure a high-quality release.</p>
+<p>Manual testing, including QA, is great for finding problems with the software&#39;s user interface or its support for various platforms. &quot;The UI doesn&#39;t adapt to mobile screen sizes.&quot; &quot;I can&#39;t paste into this input box on Android.&quot; &quot;There&#39;s a rendering glitch on Safari.&quot; &quot;This button is inaccessible for keyboard-only users.&quot; These types of bugs are difficult to catch with automated tests, and hard to spot by reading the code—because at the code level, these problems are usually caused by the programmer leaving out some necessary complication.</p>
+<p>QA is <em>not</em> a cost-effective way of finding problems with the application&#39;s internal logic. The programmers who write the code ought to be in the best position to spot and correct those problems. Very often, the problems can be reproduced in a unit test to ensure that once fixed, they never return.</p>
+<p>If an organization relies on QA to catch logic errors, </p>
+<p>In most industries, UI glitches are not showstoppers. They almost never cause data corruption or incorrect behavior, and there&#39;s usually a workaround.</p>
 		</article>
 
 		<hr/>
