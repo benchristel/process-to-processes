@@ -20,6 +20,99 @@ Code can help us understand its author's intent in many different ways. The most
 However, the most powerful way to make code communicate intent is to make it [simple](simplicity.html). People have different definitions of what "simple" code is, but I have a very specific definition in mind. In simple code, every conditional, iteration statement (e.g. loop), and mutable variable or value is there for a demonstrable reason—preferably actually demonstrated by a test. None of these "complications" can be eliminated without rendering the code incorrect.
 
 Some programmers seem to believe that simplifying code means eliminating abstractions—that is, minimizing the number of function and class definitions. While I think that reducing abstraction is sometimes the right move, that's not what I mean by simplicity. The question of whether a given abstraction hurts or helps the code as a whole is separate from simplicity.
+
+### An Example of Complicated vs. Simple Code
+
+The value of simplicity is perhaps best demonstrated by example.
+
+Suppose we are writing a program that needs to extract JSON-style quoted strings
+from its input. These strings are enclosed in double quotes, and within the
+string, double quote and backslash characters must be escaped by a preceding
+backslash.
+
+Here is some complicated JavaScript that finds the first such string given some input
+text. Don't worry if you don't understand what it's doing. The point is, it's hard to
+understand. It was a pain in the butt to write, too.
+
+```js
+function firstQuotedString(input) {
+  const startIndex = input.indexOf('"')
+  if (startIndex === -1) {
+    return undefined
+  }
+  let scanIndex = startIndex
+  let endIndex = 0
+  while (endIndex !== -1) {
+    endIndex = input.indexOf('"', scanIndex + 1)
+    if (endIndex === -1) {
+      return undefined
+    }
+    let backslashCount = 0
+    for (let i = endIndex - 1; i > 0; i--) {
+      if (input[i] === "\\") {
+        backslashCount++
+      } else {
+        break;
+      }
+    }
+    if (backslashCount % 2 === 0) {
+      return input.slice(startIndex, endIndex + 1)
+    } else {
+      scanIndex = endIndex
+    }
+  }
+}
+```
+
+Here is some simple code that does the same thing:
+
+```js
+function firstQuotedString(input) {
+  return firstMatch(/"(\\.|[^\\"])*"/, input)
+}
+
+function firstMatch(regex, string) {
+  return string.match(regex)?.[0]
+}
+```
+
+Perhaps you think regular expressions are cheating. Here's a relatively
+simple version that implements the same regex match logic by hand:
+
+```js
+function firstQuotedString(inputString) {
+  const input = new Reader(inputString)
+  let result = undefined
+  let nextChar
+  while (nextChar = input.read()) {
+    if (result === undefined) {
+      if (nextChar === '"') {
+        result = '"'
+      }
+    } else {
+      if (nextChar === '"') {
+        return result + nextChar
+      } else if (nextChar === "\\") {
+        result += nextChar + input.read()
+      } else {
+        result += nextChar
+      }
+    }
+  }
+}
+
+class Reader {
+  constructor(input) {
+    this.input = input
+    this.nextIndex = 0
+  }
+
+  read() {
+    return this.input[this.nextIndex++]
+  }
+}
+```
+
 <!--
 
 ```js

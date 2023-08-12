@@ -113,7 +113,84 @@
 </ul>
 <p>However, the most powerful way to make code communicate intent is to make it <a href="simplicity.html">simple</a>. People have different definitions of what &quot;simple&quot; code is, but I have a very specific definition in mind. In simple code, every conditional, iteration statement (e.g. loop), and mutable variable or value is there for a demonstrable reason—preferably actually demonstrated by a test. None of these &quot;complications&quot; can be eliminated without rendering the code incorrect.</p>
 <p>Some programmers seem to believe that simplifying code means eliminating abstractions—that is, minimizing the number of function and class definitions. While I think that reducing abstraction is sometimes the right move, that&#39;s not what I mean by simplicity. The question of whether a given abstraction hurts or helps the code as a whole is separate from simplicity.</p>
-<!--
+<h3 id="an-example-of-complicated-vs-simple-code">An Example of Complicated vs. Simple Code</h3>
+<p>The value of simplicity is perhaps best demonstrated by example.</p>
+<p>Suppose we are writing a program that needs to extract JSON-style quoted strings
+from its input. These strings are enclosed in double quotes, and within the
+string, double quote and backslash characters must be escaped by a preceding
+backslash.</p>
+<p>Here is some complicated JavaScript that finds the first such string given some input
+text. Don&#39;t worry if you don&#39;t understand what it&#39;s doing. The point is, it&#39;s hard to
+understand. It was a pain in the butt to write, too.</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">firstQuotedString</span>(<span class="hljs-params">input</span>) {
+  <span class="hljs-keyword">const</span> startIndex = input.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&#x27;&quot;&#x27;</span>)
+  <span class="hljs-keyword">if</span> (startIndex === -<span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>
+  }
+  <span class="hljs-keyword">let</span> scanIndex = startIndex
+  <span class="hljs-keyword">let</span> endIndex = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">while</span> (endIndex !== -<span class="hljs-number">1</span>) {
+    endIndex = input.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&#x27;&quot;&#x27;</span>, scanIndex + <span class="hljs-number">1</span>)
+    <span class="hljs-keyword">if</span> (endIndex === -<span class="hljs-number">1</span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>
+    }
+    <span class="hljs-keyword">let</span> backslashCount = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = endIndex - <span class="hljs-number">1</span>; i &gt; <span class="hljs-number">0</span>; i--) {
+      <span class="hljs-keyword">if</span> (input[i] === <span class="hljs-string">&quot;\\&quot;</span>) {
+        backslashCount++
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">break</span>;
+      }
+    }
+    <span class="hljs-keyword">if</span> (backslashCount % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">return</span> input.<span class="hljs-title function_">slice</span>(startIndex, endIndex + <span class="hljs-number">1</span>)
+    } <span class="hljs-keyword">else</span> {
+      scanIndex = endIndex
+    }
+  }
+}
+</code></pre><p>Here is some simple code that does the same thing:</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">firstQuotedString</span>(<span class="hljs-params">input</span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-title function_">firstMatch</span>(<span class="hljs-regexp">/&quot;(\\.|[^\\&quot;])*&quot;/</span>, input)
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">firstMatch</span>(<span class="hljs-params">regex, string</span>) {
+  <span class="hljs-keyword">return</span> string.<span class="hljs-title function_">match</span>(regex)?.[<span class="hljs-number">0</span>]
+}
+</code></pre><p>Perhaps you think regular expressions are cheating. Here&#39;s a relatively
+simple version that implements the same regex match logic by hand:</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">firstQuotedString</span>(<span class="hljs-params">inputString</span>) {
+  <span class="hljs-keyword">const</span> input = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Reader</span>(inputString)
+  <span class="hljs-keyword">let</span> result = <span class="hljs-literal">undefined</span>
+  <span class="hljs-keyword">let</span> nextChar
+  <span class="hljs-keyword">while</span> (nextChar = input.<span class="hljs-title function_">read</span>()) {
+    <span class="hljs-keyword">if</span> (result === <span class="hljs-literal">undefined</span>) {
+      <span class="hljs-keyword">if</span> (nextChar === <span class="hljs-string">&#x27;&quot;&#x27;</span>) {
+        result = <span class="hljs-string">&#x27;&quot;&#x27;</span>
+      }
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">if</span> (nextChar === <span class="hljs-string">&#x27;&quot;&#x27;</span>) {
+        <span class="hljs-keyword">return</span> result + nextChar
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nextChar === <span class="hljs-string">&quot;\\&quot;</span>) {
+        result += nextChar + input.<span class="hljs-title function_">read</span>()
+      } <span class="hljs-keyword">else</span> {
+        result += nextChar
+      }
+    }
+  }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Reader</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">input</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">input</span> = input
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">nextIndex</span> = <span class="hljs-number">0</span>
+  }
+
+  <span class="hljs-title function_">read</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">input</span>[<span class="hljs-variable language_">this</span>.<span class="hljs-property">nextIndex</span>++]
+  }
+}
+</code></pre><!--
 
 ```js
 // This code isn't as simple as it could be; the initial length check is not needed
