@@ -9,3 +9,4 @@ authors-notes.html
 
 !unspecified
 glossary.html
+references.html

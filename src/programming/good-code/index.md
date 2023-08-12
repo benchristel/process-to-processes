@@ -8,7 +8,7 @@ Good code is code that works for the needs of today, and is easy to build on to 
 
 - [Correct](correctness.html): The code does what its programmers intended.
   - includes functional correctness, maybe performance?
-- [Trustworthy](trust): The code's correctness and performance characteristics are easy to verify. If we don't trust our code, we'll take longer to release it, which has an opportunity cost.
+- [Verifiable](verifiability): The code's correctness and performance characteristics are easy to verify. If we can't verify our code's correctness, we'll lack confidence and take longer to release it, which has an opportunity cost.
     - [Clear](trust/clarity.html): It is obvious from reading the code that it does what it's supposed to do.
     - [Abstract](trust/abstraction.html): Once we understand what a named piece of code does, we can compress our mental representation of it into a form that is easy to recall and manipulate. We don't have to think about the internals of the code every time we use it.
     <!-- - [Simple](simplicity.html): Every conditional, loop, and mutable variable is demonstrably necessary. -->

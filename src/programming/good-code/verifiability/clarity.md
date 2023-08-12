@@ -1,9 +1,11 @@
 # Clarity
 
+One of the most powerful ways to make code verifiably correct is to make it *clear*.
+
 Code is clear when:
 
 - We can see what its author meant it to do, by reading it.
-- We can easily assess (perhaps via a combination of inspection and automated tests) whether the code actually does what it's supposed to.
+- We can easily assess whether the code actually does what it's supposed to.
 
 Clarity is, in theory, orthogonal to correctness. It's possible for code to be clear but not correct, or correct but not clear. However, the two qualities are often found together, because when code is clear it's much easier to make it correct.
 

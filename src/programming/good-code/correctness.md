@@ -26,7 +26,7 @@ I call these _confidence-building strategies_ because while they can't guarantee
 
 The effectiveness of each of the confidence-building strategies depends on the shape of the code. A given program behavior can be encoded in many different ways, and different encodings have different readability, testability, and provability properties. A big part of what distinguishes "good code" from "bad code" is whether each bit of code has readability, testability, and provability in the right proportions to give its makers confidence in the whole system.
 
-Code that makes it easy to gain confidence in its correctness is _trustworthy_. In the following section, I'll describe the properties of trustworthy code in more detail.
+Code that makes it easy to gain confidence in its correctness is _verifiable_. In the following section, I'll describe the properties of verifiable code in more detail.
 
 
 <!--

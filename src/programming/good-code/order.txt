@@ -1,5 +1,5 @@
 correctness.html
-trust
+verifiability
 economy.html
 sustainability
 mutual-benefit
