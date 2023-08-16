@@ -82,7 +82,15 @@
 				background: #fff4;
 				font-style: italic;
 			}
+			pre {
+				--padding-size: 8px;
+				background: #fff8;
+				margin-left: calc(0px - var(--padding-size));
+				padding: var(--padding-size);
+				border-radius: 3px;
+			}
 		</style>
+		<link rel="stylesheet" href="../../../assets/syntax.css">
 	</head>
 	<body>
 		<div class="navbar">
@@ -115,137 +123,147 @@
 <p>Some programmers seem to believe that simplifying code means eliminating abstractions—that is, minimizing the number of function and class definitions. While I think that reducing abstraction is sometimes the right move, that&#39;s not what I mean by simplicity. The question of whether a given abstraction hurts or helps the code as a whole is separate from simplicity.</p>
 <h3 id="an-example-of-complicated-vs-simple-code">An Example of Complicated vs. Simple Code</h3>
 <p>The value of simplicity is perhaps best demonstrated by example.</p>
-<p>Suppose we are writing a program that needs to extract JSON-style quoted strings
+<!--
+
+Suppose we are writing a program that needs to extract JSON-style quoted strings
 from its input. These strings are enclosed in double quotes, and within the
 string, double quote and backslash characters must be escaped by a preceding
-backslash.</p>
-<p>Here is some complicated JavaScript that finds the first such string given some input
-text. Don&#39;t worry if you don&#39;t understand what it&#39;s doing. The point is, it&#39;s hard to
-understand. It was a pain in the butt to write, too.</p>
-<pre><code class="hljs language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">firstQuotedString</span>(<span class="hljs-params">input</span>) {
-  <span class="hljs-keyword">const</span> startIndex = input.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&#x27;&quot;&#x27;</span>)
-  <span class="hljs-keyword">if</span> (startIndex === -<span class="hljs-number">1</span>) {
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>
+backslash.
+
+Here is some complicated JavaScript that finds the first such string given some input
+text. Don't worry if you don't understand what it's doing. The point is, it's hard to
+understand. It was a pain in the butt to write, too.
+
+```js
+function firstQuotedString(input) {
+  const startIndex = input.indexOf('"')
+  if (startIndex === -1) {
+    return undefined
   }
-  <span class="hljs-keyword">let</span> scanIndex = startIndex
-  <span class="hljs-keyword">let</span> endIndex = <span class="hljs-number">0</span>
-  <span class="hljs-keyword">while</span> (endIndex !== -<span class="hljs-number">1</span>) {
-    endIndex = input.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&#x27;&quot;&#x27;</span>, scanIndex + <span class="hljs-number">1</span>)
-    <span class="hljs-keyword">if</span> (endIndex === -<span class="hljs-number">1</span>) {
-      <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>
+  let scanIndex = startIndex
+  let endIndex = 0
+  while (endIndex !== -1) {
+    endIndex = input.indexOf('"', scanIndex + 1)
+    if (endIndex === -1) {
+      return undefined
     }
-    <span class="hljs-keyword">let</span> backslashCount = <span class="hljs-number">0</span>
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = endIndex - <span class="hljs-number">1</span>; i &gt; <span class="hljs-number">0</span>; i--) {
-      <span class="hljs-keyword">if</span> (input[i] === <span class="hljs-string">&quot;\\&quot;</span>) {
+    let backslashCount = 0
+    for (let i = endIndex - 1; i > 0; i--) {
+      if (input[i] === "\\") {
         backslashCount++
-      } <span class="hljs-keyword">else</span> {
-        <span class="hljs-keyword">break</span>;
+      } else {
+        break;
       }
     }
-    <span class="hljs-keyword">if</span> (backslashCount % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) {
-      <span class="hljs-keyword">return</span> input.<span class="hljs-title function_">slice</span>(startIndex, endIndex + <span class="hljs-number">1</span>)
-    } <span class="hljs-keyword">else</span> {
+    if (backslashCount % 2 === 0) {
+      return input.slice(startIndex, endIndex + 1)
+    } else {
       scanIndex = endIndex
     }
   }
 }
-</code></pre><p>Here is some simple code that does the same thing:</p>
-<pre><code class="hljs language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">firstQuotedString</span>(<span class="hljs-params">input</span>) {
-  <span class="hljs-keyword">return</span> <span class="hljs-title function_">firstMatch</span>(<span class="hljs-regexp">/&quot;(\\.|[^\\&quot;])*&quot;/</span>, input)
+```
+
+Here is some simple code that does the same thing:
+
+```js
+function firstQuotedString(input) {
+  return firstMatch(/"(\\.|[^\\"])*"/, input)
 }
 
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">firstMatch</span>(<span class="hljs-params">regex, string</span>) {
-  <span class="hljs-keyword">return</span> string.<span class="hljs-title function_">match</span>(regex)?.[<span class="hljs-number">0</span>]
+function firstMatch(regex, string) {
+  return string.match(regex)?.[0]
 }
-</code></pre><p>Perhaps you think regular expressions are cheating. Here&#39;s a relatively
-simple version that implements the same regex match logic by hand:</p>
-<pre><code class="hljs language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">firstQuotedString</span>(<span class="hljs-params">inputString</span>) {
-  <span class="hljs-keyword">const</span> input = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Reader</span>(inputString)
-  <span class="hljs-keyword">let</span> result = <span class="hljs-literal">undefined</span>
-  <span class="hljs-keyword">let</span> nextChar
-  <span class="hljs-keyword">while</span> (nextChar = input.<span class="hljs-title function_">read</span>()) {
-    <span class="hljs-keyword">if</span> (result === <span class="hljs-literal">undefined</span>) {
-      <span class="hljs-keyword">if</span> (nextChar === <span class="hljs-string">&#x27;&quot;&#x27;</span>) {
-        result = <span class="hljs-string">&#x27;&quot;&#x27;</span>
+```
+
+Perhaps you think regular expressions are cheating. Here's a relatively
+simple version that implements the same regex match logic by hand:
+
+```js
+function firstQuotedString(inputString) {
+  const input = new Reader(inputString)
+  let result = undefined
+  
+  let nextChar
+  while (nextChar = input.read()) {
+    if (result === undefined) {
+      if (nextChar === '"') {
+        result = '"'
       }
-    } <span class="hljs-keyword">else</span> {
-      <span class="hljs-keyword">if</span> (nextChar === <span class="hljs-string">&#x27;&quot;&#x27;</span>) {
-        <span class="hljs-keyword">return</span> result + nextChar
-      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nextChar === <span class="hljs-string">&quot;\\&quot;</span>) {
-        result += nextChar + input.<span class="hljs-title function_">read</span>()
-      } <span class="hljs-keyword">else</span> {
+    } else {
+      if (nextChar === '"') {
+        return result + nextChar
+      } else if (nextChar === "\\") {
+        result += nextChar + input.read()
+      } else {
         result += nextChar
       }
     }
   }
 }
 
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Reader</span> {
-  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">input</span>) {
-    <span class="hljs-variable language_">this</span>.<span class="hljs-property">input</span> = input
-    <span class="hljs-variable language_">this</span>.<span class="hljs-property">nextIndex</span> = <span class="hljs-number">0</span>
+class Reader {
+  constructor(input) {
+    this.input = input
+    this.nextIndex = 0
   }
 
-  <span class="hljs-title function_">read</span>(<span class="hljs-params"></span>) {
-    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">input</span>[<span class="hljs-variable language_">this</span>.<span class="hljs-property">nextIndex</span>++]
-  }
-}
-</code></pre><!--
-
-```js
-// This code isn't as simple as it could be; the initial length check is not needed
-// because Array.some() always returns false if the array is empty.
-function hasAVowel(word) {
-  if (word.length === 0) {
-    return false
-  }
-  const letters = [...word]
-  return letters.some(isVowel)
-}
-```
-
-Some readers might opine that the length check makes the code more explicit and is thus desirable even if it's not technically necessary. I say you should put that information in a unit test:
-
-```js
-describe("hasAVowel", () => {
-  it("returns false given a 'word' with no letters", () => {
-    expect(hasAVowel("")).toBe(false)
-  })
-
-  // ...
-})
-```
-
-## Assessing Correctness
-
-
-
-More subtly, code can make it obvious by its structure that certain undesirable states or behaviors are in fact impossible. Consider the following two snippets of code:
-
-```js
-const messages = ["hello", "goodbye"]
-let i = 0
-while (true) {
-  console.log(messages[i])
-  i++
-  if (i === messages.length) {
-    break
+  read() {
+    return this.input[this.nextIndex++]
   }
 }
 ```
 
-```js
-const messages = ["hello", "goodbye"]
-for (i = 0; i < messages.length; i++) {
-  console.log(messages[i])
-}
-```
+### Objective Measures of Simplicity
 
-These examples do the same thing, but it's more obvious that the `for` loop is guaranteed to terminate.
+How do I know that the last example above is simpler than the first? Well, I wrote both of them, and I know the first one was tougher to get right. Ease of understanding and debugging should be your ultimate goal when you strive for simplicity.
 
-In TypeScript, we can craft types to precisely describe the possible values that a variable might hold. More on this in future chapters.
+In cases where you're not sure which of two implementations is simpler, you can fall back on numeric metrics. These metrics aren't a perfect proxy for ease of understanding, but they can be useful—for instance, when convincing managers that simplicity is a real thing they should pay attention to.
+
+Some metrics you should consider are:
+
+- Cyclomatic complexity, which (informally speaking) counts the number of distinct paths that execution can take through a function.
+- ABC (assignments, branches, conditionals) complexity
+
+
+
 -->
 
+<pre><code class="hljs language-js"><span class="hljs-comment">// This code isn&#x27;t as simple as it could be; the initial length check is not needed</span>
+<span class="hljs-comment">// because Array.some() always returns false if the array is empty.</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">hasAVowel</span>(<span class="hljs-params">word</span>) {
+  <span class="hljs-keyword">if</span> (word.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+  }
+  <span class="hljs-keyword">const</span> letters = [...word]
+  <span class="hljs-keyword">return</span> letters.<span class="hljs-title function_">some</span>(isVowel)
+}
+</code></pre><p>Some might argue that the length check makes the code more explicit and is thus desirable even if it&#39;s not technically necessary. I say you should put that information in a unit test:</p>
+<pre><code class="hljs language-js"><span class="hljs-title function_">describe</span>(<span class="hljs-string">&quot;hasAVowel&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-title function_">it</span>(<span class="hljs-string">&quot;returns false given a &#x27;word&#x27; with no letters&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-title function_">expect</span>(<span class="hljs-title function_">hasAVowel</span>(<span class="hljs-string">&quot;&quot;</span>)).<span class="hljs-title function_">toBe</span>(<span class="hljs-literal">false</span>)
+  })
+
+  <span class="hljs-comment">// ...</span>
+})
+</code></pre><h2 id="assessing-correctness">Assessing Correctness</h2>
+<p>More subtly, code can make it obvious by its structure that certain undesirable states or behaviors are in fact impossible. Consider the following two snippets of code:</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> messages = [<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;goodbye&quot;</span>]
+<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(messages[i])
+  i++
+  <span class="hljs-keyword">if</span> (i === messages.<span class="hljs-property">length</span>) {
+    <span class="hljs-keyword">break</span>
+  }
+}
+</code></pre><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> messages = [<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;goodbye&quot;</span>]
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; messages.<span class="hljs-property">length</span>; i++) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(messages[i])
+}
+</code></pre><p>These examples do the same thing, but it&#39;s more obvious that the <code>for</code> loop is guaranteed to terminate.</p>
+<p>In TypeScript, we can craft types to precisely describe the possible values that a variable might hold. More on this in future chapters.
+--&gt;</p>
 <h2 id="limitations-of-clarity">Limitations of Clarity</h2>
 <p>Clarity makes code easier to read, but in large codebases, it&#39;s not enough. We don&#39;t have time to read all the code, so we need code that can be safely used without being read. The quality of code that makes this tenable is <em>abstractness</em>, which will be explored in the next chapter.</p>
 		</article>

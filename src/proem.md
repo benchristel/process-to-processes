@@ -32,6 +32,15 @@ Cast off the husk and save the kernel.
 Delete the code at your earliest convenience.
 The knowledge lives on in the bending of the grass.
 
+The wise see programming lessons everywhere:
+In cooking, building, games...
+They see everything as connected.
+Ordinary programmers only learn from programming.
+Fools don't learn no matter what they do.
+If you can find lessons everywhere,
+Every moment of your life will teach you something.
+This is the path to deep knowledge.
+
 Simplicity is the antidote to stupidity.
 Therefore, shun complexity.
 Delete all conditionals, loops, and variables,

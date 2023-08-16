@@ -31,6 +31,7 @@ import {test, expect, is, getAllTests, runTests, formatTestResultsAsText} from "
 function firstQuotedString(inputString) {
   const input = new Reader(inputString)
   let result = undefined
+  
   let nextChar
   while (nextChar = input.read()) {
     if (result === undefined) {
@@ -60,33 +61,33 @@ class Reader {
   }
 }
 
-// function firstQuotedString(input) {
-//   const startIndex = input.indexOf('"')
-//   if (startIndex === -1) {
-//     return undefined
-//   }
-//   let scanIndex = startIndex
-//   let endIndex = 0
-//   while (endIndex !== -1) {
-//     endIndex = input.indexOf('"', scanIndex + 1)
-//     if (endIndex === -1) {
-//       return undefined
-//     }
-//     let backslashCount = 0
-//     for (let i = endIndex - 1; i > 0; i--) {
-//       if (input[i] === "\\") {
-//         backslashCount++
-//       } else {
-//         break;
-//       }
-//     }
-//     if (backslashCount % 2 === 0) {
-//       return input.slice(startIndex, endIndex + 1)
-//     } else {
-//       scanIndex = endIndex
-//     }
-//   }
-// }
+function firstQuotedString(input) {
+  const startIndex = input.indexOf('"')
+  if (startIndex === -1) {
+    return undefined
+  }
+  let scanIndex = startIndex
+  let endIndex = 0
+  while (endIndex !== -1) {
+    endIndex = input.indexOf('"', scanIndex + 1)
+    if (endIndex === -1) {
+      return undefined
+    }
+    let backslashCount = 0
+    for (let i = endIndex - 1; i > 0; i--) {
+      if (input[i] === "\\") {
+        backslashCount++
+      } else {
+        break;
+      }
+    }
+    if (backslashCount % 2 === 0) {
+      return input.slice(startIndex, endIndex + 1)
+    } else {
+      scanIndex = endIndex
+    }
+  }
+}
 
 test("firstQuotedString", {
   "returns undefined given empty string"() {

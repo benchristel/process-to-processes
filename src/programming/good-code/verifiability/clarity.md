@@ -25,6 +25,8 @@ Some programmers seem to believe that simplifying code means eliminating abstrac
 
 The value of simplicity is perhaps best demonstrated by example.
 
+<!--
+
 Suppose we are writing a program that needs to extract JSON-style quoted strings
 from its input. These strings are enclosed in double quotes, and within the
 string, double quote and backslash characters must be escaped by a preceding
@@ -83,6 +85,7 @@ simple version that implements the same regex match logic by hand:
 function firstQuotedString(inputString) {
   const input = new Reader(inputString)
   let result = undefined
+  
   let nextChar
   while (nextChar = input.read()) {
     if (result === undefined) {
@@ -113,7 +116,20 @@ class Reader {
 }
 ```
 
-<!--
+### Objective Measures of Simplicity
+
+How do I know that the last example above is simpler than the first? Well, I wrote both of them, and I know the first one was tougher to get right. Ease of understanding and debugging should be your ultimate goal when you strive for simplicity.
+
+In cases where you're not sure which of two implementations is simpler, you can fall back on numeric metrics. These metrics aren't a perfect proxy for ease of understanding, but they can be useful—for instance, when convincing managers that simplicity is a real thing they should pay attention to.
+
+Some metrics you should consider are:
+
+- Cyclomatic complexity, which (informally speaking) counts the number of distinct paths that execution can take through a function.
+- ABC (assignments, branches, conditionals) complexity
+
+
+
+-->
 
 ```js
 // This code isn't as simple as it could be; the initial length check is not needed
@@ -127,7 +143,7 @@ function hasAVowel(word) {
 }
 ```
 
-Some readers might opine that the length check makes the code more explicit and is thus desirable even if it's not technically necessary. I say you should put that information in a unit test:
+Some might argue that the length check makes the code more explicit and is thus desirable even if it's not technically necessary. I say you should put that information in a unit test:
 
 ```js
 describe("hasAVowel", () => {

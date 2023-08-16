@@ -1,0 +1,14 @@
+.hljs-keyword {
+  font-weight: bold;
+  color: #311;
+}
+
+.hljs-string,
+.hljs-regexp {
+  font-weight: bold;
+  color: #933;
+}
+
+.hljs-number {
+  color: #33f;
+}
