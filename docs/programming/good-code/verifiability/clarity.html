@@ -229,12 +229,18 @@ Some metrics you should consider are:
 
 -->
 
+<p>Here is some code that is more complicated than it needs to be:</p>
 <pre><code class="hljs language-js"><span class="hljs-comment">// This code isn&#x27;t as simple as it could be; the initial length check is not needed</span>
 <span class="hljs-comment">// because Array.some() always returns false if the array is empty.</span>
 <span class="hljs-keyword">function</span> <span class="hljs-title function_">hasAVowel</span>(<span class="hljs-params">word</span>) {
   <span class="hljs-keyword">if</span> (word.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) {
     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
   }
+  <span class="hljs-keyword">const</span> letters = [...word]
+  <span class="hljs-keyword">return</span> letters.<span class="hljs-title function_">some</span>(isVowel)
+}
+</code></pre><p>The simpler version:</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">hasAVowel</span>(<span class="hljs-params">word</span>) {
   <span class="hljs-keyword">const</span> letters = [...word]
   <span class="hljs-keyword">return</span> letters.<span class="hljs-title function_">some</span>(isVowel)
 }

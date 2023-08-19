@@ -131,6 +131,8 @@ Some metrics you should consider are:
 
 -->
 
+Here is some code that is more complicated than it needs to be:
+
 ```js
 // This code isn't as simple as it could be; the initial length check is not needed
 // because Array.some() always returns false if the array is empty.
@@ -138,6 +140,15 @@ function hasAVowel(word) {
   if (word.length === 0) {
     return false
   }
+  const letters = [...word]
+  return letters.some(isVowel)
+}
+```
+
+The simpler version:
+
+```js
+function hasAVowel(word) {
   const letters = [...word]
   return letters.some(isVowel)
 }
