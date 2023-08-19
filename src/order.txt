@@ -1,3 +1,4 @@
+before-we-begin.html
 proem.html
 intro
 prolegomena
