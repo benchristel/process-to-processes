@@ -1,4 +1,0 @@
-clarity.html
-abstractness.html
-testability.html
-provability.html

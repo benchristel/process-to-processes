@@ -1,2 +1,0 @@
-terms.html
-models.html
