@@ -80,6 +80,12 @@ and how to make them pass again.
 This is one way to keep the leash tight.
 When you've mapped failure, you can find your way out of it.
 
+The most popular numbers
+are (relatively) close to zero.
+The best places, relatively close to home.
+The most valuable code is simple as can be.
+Keep close to the origin.
+
 If you want to find god,
 look for an old waterwheel
 standing by a river under the pines.
@@ -93,3 +99,5 @@ So it goes on being.
 </div>
 
 August 5th, 2023
+
+Updated September 1st, 2023
