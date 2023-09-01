@@ -1,12 +1,21 @@
 # Before we begin
 
-Before we begin, I want to address a fear that many programmers have. Namely, the fear that:
+Before we begin, I want to dispel a commonly-believed myth—a myth that I myself believed for a long time.
 
-- a) great programmers have figured out a reliable process for writing bug-free, efficient, maintainable code
-- b) the process is hard to learn, and once you learn it, is bureaucratic, soul-sucking, and just generally no fun at all.
+The myth goes like this:
 
-If this fear were true, we'd have to choose: do we want programming to be a joyful, exciting puzzle, full of twists and turns and little victories? Or do we want to learn what the masters know, and become code-factory drones poring over spreadsheets and twiddling bits?
+- Great programmers have superhuman abilities.
+- In order to become a great programmer, you must become superhuman.
+- Becoming superhuman starts with being inhuman—showing no emotion, believing in reductionistic models of the world, and acting like a machine.
 
-I, too, once had this fear. I shied away from deeply technical talks by expert programmers because I felt sure that what they would say would invalidate my experiences and what I felt to be true about myself as a programmer. Gradually, as I started to pick up on what these experts had to say, I realized that my fear was an illusion. As you deepen your expertise, you find _more_ fun and joy in programming, not less. You discover _more_ good ways of doing things, not one "best" way. I hope this book will make that clear to you too.
+None of this is true.
+
+Talks, papers, and blog posts by master programmers show again and again that they have the same difficulties, limitations, fears, and joys as the rest of us. They use intuition as much as, or more than, brute logic. They too are bewildered by crufty code. They too are dismayed by corporate bullshit. They are human, after all.
+
+I once shied away from deeply technical talks by expert programmers because I felt sure that they would invalidate what I felt to be true about myself as a programmer. I feared that I would have to choose between being a good programmer and being a good person.
+
+Gradually, as I started to pick up on what these experts had to say, I realized that my fear was an illusion. There is no conflict between being a good programmer and being a good person. The two go hand in hand. The path to programming mastery leads through beauty, serenity, and connectedness, and its destination is deep and satisfying understanding.
+
+I hope this book will make that clear to you too.
 
 August 19th, 2023
