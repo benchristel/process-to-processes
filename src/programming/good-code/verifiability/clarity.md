@@ -1,25 +1,56 @@
 # Clarity
 
-One of the most powerful ways to make code verifiably correct is to make it *clear*.
+Reading code is one of the most important things we can do to ensure that it is [doing what we intended](../correctness.html). In a study of peer code review at Cisco, Jason Cohen found that the first hour of code review uncovered more defects than an hour of QA testing. (_Best Kept Secrets of Peer Code Review_, 2006)
 
-Code is clear when:
+Not all code is equally easy to read, though. Tony Hoare put it this way:
 
-- We can see what its author meant it to do, by reading it.
-- We can easily assess whether the code actually does what it's supposed to.
+> There are two ways of constructing a software design: One way is to make it so simple that there are _obviously_ no deficiencies, and the other way is to make it so complicated that there are no _obvious_ deficiencies. The first method is far more difficult.
+>
+> —The Emperor's Old Clothes
 
-Clarity is, in theory, orthogonal to correctness. It's possible for code to be clear but not correct, or correct but not clear. However, the two qualities are often found together, because when code is clear it's much easier to make it correct.
+<!--Most of us have had the experience of reviewing code of the second variety, code that has no obvious deficiencies because it is so convoluted and obscure. In such code, it's often difficult to point out small, desirable changes, because the effect the changes would have is as obscure as the effect of the code as it stands. Such code often gets a perfunctory "looks good" from reviewers, but over the long term can be disastrous for a tea-->
+
+_Clear code_ is code that is easy to read and understand. Code is clear when:
+
+- We can see what its author meant it to do.
+- We can easily assess whether it actually does that.
+
+These two properties of clear code are somewhat independent. The first property can be obtained via comments and helpful variable names, but the second often can't be. To make a program's correctness easy to judge, it must be more than superficially readable; it must be _simple_.
 
 ## Simplicity
 
-Code can help us understand its author's intent in many different ways. The most commonly cited are:
+People have different definitions of what "simple" code is, but I have a very specific definition in mind. Code is simple when every complication in it is there for a demonstrable reason. That is, no complication can be removed without causing the code to do the wrong thing in some specific, identifiable, and important case.
 
-- Variable and function names.
-- Comments.
-- Unit tests. Tests document, in machine-executable form, the possible inputs to the code that the author anticipated. They also verify that the code's output in response to those inputs is what the author wanted.
+Complications include:
 
-However, the most powerful way to make code communicate intent is to make it [simple](simplicity.html). People have different definitions of what "simple" code is, but I have a very specific definition in mind. In simple code, every conditional, iteration statement (e.g. loop), and mutable variable or value is there for a demonstrable reason—preferably actually demonstrated by a test. None of these "complications" can be eliminated without rendering the code incorrect.
+- conditionals, including `if` and `switch` statements, ternary operators, short-circuiting boolean operations, and the `?` regex quantifier.
+- iteration statements, including loops and the `*` and `+` regex quantifiers.
+- calculations—numeric and otherwise
+- function calls
+- assignments to mutable variables and object properties
+- references to function parameters
 
-Some programmers seem to believe that simplifying code means eliminating abstractions—that is, minimizing the number of function and class definitions. While I think that reducing abstraction is sometimes the right move, that's not what I mean by simplicity. The question of whether a given abstraction hurts or helps the code as a whole is separate from simplicity.
+Note that this list is tailored to JavaScript. Other languages have their own forms of complication. I leave it up to you to draw appropriate analogies to constructs in those languages.
+
+Some programmers seem to believe that simplifying code means eliminating abstractions—that is, minimizing the number of function and class definitions. While I think that reducing abstraction is sometimes the right move, that's not what I mean by simplicity. The question of whether a given abstraction hurts or helps the code as a whole is separate from simplicity. **Having more classes or functions does not necessarily make code less simple.**
+
+### Complexity Metrics
+
+If you're familiar with code complexity metrics, you might see similarities between my list of "complications" above and metrics like ABC complexity. You might be tempted to assign every function you run across a "complexity score" based on ABC or some other metric, and try to get it as low as possible. To do this would be to miss the point entirely.
+
+What I mean by "simplicity" is not the inverse of any complexity metric. It is just what I said above: **code is simple when none of its complications can be removed.** Simplicity is a boolean property: it either is or it isn't, and you cannot assess it unless you know what the code is supposed to do.
+
+> Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
+>
+> —Antoine de Saint-Exupéry (translated and paraphrased)
+
+Simplicity, by this definition, might seem easy to achieve. Experience tells me it isn't. One of the most common problems I see in code that I review is code that simply does not need to be there. You can delete it, leaving surrounding code untouched, and the program is equally—or in some cases more—correct.
+
+### Why Simplicity Matters
+
+> Code argues, by its very existence, that it is both correct and necessary.
+>
+> —Sandi Metz
 
 ### An Example of Complicated vs. Simple Code
 
