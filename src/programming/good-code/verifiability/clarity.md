@@ -1,10 +1,10 @@
 # Clarity
 
-Reading code is one of the most important things we can do to ensure that it is [doing what we intended](../correctness.html). In a study of peer code review at Cisco, Jason Cohen found that the first hour of code review uncovered more defects than an hour of QA testing. (_Best Kept Secrets of Peer Code Review_, 2006)
+Reading code is one of the most important things we can do to ensure that it is [doing what we intended](../correctness.html). In a study of peer code review at Cisco, Jason Cohen found that the first hour of code review uncovered more defects than an hour of QA testing. (_Best Kept Secrets of Peer Code Review_, 2006) Reading code is one of the best debugging techniques around.
 
-Not all code is equally easy to read, though. Tony Hoare put it this way:
+Not all code is easy to debug by reading it, though. Tony Hoare put it this way:
 
-> There are two ways of constructing a software design: One way is to make it so simple that there are _obviously_ no deficiencies, and the other way is to make it so complicated that there are no _obvious_ deficiencies. The first method is far more difficult.
+> There are two ways of constructing a software design: One way is to make it so simple that there are **obviously** no deficiencies, and the other way is to make it so complicated that there are no **obvious** deficiencies. The first method is far more difficult.
 >
 > —The Emperor's Old Clothes
 
@@ -15,9 +15,13 @@ _Clear code_ is code that is easy to read and understand. Code is clear when:
 - We can see what its author meant it to do.
 - We can easily assess whether it actually does that.
 
-These two properties of clear code are somewhat independent. The first property can be obtained via comments and helpful variable names, but the second often can't be. To make a program's correctness easy to judge, it must be more than superficially readable; it must be _simple_.
+These two properties of clear code are somewhat independent. Comments and variable names can help with the first (understanding intent), but not with the second (assessing correctness). To make a program's correctness easy to judge, it must be more than superficially readable; it must be _simple_.
 
 ## Simplicity
+
+> Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
+>
+> —Antoine de Saint-Exupéry (translated and paraphrased)
 
 People have different definitions of what "simple" code is, but I have a very specific definition in mind. Code is simple when every complication in it is there for a demonstrable reason. That is, no complication can be removed without causing the code to do the wrong thing in some specific, identifiable, and important case.
 
@@ -32,25 +36,41 @@ Complications include:
 
 Note that this list is tailored to JavaScript. Other languages have their own forms of complication. I leave it up to you to draw appropriate analogies to constructs in those languages.
 
-Some programmers seem to believe that simplifying code means eliminating abstractions—that is, minimizing the number of function and class definitions. While I think that reducing abstraction is sometimes the right move, that's not what I mean by simplicity. The question of whether a given abstraction hurts or helps the code as a whole is separate from simplicity. **Having more classes or functions does not necessarily make code less simple.**
+### What Simplicity Isn't
 
-### Complexity Metrics
+Some programmers seem to believe that simplifying code means eliminating abstractions—that is, minimizing the number of function and class definitions. While I think that reducing abstraction is sometimes the right move, that's not what I mean by simplicity. The question of whether a given abstraction hurts or helps the code as a whole is separate from simplicity. **Having more classes or functions does not necessarily make code less simple.**
 
 If you're familiar with code complexity metrics, you might see similarities between my list of "complications" above and metrics like ABC complexity. You might be tempted to assign every function you run across a "complexity score" based on ABC or some other metric, and try to get it as low as possible. To do this would be to miss the point entirely.
 
 What I mean by "simplicity" is not the inverse of any complexity metric. It is just what I said above: **code is simple when none of its complications can be removed.** Simplicity is a boolean property: it either is or it isn't, and you cannot assess it unless you know what the code is supposed to do.
 
-> Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
->
-> —Antoine de Saint-Exupéry (translated and paraphrased)
-
 Simplicity, by this definition, might seem easy to achieve. Experience tells me it isn't. One of the most common problems I see in code that I review is code that simply does not need to be there. You can delete it, leaving surrounding code untouched, and the program is equally—or in some cases more—correct.
 
 ### Why Simplicity Matters
 
+To understand why simplicity is important, consider what would happen if we adopted its opposite as a goal. What if we tried to fill programs with as many unnecessary complications as possible? What if we tried to make every program a [Rube Goldberg machine](https://en.wikipedia.org/wiki/Rube_Goldberg_machine)?
+
+Of course, that's absurd, because there's no end to the amount of complication we can add. "Add as much complication as possible" is a task that can never be finished. But let's suppose we tried.
+
+Now imagine reading the resulting program. How easy would it be to debug? How easily could you find the bits that are actually meaningful?
+
+And if you found some code you thought _wasn't_ needed, how could you be sure it was really safe to remove?
+
+Simplicity matters because complication is virulent. Not only does it have immediate bad effects (making code harder to read), it perpetuates itself (because, once it's been in production for a while, it's very hard to be sure it's safe to remove).
+
+As Sandi Metz put it,
+
 > Code argues, by its very existence, that it is both correct and necessary.
 >
 > —Sandi Metz
+
+- it slows us down as we're reading the code, because there's more to parse.
+- people are averse (and rightly so) to removing complications they don't understand.
+- determining whether a line of code is necessary or unnecessary is, in general,
+  undecidable (as a specific case of Rice's theorem).
+- therefore, complications, once in production, are risky to remove, so they tend to persist.
+
+The solution is to remove complication at the earliest opportunity, while the code is still fresh in your mind, and no one is yet depending on it.
 
 ### An Example of Complicated vs. Simple Code
 
@@ -197,6 +217,8 @@ describe("hasAVowel", () => {
 })
 ```
 
+<!--
+
 ## Assessing Correctness
 
 
@@ -227,6 +249,12 @@ These examples do the same thing, but it's more obvious that the `for` loop is g
 In TypeScript, we can craft types to precisely describe the possible values that a variable might hold. More on this in future chapters.
 -->
 
-## Limitations of Clarity
+## Clarity Depends on Abstractness
 
-Clarity makes code easier to read, but in large codebases, it's not enough. We don't have time to read all the code, so we need code that can be safely used without being read. The quality of code that makes this tenable is _abstractness_, which will be explored in the next chapter.
+Clarity makes code easier to read, but in any program larger than a toy, clarity isn't enough. It isn't feasible to read all the code whenever we want to make a change. Therefore, a large portion of the system must be made of code that can be safely used and reused without being read.
+
+To put it another way: in order to understand code, we need to be able to mentally manipulate the building blocks of which it is composed, without having to understand the internal structure of those building blocks.
+
+This principle applies even in a "small" codebase—a ten-line NodeJS script, let's say. You don't have to understand the internals of NodeJS in order to make changes to such a program—even though those internals are far more complicated than your script, comprising many megabytes of machine code compared to your few hundred bytes of JS. You understand the language primitives at a conceptual level, and that's enough. The quality of those language primitives that makes this possible is _abstractness_.
+
+The topic of _abstractness_ will be further explored in the next chapter.

@@ -1,12 +1,12 @@
 # Verifiability
 
-A system is **verifiable** if it gives us a rational basis for believing in its [correctness](../correctness). Good code has several properties that make it more verifiable:
+A system is **verifiable** if it gives us a rational basis for believing that it [does what its author intended](../correctness). Good code has several properties that make it more verifiable:
 
 {{toc}}
 
 Clarity is perhaps the most powerful and general of these. Clarity makes it possible for programmers to debug code by reading it. To be sure, testing and typechecking are important, but the ability to read and understand the code is often worth a hundred tests[<sup>1</sup>](#cohen2006).
 
-Ideally, we have a set of automatic checks—tests, linters, and typecheckers, for example—that we can run to verify our code. When verification is quick, thorough, and automatic, we can do it frequently as we make changes to the software. The more often we verify, the less investigation and debugging work we have to do if verification catches a problem.
+Ideally, we have a set of automatic checks—tests, linters, and typecheckers, for example—that we can run to verify our code. When verification is quick, thorough, and automatic, we can do it frequently as we make changes to the software. The more often we verify, the less investigation and debugging we have to do if verification catches a problem.
 
 Even on small, personal projects, infrequent verification leads to pain. I can recall many times when, after changing hundreds of lines of code in one spurt of in-the-zone programming, I've discovered that my software no longer works. Where's the problem? I have to hunt through all my changes to find it. Perhaps you've had similar experiences.
 
