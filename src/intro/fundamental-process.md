@@ -4,10 +4,11 @@ The fundamental process for all software development activities is a variant of 
 
 1. **Observe** the system in its current state. Don't judge what's good or bad about it just yet, but note any suffering that is occurring.
 2. **Form a theory** about how the system works. The theory must be able to predict how the system will respond to possible future changes and events.
-3. **Make a change** that your theory predicts will alleviate some of the suffering in the system. Avoid changing too much at once. Make the smallest change you can that will have an impact you can observe. Make sure the change is reversable, since there's a good chance your theory is wrong and the improvement you predict will not happen.
+3. **Decide what to change.** Identify some suffering that your theory says you might be able to alleviate.
+3. **Try** to change the system. Avoid changing too much at once. Make the smallest change you can that will have an impact you can observe. Make sure the change is reversable, since there's a good chance your theory is wrong and the improvement you predict will not happen.
 4. **Assess** the results. Did things get better or worse? If they got worse, undo the change you made. In any case, go back to step 1 and repeat the process.
 
-All software development boils down to these four steps, repeated over and over at various levels of scale.
+All software development boils down to these five steps, repeated over and over at various levels of scale.
 
 ## Observing the System
 
@@ -19,7 +20,7 @@ This absence of tree-like taxonomic or hierarchical structure is neither a weakn
 
 To acknowledge the fuzziness and non-hierarchical organization of software development systems, I call the sub-structures _centers_ (following the lead of the architect Christopher Alexander). Centers are cohesive and identifiable; you can name them, point to them, count them, and recognize ones you've seen before. However, centers do not necessarily have a precise boundary, so they may not be separable from their context.
 
-The concept of a center may seem a bit hard to grasp. However, I am sure that you already understand what centers are, though you may not be used to paying attention to them or talking about them.
+The concept of a center may seem a bit hard to grasp. However, I am sure that you already have an intuitive and practical sense of the concept, though you may not be used to paying attention to centers or talking about them.
 
 To see that you already understand what a center is, imagine a whirlpool in a stream.
 
@@ -32,11 +33,11 @@ Yet you can point to it. You can name it. If there are several whirlpools, you c
 
 There are, of course, also centers that are more like "objects"—things that _can_ mostly be separated from their context, and that _do_ have a more or less consistent physical makeup. You are used to thinking and talking about these, so I won't dwell on them.
 
-Once you have identified the centers in your software development system, you can watch them interact. Observe the flow of resources—especially information—among the centers. Withhold judgment, for now. Just watch the system and accept that what's you see is what's happening.
+Once you have identified the centers in your software development system, you can watch them interact. Observe the flow of resources—especially money and information—among the centers. Withhold judgment, for now. Just watch the system and accept that what's you see is what's happening.
 
-_A customer complaint becomes a UX change request, which becomes a commit to version control. Code changes stack up until their gathering weight triggers a software release. QA does a full test pass of the new software, yielding a crop of bug reports. A lucrative deal closes, and the influx of cash stimulates the formation of a new business unit. An engineering team struggles with technical debt; no matter how hard they push, the code pushes back harder. Trying to jam new features into the code is like trying to stuff clothes into a suitcase that's already overflowing._
+_A customer complains. A UX change request shows up in your backlog. A programmer commits to version control. A failing test run gets retried. A new version your product is released. QA does a full test pass. There are 7 reported regressions. A lucrative deal closes. A new business unit forms. An engineering team struggles with technical debt. The CEO calls an all-hands meeting; most of the attendees spend it multitasking._
 
-As you observe, pay special attention to suffering in the system. **This is not the same thing as judging interactions as good or bad.** Your judgments are subjective and conditioned by your experience. Suffering is objective. However, suffering is distinct from inefficiency, waste, and other objective measures like software defects. **Suffering is when two centers are in conflict: when one is resisting or working against the other.**
+As you observe, pay special attention to suffering in the system. **This is not the same thing as judging interactions as good or bad.** Your judgments are subjective and conditioned by your experience. Suffering is objective. **Suffering occurs when two centers are in conflict: when one is resisting or working against the other.** Frustration, inner conflict, and thwarted desire all produce suffering.
 
 The following anecdote might help explain the difference between judgments, objective defects, and suffering. I once pair-programmed with a developer—let's call him L—who was not used to unit testing. I thought that not having unit tests was bad (my judgment) and tried to convince him that having some tests would help us release with fewer defects. His response? "So what if the software has a few bugs? If customers report bugs, we'll patch them." When I said I'd rather not release buggy software in the first place, he became a bit disgruntled. He was reluctant to pair after that.
 
@@ -44,6 +45,25 @@ I couldn't convince L that adding unit tests was a good idea, because I presente
 
 Suffering is distinct from pain and discomfort. When suffering occurs within a person, it is because two parts of their mind are in conflict. Often, the conflict is _about_ a source of pain or discomfort, which is why we associate suffering with these phenomena.
 
-For example, imagine you're in the middle of an exercise routine—running, perhaps. You're out of breath, your heart is pounding, and your joints and muscles ache. You're experiencing discomfort and pain. But you only start suffering when some part of your mind speaks up and says _you know, we could stop and walk for a bit_ and another part of your mind counters with _no, we have to keep going!_ If you were wholeheartedly committed to your exercise regimen, you wouldn't dream of stopping, and you wouldn't suffer. If you were wholeheartedly committed to stopping, you'd just stop, and you wouldn't suffer. You only suffer because of the conflict between different parts of your mind that have different goals.
+For example, imagine you're in the middle of an exercise routine—running, perhaps. You're out of breath, your heart is pounding, and your joints and muscles ache. You're experiencing discomfort and pain. But you only start suffering when some part of your mind speaks up and says _you know, we could stop and walk for a bit_ and another part of your mind counters with _no, we have to keep going!_ If you were wholeheartedly committed to your exercise regimen, you wouldn't dream of stopping, and you wouldn't suffer. If you were wholeheartedly committed to stopping, you'd just stop, and you wouldn't suffer. You only suffer when different parts of your mind have conflicting goals.
+
+Suffering can be associated with pleasure as well as with pain. For example, suppose you're tempted to stay up late playing video games, but you know you'd regret it the next morning. While just thinking about video games is inherently pleasant, that thought still causes suffering because it conflicts with the more prudent part of your mind that countermands it.
+
+Suppose you do stay up all night playing games, though, and you are tired the next morning. Your suffering at that point isn't caused by the tiredness itself, but by your desire to either sleep or be more alert. Since you probably can't do either, your desire is in conflict with reality, and so you suffer.
+
+## Forming a Theory
+
+As you observe the system, you will naturally start telling yourself stories about _why_ the system is the way it is. You'll form mental models of the various actors in the system, and you'll see how their actions affect other centers. These explanatory stories and characterizations form a _theory_ of the system that you can use to predict what might happen to it in the future.
+
+The longer and more carefully you observe, the more refined your theory will become. You'll see situations where your initial theory made incorrect predictions, and you'll revise your theory to match these new observations. You can often get more perspectives by interviewing participants in the system, and refine your theory that way. However, attempting to create a perfect theory—trying to find out what's "really" going on—is a quixotic goal. A perfect theory is neither necessary nor attainable. Once you have a predictive theory of any quality, you should probably move quickly to the next step: deciding what to change.
+
+## Deciding what to Change
+
+## Making a Change
+
+Making a change breaks down into two sub-steps:
+
+- Deciding what change to make
+- 
 
 September 3rd, 2023
