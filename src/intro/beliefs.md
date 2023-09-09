@@ -16,4 +16,10 @@ Software is an image of the system that produced it (this is Conway's law).
 
 To fully understand any software, you must understand its creators.
 
+In software development, as in life, every unbendable rule is a weakness. Pragmatism beats purity.
+
+There are things that can be known, but not taught in words.
+
+If you only know words, you understand nothing.
+
 Aesthetics matter. The only question is, who should have a say in how something looks and feels?
