@@ -1,4 +1,4 @@
-# Things I Believe to be True About Software
+# Things I Believe About Software
 
 Software can be understood.
 
