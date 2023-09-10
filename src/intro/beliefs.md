@@ -49,4 +49,4 @@ Culture selects the permissible from the possible. The future will be what we ch
 
 The future, once it arrives, will feel just as mundane as the present.
 
-The biggest problem facing software today is our inadequate menu of cosmologies.
+The biggest problem facing software today is our inadequate menu of mythologies.
