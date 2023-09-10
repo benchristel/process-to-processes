@@ -14,7 +14,7 @@ Every action in a software development process is undertaken in pursuit of some 
 
 Software is an image of the system that produced it (this is Conway's law).
 
-To fully understand any software, you must understand its creators.
+To fully understand any software, you must understand its creators, customers, and users.
 
 In software development, as in life, every unbendable rule is a weakness. Pragmatism beats purity.
 
