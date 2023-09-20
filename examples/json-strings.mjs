@@ -1,4 +1,4 @@
-import {test, expect, is, getAllTests, runTests, formatTestResultsAsText} from "@benchristel/taste"
+import {test, expect, is, debug, getAllTests, runTests, formatTestResultsAsText} from "@benchristel/taste"
 
 // function firstQuotedString(input) {
 //   return firstMatch(/"(\\.|[^\\"])*"/, input)
@@ -30,23 +30,14 @@ import {test, expect, is, getAllTests, runTests, formatTestResultsAsText} from "
 
 function firstQuotedString(inputString) {
   const input = new Reader(inputString)
-  let result = undefined
-  
-  let nextChar
-  while (nextChar = input.read()) {
-    if (result === undefined) {
-      if (nextChar === '"') {
-        result = '"'
-      }
-    } else {
-      if (nextChar === '"') {
-        return result + nextChar
-      } else if (nextChar === "\\") {
-        result += nextChar + input.read()
-      } else {
-        result += nextChar
-      }
-    }
+  const result = new Writer()
+  const parser = new Parser(input, result)
+  while(input.hasNext() && !parser.parseQuote()) {
+    input.read()
+  }
+  while (input.hasNext() && parser.parseStringCharacter()) {}
+  if (parser.parseQuote()) {
+    return result.string()
   }
 }
 
@@ -59,35 +50,85 @@ class Reader {
   read() {
     return this.input[this.nextIndex++]
   }
+
+  hasNext() {
+    return this.nextIndex < this.input.length
+  }
+
+  nextIs(character) {
+    return this.input[this.nextIndex] === character
+  }
 }
 
-function firstQuotedString(input) {
-  const startIndex = input.indexOf('"')
-  if (startIndex === -1) {
-    return undefined
+class Writer {
+  constructor() {
+    this.output = ""
   }
-  let scanIndex = startIndex
-  let endIndex = 0
-  while (endIndex !== -1) {
-    endIndex = input.indexOf('"', scanIndex + 1)
-    if (endIndex === -1) {
-      return undefined
-    }
-    let backslashCount = 0
-    for (let i = endIndex - 1; i > 0; i--) {
-      if (input[i] === "\\") {
-        backslashCount++
-      } else {
-        break;
-      }
-    }
-    if (backslashCount % 2 === 0) {
-      return input.slice(startIndex, endIndex + 1)
-    } else {
-      scanIndex = endIndex
-    }
+
+  write(string) {
+    this.output += string
+  }
+
+  string() {
+    return this.output
   }
 }
+
+class Parser {
+  constructor(input, output) {
+    this.input = input
+    this.output = output
+  }
+
+  parseQuote() {
+    if (this.input.nextIs('"')) {
+      this.output.write(this.input.read())
+      return true
+    } else {
+      return false
+    }
+  }
+
+  parseStringCharacter() {
+    if (this.input.nextIs('"')) {
+      return false
+    }
+    let character = this.input.read()
+    if (character === "\\") {
+      character += this.input.read()
+    }
+    this.output.write(character)
+    return true
+  }
+}
+
+// function firstQuotedString(input) {
+//   const startIndex = input.indexOf('"')
+//   if (startIndex === -1) {
+//     return undefined
+//   }
+//   let scanIndex = startIndex
+//   let endIndex = 0
+//   while (endIndex !== -1) {
+//     endIndex = input.indexOf('"', scanIndex + 1)
+//     if (endIndex === -1) {
+//       return undefined
+//     }
+//     let backslashCount = 0
+//     for (let i = endIndex - 1; i > 0; i--) {
+//       if (input[i] === "\\") {
+//         backslashCount++
+//       } else {
+//         break;
+//       }
+//     }
+//     if (backslashCount % 2 === 0) {
+//       return input.slice(startIndex, endIndex + 1)
+//     } else {
+//       scanIndex = endIndex
+//     }
+//   }
+// }
 
 test("firstQuotedString", {
   "returns undefined given empty string"() {
