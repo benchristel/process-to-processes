@@ -1,5 +1,3 @@
-foundational-concepts
-
-!unspecified
+what-programming-is.html
 good-code
 testing.html
