@@ -1,4 +1,4 @@
-# Summary of the Introduction
+# Overview of the Introduction
 
 1. **The System.** There is a system of interacting people and computers that creates value for your employer. As a software engineer, your job is to improve the system so it nets more value. A few subtleties are often overlooked:
     - Because money is limited and the future is uncertain, the system cannot be created, all at once. It must be _grown_, bit by bit.
@@ -14,7 +14,7 @@
 
 4. **Design.** _Design_ is the art of shaping centers to resolve conflicts between forces.
 
-5. **Patterns and Heuristics.** Experienced engineers develop _patterns and heuristics_ for doing design. These take the form _if {A, B, C ...} are true, then maybe Y is a good idea_. Of course, you still have to evaluate whether Y is actually a good idea, but at least the pattern gives you a clue about what to try. Much of this book is devoted to describing patterns and heuristics.
+5. **Patterns.** Experienced engineers develop _patterns_ for doing design. These take the form _if {A, B, C ...} are true, then maybe Y is a good idea_. Of course, you still have to evaluate whether Y is actually a good idea, but at least the pattern gives you a clue about what to try. Much of this book is devoted to describing patterns.
 
 6. **Feedback and Evaluation.** In order to know whether a pattern applies to a situation you must have some way to know if the result of applying it is any good. There are two parts to this. The first, _feedback_, is the mechanism by which you sense the results. The second, _evaluation_, is how you know if the result is good. This book tells you how to get feedback and how to evaluate results.
 

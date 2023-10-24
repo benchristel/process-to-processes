@@ -1,0 +1,11 @@
+summary.html
+system.html
+centers.html
+forces.html
+conflict.html
+design.html
+patterns.html
+feedback.html
+fundamental-process.html
+attitude.html
+next.html
