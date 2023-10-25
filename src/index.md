@@ -1,6 +1,6 @@
 # Process to Processes
 
-<span style="font-size: 150%;font-weight:bold;font-style:italic">
+<span style="font-size: 130%;font-weight:500;font-style:italic">
 A Guide to Software Application Engineering
 </span>
 
