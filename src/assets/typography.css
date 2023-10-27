@@ -2,16 +2,26 @@
   font-family: Lora;
   font-style: normal;
   src: url(Lora-VariableFont_wght.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Lora;
   font-style: italic;
   src: url(Lora-Italic-VariableFont_wght.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora fallback';
+  src: local('Georgia'), local('Times New Roman'), local(Times);
+  ascent-override: 80%;
+  descent-override: 0%;
+  font-display: block;
 }
 
 body {
-  font-family: Lora, Georgia, 'Times New Roman', Times, serif;
+  font-family: Lora, 'Lora fallback';
   line-height: 140%;
   font-weight: 466;
   font-size: 15px;
