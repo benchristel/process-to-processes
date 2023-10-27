@@ -8,9 +8,11 @@ It sounds simple, but of course it isn't easy. In real organizations, the diagra
 
 (arrow diagram: info -> triage -> miscommunication -> indecisiveness -> delays -> red tape -> action -> results? - - - > feedback? - - - > info; {politics, ego, fear} -> action)
 
-ESD gives you a recipe for gradually untangling this kind of organizational dysfunction. It starts by pulling at a loose end—the fingers-on-the keyboard act of typing code. Then it works in larger and larger loops, broadening the perspective to software architecture, team dynamics, user interfaces, and finally the organization as a whole.
+Turbulence, uncertainty, and ulterior motives waste our energy. They drain value from the system and sap its strength.
 
-Grand schemes aside: at the individual, personal level, we have to grapple with questions like:
+ESD gives you a recipe for gradually untangling this kind of organizational dysfunction. It starts by pulling at a loose end—the fingers-on-the keyboard act of typing code. Then it works in larger and larger loops, broadening the perspective to programming workflow, software architecture, team dynamics, and user interfaces.
+
+Grand schemes aside: in our day to day work, we have to grapple with questions like:
 
 - What if I don't have all the information?
 - What if I have a hunch, but can't prove it?

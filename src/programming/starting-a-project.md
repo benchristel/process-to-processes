@@ -40,4 +40,5 @@
 
 - a functional utility library
 - a simple test framework
-- a command line program
+- a command line program (TODO domain)
+- a web UI (TODO domain)
