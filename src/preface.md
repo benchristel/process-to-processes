@@ -4,7 +4,7 @@
 
 (arrow diagram: information -> action -> results -> feedback -> information)
 
-It sounds simple, but of course it isn't easy. In real organizations, the diagram often looks more like this:
+Working this way is both joyful and productive. It sounds simple, but of course it isn't easy. In real organizations, the diagram often looks more like this:
 
 (arrow diagram: info -> triage -> miscommunication -> indecisiveness -> delays -> red tape -> action -> results? - - - > feedback? - - - > info; {politics, ego, fear} -> action)
 
@@ -47,8 +47,8 @@ This book will teach you these skills, and more.
 
 Empirical Software Development probably isn't right for every team or project. You'll get the most out of it if you value certain things:
 
-- **Defect-free software** over lots and lots of features
-- **Steady improvement** over chasing utopian ideals
+- **Understanding your code, users, and business** over piling on features
+- **Steady improvement** over chasing pie-in-the-sky ideas
 - **Being genuine** over looking impressive
 - **Being kind** over being cute
 
@@ -60,8 +60,8 @@ As I write this description of ESD, I'm already worrying about how people might 
 
 Empirical Software Development:
 
-- does NOT mean that quantitative data is the only information that matters
-- does NOT mean that programmers have to or get to make all the decisions
+- does NOT mean that quantitative data is the only information that matters. This book will show you how to use qualitative information to make decisions, by [**comparing alternatives**](/programming/comparing-alternatives.html).
+- does NOT mean that programmers have to or get to make all the decisions.
 - is NOT the One True Way to program.
 
 ## Comparison to Empirical Software Design

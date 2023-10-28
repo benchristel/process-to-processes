@@ -18,23 +18,33 @@ Your organization _is_ software, albeit software that runs on people instead of 
 
 I was lucky enough to spend five years working at Pivotal, a company whose "peopleware" was designed by an excellent software engineer, Rob Mee. I'm still in the process of analyzing that design and figuring out how it worked, and all the tradeoffs it made—but for us, it worked astonishingly well.
 
-Some facts about that system:
+Some facts about that company:
 
+- The company had about 3000 employees, spread over a dozen-plus offices worldwide.
 - Each team was co-located in an office.
 - We all worked the same hours: 9 to 6 with a one-hour lunch break at 12:30.
 - We pair-programmed full time.
 - We didn't have laptops. There was no way to take work home.
-- We barely looked at email, or any other digital communication platform. All communication was in-person.
-- We had about two hours of whole-team meetings per week: a one-hour planning meeting on Monday, and a one-hour retrospective on Friday.
+- We barely looked at email, or any other messaging app. All ephemeral communication was in-person.
+- We had about two hours of whole-team meetings per week: a one-hour planning meeting on Monday, and a one-hour retrospective on Friday. No other standing meetings.
+- Managers spent about 80% of their time writing code. Your manager probably wasn't on your team, and wasn't necessarily the lead engineer on _their_ team.
 - We got catered breakfast every day. The snacks were free. We took frequent ping-pong breaks.
 
-This way of working might sound strange to you—that's kind of the point. Take it as an illustration of some of the ways a system can differ from your own.
+Much of this probably sounds very different from your current way of working, perhaps alarmingly so—and that's kind of my point. Take this as an illustration of some of the ways a system can differ from your own.
+
+I'm *not* saying you have to work this way. I'm saying you should feel free to change things up, even in wild-seeming ways, as long as the resulting system works for you and your context. The landscape of possibility is much wider than what current "industry-standard practices" would have you believe.
 
 ## What Can You Change?
 
-As an individual engineer working for a large company, you're not, of course, going to be able to make changes this radical yourself. What you _can_ do is choose how to set the various knobs and levers available to you. You can choose, for instance, to do more synchronous communication, or more asynchronous communication.
+As an individual engineer working for a large company, you're not, of course, going to be able to make radical changes on your own. What you _can_ do is choose how to set the various knobs and levers available to you. You can choose, for instance, to do more synchronous communication, or more asynchronous communication.
 
 ## Systems Are Grown, Not Made
+
+It's tempting to try to design the perfect system up front, put all the pieces together, and let 'er rip. That approach is pretty much doomed to fail.
+
+> A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.
+>
+> —John Gall, [_Systemantics_](https://en.wikipedia.org/wiki/Systemantics), p. 71
 
 Because money is limited and the future is uncertain, the system cannot be created, all at once. It must be _grown_, bit by bit, incorporating [feedback](feedback.html) from its environment at every step. A system that is designed and built all at once is almost certain to be as dead as a flower made from glued-together petals and leaves.
 
