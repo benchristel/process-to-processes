@@ -1,6 +1,6 @@
 # Preface
 
-**Empirical Software Development** is a way of working where action naturally flows from information. You see a problem or an opportunity. You figure out what to do about it. You do it. You check that it worked.
+**Empirical Software Development** is a way of working where action flows naturally from information. You see a problem or an opportunity. You figure out what to do about it. You do it. You check that it worked.
 
 (arrow diagram: information -> action -> results -> feedback -> information)
 
