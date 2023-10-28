@@ -4,13 +4,13 @@
 
 (arrow diagram: information -> action -> results -> feedback -> information)
 
-Working this way is both joyful and productive. It sounds simple, but of course it isn't easy. In real organizations, the diagram often looks more like this:
+Working this way is both joyful and productive—especially when the whole team participates. It sounds simple, but of course it isn't easy. In real organizations, the diagram often looks more like this:
 
 (arrow diagram: info -> triage -> miscommunication -> indecisiveness -> delays -> red tape -> action -> results? - - - > feedback? - - - > info; {politics, ego, fear} -> action)
 
-Turbulence, uncertainty, and ulterior motives waste our energy. They drain value from the system and sap its strength.
+Turbulence, uncertainty, and ulterior motives waste our energy. They drain value from the system and sap its strength. We'd like to prevent this waste, but most of us don't know how.
 
-ESD gives you a recipe for gradually untangling this kind of organizational dysfunction. It starts by pulling at a loose end—the fingers-on-the keyboard act of typing code. Then it works in larger and larger loops, broadening the perspective to programming workflow, software architecture, team dynamics, and user interfaces.
+ESD gives you a recipe for reducing waste by gradually untangling organizational dysfunction. It starts by pulling at a loose end—the fingers-on-the keyboard act of typing code. Then it works in larger and larger loops, broadening the perspective to programming workflow, software architecture, team dynamics, and user interfaces.
 
 Grand schemes aside: in our day to day work, we have to grapple with questions like:
 
