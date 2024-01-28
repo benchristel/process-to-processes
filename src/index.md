@@ -69,7 +69,7 @@ Good designs often seem to come from a flash of inspiration or insight. While it
 
 ## Patterns
 
-A **pattern** is a way of arranging centers. A *pattern description* consists of the following parts:
+A **pattern** is a local arrangement of centers that solves some design problem. A *pattern class* consists of the following parts:
 
 - A *trigger*—a situation that makes you go "aha! Pattern X might apply here."
 - A *design move*. You can think of this as a function that transforms a system *S* that does not have the pattern into a system *S&prime;* that does.
@@ -83,6 +83,10 @@ The **wholeness** of a system is its internal coherence. It is related to our se
 
 The degree of wholeness in a system inversely correlates with conflict between forces.
 
+Holographic structure &rarr; wholeness. You can see evidence of the whole in each part.
+
+Wholeness is recursive. A whole system consists of centers that are themselves whole.
+
 Wholeness predicts predictability. "You know you're reading good code when each routine you look at turns out to be pretty much what you expected" —Ward Cunningham.
 
 ## Latent, Weak, and Strong Centers
@@ -93,6 +97,12 @@ Wholeness can often be enhanced by:
 - Making weak but important centers stronger, by creating and arranging other centers within and around them to reinforce them
 - Making strong but unimportant centers weaker (by indirection / decoupling?)
 
+## How Centers Strengthen Each Other
+
+Alternative titles: Fifteen Properties of Living Structure; the Structure of Seredipity
+
+
+
 ## Cognitive Efficiency and the Criterion of Life
 
 - The rational part of your brain is slow, expensive, and weak.
@@ -101,6 +111,7 @@ Wholeness can often be enhanced by:
 - Compare: _Notes on the Synthesis of Form_ to _The Nature of Order_.
 - Therefore, **our judgment of relative life must be our central guiding criterion as we design**. There is no other way to get quality/value at a reasonable speed.
 - ...but we also have to confirm that our snap judgments are reasonable, e.g. by asking "who benefits"?
+- We can also automate a lot of judgments about the software components of the system, e.g. with tests, types, and linters.
 
 ## The Fundamental Process
 
@@ -115,3 +126,52 @@ The fundamental process for improving a system is a variant of the OODA loop (OO
 ## Computational Irreducibility of the Process
 
 Non-incremental approaches are doomed to technical success.
+
+## A Good Starting Point for the Process
+
+The process takes many guises, depending on context, but is always ultimately the same.
+
+Projects, teams, and codebases, of course, may look very different.
+
+You will know better than I do how you should begin your project, but here are some suggested patterns. Use these as defaults, and customize to your liking.
+
+Code: <pattern>walking skeleton</pattern>
+
+People: <pattern>cross-functional team</pattern>
+
+Plan: <pattern>ordered backlog</pattern>
+
+Process: <pattern>shared schedule</pattern>, <pattern>top of backlog</pattern>, <pattern>weekly planning</pattern>, <pattern>weekly retrospective</pattern>, <pattern>manual system testing</pattern>, <pattern>test-driven development</pattern>
+
+## Pattern: Walking Skeleton
+
+Summary: A tiny, featureless, yet "complete" and working whole. A walking skeleton is a hilariously overbuilt "hello world" app that includes all the scaffolding on which you will hang your real functionality.
+
+Trigger: you are starting a project
+
+Evaluator: you shouldn't need to mess with the infrastructure (much) as you develop the skeleton into something useful. You can separate infrastructure changes from feature changes. New people on the team can get up and running easily.
+
+Move: create a "hello world" app that uses the architecture and tools appropriate to your project. Including:
+
+- version control
+- production deployment or installer
+- package manager
+- dev build / server
+- test runner
+- typechecker
+- linter
+- formatter
+- git hooks
+- developer documentation
+- editor configuration
+- frontend/backend interaction
+- database
+
+### Examples
+
+TODO
+
+### Related Patterns
+
+- <pattern>O(1) tooling</pattern>
+- <pattern>400ms feedback loop</pattern>
