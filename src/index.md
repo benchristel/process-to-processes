@@ -9,4 +9,109 @@ A work in progress by [Ben Christel](https://github.com/benchristel)
 NOTE: you can use the left and right arrow keys to navigate between pages of this book.
 They do the same thing as the "Prev" and "Next" links.
 
-{{toc}}
+---
+
+## The System
+
+A **system** of interacting people and machines creates value for your employer. As a software developer, your job is to improve the system so it nets more **value**.
+
+## Value
+
+**Value** is shorthand for "what is intrinsically good".
+
+Value is not profit. Profit is an indirect result of value.
+
+Consider the architecture of Sorrento, a beautiful city in Italy. To say that the buildings and public spaces of the city have *value* is simply to say that people like them: that they are beautiful, pleasant places to be. Because of this intrinsic value, the city has a thriving tourism industry, which generates revenue for the city. That is the connection between value and profit.
+
+Why do we, as software developers, concern ourselves with value and not profit? Profit is not something we can directly control. There are too many factors influencing it. It is a fool's game to try to link a change in profits back to the efforts of an individual engineer or even an engineering team.
+
+By contrast, value can be perceived more or less directly, objectively, and immediately. We can do quick tests to judge which of two alternatives is more or less valuable, even before putting our changes into production.
+
+Judging value accurately, however, is challenging for many software developers. For many of us, our education has trained us to systematically ignore the kind of value I am talking about. To begin to perceive it, we have to reawaken a long-buried part of ourselves. This begins with learning a new mode of perception.
+
+If we are to "improve the system", steadily adding to its value, we have to learn to see the system clearly. The fundamental constituents of any system are **centers**.
+
+## Centers
+
+Every sociotechnical system can be modeled as a graph of internally coherent, interrelated, fuzzily-bounded regions that I call **centers**. The term _center_ comes from Christopher Alexander, and was first applied to visual art and the design of the built environment. Although we are going to apply the concept of centers to human-computer systems, that application will be made easier by first studying the concept in its original context.
+
+Christopher Alexander used the term *center* to refer to the visually coherent regions of space that appear in art and architecture. Centers are cohesive and identifiable; you can name them, point to them, count them, and recognize ones you've seen before. However, centers do not necessarily have a precise boundary, so they may not be separable from their context.
+
+The concept of a center may seem a bit hard to grasp. However, I am sure that you already have an intuitive and practical sense of the concept, though you may not be used to paying attention to centers or talking about them.
+
+To see that you already understand what a center is, imagine a whirlpool in a stream.
+
+![a whirlpool](whirlpool.png)
+
+What is a whirlpool? It's not a set of water molecules. The physical material that makes up the whirlpool is rapidly and constantly changing. It's also not an exact shape; the particular ripples in the water are constantly changing. It's not separable from the stream itself; you can't lift it out of the water and take it home with you.
+
+Yet you can point to it. You can name it. If there are several whirlpools, you can count them. If you come back the next day and the whirlpool is still there, you can say "it's the same one I saw yesterday". If you know you can do all those things, then you know what a center is.
+
+There are, of course, also centers that are more like "objects"—things that _can_ mostly be separated from their context, and that _do_ have a more or less consistent physical makeup. You are used to thinking and talking about these, so I won't dwell on them.
+
+## Forces
+
+Where do centers come from? Centers are shaped by **forces**.
+
+The forces acting on a center push it to develop in a certain direction, or constrain it to have certain properties. For example, the forces acting on a piece of code might push it toward being correct, performant, and maintainable.
+
+## Conflict
+
+Multiple forces may propel a center in the same "direction"—that is, they may all push it toward the same shape or structure. This is delightful when it happens, because it means that the center, so shaped, can accommodate all of those forces well.
+
+More often, though, we see that forces conflict. One force pushes a center toward one structure, and another pushes it toward a different structure. When conflict happens, we are forced to make tradeoffs. It is not possible to satisfy both forces at once, so we have to choose one, or make some compromise between them.
+
+## Design
+
+**Design** is the art of resolving conflicts between forces. By shaping and arranging centers in the right way, it is often possible to turn a situation of conflict into one of harmony and agreement.
+
+Good designs often seem to come from a flash of inspiration or insight. While it may never be possible to reach a good design solely by following mechanical rules, design is a learnable skill. Designers learn by formulating and applying **patterns**.
+
+## Patterns
+
+A **pattern** is a way of arranging centers. A *pattern description* consists of the following parts:
+
+- A *trigger*—a situation that makes you go "aha! Pattern X might apply here."
+- A *design move*. You can think of this as a function that transforms a system *S* that does not have the pattern into a system *S&prime;* that does.
+- An *evaluator*—a function that tells you whether *S&prime;* is an improvement on *S*.
+
+In this book, we will focus on a single evaluator: *wholeness*.
+
+## Wholeness
+
+The **wholeness** of a system is its internal coherence. It is related to our senses of beauty, rightness, good fit, life, health, simplicity, and tranquility. When people are involved in a system that is whole, they tend to feel joy, satisfaction, confidence, trust, loving-kindness, and connectedness.
+
+The degree of wholeness in a system inversely correlates with conflict between forces.
+
+Wholeness predicts predictability. "You know you're reading good code when each routine you look at turns out to be pretty much what you expected" —Ward Cunningham.
+
+## Latent, Weak, and Strong Centers
+
+Wholeness can often be enhanced by:
+
+- Making implicit (latent) centers implicit, by giving them a definite identity and structure.
+- Making weak but important centers stronger, by creating and arranging other centers within and around them to reinforce them
+- Making strong but unimportant centers weaker (by indirection / decoupling?)
+
+## Cognitive Efficiency and the Criterion of Life
+
+- The rational part of your brain is slow, expensive, and weak.
+- Our hardware is optimized for holistic perception and feeling.
+- It is much easier to get wholeness by feeling your way to it than by trying to reason out all the interactions between forces.
+- Compare: _Notes on the Synthesis of Form_ to _The Nature of Order_.
+- Therefore, **our judgment of relative life must be our central guiding criterion as we design**. There is no other way to get quality/value at a reasonable speed.
+- ...but we also have to confirm that our snap judgments are reasonable, e.g. by asking "who benefits"?
+
+## The Fundamental Process
+
+The fundamental process for improving a system is a variant of the OODA loop (OODA = observe, orient, decide, act):
+
+1. Observe the system, just as it is.
+2. Notice something that could be better (e.g. an impedance mismatch or a weak/latent center)
+3. Make a small change to make that thing better without making anything else worse.
+4. Evaluate. If your change made things worse, undo it.
+5. Repeat.
+
+## Computational Irreducibility of the Process
+
+Non-incremental approaches are doomed to technical success.
