@@ -23,11 +23,23 @@
 body {
   font-family: Lora, 'Lora fallback';
   line-height: 150%;
-  font-weight: 450;
+  font-weight: 500;
   font-size: 17px;
+}
+
+article {
+  color: #181c20;
+  text-shadow: 0 1px #fff8;
 }
 
 b, strong {
   font-weight: 660;
   letter-spacing: 0.01em;
+}
+
+pattern {
+  color: #400;
+  font-variant: small-caps;
+  font-weight: 566;
+  letter-spacing: 0.02em;
 }
