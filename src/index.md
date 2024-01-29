@@ -9,6 +9,20 @@ A work in progress by [Ben Christel](https://github.com/benchristel)
 NOTE: you can use the left and right arrow keys to navigate between pages of this book.
 They do the same thing as the "Prev" and "Next" links.
 
+Can't wait for the book? Read the books that inspired me instead:
+
+- Kent Beck:
+  - _Extreme Programming Explained_, 2nd ed.
+  - _Test Driven Development By Example_
+- Christopher Alexander:
+  - _The Timeless Way of Building_
+  - _A Pattern Language_
+  - _The Nature of Order_
+- Eric S. Raymond: [_The Art of Unix Programming_](http://www.catb.org/esr/writings/taoup/html/)
+- Culadasa: _The Mind Illuminated_
+- Marijn Haverbeke: [_Eloquent JavaScript_](https://eloquentjavascript.net/)
+- Stephen Wolfram: [_A New Kind of Science_](https://www.wolframscience.com/nks/)
+
 ---
 
 ## The System
