@@ -2,63 +2,109 @@
 <html lang="en">
 	<head>
 		<title>{{title}}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<style>
 			* {
 				box-sizing: border-box;
 			}
+
+			:root {
+				--body-width: 7in;
+				--page-margin: 1in;
+				--body-margin: 16px;
+				--nav-link-inline-padding: 9px;
+				--ink: #202224;
+				--light-ink: #20222488;
+			}
+			
 			html, body {
 				margin: 0;
 				padding: 0;
+				color: var(--ink);
 			}
+
+			.container {
+				box-sizing: content-box;
+				margin-inline: auto;
+				max-width: var(--body-width);
+				/* background: #fcfcfcdd; */
+				padding: 0.25in var(--page-margin);
+				/* border-inline: 1px solid #bbb; */
+				/* box-shadow: 0 0 6px 1px #0002; */
+			}
+			
 			a {
 				text-decoration-color: #0004;
 				text-underline-offset: 3px;
 				text-decoration-skip: none;
 			}
+			
 			a:hover, a:focus-visible {
 				background: #0000000b;
 			}
+			
 			@media screen {
 			  body {
 					background-color: #f4e8d0;
-					max-width: 700px;
 					margin: 0 auto;
 					overflow-y: scroll;
 				}
 			}
-			.navbar {
+
+			@media print {
+				.navbar {
+					display: none;
+				}
+			}
+
+			@media (max-width: 740px) {
+				:root {
+					--page-margin: 0;
+				}
+			}
+			
+			.navbar > nav {
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
 				flex-wrap: wrap;
-				padding: 0 0.5em;
+				padding-inline: var(--body-margin)
 			}
+			
 			nav a {
 				display: inline-block;
-				padding: 0.6em;
+				padding: 0.6em var(--nav-link-inline-padding);
 				white-space: nowrap;
 			}
-			nav > .divider {
+
+			.paging {
+				margin-inline: calc(-1 * var(--nav-link-inline-padding));
+			}
+			
+			.paging > .divider {
 				display: none;
 			}
-			nav > .divider:not(:first-child):not(:last-child) {
+			
+			.paging > .divider:not(:first-child):not(:last-child) {
 				display: inline-block;
 				content: "";
 				vertical-align: middle;
 				height: 20px;
-				border-left: 1px solid black;
+				border-left: 1px solid var(--light-ink);
 			}
-			.mdsite-breadcrumb > a {
+			
+			.breadcrumb a {
 				padding: 0.6em 0;
 			}
-			.mdsite-breadcrumb > a:not(:last-child)::after {
+			
+			.breadcrumb a:not(:last-child)::after {
 				display: inline-block;
 				padding: 0 0.5em 0 0.2em;
-				color: #000;
+				color: var(--light-ink);
 				content: "/";
 			}
 			article {
-				margin: 0 16px;
+				padding: 0 16px;
 			}
 			article h1 {
 				font-size: 200%;
@@ -72,7 +118,7 @@
 			figure {
 				float: right;
 				background: #eee;
-				border: 1px solid #888;
+				border: 1px solid var(--light-ink);
 				display: table;
 				padding: 0 1em;
 				text-align: center;
@@ -92,13 +138,9 @@
 			}
 			blockquote {
 				margin: 1em 0;
-				/* border: 1px solid #0004; */
-				/* border-left: 6px solid #0004; */
-				/* padding: 0.1em 2em; */
 				padding: 0 2em;
-				border-top: 1px solid gray;
-				border-bottom: 1px solid gray;
-				/* background: linear-gradient(to bottom, #ffc4, #fff0 20%, #fff0 80%, #ffc4); */
+				border-top: 1px solid var(--light-ink);
+				border-bottom: 1px solid var(--light-ink);
 				font-style: italic;
 			}
 			pre {
@@ -109,11 +151,11 @@
 				border-radius: 3px;
 			}
 			header.navbar {
-				border-bottom: 1px solid #aaa;
+				border-bottom: 1px solid var(--light-ink);
 			}
 			footer.navbar {
 				margin-top: 2em;
-				border-top: 1px solid #aaa;
+				border-top: 1px solid var(--light-ink);
 				padding-bottom: 120px;
 			}
 		</style>
@@ -121,26 +163,31 @@
 		<link rel="stylesheet" href="/assets/syntax.css">
 	</head>
 	<body>
-		<header class="navbar">
-			<div>
-				{{breadcrumb}}
-			</div>
-			<nav>
-				{{prev}}<div class="divider"></div>{{next}}
-			</nav>
-		</header>
+		<div class="container">
+			<header class="navbar">
+				<nav>
+					<div class="breadcrumb">
+						{{breadcrumb}}
+					</div>
+					<div class="paging">
+						{{prev}}<div class="divider"></div>{{next}}
+					</div>
+				</nav>
+			</header>
 
-		<article>
-			{{content}}
-		</article>
+			<article>
+				{{content}}
+			</article>
 
-		<footer class="navbar">
-			<div>
-			</div>
-			<nav>
-				{{prev}}<div class="divider"></div>{{next}}
-			</nav>
-		</footer>
+			<footer class="navbar">
+				<nav>
+					<div></div>
+					<div class="paging">
+						{{prev}}<div class="divider"></div>{{next}}
+					</div>
+				</nav>
+			</footer>
+		</div>
 		<script>
 document.onkeydown = (e) => {
 	switch (e.key) {
