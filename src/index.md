@@ -27,7 +27,67 @@ Can't wait for the book? Read the books that inspired me instead:
 
 ## The System
 
-A **system** of interacting people and machines creates value for your employer. As a software developer, your job is to improve the system so it nets more **value**.
+A **system** of interacting people and machines creates **value** for your employer. As software developers, our job is to improve the system so it nets more value.
+
+A system is composed of interacting parts. The interactions take many forms. The kind of interaction that software can directly affect is **information flow**. All software does, really, is route torrents of information from one place to another, swirling, splitting, and joining it along the way.
+
+The word "information" in English is an unemotional one. It feels thin, dry, and colorless. I think that is unfortunate. Like water, information can comfort, quench, heal, threaten, and destroy. Information can make you laugh, or it can punch your guts out.
+
+Information is the stuff of experience, and it is all you will ever experience.
+
+It is information that turns the value-generating wheels of the software organization.
+
+Information flows through people and machines. Each twist, turn, and interface it traverses is an opportunity for **friction**. Resistance, turbulence, bottlenecks, crosstalk, impedance mismatches—these are some of the metaphors we use to talk about information flows gone wrong.
+
+Information is the lifeblood of the system. When the information flows are quick, clear, and harmonious, the system is healthy. When they are slow, muddy, and working at cross purposes, the system is sick.
+
+A healthy system sustains itself with little effort. A system that is at death's door can only be kept alive by extreme heroics and frequent injections of money.
+
+How can you tell if a system is healthy or unhealthy? It's easy: step into the system, and you can feel it. Being in the middle of an unhealthy information flow sucks! It makes you want to get out.
+
+When unhealthy information flows touch human beings, we experience them as **suffering**. By contrast, healthy information flows produce a kind of pleasure that, over time, gives rise to a relaxed, joyful attitude.
+
+Your employer pays you to work, not to feel good. Is it ethical to change how you work just so you feel better? It depends on the change, but the short answer is "yes". We do not improve the system only in order to feel better. We have feelings because they tell us how to improve. The feeling of pleasure or displeasure at information flows has been wired into us by natural selection _so that_ the systems we create will tend toward health and prosperity.
+
+## Three Types of Information Flow
+
+Broadly speaking, there are three types of information flow in a sociotechnical system:
+
+- **Machine-to-machine.** In order to heal this kind of flow, we must learn to write correct, reliable programs.
+- **Human-to-machine.** In software systems this breaks down into two subtypes:
+  - **Programmer-to-machine.** This information flow is healed by structuring programs in a way that makes them easy to understand and change. It is intimately related to machine-to-machine information flows, because understandability and changeability are prerequisites for correctness.
+  - **User-to-machine.** This type of information flow is healed by good user interface design.
+- **Human-to-human.** This type of information flow is healed by good team structure and process. It is by far the most important, because all the other types of information flow can only be healed by humans working effectively.
+
+While human-to-human communication is the most important, it's also nearly impossible to tackle head-on in an unhealthy system. Human-to-human flows pervade the entire system. They are deep, swift, and often cruel. Get in their way, and you _will_ get knocked down.
+
+If you want to heal a system, you must start small: If you're a programmer, that means starting with the fingers-on-the-keyboard act of typing code. As you earn trust and gain confidence, you can work in larger and larger loops: improving architecture, team process, and user experience. If you succeed, others will want to emulate you. Then, and only then, can you start to coach them.
+
+## Trust
+
+Most people (rightly) do not trust programmers. If a programmer says something will take two days, it will actually take two weeks. Once the programmer says it's "done", it will still have multiple bugs.
+
+If you want to improve the system you're in, you need autonomy. To get autonomy, you must earn people's trust. The simplest way to earn trust as a programmer is to do good work. (Doing good work _and hitting your estimates_ is harder; in general you should try to reframe conversations about estimates so you are not held to a date that turns out to be unrealistic.)
+
+## Types of Friction
+
+- Human-to-machine
+  - interruption of service
+  - ugly UI
+  - inaccessible UI
+  - too many clicks
+  - slow performance
+  - missing information, weak / latent centers
+  - information overload
+  - unconventional or inconsistent interactions (muscle memory)
+  - not discoverable
+- Machine-to-machine
+  - incompatibility (should this go under human-to-machine? e.g. web app that's incompatible with old browsers)
+  - incorrectness
+  - performance?
+- Human-to-human
+  - Conflicting goals
+  - Conflicting expectations (e.g. for communication)
 
 ## Value
 
