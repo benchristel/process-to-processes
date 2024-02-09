@@ -163,6 +163,8 @@ Wholeness is recursive. A whole system consists of centers that are themselves w
 
 Wholeness predicts predictability. "You know you're reading good code when each routine you look at turns out to be pretty much what you expected" —Ward Cunningham.
 
+If you can't see wholeness, you're doomed to thrash between micro-optimizations as you focus first on one force and then on another.
+
 ## Latent, Weak, and Strong Centers
 
 Wholeness can often be enhanced by:
