@@ -81,12 +81,6 @@ While human-to-human communication is the most important, it's also nearly impos
 
 If you want to heal a system, you must start small: If you're a programmer, that means starting with the fingers-on-the-keyboard act of typing code. As you earn trust and gain confidence, you can work in larger and larger loops: improving architecture, team process, and user experience. If you succeed, others will want to emulate you. Then, and only then, can you start to coach them.
 
-## Trust
-
-Most people (rightly) do not trust programmers. If a programmer says something will take two days, it will actually take two weeks. Once the programmer says it's "done", it will still have multiple bugs.
-
-If you want to improve the system you're in, you need autonomy. To get autonomy, you must earn people's trust. The simplest way to earn trust as a programmer is to do good work. (Doing good work _and hitting your estimates_ is harder; in general you should try to reframe conversations about estimates so you are not held to a date that turns out to be unrealistic.)
-
 ## Types of Friction
 
 - Human-to-machine
@@ -220,6 +214,21 @@ The fundamental process for improving a system is a variant of the OODA loop (OO
 ## Computational Irreducibility of the Process
 
 Non-incremental approaches are doomed to technical success.
+
+## Trust
+
+Most people (rightly) do not trust programmers. If a programmer says something will take two days, it will actually take two weeks. Once the programmer says it's "done", it will still have multiple bugs.
+
+If you want to improve the system you're in, you need autonomy. To get autonomy, you must earn people's trust. The simplest way to earn trust as a programmer is to do good work. (Doing good work _and hitting your estimates_ is harder; in general you should try to reframe conversations about estimates so you are not held to a date that turns out to be unrealistic.)
+
+## Incremental Change
+
+We have to change software incrementally for two reasons, one technical and one human.
+
+- A technical reason: changes to the system generate new forces which have to be accounted for. These forces are very difficult to predict in advance, so it's prohibitively expensive to plan for them. It's much cheaper and easier to use the software itself as a laboratory to find out what will happen when we change it.
+- A human reason: incremental changes let us show steady progress, which helps build trust.
+
+Incremental change != continuous release!
 
 ## A Good Starting Point for the Process
 
