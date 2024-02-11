@@ -125,6 +125,45 @@ Where do centers come from? Centers are shaped by **forces**.
 
 The forces acting on a center push it to develop in a certain direction, or constrain it to have certain properties. For example, the forces acting on a piece of code might push it toward being correct, performant, and maintainable.
 
+### Forces Acting on Code
+
+Good code is **correct**, **efficient**, **verifiable**, **portable**, and **instructive**. Each of these virtues can be viewed as a force that pushes the centers in the code toward particular shapes and arrangements.
+
+#### Correctness
+
+Correct code does what its programmer intended, and nothing else. Code can only be as correct as its programmer's intentions are clear. Muddled intentions invariably produce buggy code.
+
+#### Efficient
+
+Code is more efficient when it takes less time to run and uses fewer scarce resources (e.g. memory, file handles).
+
+#### Verifiable
+
+Code is verifiable when you can tell whether it is correct or incorrect. Verifiability breaks down into several sub-virtues:
+
+- static verifiability
+  - readability
+  - type safety
+  - lint
+- dynamic verifiability
+  - testability
+  - observability
+
+#### Portable
+
+Code is portable when it can be carried forward into new contexts.
+
+Portability may either mean:
+
+- the code can be reused as-is in new contexts, or to solve new problems.
+- maintenance of the code does not require big or invasive changes.
+
+#### Instructive
+
+Good code looks "pretty much like what you'd expect" (according to Ward Cunningham). But in my experience, the best code teaches you something new about how to solve a problem.
+
+"Pretty much like what you'd expect" is a low bar—at least, it is when I'm the person doing the expecting. When I am looking at code I've never seen before, which solves a problem I've never had to solve, I often don't have a clear idea of what I expect to see. It's great if the code names variables and functions after concepts I'm familiar with, but again—that's a low bar.
+
 ## Conflict
 
 Multiple forces may propel a center in the same "direction"—that is, they may all push it toward the same shape or structure. This is delightful when it happens, because it means that the center, so shaped, can accommodate all of those forces well.
