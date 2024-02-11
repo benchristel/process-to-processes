@@ -43,7 +43,7 @@ The rest of the book consists of **views** and **patterns**.
 
 The views and patterns are presented in "smallest to largest" order. We'll start with tiny details of coding style and work our way up to software architecture, user experience design, and team dynamics. The reason for this presentation is practical: if you're trying to improve any situation, technical or human, it is most effective to start with the simplest and least dependent elements. It's always tempting to go the other way and tackle the biggest, most urgent problem first, but that's like trying to build a house on a foundation of quicksand. Get the foundations right; then everything else will fall naturally into place.
 
-## The System
+## Flows of Information
 
 A **system** of interacting people and machines creates **value** for your employer. As software developers, our job is to improve the system so it nets more value.
 
