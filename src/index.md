@@ -25,6 +25,24 @@ Can't wait for the book? Read the books that inspired me instead:
 
 ---
 
+## Introduction
+
+This book is for software developers who want to make better things in better ways. If you are interested in making software that is kinder, sturdier, more deeply felt, and better fit to your hand and mind, this book is for you. If you don't care about software so much, but just want to feel less stressed at work, I think you'll also find something of value here.
+
+_Process to Processes_ is a perpetual work in progress. I'm writing it because I don't know of a single other resource that presents similar ideas in an orderly, linear fashion. My own journey toward creating better software has been rather roundabout. My hope is that yours will be less so because of this book.
+
+### Contents
+
+The book begins by laying some foundations. I start with the big questions—like, "what is software development?"—and zoom in from there. The purpose of this section is to ensure that we have a shared vocabulary and similar mental models of what software development entails. Terms introduced in this section will be used and reused throughout the book.
+
+The rest of the book consists of **views** and **patterns**.
+
+**Views** are ways of looking at things. A mental model is constructed from a set of complementary views. Mental models are a crucial part of any scientific or technical work, because they are what enable us to predict the modeled system's behavior. Unfortunately, mental models are bound to one mind; they cannot be communicated, only built "on-site". So instead of trying to give you my model, I will give you views. Views are the plans and diagrams that will help you construct your own mental models of the software systems you encounter.
+
+**Patterns** are templates for solving common problems. You may have heard of patterns in the context of object-oriented design. But the concept of a pattern is much broader than that. The patterns in this book deal with problems large and small, technical and human. Most of the canonical OO design patterns are not covered here.
+
+The views and patterns are presented in "smallest to largest" order. We'll start with tiny details of coding style and work our way up to software architecture, user experience design, and team dynamics. The reason for this presentation is practical: if you're trying to improve any situation, technical or human, it is most effective to start with the simplest and least dependent elements. It's always tempting to go the other way and tackle the biggest, most urgent problem first, but that's like trying to build a house on a foundation of quicksand. Get the foundations right; then everything else will fall naturally into place.
+
 ## The System
 
 A **system** of interacting people and machines creates **value** for your employer. As software developers, our job is to improve the system so it nets more value.
@@ -251,3 +269,6 @@ TODO
 
 - <pattern>O(1) tooling</pattern>
 - <pattern>400ms feedback loop</pattern>
+
+## Further Reading
+
