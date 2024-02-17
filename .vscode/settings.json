@@ -6,5 +6,8 @@
         "cmd": "mdsite"
       },
     ]
+  },
+  "files.exclude": {
+    "docs": true
   }
 }
