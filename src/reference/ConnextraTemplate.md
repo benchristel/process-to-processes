@@ -1,0 +1,1 @@
+"As a [persona], I want to [action], so that [outcome]"

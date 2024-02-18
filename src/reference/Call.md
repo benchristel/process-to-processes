@@ -1,0 +1,1 @@
+To _call_ a [[Routine]] is to pass [[Control]] to it, binding a set of [[Argument]]s to its [[Parameter]]s. Typically, the called unit of code will [[Return]] control to the statement it was called from when it finishes, though it might also [[Halt]] the process, throw an [[Exception]], loop forever, or call a [[Continuation]] that never returns.

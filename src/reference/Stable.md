@@ -1,0 +1,5 @@
+[[RobertCMartin]], in [Design Principles and Design Patterns](https://wnmurphy.com/assets/pdf/Robert_C._Martin_-_2000_-_Principles_and_Patterns.pdf), defines the **instability** of a software [[Component]] as `fan-out / (fan-in + fan-out)`. Fan-in is also called [[AfferentCoupling]] (the number of callers of our component) and fan-out is also called [[EfferentCoupling]] (the number of concepts our component knows about, i.e. depends on).
+
+An instable software component is easy to change, and may be risky to rely on (since its high fan-out means it can be broken by many other possible changes). A stable software component may be risky or difficult to change because so many things depend on it, but is safe to rely on.
+
+It's important to realize that there is no particular value judgment attached to stability or instability _per se_. Some parts of software, like the high-level [[Policy]], should be easily changeable and thus instable. Other parts, like [[Mechanism]], should be stable.

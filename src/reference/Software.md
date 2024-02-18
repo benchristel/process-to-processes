@@ -1,0 +1,3 @@
+Thomas Haigh has an interesting insight into the historical use of the term "software": it originally referred to the operating systems and programming languages that were the substrate for applications ("programs"). That is, software was the complement of hardware. https://static.isthisit.nz/images/2022-08-nato-software-engineering/static/what-crisis-haigh.pdf
+
+It was probably used in this sense at the 1968 NATO conference on software engineering. In light of this, some of the remarks quoted in the conference proceedings about software and hardware needing to be developed together make more sense.

@@ -1,0 +1,1 @@
+Opaque parameters are a [[CodeSmell]] that often occurs in the presence of a [[DeepHierarchy]], e.g. a deep call graph. A parameter to a function is _opaque_ to that function if the function doesn't do anything with the parameter except pass it on to a single other function.

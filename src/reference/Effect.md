@@ -1,0 +1,3 @@
+I use the word "effect" to refer to communication between a [[Process]] and the rest of the world. Many other people use the term "side effect" for this. [[EricNormand]] uses the term "action".
+
+Effects can be the process acting on the outside world (sending an email, writing to a file), or the outside world acting on the process (telling it the current time, feeding it user input events). Often the communication is conversational: the process will ask for some information, and the OS or other [[RuntimeEnvironment]] will suspend the process, go get the information, and resume the process with the information supplied.
