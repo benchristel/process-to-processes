@@ -29,11 +29,11 @@ Can't wait for the book? Read the books that inspired me instead:
 
 This book is for software developers who want to make better things in better ways. If you are interested in making software that is kinder, sturdier, more deeply felt, and better fit to your hand and mind, this book is for you. If you don't care about software so much, but just want to feel less stressed at work, I think you'll also find something of value here.
 
-_Process to Processes_ is a perpetual work in progress. I'm writing it because I don't know of a single other resource that presents similar ideas in an orderly, linear fashion. My own journey toward creating better software has been rather roundabout. My hope is that yours will be less so because of this book.
+I'm writing _Process to Processes_ because I don't know of a single other resource that presents similar ideas in an orderly, linear fashion. My own journey toward creating better software has been rather roundabout. My hope is that yours will be less so because of this book.
 
 ### Contents
 
-The book begins by laying some foundations. I start with the big questions—like, "what is software development?"—and zoom in from there. The purpose of this section is to ensure that we have a shared vocabulary and similar mental models of what software development entails. Terms introduced in this section will be used and reused throughout the book.
+The book begins with some essays that set the scene. I start with the big questions—like, "what is software development?"—and zoom in from there. The purpose of this section is to ensure that we have a shared vocabulary and similar mental models of what software development entails. Terms introduced in this section will be used and reused throughout the book.
 
 The rest of the book consists of **views** and **patterns**.
 
@@ -43,11 +43,121 @@ The rest of the book consists of **views** and **patterns**.
 
 The views and patterns are presented in "smallest to largest" order. We'll start with tiny details of coding style and work our way up to software architecture, user experience design, and team dynamics. The reason for this presentation is practical: if you're trying to improve any situation, technical or human, it is most effective to start with the simplest and least dependent elements. It's always tempting to go the other way and tackle the biggest, most urgent problem first, but that's like trying to build a house on a foundation of quicksand. Get the foundations right; then everything else will fall naturally into place.
 
+## What is Software Development?
+
+### Exploration, not production
+
+- figuring stuff out, not typing code
+- making maps
+- you can't map the territory until you've gone there
+- dead ends are not caused by mistakes
+
+### Forces, not requirements
+
+- most software has few hard requirements
+- we often have to make tradeoffs between competing forces
+- the best designs transcend tradeoffs
+
+### Controllability, not correctness
+
+- when writing code, the best you can hope for is that the software does what you (the programmer) intended it to do.
+
+### A process, not a project
+
+Abandon the illusion that your software will at some point be "done". Software is never finished, it's only adequate or inadequate for the needs of its users. As needs change over time (shaped by the software itself, among other things) adequate software becomes inadequate and must continue to evolve.
+
+A software system is a living system, in the sense that it is made of self-sustaining causal loops. It is also mortal. Its self-sustaining mechanisms can get bricked / die. A healthy system is one that tends toward self-sustenance; an unhealthy one tends toward death.
+
+## Essay: Software Development is Figuring Stuff Out
+
+Why does software take so long to build? Why are programmers paid so well? In what does the value of a software company consist?
+
+In other words, what _is_ software development?
+
+> Software development is an exercise in learning.
+>
+> —[[DaveFarley]] (https://www.youtube.com/watch?v=v21jg8wb1eU&t=949s)
+
+> If we set things up to maximize learning instead of production, the value produced goes way way up.
+>
+> —[[KentBeck]] (https://www.youtube.com/watch?v=guycIP56YeY&t=14m15s)
+
+> Software is what we learned along the way.
+>
+> —[Jim Nielsen](https://blog.jim-nielsen.com/2023/software-is-what-we-learned-along-the-way/)
+
+> Software is the insights of the development team made manifest.
+>
+> —Baldur Bjarnason
+
+Software development is not just (or even mainly) writing code. If it were, it would go many times faster than it does. You can demonstrate this to yourself with a thought experiment. First, estimate how many person-hours of work have gone into the codebase you work on. Then count the lines of code (with something like `find src -type f | xargs wc -l`) and calculate how long it would take you to type that much text (15 lines per minute is a conservative estimate). I predict the ratio will be above 50:1. In other words, less than 2% of a team's time is spent typing the code that goes into production.
+
+The other 98% is not idle time. It's where the real work happens. That 98% consists of:
+
+- Figuring out how the software currently works
+- Figuring out what it should do differently
+- Figuring out how to make it do that
+- Communicating what you've figured out to other people
+
+All that _figuring out_ is what software developers are paid to do. The stuff that developers figure out constitutes their employer's software <abbr title="intellectual property">IP</abbr>. It's a large part of what makes one software company more valuable than another. It's imperative, therefore, that developers pass on what they learn to others, so their knowledge isn't lost when they switch teams or companies.
+
+_Figuring out_ doesn't happen entirely in your head. It's usually a dialogue between you and the machine. You read some code. You have an idea. You write some code. It doesn't work the way you thought it would. You figure out why it doesn't work, and you learn something. You try again and again until you get the results you expect.
+
+This process might look inefficient, but inefficiency is relative. It's only inefficient if something else would be _more_ efficient. In general, typing is cheap, computers are fast, our brains are slow and limited, and coding mistakes are easy to undo as long as we catch them quickly. For all of these reasons, performing experiments in the codebase is often the fastest way to learn what will and won't work.
+
+> As developers, we're not paid for what we do. We're paid for what we _know how_ to do. Our limitation is how much we can know. You can tell, because we don't sit there typing all day, and most of what we type, we delete.
+>
+> —[[JessicaKerr]] (https://www.youtube.com/watch?v=10Foa_lulK4&t=1213s)
+
+### Is programming translation?
+
+"Okay," you might be saying, "clearly figuring stuff out is a big part of what software developers do, but writing code is also important, right? Without code, there wouldn't be software."
+
+Yes. But there are some caveats.
+
+I have the impression that nontechnical people tend to think of programming as a kind of translation process, in which one takes human-language requirements and translates them into code that can be understood by a machine. This perception is reinforced in people who have tried programming once or twice, and have found that it's devilishly difficult to get the computer to do anything other than spit out a cryptic error message. If even one character is out of place, the program often won't even run.
+
+To beginners, coding syntax seems like the hard part of programming. But it's actually the easy part. The real work begins only _after_ you have mastered syntax, and can reliably get your programs to run. Then you encounter hard questions like:
+
+- What do I actually want this program to do?
+- How can I tell if this program will do what I want in all circumstances?
+- How can I change my program without breaking it for its current users?
+- How can I communicate my mental model of the program to the people who have to use, extend, and repair it?
+- How can I make the program fast, yet reliable?
+
+Finding answers to these questions is not a simple matter of translation. It requires insight, creativity, empathy, good taste, and deductive reasoning. It's fundamentally a process of discovery, in which art and science become one.
+
+_If_ you could somehow separate the work of figuring stuff out from the work of writing code, the latter would be a low-paid, menial task. Indeed, software teams of old used to try to make this separation, by dividing projects into "design" and "coding" phases. All the figuring out was supposed to happen in the design phase.
+
+However, the tasks of design and coding _cannot_ be separated, because, as I stated earlier, the most efficient design process we know of involves a tight feedback loop between the designer and the machine, and code is part of that loop. Therefore, the engineers—the people who figure stuff out—must be coders, and the coders must be engineers.
+
+## Process to Processes
+
+The title of this book refers to the two kinds of process that bookend software development. On one end, we have the _development process_ that people go through as they learn about the system, make changes, and observe the results. On the other end, we have the _computational processes_ that run on computers—the things that are listed by the `ps` command on Unix systems.
+
 ## Flows of Information
 
-A **system** of interacting people and machines creates **value** for your employer. As software developers, our job is to improve the system so it nets more value.
+A [**system**](reference/System.html) of interacting people and machines creates [**value**](reference/Value.html) for your employer. As software developers, our job is to improve the system so it nets more value.
 
-A system is composed of interacting parts. The interactions take many forms. The kind of interaction that software can directly affect is **information flow**. All software does, really, is route torrents of information from one place to another, swirling, splitting, and joining it along the way.
+We can analyze a system as a set of interrelated subsystems. In a software company, the subsystems of interest might include:
+
+- Departments
+- Teams
+- Employees
+- Office buildings
+- Vendors
+- Users
+- Users' computers
+- Codebases
+- Files
+- Servers
+- Virtual machines
+
+The first thing you probably notice about this list is how heterogeneous and all-encompassing it is. People, machines, and abstract ideas are all included.
+
+The second thing you might notice is that subsystems contain subsystems of their own, and that the hierarchy is not a tree (where each subsystem belongs to exactly one parent system), but a [**semilattice**](reference/Semilattice.html) or <a title="directed acyclic graph" href="reference/DAG.html">DAG</a>. For example, a team might consist of people from multiple departments, and a server might run code from multiple codebases.
+
+The system hangs together because its subsystems interact. The interactions between parts of a system take many forms. The kind of interaction that software can directly affect is **information flow**. All software does, really, is route torrents of information from one place to another, swirling, splitting, and joining it along the way.
 
 The word "information" in English is an unemotional one. It feels thin, dry, and colorless. I think that is unfortunate. Like water, information can comfort, quench, heal, threaten, and destroy. Information can make you laugh, or it can punch your guts out.
 
