@@ -9,27 +9,149 @@ A work in progress by [Ben Christel](https://github.com/benchristel)
 NOTE: you can use the left and right arrow keys to navigate between pages of this book.
 They do the same thing as the "Prev" and "Next" links.
 
-Can't wait for the book? Read the books that inspired me instead:
-
-- Kent Beck:
-  - _Extreme Programming Explained_, 2nd ed.
-  - _Test Driven Development By Example_
-- Christopher Alexander:
-  - _The Timeless Way of Building_
-  - _A Pattern Language_
-  - _The Nature of Order_
-- Eric S. Raymond: [_The Art of Unix Programming_](http://www.catb.org/esr/writings/taoup/html/)
-- Culadasa: _The Mind Illuminated_
-- Marijn Haverbeke: [_Eloquent JavaScript_](https://eloquentjavascript.net/)
-- Stephen Wolfram: [_A New Kind of Science_](https://www.wolframscience.com/nks/)
-
 ---
 
-## Introduction
+## Preface
 
-This book is for software developers who want to make better things in better ways. If you are interested in making software that is kinder, sturdier, more deeply felt, and better fit to your hand and mind, this book is for you. If you don't care about software so much, but just want to feel less stressed at work, I think you'll also find something of value here.
+This book is for software developers who want to make better things in better ways.
 
-I'm writing _Process to Processes_ because I don't know of a single other resource that presents similar ideas in an orderly, linear fashion. My own journey toward creating better software has been rather roundabout. My hope is that yours will be less so because of this book.
+If you are interested in making software that is kinder, sturdier, more deeply felt, and better fit to your hand and mind, this book is for you. 
+
+If you don't really care about software _per se_, but just want to feel less stressed at work, I think you'll also find something of value here.
+
+This book will give you:
+
+- Better **views**: more realistic, useful, and humane ways of seeing the systems we inhabit.
+- Better **techniques**: ways of working that provide ease, efficiency, and control.
+
+### Audience
+
+This book is addressed to professional software developers with at least a year or two of experience in application development. The code examples are mostly in JavaScript and TypeScript.
+
+## Table of Contents
+
+- Software Development
+  - View: Views
+    - shortcut to understanding
+    - partial!
+    - a mental model is built from complementary views
+  - View: Exploration, Not Production
+  - View: Forces, Not Requirements
+  - View: Controllability, Not Correctness
+  - View: A Process, Not a Project
+  - View: A Living System, Not an Artifact
+  - View: The Life and Death of Systems
+    - Systems can be stable (self-sustaining) or unstable (prone to collapse or replacement)
+    - Caveat: instability of the parts sometimes contributes to stability of the whole!
+  - View: Techniques
+    - a technique solves a problem in a situation
+    - context-dependent - use your judgment about when to apply
+    - TODO: rename to "pattern" or something else?
+  - Technique: Make the easy change
+  - Technique: Change something!
+  - Technique: Make changes reversible
+  - Technique: Make changes safe
+  - View: Positive Feedback Loops Work Both Ways
+    - With incremental changes, a catch-22 can become a virtuous cycle
+  - View: Trust
+  - View: tools, not rules
+  - View: two kinds of work
+    - creative exploration
+    - slog
+  - Technique: balanced work
+    - the purpose of much of software engineering is to make the work straightforward and unexciting - i.e. to turn creative exploration into slog
+    - over-automation can make working on a codebase boring, which leads to alienation, inattentiveness, and mistakes. It's not actually sustainable!
+    - maintain a healthy balance between exploration and slog.
+    - some programmers prefer one type of work or the other... rotate programmers at different phases of the product lifecycle?
+  - View: Mutual Benefit
+- Starting a Project
+  - Technique: Walking Skeleton
+  - Technique: Constant Tooling
+    - O(1) tooling - you don't need to change build/test scripts to add a file to the project
+  - Technique: Readme-driven design
+  - Technique: Version Control
+  - View: The Doherty Threshold
+  - Technique: 400ms feedback
+  - Technique: passive feedback
+    - watch mode for types and tests
+    - live-updating dev environment
+    - Counterpoint: call your shot
+  - Technique: separate fast and slow tests
+  - Technique: system test
+- Changing Code Within One Function
+  - View: Centers
+  - View: Latent Centers
+  - Technique: Strengthen Latent Centers
+  - View: Chunking and Levels of Scale
+  - Technique: Organize Code For Chunking
+  - Technique: One thing at a time
+  - View: Duplicated Code
+    - The point of reducing duplication is not to save typing time, but to reduce the risk of mistakes.
+  - View: Symmetry
+  - View: Dead Code
+  - View: Behavior
+  - View: Testing
+    - types of tests
+  - View: Simplicity and Occam's Razor
+  - Technique: reproduce bugs
+  - Technique: automated tests
+- Changing Code Across Functions
+  - View: Call Graph
+  - View: Processes
+  - View: Effects
+  - View: Dependency
+  - View: Dependency Graph
+  - View: Coupling and Cohesion
+  - View: State
+  - View: Objects
+  - View: Types as Sets
+  - View: Design is always incomplete
+  - Technique: TODO comment
+
+- Working on a Team
+  - View: a team is a group of people with a common goal
+  - View: Velocity
+  - View: Metrics and Goodhart's Law
+  - Technique: assign work to teams, not individuals
+  - Technique: full-time allocation
+  - Technique: ordered backlog
+  - Technique: easy task creation
+  - Technique: definition of done
+  - Technique: no personal tasks
+  - Technique: three amigos
+  - Technique: group estimates
+  - Technique: relative estimates
+  - Technique: planning meeting
+  - Technique: Lean Coffee retrospective
+  - Technique: Team Space
+  - Technique: Information Radiator
+  - Technique: Peer evaluation and feedback
+  - 
+<!--
+### What is Software Development All About?
+
+Software is a type of technology. The purpose of technology is to resolve mismatches between:
+- human needs and abilities
+- the environment
+
+In other words, technology is supposed to help us live better, by making the system we inhabit a more hospitable and comfortable one.
+
+Another way of looking at it is that technology augments human abilities so we can better cope with the challenges our environment throws at us.
+
+However, technology is a double-edged sword. It often generates new problems even as it resolves old ones.
+
+For example, in the last century, we humans have gotten very good at manipulating the environment to fulfill our basic physical needs more efficiently. Food, water, shelter, and medicine are now abundant in most of the developed world. However, these benefits have come at a cost: environmental catastrophe and pandemic mental illness.
+
+It's easy to blame "technology" or "capitalism" for these problems, but that doesn't get us any closer to solving them. "Technology" encompasses everything humans do and think, so it's not going away anytime soon. And "capitalism" is really just the observation that when you have more power, you can do more stuff.
+
+So here is my diagnosis of the actual problem:
+
+- Our current view of ourselves and the world is incomplete, and the cause of the destruction we see around us.
+- Our current ways of doing things are inefficient, error-prone, and more painful than they need to be.
+
+What we need is better views and better techniques
+
+-->
 
 ### Contents
 
@@ -50,7 +172,7 @@ The views and patterns are presented in "smallest to largest" order. We'll start
 - figuring stuff out, not typing code
 - making maps
 - you can't map the territory until you've gone there
-- dead ends are not caused by mistakes
+- dead ends are not mistakes, they're part of the exploration
 
 ### Forces, not requirements
 
@@ -414,3 +536,14 @@ TODO
 
 ## Further Reading
 
+- Kent Beck:
+  - _Extreme Programming Explained_, 2nd ed.
+  - _Test Driven Development By Example_
+- Christopher Alexander:
+  - _The Timeless Way of Building_
+  - _A Pattern Language_
+  - _The Nature of Order_
+- Eric S. Raymond: [_The Art of Unix Programming_](http://www.catb.org/esr/writings/taoup/html/)
+- Culadasa: _The Mind Illuminated_
+- Marijn Haverbeke: [_Eloquent JavaScript_](https://eloquentjavascript.net/)
+- Stephen Wolfram: [_A New Kind of Science_](https://www.wolframscience.com/nks/)
