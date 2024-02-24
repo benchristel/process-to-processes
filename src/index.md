@@ -192,6 +192,9 @@ Ultimately, you have to assess whether the views and techniques in this book are
   - View: Coupling and Cohesion
   - View: State
   - View: Objects
+  - Technique: Objects for Caching
+  - Technique: Objects for Laziness
+  - Technique: Objects as State Machines
   - View: Types as Sets
   - View: Design is always incomplete
     - Technique: TODO comment
@@ -211,6 +214,8 @@ Ultimately, you have to assess whether the views and techniques in this book are
     - Principle: Feedback Up Intent Down
   - Technique: Adapters
   - Technique: Parse, Don't Validate
+  - Technique: Treat All Exceptions as Fatal (at some level of abstraction)
+  - Technique: No Checked Exceptions
 - Working on a Team
   - View: a team is a group of people with a common goal
   - View: Velocity
@@ -240,11 +245,23 @@ Ultimately, you have to assess whether the views and techniques in this book are
   - Technique: Staging Environment
   - Technique: Acceptance
 - User Interface Design
+  - Good: Customizable UI
+    - Lowest to highest priority:
+      - Platform
+      - Platform-level User Customizations
+      - Application
+      - Application-level User Customizations
+    - Each layer should be able to delegate some/all of its styling to any of the earlier ones.
   - View: Fitts's Law
   - Principle: Recognition over Recall
   - View: Doherty Threshold (again)
   - Principle: Feedback
   - Principle: Least Surprise
+  - Principle: Reversibility
+  - Principle: Boundary
+  - Principle: Attachment
+  - Principle: Least Marking
+  - Principle: Trust
 
 <!--
 ### What is Software Development All About?
