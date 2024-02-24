@@ -553,8 +553,10 @@ For example, this regex for matching C strings taught me how to think about pars
 // A string consists of:
 // - a double-quote character
 // - any number of "units", where a unit is either:
-//   - an escape sequence: a backslash followed by any character
-//   - a literal character other than a backslash, quote, or newline
+//   - an escape sequence: a backslash followed by any
+//     character
+//   - a literal character other than a backslash, quote, or
+//     newline
 // - a closing double-quote.
 const cString = /"(\\.|[^\\"\n])*"/
 ```
