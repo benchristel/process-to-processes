@@ -77,6 +77,8 @@ Ultimately, you have to assess whether the views and techniques in this book are
     - partial! the map, not the territory
     - a mental model is built from complementary views
     - the purpose of a model is to make predictions
+  - View: Humans, Not Humanoids
+    - c.f. Kathy Sierra "Making Badass Developers"
   - View: Exploration, Not Production
   - View: Code Is an Asset; Dependencies Are Liabilities
     - really, only _useful_ code is an asset
