@@ -162,6 +162,9 @@ Ultimately, you have to assess whether the views and techniques in this book are
   - View: Test coverage
   - Technique: Mutation Testing
   - Technique: Characterization Test
+  - Technique: Empirically Motivated Change
+    - Want something changed? find the bugs!
+    - There are bound to be bugs in messy code.
   - View: Centers
   - View: Latent Centers
   - View: Weak and Strong Centers
@@ -219,6 +222,7 @@ Ultimately, you have to assess whether the views and techniques in this book are
   - Technique: Parse, Don't Validate
   - Technique: Treat All Exceptions as Fatal (at some level of abstraction)
   - Technique: No Checked Exceptions
+  - Technique: Start TDDing from the strongest center (middle-out TDD)
 - Working on a Team
   - View: a team is a group of people with a common goal
   - View: Velocity
