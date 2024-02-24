@@ -91,6 +91,7 @@ Ultimately, you have to assess whether the views and techniques in this book are
   - View: The Life and Death of Systems
     - Systems can be stable (self-sustaining) or unstable (prone to collapse or replacement)
     - Caveat: instability of the parts sometimes contributes to stability of the whole!
+      - Examples: economics (competition means firms that can't compete go out of business, but the market is more efficient), evolution (because individuals die, the species can survive and adapt in a changing environment)
   - View: Information Flow
     - As info flows through a system, it drives the parts of the system to move
     - certain motions are accommodated by the structure of the system, and are easy.
