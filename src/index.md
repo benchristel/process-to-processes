@@ -43,14 +43,14 @@ The code examples are mostly in JavaScript and TypeScript. However, the programm
 
 ### Goals
 
-- Good: Meeting Expectations
-  - we all want systems that are predictable and controllable—we can understand them well enough to make them do what we want.
+- Good: **Meeting Expectations**
+  - we all want systems that are predictable and controllable—we can understand them well enough to make them do what we want (or understand why what we want isn't possible).
   - this applies at all levels of scale
-- Good: Kindness
+- Good: **Kindness**
   - be nice, keep it real, feel connection, feel good
   - trust and transparency
   - essential for functional, productive teams
-- Good: Sustainability
+- Good: **Sustainability**
   - we want to be able to keep doing this indefinitely
 
 These goals are supported by sub-goals and instrumental goods which are scattered throughout the text.
@@ -71,13 +71,13 @@ Ultimately, you have to assess whether the views and techniques in this book are
 
 ## Table of Contents
 
-- Software Development
-  - View: Views
+- [Software Development](/SoftwareDevelopment)
+  - [Technique: 36 Views](/SoftwareDevelopment/36Views.md)
     - shortcut to understanding
     - partial! the map, not the territory
     - a mental model is built from complementary views
     - the purpose of a model is to make predictions
-  - View: Humans, Not Humanoids
+  - [View: Humans, Not Humanoids](/SoftwareDevelopment/Humans.md)
     - c.f. Kathy Sierra "Making Badass Developers"
   - View: Exploration, Not Production
   - View: Code Is an Asset; Dependencies Are Liabilities
