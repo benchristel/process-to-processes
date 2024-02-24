@@ -9,6 +9,8 @@ A work in progress by [Ben Christel](https://github.com/benchristel)
 NOTE: you can use the left and right arrow keys to navigate between pages of this book.
 They do the same thing as the "Prev" and "Next" links.
 
+This is an early early draft and I would love to get your feedback on it. Send it to <a href="mailto:benchristel@gmail.com">benchristel@gmail.com</a>.
+
 ---
 
 ## Preface
@@ -23,37 +25,91 @@ This book will give you:
 
 - Better **views**: more realistic, useful, and humane ways of seeing the systems we inhabit.
 - Better **techniques**: ways of working that provide ease, efficiency, and control.
+- Generative **principles** that help you invent new techniques to fit your situation.
+
+...all in service of providing **mutually beneficial goods** to you, your clients, your teammates, and the users of your software.
 
 ### Audience
 
-This book is addressed to professional software developers with at least a year or two of experience in application development. The code examples are mostly in JavaScript and TypeScript.
+This book is addressed to professional software developers with at least a year or two of experience in application development.
+
+The code examples are mostly in JavaScript and TypeScript. However, the programming ideas in the book apply across languages. Specifically, they apply to the extent that your language supports:
+
+- An interpreter or fast, incremental compiler
+- Higher-order first-class functions
+- Some degree of late-binding (e.g. dynamic dispatch, function pointers, mutability)
+- Algebraic types
+- A sane package manager for installing dependencies
+
+### Goals
+
+- Good: Meeting Expectations
+  - we all want systems that are predictable and controllable—we can understand them well enough to make them do what we want.
+  - this applies at all levels of scale
+- Good: Kindness
+  - be nice, keep it real, feel connection, feel good
+  - trust and transparency
+  - essential for functional, productive teams
+- Good: Sustainability
+  - we want to be able to keep doing this indefinitely
+
+These goals are supported by sub-goals and instrumental goods which are scattered throughout the text.
+
+### How to Use This Book
+
+I'm under no illusions, and I'll give it to you straight: there's no way you're going to become an expert programmer just by reading a book.
+
+Much of what I know of **technique** is muscle memory—habit built through repetition. It takes time and practice to learn that, and reading a book is not going to make it happen.
+
+Likewise, the mental models of software I've built from various **views** are unserializable, untransmittable. I can't dump them out of my brain and load them into yours.
+
+What I *can* do is offer you a navigational toolkit: a map and a compass to help you find your way. I can give you the basic instructions for techniques. I can tell you where to stand to see a particular view of your system.
+
+But *you* have to do the work of learning. You have to practice. You have to write code (lots of it). You have to reflect on what you write. You have to seek feedback from other people. And you have to read other people's code, make sense of it, and evaluate what's good and bad about it.
+
+Ultimately, you have to assess whether the views and techniques in this book are applicable to you and your situation or not.
 
 ## Table of Contents
 
 - Software Development
   - View: Views
     - shortcut to understanding
-    - partial!
+    - partial! the map, not the territory
     - a mental model is built from complementary views
+    - the purpose of a model is to make predictions
   - View: Exploration, Not Production
+  - View: Code Is an Asset; Dependencies Are Liabilities
+    - really, only _useful_ code is an asset
   - View: Forces, Not Requirements
   - View: Controllability, Not Correctness
+  - View: Differentiation, Not Accretion
   - View: A Process, Not a Project
+  - View: A Semilattice, Not a Tree
   - View: A Living System, Not an Artifact
   - View: The Life and Death of Systems
     - Systems can be stable (self-sustaining) or unstable (prone to collapse or replacement)
     - Caveat: instability of the parts sometimes contributes to stability of the whole!
+  - View: Information Flow
+    - As info flows through a system, it drives the parts of the system to move
+    - certain motions are accommodated by the structure of the system, and are easy.
+    - Other motions are resisted by the structure of the system. When this resistance touches humans, we experience it as discomfort/pain.
+    - The system's response to pain is long-term/plastic change. We suffer to the degree that changes in response to pain are obstructed.
   - View: Techniques
     - a technique solves a problem in a situation
     - context-dependent - use your judgment about when to apply
+    - Principle: Judgment
     - TODO: rename to "pattern" or something else?
-  - Technique: Make the easy change
+  - Principle: Constant Improvement
+  - View: Improvement is change
+    - change things without making them worse, and you'll improve
+  - Principle: Small Steps
+  - Technique: Start with the easy change
   - Technique: Change something!
   - Technique: Make changes reversible
   - Technique: Make changes safe
   - View: Positive Feedback Loops Work Both Ways
     - With incremental changes, a catch-22 can become a virtuous cycle
-  - View: Trust
+  - Good: Trust
   - View: tools, not rules
   - View: two kinds of work
     - creative exploration
@@ -64,24 +120,53 @@ This book is addressed to professional software developers with at least a year 
     - maintain a healthy balance between exploration and slog.
     - some programmers prefer one type of work or the other... rotate programmers at different phases of the product lifecycle?
   - View: Mutual Benefit
+  - View: Bugs vs. Features
+  - Technique: Sleep
+    - sleep is the best debugger
+  - Principle: "to the extent that..."
+    - I've found that these are magic words for making fuzzy-seeming ideas pop into focus.
+    - Replace "A is true if B" with "A is true to the extent that B".
 - Starting a Project
+  - Technique: Project Template
   - Technique: Walking Skeleton
   - Technique: Constant Tooling
     - O(1) tooling - you don't need to change build/test scripts to add a file to the project
-  - Technique: Readme-driven design
   - Technique: Version Control
   - View: The Doherty Threshold
+  - Technique: Automatic Dev Setup
+  - Technique: Reproducible Build
+  - Technique: Dev Environment
   - Technique: 400ms feedback
   - Technique: passive feedback
     - watch mode for types and tests
     - live-updating dev environment
     - Counterpoint: call your shot
+  - Technique: Readme-driven design
+  - Technique: Prototype
+  - Technique: Spike
   - Technique: separate fast and slow tests
   - Technique: system test
+  - Technique: smoke test
+  - Technique: Continuous Integration
+  - Technique: Semi-automated release
+    - Principle: Human in the loop
+  - View: "Making code" vs. "Shipping code"
 - Changing Code Within One Function
+  - View: Behavior
+  - View: Structure
+  - Technique: Separate behavior and structure changes
+  - Technique: Refactoring
+  - View: Test coverage
+  - Technique: Mutation Testing
+  - Technique: Characterization Test
   - View: Centers
   - View: Latent Centers
+  - View: Weak and Strong Centers
   - Technique: Strengthen Latent Centers
+  - View: Wholeness
+  - Technique: The Mirror of the Self Test
+    - Principle: Relative Assessment
+    - Good: Living Structure
   - View: Chunking and Levels of Scale
   - Technique: Organize Code For Chunking
   - Technique: One thing at a time
@@ -89,15 +174,18 @@ This book is addressed to professional software developers with at least a year 
     - The point of reducing duplication is not to save typing time, but to reduce the risk of mistakes.
   - View: Symmetry
   - View: Dead Code
-  - View: Behavior
   - View: Testing
     - types of tests
   - View: Simplicity and Occam's Razor
+    - Good: Simplicity
   - Technique: reproduce bugs
   - Technique: automated tests
+    - Notice: some functions are harder to test than others. Why do you think that is? Do you notice any patterns?
 - Changing Code Across Functions
+  - Technique: Change together, live together
   - View: Call Graph
   - View: Processes
+  - View: System Calls
   - View: Effects
   - View: Dependency
   - View: Dependency Graph
@@ -106,8 +194,23 @@ This book is addressed to professional software developers with at least a year 
   - View: Objects
   - View: Types as Sets
   - View: Design is always incomplete
-  - Technique: TODO comment
-
+    - Technique: TODO comment
+  - Technique: Tesseract Organization
+  - View: Immutable Data
+  - Technique: Updating Immutable Data
+  - Technique: Tests Next to Production Code
+  - Good: Shallow Hierarchy
+  - View: Concerns
+  - Technique: Separation of Concerns
+  - View: Brittle Tests
+- Adding New Code
+  - Technique: Test-Driven Development
+  - View: TDD Is Science
+    - View: A Program is a Theory
+  - Technique: Reactive Programming
+    - Principle: Feedback Up Intent Down
+  - Technique: Adapters
+  - Technique: Parse, Don't Validate
 - Working on a Team
   - View: a team is a group of people with a common goal
   - View: Velocity
@@ -115,8 +218,11 @@ This book is addressed to professional software developers with at least a year 
   - Technique: assign work to teams, not individuals
   - Technique: full-time allocation
   - Technique: ordered backlog
+  - Technique: user story
   - Technique: easy task creation
   - Technique: definition of done
+  - Technique: Preconditions, action, expectations
+    - Gherkin, GIVEN, WHEN, THEN
   - Technique: no personal tasks
   - Technique: three amigos
   - Technique: group estimates
@@ -125,8 +231,21 @@ This book is addressed to professional software developers with at least a year 
   - Technique: Lean Coffee retrospective
   - Technique: Team Space
   - Technique: Information Radiator
+  - Technique: Pair Programming
+  - Technique: Pairing station
   - Technique: Peer evaluation and feedback
-  - 
+    - Principle: Relative Assessment
+  - Technique: Workstation Setup
+  - Technique: Daily Pair Rotation
+  - Technique: Staging Environment
+  - Technique: Acceptance
+- User Interface Design
+  - View: Fitts's Law
+  - Principle: Recognition over Recall
+  - View: Doherty Threshold (again)
+  - Principle: Feedback
+  - Principle: Least Surprise
+
 <!--
 ### What is Software Development All About?
 
@@ -153,6 +272,7 @@ What we need is better views and better techniques
 
 -->
 
+<!--
 ### Contents
 
 The book begins with some essays that set the scene. I start with the big questions—like, "what is software development?"—and zoom in from there. The purpose of this section is to ensure that we have a shared vocabulary and similar mental models of what software development entails. Terms introduced in this section will be used and reused throughout the book.
@@ -164,33 +284,36 @@ The rest of the book consists of **views** and **patterns**.
 **Patterns** are templates for solving common problems. You may have heard of patterns in the context of object-oriented design. But the concept of a pattern is much broader than that. The patterns in this book deal with problems large and small, technical and human. Most of the canonical OO design patterns are not covered here.
 
 The views and patterns are presented in "smallest to largest" order. We'll start with tiny details of coding style and work our way up to software architecture, user experience design, and team dynamics. The reason for this presentation is practical: if you're trying to improve any situation, technical or human, it is most effective to start with the simplest and least dependent elements. It's always tempting to go the other way and tackle the biggest, most urgent problem first, but that's like trying to build a house on a foundation of quicksand. Get the foundations right; then everything else will fall naturally into place.
-
+-->
 ## What is Software Development?
 
-### Exploration, not production
+### View: Exploration, not production
 
 - figuring stuff out, not typing code
 - making maps
 - you can't map the territory until you've gone there
+- managers often want detailed plans, but whatever plans they force their teams to produce will be lies.
+- "by the time we're done planning, the software will already be finished!"
 - dead ends are not mistakes, they're part of the exploration
 
-### Forces, not requirements
+### View: Forces, not requirements
 
 - most software has few hard requirements
+- "forces" expresses the squishiness of the constraints on software
 - we often have to make tradeoffs between competing forces
 - the best designs transcend tradeoffs
 
-### Controllability, not correctness
+### View: Controllability, not correctness
 
 - when writing code, the best you can hope for is that the software does what you (the programmer) intended it to do.
 
-### A process, not a project
+### View: A process, not a project
 
 Abandon the illusion that your software will at some point be "done". Software is never finished, it's only adequate or inadequate for the needs of its users. As needs change over time (shaped by the software itself, among other things) adequate software becomes inadequate and must continue to evolve.
 
 A software system is a living system, in the sense that it is made of self-sustaining causal loops. It is also mortal. Its self-sustaining mechanisms can get bricked / die. A healthy system is one that tends toward self-sustenance; an unhealthy one tends toward death.
 
-## Essay: Software Development is Figuring Stuff Out
+## Software Development is Figuring Stuff Out
 
 Why does software take so long to build? Why are programmers paid so well? In what does the value of a software company consist?
 
@@ -251,11 +374,13 @@ Finding answers to these questions is not a simple matter of translation. It req
 
 _If_ you could somehow separate the work of figuring stuff out from the work of writing code, the latter would be a low-paid, menial task. Indeed, software teams of old used to try to make this separation, by dividing projects into "design" and "coding" phases. All the figuring out was supposed to happen in the design phase.
 
-However, the tasks of design and coding _cannot_ be separated, because, as I stated earlier, the most efficient design process we know of involves a tight feedback loop between the designer and the machine, and code is part of that loop. Therefore, the engineers—the people who figure stuff out—must be coders, and the coders must be engineers.
+However, the tasks of design and coding _cannot_ be separated, because, as I stated earlier, the most efficient design process we know of involves a tight feedback loop between the designer and the machine, and code is part of that loop. The specific technologies used also impose constraints on the evolution of the software which are hard to predict in advance. Therefore, the engineers—the people who figure stuff out—must be coders, and the coders must be engineers.
 
 ## Process to Processes
 
 The title of this book refers to the two kinds of process that bookend software development. On one end, we have the _development process_ that people go through as they learn about the system, make changes, and observe the results. On the other end, we have the _computational processes_ that run on computers—the things that are listed by the `ps` command on Unix systems.
+
+<!--
 
 ## Flows of Information
 
@@ -332,7 +457,7 @@ If you want to heal a system, you must start small: If you're a programmer, that
 - Human-to-human
   - Conflicting goals
   - Conflicting expectations (e.g. for communication)
-
+-->
 ## Centers
 
 Every sociotechnical system can be modeled as a graph of internally coherent, interrelated, fuzzily-bounded regions that I call **centers**. The term _center_ comes from Christopher Alexander, and was first applied to visual art and the design of the built environment. Although we are going to apply the concept of centers to human-computer systems, that application will be made easier by first studying the concept in its original context.
@@ -361,13 +486,13 @@ The forces acting on a center push it to develop in a certain direction, or cons
 
 Good code is **correct**, **efficient**, **verifiable**, **portable**, and **instructive**. Each of these virtues can be viewed as a force that pushes the centers in the code toward particular shapes and arrangements.
 
-#### Correctness
+#### Correct
 
 Correct code does what its programmer intended, and nothing else. Code can only be as correct as its programmer's intentions are clear. Muddled intentions invariably produce buggy code.
 
 #### Efficient
 
-Code is more efficient when it takes less time to run and uses fewer scarce resources (e.g. memory, file handles).
+Code is more efficient when it takes less time to run and uses fewer scarce resources (e.g. memory, file handles, network bandwidth).
 
 #### Verifiable
 
@@ -395,6 +520,20 @@ Portability may either mean:
 Good code looks "pretty much like what you'd expect" (according to Ward Cunningham). But in my experience, the best code teaches you something new about how to solve a problem.
 
 "Pretty much like what you'd expect" is a low bar—at least, it is when I'm the person doing the expecting. When I am looking at code I've never seen before, which solves a problem I've never had to solve, I often don't have a clear idea of what I expect to see. It's great if the code names variables and functions after concepts I'm familiar with, but again—that's a low bar.
+
+But sometimes, I see code and have an "aha!" moment. The code is so lucid, so clear and simple, that it has communicated something new to me and I now understand both the problem and its solution more clearly.
+
+For example, this regex for matching C strings taught me how to think about parsing escape sequences like `\n`:
+
+```js
+// A string consists of:
+// - a double-quote character
+// - any number of "units", where a unit is either:
+//   - an escape sequence: a backslash followed by any character
+//   - a literal character other than a backslash, quote, or newline
+// - a closing double-quote.
+const cString = /"(\\.|[^\\"\n])*"/
+```
 
 ## Conflict
 
