@@ -710,3 +710,7 @@ TODO
 - Culadasa: _The Mind Illuminated_
 - Marijn Haverbeke: [_Eloquent JavaScript_](https://eloquentjavascript.net/)
 - Stephen Wolfram: [_A New Kind of Science_](https://www.wolframscience.com/nks/)
+- Kathy Sierra:
+  - ["Making Badass Developers"](https://www.youtube.com/watch?v=FKTxC9pl-WM)
+  - _Badass: Making Users Awesome_
+- Peter Naur: ["Programming as Theory Building"](https://gwern.net/doc/cs/algorithm/1985-naur.pdf)
