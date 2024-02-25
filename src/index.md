@@ -17,9 +17,9 @@ This is an early early draft and I would love to get your feedback on it. Send i
 
 This book is for software developers who want to make better things in better ways.
 
-If you are interested in making software that is kinder, sturdier, more deeply felt, and better fit to your hand and mind, this book is for you. 
+If you are interested in making software that is kinder, sturdier, more deeply felt, and better fit to your hand, eye, and mind, this book is for you. 
 
-If you don't really care about software _per se_, but just want to feel less stressed at work, I think you'll also find something of value here.
+If you don't care that much about software _per se_, but just want to feel less stressed at work, I think you'll also find something of value here.
 
 This book will give you:
 
@@ -27,7 +27,11 @@ This book will give you:
 - Better **techniques**: ways of working that provide ease, efficiency, and control.
 - Generative **principles** that help you invent new techniques to fit your situation.
 
-...all in service of providing **mutually beneficial goods** to you, your clients, your teammates, and the users of your software.
+...all in service of providing **mutually beneficial goods** to you, your clients, your teammates, and the users of your software:
+
+- Software that does what you meant it to do
+- ...that is satisfying to work on
+- ...and can be improved at a steady, predictable pace.
 
 ### Audience
 
@@ -40,6 +44,8 @@ The code examples are mostly in JavaScript and TypeScript. However, the programm
 - Some degree of late-binding (e.g. dynamic dispatch, function pointers, mutability)
 - Algebraic types
 - A sane package manager for installing dependencies
+- Coroutines or generator functions
+- Exceptions
 
 ### Goals
 

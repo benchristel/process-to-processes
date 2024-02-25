@@ -1,6 +1,6 @@
 # Technique: 36 Views
 
-The "36 Views" technique is a way of exploring a topic by approaching it from many different, complementary angles.
+The "36 Views" technique is a way to make sense of a complex topic, by approaching it from many different, complementary angles.
 
 The name is a reference to the series of paintings ["36 Views of Mount Fuji"](https://en.wikipedia.org/wiki/Thirty-six_Views_of_Mount_Fuji) by Hokusai.
 
