@@ -1,6 +1,7 @@
 SoftwareDevelopment
-preface.html
-introduction
+StartingAProject
+ChangingOneFunction
+ChangingAcrossFunctions
 
 !unspecified
 programming

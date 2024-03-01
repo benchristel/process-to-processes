@@ -1,3 +1,3 @@
 # Software Development
 
-{{toc}}
+{{toc --include-latent}}

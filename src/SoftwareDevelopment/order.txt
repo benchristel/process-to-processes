@@ -1,0 +1,66 @@
+36Views.md
+Humans.md
+Exploration.md
+CodeIsAnAsset.md
+Forces.md
+ControllabilityNotCorrectness.md
+DifferentiationNotAccretion.md
+ProcessNotAProject.md
+Semilattice.md
+LivingSystemNotAnArtifact.md
+LifeAndDeathOfSystems.md
+# - Systems can be stable (self-sustaining) or unstable (prone to collapse or replacement)
+#    - Caveat: instability of the parts sometimes contributes to stability of the whole!
+#      - Examples: economics (competition means firms that can't compete go out of business,
+#        but the market is more efficient), evolution (because individuals die, the species can
+#        survive and adapt in a changing environment)
+
+InformationFlow.md
+# - As info flows through a system, it drives the parts of the system to move
+# - certain motions are accommodated by the structure of the system, and are easy.
+# - Other motions are resisted by the structure of the system. When this resistance
+#   touches humans, we experience it as discomfort/pain.
+# - The system's response to pain is long-term/plastic change. We suffer to the degree
+#   that changes in response to pain are obstructed.
+
+Techniques.md
+# - a technique solves a problem in a situation
+# - context-dependent - use your judgment about when to apply
+# - Principle: Judgment
+# - TODO: rename to "pattern" or something else?
+
+ConstantImprovement.md
+ImprovementIsChange.md
+# change things and do not make them worse
+SmallSteps.md
+StartWithTheEasyChange.md
+ChangeSomething.md
+Reversibility.md
+SafeChange.md
+
+PositiveFeedbackLoops.md
+# - View: Positive Feedback Loops Work Both Ways
+#   - With incremental changes, a catch-22 can become a virtuous cycle
+
+Trust.md
+ToolsNotRules.md
+TwoKindsOfWork.md
+# creative exploration
+# slog
+
+BalancedWork.md
+# - the purpose of much of software engineering is to make the work straightforward and
+#   unexciting - i.e. to turn creative exploration into slog
+# - over-automation can make working on a codebase boring, which leads to alienation,
+#   inattentiveness, and mistakes. It's not actually sustainable!
+# - maintain a healthy balance between exploration and slog.
+# - some programmers prefer one type of work or the other... rotate programmers at
+#   different phases of the product lifecycle?
+
+MutualBenefit.md
+BugsVsFeatures.md
+
+Sleep.md
+# sleep is the best debugger
+
+ToTheExtentThat.md

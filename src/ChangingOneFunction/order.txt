@@ -1,0 +1,32 @@
+Behavior.md
+Structure.md
+SeparateBehaviorAndStructureChanges.md
+Refactoring.md
+TestCoverage.md
+MutationTesting.md
+CharacterizationTest.md
+EmpiricallyMotivatedChange.md
+#   - Want something changed? find the bugs!
+#   - There are bound to be bugs in messy code.
+Centers.md
+LatentCenters.md
+WeakAndStrongCenters.md
+StrengthenLatentCenters.md
+Wholeness.md
+TheMirrorOfTheSelfTest.md
+#   - Principle: Relative Assessment
+#   - Good: Living Structure
+ChunkingAndLevelsOfScale.md
+OrganizeCodeForChunking.md
+OneThingAtATime.md
+DuplicatedCode.md
+#   - The point of reducing duplication is not to save typing time, but to reduce the risk of mistakes.
+Symmetry.md
+DeadCode.md
+Testing.md
+#   - types of tests
+SimplicityAndOccamsRazor.md
+#   - Good: Simplicity
+ReproduceBugs.md
+AutomatedTests.md
+#   - Notice: some functions are harder to test than others. Why do you think that is? Do you notice any patterns?

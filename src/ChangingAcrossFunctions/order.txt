@@ -1,0 +1,26 @@
+ChangeTogetherLiveTogether.md
+CallGraph.md
+Processes.md
+SystemCalls.md
+Effects.md
+Dependency.md
+DependencyGraph.md
+CouplingAndCohesion.md
+State.md
+Objects.md
+ObjectsForCaching.md
+ObjectsForLaziness.md
+ObjectsAsStateMachines.md
+TypesAsSets.md
+DesignIsAlwaysIncomplete.md
+TodoComment.md
+TesseractOrganization.md
+ImmutableData.md
+UpdatingImmutableData.md
+TestsNextToProductionCode.md
+ShallowHierarchy.md
+# good
+Concerns.md
+# groundwork for separation of concerns
+SeparationOfConcerns.md
+BrittleTests.md
