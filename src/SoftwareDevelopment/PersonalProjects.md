@@ -1,4 +1,4 @@
-# Technique: Side Projects
+# Technique: Personal Projects
 
 _a way to experiment with different programming styles, and get in touch with your true feelings about them._
 
