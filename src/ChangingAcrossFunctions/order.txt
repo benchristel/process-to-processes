@@ -23,4 +23,8 @@ ShallowHierarchy.md
 Concerns.md
 # groundwork for separation of concerns
 SeparationOfConcerns.md
+AlignAbstractionsWithSeams.md
+# if you want to "abstract away" specific behaviors,
+# structure code so you cannot depend on specific behaviors.
+# dependencies with abstract names should be inverted.
 BrittleTests.md
