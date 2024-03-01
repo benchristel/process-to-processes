@@ -6,6 +6,10 @@ Forces.md
 ControllabilityNotCorrectness.md
 DifferentiationNotAccretion.md
 ProcessNotAProject.md
+# development as computation:
+# - garbage collection - finding/deleting unused code / outdated artifacts is an important subproblem
+# - search - we can conceptualize dev as a search in a solution space.
+#   a common search strategy is to try many hypothetical/possible solutions and see what works out
 Semilattice.md
 LivingSystemNotAnArtifact.md
 LifeAndDeathOfSystems.md
