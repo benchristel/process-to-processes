@@ -39,7 +39,7 @@
 				text-decoration-skip: none;
 			}
 			
-			a:hover, a:focus-visible {
+			a:not(.mdsite-broken-link):is(:hover, :focus-visible) {
 				background: #0000000b;
 			}
 			
@@ -154,6 +154,10 @@
 				margin-left: calc(0px - var(--padding-size));
 				padding: var(--padding-size);
 				border-radius: 3px;
+			}
+			.mdsite-broken-link {
+				color: #a00;
+				cursor: not-allowed;
 			}
 			header.navbar {
 				border-bottom: 1px solid var(--light-ink);
