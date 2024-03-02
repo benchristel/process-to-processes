@@ -1,11 +1,11 @@
 # View: Exploration, Not Production
 
----
+<div class="summary-block">
 
-- ***Why is programmer productivity so hard to measure?***
-- ***Why do software projects always seem to take longer than predicted?***
+- Why is programmer productivity so hard to measure?
+- Why do software projects always seem to take longer than predicted?
 
----
+</div>
 
 At first glance, the job of a programmer appears to be to write code that makes a computer perform some desired function. Programming appears to be the task of producing code. I'll call this the **production** view of programming.
 

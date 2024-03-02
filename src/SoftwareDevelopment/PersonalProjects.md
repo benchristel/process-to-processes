@@ -1,10 +1,10 @@
 # Technique: Personal Projects
 
----
+<div class="summary-block">
 
-***...a way to experiment with different programming techniques, and get in touch with your true feelings about them.***
+...a way to experiment with different programming techniques, and get in touch with your true feelings about them.
 
----
+</div>
 
 One of the best things you can do to deepen and broaden your technical knowledge is to work on side projects, outside your day job.
 
