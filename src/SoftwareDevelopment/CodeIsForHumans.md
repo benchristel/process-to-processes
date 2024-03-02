@@ -6,7 +6,7 @@
 
 </div>
 
-At first glance, task of programming appears to consist of writing code to make a computer perform some desired function.
+At first glance, the task of programming appears to consist of writing code to make a computer do something useful for us.
 
 That's certainly part of it, but it's not the whole story.
 
