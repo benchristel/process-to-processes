@@ -59,3 +59,4 @@ Maintaining code that you wrote over a long period of time, where you have no on
 This process of self-discovery is frustrating and humbling at first. But it leads ultimately to peace, because you eventually realize that when you are in touch with your feelings about the code, you can relax. Instead of tenaciously pursuing idealistic images of how things "should" be,
 you can simply fix the problems that _really_ exist, and are _really_ important to you, one at a time. You'll be open to many more ways of doing things, and won't feel the need to put down anyone else's programming style,
 because you'll see that everything is a good idea in its proper context.
+-->
