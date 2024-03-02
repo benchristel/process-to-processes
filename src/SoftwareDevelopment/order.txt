@@ -1,5 +1,6 @@
 36Views.md
 Humans.md
+CodeIsForHumans.md
 Exploration.md
 CodeIsAnAsset.md
 Forces.md
