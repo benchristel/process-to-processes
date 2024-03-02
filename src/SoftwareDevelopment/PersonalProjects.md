@@ -25,7 +25,7 @@ For example, you might try:
 - Doing {{link TestDrivenDevelopment}} for an entire project
 - Forgoing {{link AutomatedTest}}s entirely
 - Writing in a {{link FunctionalProgramming}} language like Clojure, F#, Haskell, or Elm.
-- Writing in an {{link ObjectOrientedProgramming}} language like Ruby.
+- Writing in an {{link ObjectOrientedProgramming "object oriented"}} language like Ruby.
 - Using or eschewing {{link StaticTyping}}.
 
 ## Putting Yourself Under the Microscope
