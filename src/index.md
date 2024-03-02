@@ -63,7 +63,7 @@ These goals are supported by sub-goals and instrumental goods which are scattere
 
 ### How to Use This Book
 
-I'm under no illusions, and I'll give it to you straight: there's no way you're going to become an expert programmer just by reading a book.
+Real talk: there's no way you're going to become an expert programmer just by reading a book.
 
 Much of what I know of **technique** is muscle memory—habit built through repetition. It takes time and practice to learn that, and reading a book is not going to make it happen.
 
