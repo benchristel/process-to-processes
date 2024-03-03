@@ -13,16 +13,48 @@
 }
 
 @font-face {
-  font-family: 'Lora fallback';
+  font-family: 'fallback';
   src: local('Georgia'), local('Times New Roman'), local(Times);
-  ascent-override: 80%;
+  ascent-override: 75%;
   descent-override: 0%;
   font-display: block;
 }
 
+@font-face {
+  font-family: 'Gentium Book Plus';
+  font-style: normal;
+  font-weight: 400;
+  src: url(GentiumBookPlus-Regular.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gentium Book Plus';
+  font-style: italic;
+  font-weight: 400;
+  src: url(GentiumBookPlus-Italic.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gentium Book Plus';
+  font-style: normal;
+  font-weight: 700;
+  src: url(GentiumBookPlus-Bold.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gentium Book Plus';
+  font-style: italic;
+  font-weight: 700;
+  src: url(GentiumBookPlus-BoldItalic.ttf);
+  font-display: swap;
+}
+
 body {
-  font-family: Lora, 'Lora fallback';
-  line-height: 150%;
+  font-family: 'Gentium Book Plus', 'fallback';
+  line-height: 160%;
   font-weight: 500;
   font-size: 17px;
 }
@@ -30,6 +62,15 @@ body {
 article {
   color: #181c20;
   text-shadow: 0 1px #fff8;
+}
+
+article p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+article :is(p, li, blockquote) {
+  font-size-adjust: 0.5;
 }
 
 b, strong {
