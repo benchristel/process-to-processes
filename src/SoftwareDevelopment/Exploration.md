@@ -4,6 +4,7 @@
 
 - Why is programmer productivity so hard to measure?
 - Why do software projects always seem to take longer than predicted?
+- Why are programmers so bad at estimating tasks?
 
 </div>
 
