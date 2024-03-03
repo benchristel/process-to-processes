@@ -26,11 +26,11 @@ Examples of forces:
 - "It shouldn't be possible for a user to get these form fields into an inconsistent state."
 
 Managers like to set targets, deadlines, and thresholds for things, so they can declare unambiguous success or unambiguous failure. I'm not going to claim that drawing a line in the sand has no value,
-but it's not as essential as some people think it is. Metrics and targets *come from somewhere*.
-Where do they come from? Our qualitative assessments of the system state, and our desire for things
-to be different. Instead of pushing ourselves to hit arbitrary, artificial targets (which often incentivize bad behavior—{{link GoodhartsLaw}}) we can continuously ask ourselves "do we still care about improving this?"
+but it's not as essential to the healthy functioning of an organization as some people think it is. Metrics and targets *come from somewhere*, and they're not handed down on stone tablets.
+Where do they come from? They come from us. Our qualitative assessments of the system state, and our desire for things
+to be different. Instead of pushing ourselves to hit arbitrary, artificial targets (which often incentivize bad behavior—{{link GoodhartsLaw}}) we can continuously ask ourselves "do we still care about improving this?" If the answer is "no", we stop doing the thing.
 
-(_because really, that's what we're doing anyway._)
+(_because really, that's what we're doing anyway. Goalposts often get moved. The reason goalposts move is that the person in charge of setting the goal realizes that movement in the direction of the goal is no longer the highest priority._)
 
 Say we're working on improving the performance of our software. If we don't have metrics or targets, how do we know when to stop? Easy: we stop when we no longer feel a net force pushing us to change. We stop
 when the cost of further action outweighs the benefit.

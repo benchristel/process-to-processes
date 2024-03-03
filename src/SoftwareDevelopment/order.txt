@@ -1,9 +1,12 @@
 36Views.md
+StructureAndBehavior.md
+SoftwareSystem.md
 Humans.md
 CodeIsForHumans.md
 Exploration.md
 CodeIsAnAsset.md
 Forces.md
+Tension.md
 ControllabilityNotCorrectness.md
 DifferentiationNotAccretion.md
 ProcessNotAProject.md
