@@ -13,44 +13,20 @@ That's certainly part of it, but it's not the whole story.
 If it were, our code would look like this:
 
 ```js
-var z=1,D=3,F={},X=[],W="http://www.w3.org/2000/svg",I=
-function(r){this.events[r.type](r)},L=r=>r==null?r:r.key,Q=(r,
-t,f,u,c)=>{t==="key"||(t[0]==="o"&&t[1]==="n"?((r.events||(r.
-events={}))[t=t.slice(2)]=u)?f||r.addEventListener(t,I):r.
-removeEventListener(t,I):!c&&t!=="list"&&t!=="form"&&t in r?r[
-t]=u??"":u==null||u===!1?r.removeAttribute(t):r.setAttribute(t
-,u))},j=(r,t)=>{var f=r.props,u=r.type===D?document.
-createTextNode(r.tag):(t=t||r.tag==="svg")?document.
-createElementNS(W,r.tag,{is:f.is}):document.createElement(r.
-tag,{is:f.is});for(var c in f)Q(u,c,null,f[c],t);for(var b=0;b
-<r.children.length;b++)u.appendChild(j(r.children[b]=R(r.
-children[b]),t));return r.node=u},O=(r,t,f,u,c)=>{if(f!==u)if(
-f!=null&&f.type===D&&u.type===D)f.tag!==u.tag&&(t.nodeValue=u.
-tag);else if(f==null||f.tag!==u.tag)t=r.insertBefore(j(u=R(u),
-c),t),f!=null&&r.removeChild(f.node);else{var b,C,A,m,G=f.
-props,J=u.props,x=f.children,g=u.children,v=0,p=0,_=x.length-1
-,B=g.length-1;c=c||u.tag==="svg";for(var E in{...G,...J})(E===
-"value"||E==="selected"||E==="checked"?t[E]:G[E])!==J[E]&&Q(t,
-E,G[E],J[E],c);for(;p<=B&&v<=_&&!((A=L(x[v]))==null||A!==L(g[p
-]));)O(t,x[v].node,x[v++],g[p]=R(g[p++]),c);for(;p<=B&&v<=_&&!
-((A=L(x[_]))==null||A!==L(g[B]));)O(t,x[_].node,x[_--],g[B]=R(
-g[B--]),c);if(v>_)for(;p<=B;)t.insertBefore(j(g[p]=R(g[p++]),c
-),(C=x[v])&&C.node);else if(p>B)for(;v<=_;)t.removeChild(x[v++
-].node);else{for(var M={},Y={},E=v;E<=_;E++)(A=x[E].key)!=null
-&&(M[A]=x[E]);for(;p<=B;){if(A=L(C=x[v]),m=L(g[p]=R(g[p])),Y[A
-]||m!=null&&m===L(x[v+1])){A==null&&t.removeChild(C.node),v++;
-continue}m==null||f.type===z?(A==null&&(O(t,C&&C.node,C,g[p],c
-),p++),v++):(A===m?(O(t,C.node,C,g[p],c),Y[m]=!0,v++):(b=M[m])
-!=null?(O(t,t.insertBefore(b.node,C&&C.node),b,g[p],c),Y[m]=!0
-):O(t,C&&C.node,null,g[p],c),p++)}for(;v<=_;)L(C=x[v++])==null
-&&t.removeChild(C.node);for(var E in M)Y[E]==null&&t.
-removeChild(M[E].node)}}return u.node=t},R=r=>r!==!0&&r!==!1&&
-r?r:text(""),U=r=>r.nodeType===D?text(r.nodeValue,r):q(r.
-nodeName.toLowerCase(),F,X.map.call(r.childNodes,U),z,r),q=(r,
-t,f,u,c)=>({tag:r,props:t,key:t.key,children:f,type:u,node:c})
-;export var text=(r,t)=>q(r,F,X,D,t),h=(r,t,f=X)=>q(r,t,Array.
-isArray(f)?f:[f]),patch=(r,t)=>((r=O(r.parentNode,r,r.vdom||U
-(r),t)).vdom=t,r);
+var D=1,N=3,F={},j=[],R="http://www.w3.org/2000/svg",I=function(e){this.events[e.type](e)},k=e=>e==null?e:e.key,O=(e,n,l,o,d)=>{n==="key"||(n[0]==="o"&&n[1]==="n"
+?((e.events||(e.events={}))[n=n.slice(2)]=o)?l||e.addEventListener(n,I):e.removeEventListener(n,I):!d&&n!=="list"&&n!=="form"&&n in e?e[n]=o??"":o==null||o===!1?e.
+removeAttribute(n):e.setAttribute(n,o))},q=(e,n)=>{var l=e.props,o=e.type===N?document.createTextNode(e.tag):(n=n||e.tag==="svg")?document.createElementNS(R,e.tag,
+{is:l.is}):document.createElement(e.tag,{is:l.is});for(var d in l)O(o,d,null,l[d],n);for(var v=0;v<e.children.length;v++)o.appendChild(q(e.children[v]=w(e.children
+[v]),n));return e.node=o},p=(e,n,l,o,d)=>{if(l!==o)if(l!=null&&l.type===N&&o.type===N)l.tag!==o.tag&&(n.nodeValue=o.tag);else if(l==null||l.tag!==o.tag)n=e.
+insertBefore(q(o=w(o),d),n),l!=null&&e.removeChild(l.node);else{var v,r,y,c,T=l.props,V=o.props,u=l.children,t=o.children,a=0,i=0,f=u.length-1,m=t.length-1;d=d||o.
+tag==="svg";for(var s in{...T,...V})(s==="value"||s==="selected"||s==="checked"?n[s]:T[s])!==V[s]&&O(n,s,T[s],V[s],d);for(;i<=m&&a<=f&&!((y=k(u[a]))==null||y!==k(t
+[i]));)p(n,u[a].node,u[a++],t[i]=w(t[i++]),d);for(;i<=m&&a<=f&&!((y=k(u[f]))==null||y!==k(t[m]));)p(n,u[f].node,u[f--],t[m]=w(t[m--]),d);if(a>f)for(;i<=m;)n.
+insertBefore(q(t[i]=w(t[i++]),d),(r=u[a])&&r.node);else if(i>m)for(;a<=f;)n.removeChild(u[a++].node);else{for(var g={},L={},s=a;s<=f;s++)(y=u[s].key)!=null&&(g[y]=u
+[s]);for(;i<=m;){if(y=k(r=u[a]),c=k(t[i]=w(t[i])),L[y]||c!=null&&c===k(u[a+1])){y==null&&n.removeChild(r.node),a++;continue}c==null||l.type===D?(y==null&&(p(n,r&&r.
+node,r,t[i],d),i++),a++):(y===c?(p(n,r.node,r,t[i],d),L[c]=!0,a++):(v=g[c])!=null?(p(n,n.insertBefore(v.node,r&&r.node),v,t[i],d),L[c]=!0):p(n,r&&r.node,null,t[i],
+d),i++)}for(;a<=f;)k(r=u[a++])==null&&n.removeChild(r.node);for(var s in g)L[s]==null&&n.removeChild(g[s].node)}}return o.node=n},w=e=>e!==!0&&e!==!1&&e?e:text(""),
+Q=e=>e.nodeType===N?text(e.nodeValue,e):z(e.nodeName.toLowerCase(),F,j.map.call(e.childNodes,Q),D,e),z=(e,n,l,o,d)=>({tag:e,props:n,key:n.key,children:l,type:o,
+node:d});export var text=(e,n)=>z(e,F,j,N,n),h=(e,n,l=j)=>z(e,n,Array.isArray(l)?l:[l]),patch=(e,n)=>((e=p(e.parentNode,e,e.vdom||Q(e),n)).vdom=n,e);
 ```
 
 <cite>Source: [Superfine, by Jorge Bucaran](https://github.com/jorgebucaran/superfine). Minified by [esbuild](https://esbuild.github.io/).</cite>
