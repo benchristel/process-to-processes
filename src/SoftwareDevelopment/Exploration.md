@@ -73,6 +73,10 @@ routes, possibly running into obstacles and backtracking, and making maps to rec
 In this analogy, a software project plan is like a map of the territory we have to pass through.
 Though we might like to have a map before we start exploring, we can't make an accurate map until we've finished. Plans have their uses (e.g. if we treat them as falsifiable {{link Hypothesis hypotheses}} about what we will discover, they make a good starting point for {{link DeriskUnknowns de-risking}} and experimentation) but it's important to understand that a plan is, at best, wishful thinking.
 
+## Figuring Things Out
+
+Yet another view is that the main task of programming is figuring things out. That is, collecting information, making inferences and deductions, forming hypotheses, testing them, and summarizing the results in a way that someone else can understand.
+
 <!--
 Of course, this rather silly example merely illustrates what every programmer
 already knows—that maintaining an intellectual grasp of the program is the programmer's
