@@ -42,7 +42,7 @@ magnitude, by the extreme difficulty of understanding the
 most basic facts about what the code is doing and how its parts
 relate to each other.
 
-When we read a program, we don't parse it characater-by-character like
+When we read a program, we don't parse it character-by-character like
 a machine does. Instead, we look for recognizable, coherent structures—{{link Center "centers"}}—that
 guide our eye and mirror our understanding of the problem being solved.
 
