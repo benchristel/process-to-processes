@@ -1,6 +1,6 @@
 # View: Forces, Not Requirements
 
-<div class="summary-box">
+<div class="summary-block">
 
 - How do we deal with competing priorities and needs on a software project?
 
