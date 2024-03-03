@@ -15,6 +15,6 @@ Improving the system might mean writing code, but it might also mean:
 
 These are all examples of changes to {{link StructureAndBehavior structure}} that affect the system's {{link StructureAndBehavior behavior}}.
 
-If {{link /Software.html software}} is structure that has behavior, then your organization _is_ software, albeit software that runs on people instead of silicon. Its code is the policies, {{link Incentive}}s, habits, and communication pathways that shape its employees' behavior. If no one engineers that system to work well, then—surprise surprise—it will work poorly.
+If {{link /Software.html software}} is structure that has behavior, then your organization _is_ software, though it runs on people instead of silicon. Its code is the policies, {{link Incentive}}s, habits, and communication pathways that shape its employees' behavior. If no one engineers that system to work well, then—surprise surprise—it will work poorly.
 
 [Kent Beck notes that a software system is "people & computers together"](https://www.mechanical-orchard.com/post/features-and-design-why-not-both).
