@@ -64,11 +64,6 @@ article {
   text-shadow: 0 1px #fff8;
 }
 
-article p {
-  text-align: justify;
-  hyphens: auto;
-}
-
 article :is(p, li, blockquote) {
   font-size-adjust: 0.5;
 }
