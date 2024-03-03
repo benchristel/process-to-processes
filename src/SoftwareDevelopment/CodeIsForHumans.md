@@ -2,7 +2,7 @@
 
 <div class="summary-block">
 
-- Why do programmers spend so much time talking about software design—{{link Structure}}—when what they're paid for is {{link Behavior}}?
+Why do programmers spend so much time talking about software design — {{link StructureAndBehavior structure}} — when what they're paid for is {{link StructureAndBehavior behavior}}?
 
 </div>
 
