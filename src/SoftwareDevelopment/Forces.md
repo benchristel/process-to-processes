@@ -2,15 +2,18 @@
 
 <div class="summary-block">
 
-- How do we deal with competing priorities and needs on a software project?
+How do we deal with competing priorities and needs on a software project?
 
 </div>
 
 It's common to speak of software "requirements", as if our to-do list were set in
-stone and absolutely everything on it must get done. In reality, few software
-products have such hard requirements.
+stone and absolutely everything on it must get done. But in reality, few software
+products have such hard requirements. Usually, we are in a situation where some to-do items are more important
+than others, and time and money are limited. To avoid over-spending on unimportant
+items, the members of a {{link BalancedTeam}} constantly renegotiate the {{link Team/Scope "scope"}} of the
+project—see {{link Team/NegotiateScope "negotiating scope"}}.
 
-In this book, I'll refer to **forces** instead of "requirements". A force is a soft
+Therefore, it is useful to think of software as being shaped by **forces** instead of "requirements". A force is a soft
 constraint that pushes the {{link SoftwareSystem system}} to develop in a certain
 direction. Not all forces are equally strong—they have a magnitude. Forces can push in the same direction and add together,
 or they can oppose each other and cancel out.
