@@ -17,4 +17,8 @@ These are all examples of changes to {{link StructureAndBehavior structure}} tha
 
 If {{link /Software.html software}} is structure that has behavior, then your organization _is_ software, though it runs on people instead of silicon. Its code is the policies, {{link Incentive}}s, habits, and communication pathways that shape its employees' behavior. If no one engineers that system to work well, then—surprise surprise—it will work poorly.
 
-[Kent Beck notes that a software system is "people & computers together"](https://www.mechanical-orchard.com/post/features-and-design-why-not-both).
+Since the whole system, people and machines, is structure that has behavior, the economic points in {{link StructureAndBehavior}} apply. Structure is what we can control, but behavior is what generates value. Our ideal should be to create more valuable behavior with simpler and more economical structures. For example, consider the {{link CostOfMeetings}}.
+
+## References
+
+- [Kent Beck notes that a software system is "people & computers together"](https://www.mechanical-orchard.com/post/features-and-design-why-not-both).
