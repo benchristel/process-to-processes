@@ -14,3 +14,9 @@ Yet it can't be a personal problem, because everyone has these same "faults". It
 Watch Kathy's talk. It's well worth your time.
 
 <iframe width="600" height="338" src="https://www.youtube-nocookie.com/embed/FKTxC9pl-WM?rel=0&iv_load_policy=3"></iframe>
+
+## All One Tank
+
+Kathy notes that we only have one "tank" of cognitive resources. Anything that drains it uses up this scarce resource, affecting _every_ process that needs to draw on it.
+
+This is one of the reasons that seemingly trivial things like code readability matter. Any rational processing or willpower that gets burned to merely parse the code in front of you can't be used for more impactful tasks like finding a bug or designing an algorithm.
