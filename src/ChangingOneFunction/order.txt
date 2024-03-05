@@ -1,6 +1,9 @@
 Behavior.md
 Structure.md
 SeparateBehaviorAndStructureChanges.md
+DesignForToday.html
+Paragraphs.html
+SimpleCode.html
 Refactoring.md
 TestCoverage.md
 MutationTesting.md

@@ -1,0 +1,10 @@
+ContinuousIntegration.html
+# CI does NOT mean you are constantly releasing new software to users/customers.
+# The decision to release software should remain in the hands of those who own the software—the business people.
+# The purpose of CI is to decouple technical concerns (can we test that our latest changes work together)
+# from business concerns by keeping the software in an always-shippable state where the latest features *could*
+# be released if the business so chose.
+ContinuousDeployment.html
+ContinuousDelivery.html
+ContinuousRelease.html
+DemoUI.html
