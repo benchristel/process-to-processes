@@ -97,7 +97,7 @@ Text editors often add vertical lines to strengthen these rectangular centers an
 
 However, the rectangles of indentation cannot help us effectively if they are too tall and narrow:
 
-```jsx
+```
 <Layout
   screen={
     <div className={infoPaneOpen ? "info-pane-open" : ""}>
@@ -141,7 +141,7 @@ added by my text editor.
 However, Alexander's theory predicts that deeper indentation—four or eight spaces—will allow longer blocks to be more readable.
 This also is confirmed by experience. See what a difference doubling the indentation makes:
 
-```jsx
+```
 <Layout
     screen={
         <div className={infoPaneOpen ? "info-pane-open" : ""}>
