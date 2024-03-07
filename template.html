@@ -153,12 +153,14 @@
 			}
 			pre {
 				--padding-size: 16px;
+				margin-inline: calc(0px - var(--padding-size));
 				border: 1px solid var(--pencil);
+				border-radius: 3px;
 				overflow: auto;
 				background: #fff8;
-				margin-inline: calc(0px - var(--padding-size));
 				padding: var(--padding-size);
-				border-radius: 3px;
+				font-size: 1rem;
+				line-height: 150%;
 			}
 			.mdsite-broken-link {
 				color: #a00;
@@ -173,10 +175,12 @@
 				padding-bottom: 120px;
 			}
 			.summary-block {
-				border: 3px double var(--light-ink);
-				padding: 0 1em;
-				font-weight: bold;
+				border-block: 3px double var(--light-ink);
+				padding: 0 16px;
+				margin-inline: -16px;
 				font-style: italic;
+				font-weight: bold;
+				font-family: 'Gentium Book Plus'
 			}
 		</style>
 		<link rel="stylesheet" href="/assets/typography.css">
