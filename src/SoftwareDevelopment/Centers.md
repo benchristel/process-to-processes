@@ -194,3 +194,7 @@ This also is confirmed by experience. See what a difference doubling the indenta
 ## Latent Centers
 
 [[NikosSalingaros]] distinguishes explicitly between latent centers and the other kind (TODO: find the quote and the terms he uses; it's in one of his lecture videos)
+
+## Further Reading
+
+- ["Change Harvesting and the Dynamic Unity"](https://www.geepawhill.org/2020/01/18/change-harvesting-and-the-dynamic-unity/) – GeePaw Hill with a similar view

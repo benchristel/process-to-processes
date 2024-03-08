@@ -25,3 +25,7 @@ My personal theory: the alignment trap is a simple consequence of the definition
 Because of this, the business is much more likely to pour money into alignment-trapped projects that appear to be at risk of failure. That's why aligned, ineffective IT is so expensive.
 
 It is also easy to explain why, if you're in the alignment trap, it's easier to move down to "well-oiled IT" before moving to "enabled growth". Software teams in the alignment trap are under a lot of pressure to deliver, and pressure is not conducive to learning. Making the team _less_ aligned with business objectives—i.e. giving them less important things to work on—creates space for learning. Once that learning translates into improved effectiveness, the team can take on more responsibility and move to the "enabled growth" quadrant.
+
+## Further Reading
+
+- ["Slash the Load"](https://www.geepawhill.org/2022/10/25/slash-the-load/) – GeePaw Hill on getting out of the alignment trap.

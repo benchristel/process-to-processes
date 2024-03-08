@@ -2,6 +2,12 @@
 StructureAndBehavior.md
 SoftwareSystem.md
 Humans.md
+IncrementalChange.md
+# Systems contain causal loops. A causes B causes A. Or A depends on B depends on A.
+# Change is hard because it runs into these causal loops. We want to address problem A,
+# but it's caused by problem B. But B is in turn caused by A!
+# By solving a "problem" we might also undermine something that's good about the current system.
+# Therefore, we have to make many small changes in sequence, checking the results at every step.
 CodeIsForHumans.md
 Exploration.md
 # CodeIsAnAsset.md

@@ -23,3 +23,7 @@ Because we can't directly communicate our mental models to each other, we need v
 ## Examples of Views in This Book
 
 TODO
+
+## Further Reading
+
+- ["If All You Have is a Hammer"](https://www.geepawhill.org/2019/12/30/if-all-you-have-is-a-hammer/) – GeePaw Hill on the importance of worldview.
