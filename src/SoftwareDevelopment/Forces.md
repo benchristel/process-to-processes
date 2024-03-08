@@ -99,3 +99,7 @@ For example, this regex for matching C strings taught me how to think about pars
 // - a closing double-quote.
 const cString = /"(\\.|[^\\"\n])*"/
 ```
+
+## Further Reading
+
+- ["Change Pro-Tip: Lining Up The Betters"](https://www.geepawhill.org/2019/05/15/change-pro-tip-lining-up-the-betters/) – GeePaw Hill on mutual benefit
