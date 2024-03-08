@@ -17,199 +17,6 @@ This is an early early draft and I would love to get your feedback on it. Send i
 
 {{toc --include-latent}}
 
----
-
-- [Software Development](/SoftwareDevelopment)
-  - [Technique: 36 Views](/SoftwareDevelopment/36Views.md)
-  - [View: Humans, Not Humanoids](/SoftwareDevelopment/Humans.md)
-  - View: Exploration, Not Production
-  - View: Code Is an Asset; Dependencies Are Liabilities
-    - really, only _useful_ code is an asset
-  - View: Forces, Not Requirements
-  - View: Controllability, Not Correctness
-  - View: Differentiation, Not Accretion
-  - View: A Process, Not a Project
-  - View: A Semilattice, Not a Tree
-  - View: A Living System, Not an Artifact
-  - View: The Life and Death of Systems
-  - View: Information Flow
-    - As info flows through a system, it drives the parts of the system to move
-    - certain motions are accommodated by the structure of the system, and are easy.
-    - Other motions are resisted by the structure of the system. When this resistance touches humans, we experience it as discomfort/pain.
-    - The system's response to pain is long-term/plastic change. We suffer to the degree that changes in response to pain are obstructed.
-  - View: Techniques
-    - a technique solves a problem in a situation
-    - context-dependent - use your judgment about when to apply
-    - Principle: Judgment
-    - TODO: rename to "pattern" or something else?
-  - Principle: Constant Improvement
-  - View: Improvement is change
-    - change things without making them worse, and you'll improve
-  - Principle: Small Steps
-  - Technique: Start with the easy change
-  - Technique: Change something!
-  - Technique: Make changes reversible
-  - Technique: Make changes safe
-  - View: Positive Feedback Loops Work Both Ways
-    - With incremental changes, a catch-22 can become a virtuous cycle
-  - Good: Trust
-  - View: tools, not rules
-  - View: two kinds of work
-    - creative exploration
-    - slog
-  - Technique: balanced work
-    - the purpose of much of software engineering is to make the work straightforward and unexciting - i.e. to turn creative exploration into slog
-    - over-automation can make working on a codebase boring, which leads to alienation, inattentiveness, and mistakes. It's not actually sustainable!
-    - maintain a healthy balance between exploration and slog.
-    - some programmers prefer one type of work or the other... rotate programmers at different phases of the product lifecycle?
-  - View: Mutual Benefit
-  - View: Bugs vs. Features
-  - Technique: Sleep
-    - sleep is the best debugger
-  - Principle: "to the extent that..."
-    - I've found that these are magic words for making fuzzy-seeming ideas pop into focus.
-    - Replace "A is true if B" with "A is true to the extent that B".
-- Starting a Project
-  - Technique: Project Template
-  - Technique: Walking Skeleton
-  - Technique: Constant Tooling
-    - O(1) tooling - you don't need to change build/test scripts to add a file to the project
-  - Technique: Version Control
-  - View: The Doherty Threshold
-  - Technique: Automatic Dev Setup
-  - Technique: Reproducible Build
-  - Technique: Dev Environment
-  - Technique: 400ms feedback
-  - Technique: passive feedback
-    - watch mode for types and tests
-    - live-updating dev environment
-    - Counterpoint: call your shot
-  - Technique: Readme-driven design
-  - Technique: Prototype
-  - Technique: Spike
-  - Technique: separate fast and slow tests
-  - Technique: system test
-  - Technique: smoke test
-  - Technique: Continuous Integration
-  - Technique: Semi-automated release
-    - Principle: Human in the loop
-  - View: "Making code" vs. "Shipping code"
-- Changing Code Within One Function
-  - View: Behavior
-  - View: Structure
-  - Technique: Separate behavior and structure changes
-  - Technique: Refactoring
-  - View: Test coverage
-  - Technique: Mutation Testing
-  - Technique: Characterization Test
-  - Technique: Empirically Motivated Change
-    - Want something changed? find the bugs!
-    - There are bound to be bugs in messy code.
-  - View: Centers
-  - View: Latent Centers
-  - View: Weak and Strong Centers
-  - Technique: Strengthen Latent Centers
-  - View: Wholeness
-  - Technique: The Mirror of the Self Test
-    - Principle: Relative Assessment
-    - Good: Living Structure
-  - View: Chunking and Levels of Scale
-  - Technique: Organize Code For Chunking
-  - Technique: One thing at a time
-  - View: Duplicated Code
-    - The point of reducing duplication is not to save typing time, but to reduce the risk of mistakes.
-  - View: Symmetry
-  - View: Dead Code
-  - View: Testing
-    - types of tests
-  - View: Simplicity and Occam's Razor
-    - Good: Simplicity
-  - Technique: reproduce bugs
-  - Technique: automated tests
-    - Notice: some functions are harder to test than others. Why do you think that is? Do you notice any patterns?
-- Changing Code Across Functions
-  - Technique: Change together, live together
-  - View: Call Graph
-  - View: Processes
-  - View: System Calls
-  - View: Effects
-  - View: Dependency
-  - View: Dependency Graph
-  - View: Coupling and Cohesion
-  - View: State
-  - View: Objects
-  - Technique: Objects for Caching
-  - Technique: Objects for Laziness
-  - Technique: Objects as State Machines
-  - View: Types as Sets
-  - View: Design is always incomplete
-    - Technique: TODO comment
-  - Technique: Tesseract Organization
-  - View: Immutable Data
-  - Technique: Updating Immutable Data
-  - Technique: Tests Next to Production Code
-  - Good: Shallow Hierarchy
-  - View: Concerns
-  - Technique: Separation of Concerns
-  - View: Brittle Tests
-- Adding New Code
-  - Technique: Test-Driven Development
-  - View: TDD Is Science
-    - View: A Program is a Theory
-  - Technique: Reactive Programming
-    - Principle: Feedback Up Intent Down
-  - Technique: Adapters
-  - Technique: Parse, Don't Validate
-  - Technique: Treat All Exceptions as Fatal (at some level of abstraction)
-  - Technique: No Checked Exceptions
-  - Technique: Start TDDing from the strongest center (middle-out TDD)
-- Working on a Team
-  - View: a team is a group of people with a common goal
-  - View: Velocity
-  - View: Metrics and Goodhart's Law
-  - Technique: assign work to teams, not individuals
-  - Technique: full-time allocation
-  - Technique: ordered backlog
-  - Technique: user story
-  - Technique: easy task creation
-  - Technique: definition of done
-  - Technique: Preconditions, action, expectations
-    - Gherkin, GIVEN, WHEN, THEN
-  - Technique: no personal tasks
-  - Technique: three amigos
-  - Technique: group estimates
-  - Technique: relative estimates
-  - Technique: planning meeting
-  - Technique: Lean Coffee retrospective
-  - Technique: Team Space
-  - Technique: Information Radiator
-  - Technique: Pair Programming
-  - Technique: Pairing station
-  - Technique: Peer evaluation and feedback
-    - Principle: Relative Assessment
-  - Technique: Workstation Setup
-  - Technique: Daily Pair Rotation
-  - Technique: Staging Environment
-  - Technique: Acceptance
-- User Interface Design
-  - Good: Customizable UI
-    - Lowest to highest priority:
-      - Platform
-      - Platform-level User Customizations
-      - Application
-      - Application-level User Customizations
-    - Each layer should be able to delegate some/all of its styling to any of the earlier ones.
-  - View: Fitts's Law
-  - Principle: Recognition over Recall
-  - View: Doherty Threshold (again)
-  - Principle: Feedback
-  - Principle: Least Surprise
-  - Principle: Reversibility
-  - Principle: Boundary
-  - Principle: Attachment
-  - Principle: Least Marking
-  - Principle: Trust
-
 <!--
 ### What is Software Development All About?
 
@@ -251,94 +58,11 @@ The views and patterns are presented in "smallest to largest" order. We'll start
 -->
 ## What is Software Development?
 
-### View: Exploration, not production
-
-- figuring stuff out, not typing code
-- making maps
-- you can't map the territory until you've gone there
-- managers often want detailed plans, but whatever plans they force their teams to produce will be lies.
-- "by the time we're done planning, the software will already be finished!"
-- dead ends are not mistakes, they're part of the exploration
-
-### View: Forces, not requirements
-
-- most software has few hard requirements
-- "forces" expresses the squishiness of the constraints on software
-- we often have to make tradeoffs between competing forces
-- the best designs transcend tradeoffs
-
-### View: Controllability, not correctness
-
-- when writing code, the best you can hope for is that the software does what you (the programmer) intended it to do.
-
 ### View: A process, not a project
 
 Abandon the illusion that your software will at some point be "done". Software is never finished, it's only adequate or inadequate for the needs of its users. As needs change over time (shaped by the software itself, among other things) adequate software becomes inadequate and must continue to evolve.
 
 A software system is a living system, in the sense that it is made of self-sustaining causal loops. It is also mortal. Its self-sustaining mechanisms can get bricked / die. A healthy system is one that tends toward self-sustenance; an unhealthy one tends toward death.
-
-## Software Development is Figuring Stuff Out
-
-Why does software take so long to build? Why are programmers paid so well? In what does the value of a software company consist?
-
-In other words, what _is_ software development?
-
-> Software development is an exercise in learning.
->
-> —[[DaveFarley]] (https://www.youtube.com/watch?v=v21jg8wb1eU&t=949s)
-
-> If we set things up to maximize learning instead of production, the value produced goes way way up.
->
-> —[[KentBeck]] (https://www.youtube.com/watch?v=guycIP56YeY&t=14m15s)
-
-> Software is what we learned along the way.
->
-> —[Jim Nielsen](https://blog.jim-nielsen.com/2023/software-is-what-we-learned-along-the-way/)
-
-> Software is the insights of the development team made manifest.
->
-> —Baldur Bjarnason
-
-Software development is not just (or even mainly) writing code. If it were, it would go many times faster than it does. You can demonstrate this to yourself with a thought experiment. First, estimate how many person-hours of work have gone into the codebase you work on. Then count the lines of code (with something like `find src -type f | xargs wc -l`) and calculate how long it would take you to type that much text (15 lines per minute is a conservative estimate). I predict the ratio will be above 50:1. In other words, less than 2% of a team's time is spent typing the code that goes into production.
-
-The other 98% is not idle time. It's where the real work happens. That 98% consists of:
-
-- Figuring out how the software currently works
-- Figuring out what it should do differently
-- Figuring out how to make it do that
-- Communicating what you've figured out to other people
-
-All that _figuring out_ is what software developers are paid to do. The stuff that developers figure out constitutes their employer's software <abbr title="intellectual property">IP</abbr>. It's a large part of what makes one software company more valuable than another. It's imperative, therefore, that developers pass on what they learn to others, so their knowledge isn't lost when they switch teams or companies.
-
-_Figuring out_ doesn't happen entirely in your head. It's usually a dialogue between you and the machine. You read some code. You have an idea. You write some code. It doesn't work the way you thought it would. You figure out why it doesn't work, and you learn something. You try again and again until you get the results you expect.
-
-This process might look inefficient, but inefficiency is relative. It's only inefficient if something else would be _more_ efficient. In general, typing is cheap, computers are fast, our brains are slow and limited, and coding mistakes are easy to undo as long as we catch them quickly. For all of these reasons, performing experiments in the codebase is often the fastest way to learn what will and won't work.
-
-> As developers, we're not paid for what we do. We're paid for what we _know how_ to do. Our limitation is how much we can know. You can tell, because we don't sit there typing all day, and most of what we type, we delete.
->
-> —[[JessicaKerr]] (https://www.youtube.com/watch?v=10Foa_lulK4&t=1213s)
-
-### Is programming translation?
-
-"Okay," you might be saying, "clearly figuring stuff out is a big part of what software developers do, but writing code is also important, right? Without code, there wouldn't be software."
-
-Yes. But there are some caveats.
-
-I have the impression that nontechnical people tend to think of programming as a kind of translation process, in which one takes human-language requirements and translates them into code that can be understood by a machine. This perception is reinforced in people who have tried programming once or twice, and have found that it's devilishly difficult to get the computer to do anything other than spit out a cryptic error message. If even one character is out of place, the program often won't even run.
-
-To beginners, coding syntax seems like the hard part of programming. But it's actually the easy part. The real work begins only _after_ you have mastered syntax, and can reliably get your programs to run. Then you encounter hard questions like:
-
-- What do I actually want this program to do?
-- How can I tell if this program will do what I want in all circumstances?
-- How can I change my program without breaking it for its current users?
-- How can I communicate my mental model of the program to the people who have to use, extend, and repair it?
-- How can I make the program fast, yet reliable?
-
-Finding answers to these questions is not a simple matter of translation. It requires insight, creativity, empathy, good taste, and deductive reasoning. It's fundamentally a process of discovery, in which art and science become one.
-
-_If_ you could somehow separate the work of figuring stuff out from the work of writing code, the latter would be a low-paid, menial task. Indeed, software teams of old used to try to make this separation, by dividing projects into "design" and "coding" phases. All the figuring out was supposed to happen in the design phase.
-
-However, the tasks of design and coding _cannot_ be separated, because, as I stated earlier, the most efficient design process we know of involves a tight feedback loop between the designer and the machine, and code is part of that loop. The specific technologies used also impose constraints on the evolution of the software which are hard to predict in advance. Therefore, the engineers—the people who figure stuff out—must be coders, and the coders must be engineers.
 
 ## Process to Processes
 
@@ -422,23 +146,6 @@ If you want to heal a system, you must start small: If you're a programmer, that
   - Conflicting goals
   - Conflicting expectations (e.g. for communication)
 -->
-## Centers
-
-Every sociotechnical system can be modeled as a graph of internally coherent, interrelated, fuzzily-bounded regions that I call **centers**. The term _center_ comes from Christopher Alexander, and was first applied to visual art and the design of the built environment. Although we are going to apply the concept of centers to human-computer systems, that application will be made easier by first studying the concept in its original context.
-
-Christopher Alexander used the term *center* to refer to the visually coherent regions of space that appear in art and architecture. Centers are cohesive and identifiable; you can name them, point to them, count them, and recognize ones you've seen before. However, centers do not necessarily have a precise boundary, so they may not be separable from their context.
-
-The concept of a center may seem a bit hard to grasp. However, I am sure that you already have an intuitive and practical sense of the concept, though you may not be used to paying attention to centers or talking about them.
-
-To see that you already understand what a center is, imagine a whirlpool in a stream.
-
-![a whirlpool](whirlpool.png)
-
-What is a whirlpool? It's not a set of water molecules. The physical material that makes up the whirlpool is rapidly and constantly changing. It's also not an exact shape; the particular ripples in the water are constantly changing. It's not separable from the stream itself; you can't lift it out of the water and take it home with you.
-
-Yet you can point to it. You can name it. If there are several whirlpools, you can count them. If you come back the next day and the whirlpool is still there, you can say "it's the same one I saw yesterday". If you know you can do all those things, then you know what a center is.
-
-There are, of course, also centers that are more like "objects"—things that _can_ mostly be separated from their context, and that _do_ have a more or less consistent physical makeup. You are used to thinking and talking about these, so I won't dwell on them.
 
 ## Forces
 
@@ -501,18 +208,7 @@ For example, this regex for matching C strings taught me how to think about pars
 const cString = /"(\\.|[^\\"\n])*"/
 ```
 
-## Conflict
-
-Multiple forces may propel a center in the same "direction"—that is, they may all push it toward the same shape or structure. This is delightful when it happens, because it means that the center, so shaped, can accommodate all of those forces well.
-
-More often, though, we see that forces conflict. One force pushes a center toward one structure, and another pushes it toward a different structure. When conflict happens, we are forced to make tradeoffs. It is not possible to satisfy both forces at once, so we have to choose one, or make some compromise between them.
-
-## Design
-
-**Design** is the art of resolving conflicts between forces. By shaping and arranging centers in the right way, it is often possible to turn a situation of conflict into one of harmony and agreement.
-
-Good designs often seem to come from a flash of inspiration or insight. While it may never be possible to reach a good design solely by following mechanical rules, design is a learnable skill. Designers learn by formulating and applying **patterns**.
-
+<!--
 ## Patterns
 
 A **pattern** is a local arrangement of centers that solves some design problem. A *pattern class* consists of the following parts:
@@ -522,6 +218,7 @@ A **pattern** is a local arrangement of centers that solves some design problem.
 - An *evaluator*—a function that tells you whether *S&prime;* is an improvement on *S*.
 
 In this book, we will focus on a single evaluator: *wholeness*.
+-->
 
 ## Wholeness
 
@@ -606,53 +303,7 @@ Plan: <pattern>ordered backlog</pattern>
 
 Process: <pattern>shared schedule</pattern>, <pattern>top of backlog</pattern>, <pattern>weekly planning</pattern>, <pattern>weekly retrospective</pattern>, <pattern>manual system testing</pattern>, <pattern>test-driven development</pattern>
 
-## Pattern: Walking Skeleton
-
-Summary: A tiny, featureless, yet "complete" and working whole. A walking skeleton is a hilariously overbuilt "hello world" app that includes all the scaffolding on which you will hang your real functionality.
-
-Trigger: you are starting a project
-
-Evaluator: you shouldn't need to mess with the infrastructure (much) as you develop the skeleton into something useful. You can separate infrastructure changes from feature changes. New people on the team can get up and running easily.
-
-Move: create a "hello world" app that uses the architecture and tools appropriate to your project. Including:
-
-- version control
-- production deployment or installer
-- package manager
-- dev build / server
-- test runner
-- typechecker
-- linter
-- formatter
-- git hooks
-- developer documentation
-- editor configuration
-- frontend/backend interaction
-- database
-
-### Examples
-
-TODO
-
 ### Related Patterns
 
 - <pattern>O(1) tooling</pattern>
 - <pattern>400ms feedback loop</pattern>
-
-## Further Reading
-
-- Kent Beck:
-  - _Extreme Programming Explained_, 2nd ed.
-  - _Test Driven Development By Example_
-- Christopher Alexander:
-  - _The Timeless Way of Building_
-  - _A Pattern Language_
-  - _The Nature of Order_
-- Eric S. Raymond: [_The Art of Unix Programming_](http://www.catb.org/esr/writings/taoup/html/)
-- Culadasa: _The Mind Illuminated_
-- Marijn Haverbeke: [_Eloquent JavaScript_](https://eloquentjavascript.net/)
-- Stephen Wolfram: [_A New Kind of Science_](https://www.wolframscience.com/nks/)
-- Kathy Sierra:
-  - ["Making Badass Developers"](https://www.youtube.com/watch?v=FKTxC9pl-WM)
-  - _Badass: Making Users Awesome_
-- Peter Naur: ["Programming as Theory Building"](https://gwern.net/doc/cs/algorithm/1985-naur.pdf)

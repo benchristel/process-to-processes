@@ -1,1 +1,0 @@
-GAK = "Geek at Keyboard". A form of [Informal](InformalTest) [Manual](ManualTest) [[SoftwareTesting]]. Heard from [[TomAyerst]]

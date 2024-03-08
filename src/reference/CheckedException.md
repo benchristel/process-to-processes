@@ -1,3 +1,0 @@
-Checked [[Exception]]s (e.g. in Java) should be avoided. Too often, they force domain code to know about infrastructural errors—errors that ought to be handled by the [[ImperativeShell]]. This impedes [[ContractTesting]] because the domain code's collaborators often cannot implement [[UbiquitousInterfaces]] if they have to declare that they throw an exception.
-
-When errors or exceptional cases exist _in the domain_, they're better represented by [[AlgebraicType]]s like [[Maybe]] or [[Either]]. These types of errors _cannot_ be handled by the [[ImperativeShell]]—they have to be handled in domain code—so it's nice if the type system forces you to handle them.

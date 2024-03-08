@@ -1,1 +1,0 @@
-See: Eric Normand's podcast ["Why Are Corner Cases the Devil?"](https://www.youtube.com/watch?v=wf70qwkNjt4)

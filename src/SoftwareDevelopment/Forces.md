@@ -6,6 +6,11 @@ How do we deal with competing priorities and needs on a software project?
 
 </div>
 
+- most software has few hard requirements
+- "forces" expresses the squishiness of the constraints on software
+- we often have to make tradeoffs between competing forces
+- the best designs transcend tradeoffs
+
 It's common to speak of software "requirements", as if our to-do list were set in
 stone and absolutely everything on it must get done. But in reality, few software
 products have such hard requirements. Usually, we are in a situation where some to-do items are more important

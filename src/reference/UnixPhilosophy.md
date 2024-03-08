@@ -1,3 +1,0 @@
-- http://catb.org/esr/writings/taoup/html/ch01s06.html
-- http://catb.org/esr/writings/taoup/html/ch01s08.html
-- http://catb.org/esr/writings/taoup/html/ch01s09.html

@@ -1,1 +1,0 @@
-A [[Mock]] is a [[Spy]] that performs its own assertions instead of providing an interface to inspect the messages it received; while this is perhaps theoretically interesting as a technique for doing pure [[MessageBasedVerification]] without reliance on [[StateBasedVerification]], in practice it's simply a way of adding coupling to [[TestCode]] for no real benefit.

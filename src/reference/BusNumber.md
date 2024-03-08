@@ -1,3 +1,0 @@
-The bus number is the minimum number of people on your team who have to get hit by a bus (or quit, or win the lottery, etc.) before the team becomes unable to do all the things it's supposed to do. You want it to be high.
-
-For example, if one person is the owner of a particular area of the codebase, and they're the only person who understands how it works, and they handle every feature request and bug report for that area... then if they disappear, you're screwed. Your bus number is 1.

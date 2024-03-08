@@ -1,1 +1,0 @@
-A program is the textual representation of the instructions governing a set of (real or hypothetical) [[Process]]es.

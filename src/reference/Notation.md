@@ -1,1 +1,0 @@
-The beauty of _notation_ is always of secondary importance; the beauty of the idea itself is primary.

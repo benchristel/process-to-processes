@@ -1,1 +1,0 @@
-A value is a statement about which [[Good]]s or attributes of the Good are important, and in which contexts.

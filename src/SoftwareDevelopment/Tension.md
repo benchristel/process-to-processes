@@ -6,6 +6,10 @@ What happens when {{link SoftwareDevelopment/Force forces}} pull us in conflicti
 
 </div>
 
+Multiple forces may propel a center in the same "direction"—that is, they may all push it toward the same shape or structure. This is delightful when it happens, because it means that the center, so shaped, can accommodate all of those forces well.
+
+More often, though, we see that forces conflict. One force pushes a center toward one structure, and another pushes it toward a different structure. When conflict happens, we are forced to make tradeoffs. It is not possible to satisfy both forces at once, so we have to choose one, or make some compromise between them.
+
 We often find situations in software development where one force is pulling the system to develop in one direction, and another force is pulling it in the opposite direction. A common metaphor among software developers is to say that the competing needs or forces are in **tension**.
 
 If the opposing forces cancel out perfectly, then the net effect on the system's development may be zero—no change. Even so, to someone inside the {{link SoftwareDevelopment/SoftwareSystem "software system"}}, the presence of equal opposing forces feels quite different from the absence of forces. Tension is stressful.

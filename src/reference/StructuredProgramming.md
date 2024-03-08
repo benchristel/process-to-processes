@@ -1,1 +1,0 @@
-Most of what I know about **structured programming** comes from this talk by [[KevlinHenney]]: https://www.youtube.com/watch?v=SFv8Wm2HdNM

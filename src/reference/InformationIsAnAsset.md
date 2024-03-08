@@ -1,1 +1,0 @@
-Information is an asset, but data is a liability. See also [[CodeIsAnAsset]] and [[DataDepreciates]]

@@ -3,8 +3,5 @@ SoftwareDevelopment
 StartingAProject
 ChangingOneFunction
 ChangingAcrossFunctions
-
-
-!unspecified
 WorkingOnATeam
-reference
+FurtherReading.md

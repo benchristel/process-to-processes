@@ -1,1 +1,0 @@
-identifier = "[[Variable]] or [[Constant]]"

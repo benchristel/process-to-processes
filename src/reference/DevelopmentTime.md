@@ -1,3 +1,0 @@
-Development time causally orders the events of the construction and elaboration of a software system.
-
-[[Views|36Views]] of software can be [[Synchronic]] or [[Diachronic]] in development time. A [[Synchronic]] view describes the software at a single point in time without regard for how it got that way or its possibilities for future development. A [[Diachronic]] view encompasses a period of time, describing the historical development of the software and its likely futures.

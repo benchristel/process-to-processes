@@ -1,5 +1,0 @@
-- [[Nilpotence]]
-- [[Idempotence]]
-- [[Commutativity]]
-- [[Associativity]]
-- [[Distributivity]]

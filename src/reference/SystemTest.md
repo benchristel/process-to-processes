@@ -1,1 +1,0 @@
-A **system test** is a [[TestCase]] whose [[TestSubject]] is a [[Deploy]]ed software system. The tester (in the case of a [[ManualTest]]) or test code (in the case of an [[AutomatedTest]]) interacts with the system through a UI or an API, rather than directly linking to the test subject's code (as in a [[UnitTest]]).

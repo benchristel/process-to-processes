@@ -1,1 +1,0 @@
-A spy is a type of [[TestDouble]] [[Object]] that records [[Message]]s it receives and provides an interface for the [[TestCode]] to get information about those [[Message]]s. Spies are used to [[Assert]] that the [[SystemUnderTest]] sends a particular sequence of messages to another [[Object]].

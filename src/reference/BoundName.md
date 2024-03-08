@@ -1,3 +1,0 @@
-A bound name is a [[Variable]], [[Constant]], or [[Limb]] of a [[ProductType]]. If a [[Routine]] contains a bound name, then [[Closure]]s instantiated from that routine can [[Access]] the [[Value]] or [[Object]] it refers to.
-
-A bound name inhabits a [[Namespace]]. If it is a [[Limb]], it may be [[Diegetic]]—that is, it may be possible for the process to reflect on the name itself rather than just getting its value, e.g. to print out a string representation of the name. [[Variable]]s and [[Constant]]s are usually [[NonDiegetic]] and can't be reflected upon.

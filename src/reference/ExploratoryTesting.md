@@ -1,5 +1,0 @@
-Exploratory testing is a manual testing technique designed to find contradictions (i.e. bugs or UX issues) among a software system's behaviors.
-
-During exploratory testing, the tester interacts with the system in a freeform way, not following a particular test plan. They build a mental [[Model]] of how the system works, which guides them toward areas of the system where bugs are most likely to occur. They try to [[Falsify]] the model by comparing it to the system's actual [[Behavior]]. In [[WhiteBox]] exploratory testing, the tester also looks at the code to build their model. Often, this scrutiny reveals [[CornerCase]]s where the system behaves in an unexpected way because its [[Developer]]s did not have a coherent mental model of what it should do in that case.
-
-Here is a video of exploratory testing in action: https://www.youtube.com/watch?v=xvUKVpOCqAY

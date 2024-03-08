@@ -8,6 +8,13 @@
 
 </div>
 
+- making software is figuring stuff out, not typing code
+- making maps
+- you can't map the territory until you've gone there
+- managers often want detailed plans, but whatever plans they force their teams to produce will be lies.
+- "by the time we're done planning, the software will already be finished!"
+- dead ends are not mistakes, they're part of the exploration
+
 At first glance, the job of a programmer appears to be to write code that makes a computer perform some desired function. Programming appears to be the task of producing code. I'll call this the **production** view of programming.
 
 Typing code is certainly one aspect of programming, but it isn't the whole story. As long as the production view of programming is our only view, much of what programmers do will remain inexplicable.
@@ -76,6 +83,64 @@ Though we might like to have a map before we start exploring, we can't make an a
 ## Figuring Things Out
 
 Yet another view is that the main task of programming is figuring things out. That is, collecting information, making inferences and deductions, forming hypotheses, testing them, and summarizing the results in a way that someone else can understand.
+
+> Software development is an exercise in learning.
+>
+> —[[DaveFarley]] (https://www.youtube.com/watch?v=v21jg8wb1eU&t=949s)
+
+> If we set things up to maximize learning instead of production, the value produced goes way way up.
+>
+> —[[KentBeck]] (https://www.youtube.com/watch?v=guycIP56YeY&t=14m15s)
+
+> Software is what we learned along the way.
+>
+> —[Jim Nielsen](https://blog.jim-nielsen.com/2023/software-is-what-we-learned-along-the-way/)
+
+> Software is the insights of the development team made manifest.
+>
+> —Baldur Bjarnason
+
+Software development is not just (or even mainly) writing code. If it were, it would go many times faster than it does. You can demonstrate this to yourself with a thought experiment. First, estimate how many person-hours of work have gone into the codebase you work on. Then count the lines of code (with something like `find src -type f | xargs wc -l`) and calculate how long it would take you to type that much text (15 lines per minute is a conservative estimate). I predict the ratio will be above 50:1. In other words, less than 2% of a team's time is spent typing the code that goes into production.
+
+> As developers, we're not paid for what we do. We're paid for what we _know how_ to do. Our limitation is how much we can know. You can tell, because we don't sit there typing all day, and most of what we type, we delete.
+>
+> —[[JessicaKerr]] (https://www.youtube.com/watch?v=10Foa_lulK4&t=1213s)
+
+The other 98% is not idle time. It's where the real work happens. That 98% consists of:
+
+- Figuring out how the software currently works
+- Figuring out what it should do differently
+- Figuring out how to make it do that
+- Communicating what you've figured out to other people
+
+All that _figuring out_ is what software developers are paid to do. The stuff that developers figure out constitutes their employer's software <abbr title="intellectual property">IP</abbr>. It's a large part of what makes one software company more valuable than another. It's imperative, therefore, that developers pass on what they learn to others ({{link PairProgramming}}), so their knowledge isn't lost when they switch teams or companies.
+
+_Figuring out_ doesn't happen entirely in your head. It's usually a dialogue between you and the machine. You read some code. You have an idea. You write some code. It doesn't work the way you thought it would. You figure out why it doesn't work, and you learn something. You try again and again until you get the results you expect.
+
+This process might look inefficient, but inefficiency is relative. It's only inefficient if something else would be _more_ efficient. In general, typing is cheap, computers are fast, our brains are slow and limited (see: {{link SoftwareDevelopment/Humans}}), and coding mistakes are easy to undo as long as we catch them quickly. For all of these reasons, performing experiments in the codebase is often the fastest way to learn what will and won't work.
+
+### Is programming translation?
+
+<!-- TODO: retitle to "Is design separable from coding?" -->
+
+"Okay," you might be saying, "clearly figuring stuff out is a big part of what software developers do, but just because you have something figured out in the abstract doesn't mean it's trivial to write the code that will actually make it real. Doesn't that imply coding is still a big part of the effort? And if someone else has already figured out what the software should do, what's there left for the programmers to do but translate it into code?"
+
+I have the impression that nontechnical people tend to think of programming as a kind of translation process, in which one takes human-language requirements and translates them into code that can be understood by a machine. This perception is reinforced in people who have tried programming once or twice, and have found that it's devilishly difficult to get the computer to do anything but spit out a cryptic error message. If even one character is out of place, the program often won't even run.
+
+To beginners, coding syntax seems like the hard part of programming. But it's actually the easy part. The real work begins only _after_ you have mastered syntax, and can reliably get your programs to run. Then you encounter hard questions like:
+
+- What do I actually want this program to do?
+- How can I tell if this program will do what I want in all circumstances?
+- How can I change my program without breaking it for its current users?
+- How can I communicate my mental model of the program to the people who have to use, extend, and repair it?
+- How can I make the program fast, yet reliable?
+
+Finding answers to these questions is not a simple matter of translation. It requires insight, creativity, empathy, good taste, and deductive reasoning. It's fundamentally a process of discovery, in which art and science become one.
+
+_If_ you could somehow separate the work of figuring stuff out from the work of writing code, the latter would be a low-paid, menial task. Indeed, software teams of old used to try to make this separation, by dividing projects into "design" and "coding" phases. All the figuring out was supposed to happen in the design phase.
+
+However, the tasks of design and coding _cannot_ be separated, because, as I stated earlier, the most efficient design process we know of involves a tight feedback loop between the designer and the machine, and code is part of that loop. The specific technologies used also impose constraints on the evolution of the software which are hard to predict in advance. Therefore, the engineers—the people who figure stuff out—must be coders, and the coders must be engineers.
+
 
 <!--
 Of course, this rather silly example merely illustrates what every programmer

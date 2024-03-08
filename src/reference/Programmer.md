@@ -1,1 +1,0 @@
-A programmer is someone who specifies the behavior of a software system in unambiguous formal language, a.k.a. "[[Code]]".

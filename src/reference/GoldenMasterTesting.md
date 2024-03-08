@@ -1,1 +1,0 @@
-A **golden master test** compares the output of a "known good" or "golden master" system with the output of the system under test. The test fails if there is a difference in the outputs.

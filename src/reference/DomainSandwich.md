@@ -1,6 +1,0 @@
-In a **domain sandwich**, the [[CallGraph]] locates the business logic between two layers of infrastructure, usually entrypoint code and data persistence code. It is similar to a [[LayeredArchitecture]], with the following differences:
-
-- The business logic code does not directly depend on the data persistence code, but depends on an abstraction (see [[DependencyInversion]]).
-- The business logic is agnostic to infrastructural errors from the data layer (e.g. lost connection to database, transaction commit failed). These errors are represented as exceptions that are handled by the entrypoint code. This allows the business layer to be developed and tested with no view to persistence, which keeps it simple and separates concerns. Persistence is, after all, not a concept in your domain or the abstract logic of your application. The domain sandwich also allows the data persistence code to implement interfaces like `Map` and `Iterator` designed with in-memory implementations in mind (which can't fail in the same ways).
-
-Here's an example repo that implements the domain sandwich idea: https://github.com/benchristel/Bank-kata
