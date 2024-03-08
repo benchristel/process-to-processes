@@ -246,18 +246,6 @@ Wholeness can often be enhanced by:
 
 Alternative titles: Fifteen Properties of Living Structure; the Structure of Seredipity
 
-
-
-## Cognitive Efficiency and the Criterion of Life
-
-- The rational part of your brain is slow, expensive, and weak.
-- Our hardware is optimized for holistic perception and feeling.
-- It is much easier to get wholeness by feeling your way to it than by trying to reason out all the interactions between forces.
-- Compare: _Notes on the Synthesis of Form_ to _The Nature of Order_.
-- Therefore, **our judgment of relative life must be our central guiding criterion as we design**. There is no other way to get quality/value at a reasonable speed.
-- ...but we also have to confirm that our snap judgments are reasonable, e.g. by asking "who benefits"?
-- We can also automate a lot of judgments about the software components of the system, e.g. with tests, types, and linters.
-
 ## The Fundamental Process
 
 The fundamental process for improving a system is a variant of the OODA loop (OODA = observe, orient, decide, act):
