@@ -4,6 +4,8 @@
 
 How do we deal with competing priorities and needs on a software project?
 
+Where do the {{link Centers}} that appear in software come from?
+
 </div>
 
 - most software has few hard requirements
@@ -42,3 +44,58 @@ to be different. Instead of pushing ourselves to hit arbitrary, artificial targe
 
 Say we're working on improving the performance of our software. If we don't have metrics or targets, how do we know when to stop? Easy: we stop when we no longer feel a net force pushing us to change. We stop
 when the cost of further action outweighs the benefit.
+
+## Forces Acting on Code
+
+Good code is **correct**, **efficient**, **verifiable**, **portable**, and **instructive**. Each of these virtues can be viewed as a force that pushes the centers in the code toward particular shapes and arrangements.
+
+### Correct
+
+Correct code does what its programmer intended, and nothing else. Code can only be as correct as its programmer's intentions are clear. Muddled intentions invariably produce buggy code.
+
+### Efficient
+
+Code is more efficient when it takes less time to run and uses fewer scarce resources (e.g. memory, file handles, network bandwidth).
+
+### Verifiable
+
+Code is verifiable when you can tell whether it is correct or incorrect. Verifiability breaks down into several sub-virtues:
+
+- static verifiability
+  - readability
+  - type safety
+  - lint
+- dynamic verifiability
+  - testability
+  - observability
+
+### Portable
+
+Code is portable when it can be carried forward into new contexts.
+
+Portability may either mean:
+
+- the code can be reused as-is in new contexts, or to solve new problems.
+- maintenance of the code does not require big or invasive changes.
+
+### Instructive
+
+Good code looks "pretty much like what you'd expect" (according to Ward Cunningham). But in my experience, the best code teaches you something new about how to solve a problem.
+
+"Pretty much like what you'd expect" is a low bar—at least, it is when I'm the person doing the expecting. When I am looking at code I've never seen before, which solves a problem I've never had to solve, I often don't have a clear idea of what I expect to see. It's great if the code names variables and functions after concepts I'm familiar with, but again—that's a low bar.
+
+But sometimes, I see code and have an "aha!" moment. The code is so lucid, so clear and simple, that it has communicated something new to me and I now understand both the problem and its solution more clearly.
+
+For example, this regex for matching C strings taught me how to think about parsing escape sequences like `\n`:
+
+```js
+// A string consists of:
+// - a double-quote character
+// - any number of "units", where a unit is either:
+//   - an escape sequence: a backslash followed by any
+//     character
+//   - a literal character other than a backslash, quote, or
+//     newline
+// - a closing double-quote.
+const cString = /"(\\.|[^\\"\n])*"/
+```

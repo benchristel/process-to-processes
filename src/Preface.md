@@ -59,3 +59,19 @@ What I *can* do is offer you a navigational toolkit: a map and a compass to help
 But *you* have to do the work of learning. You have to practice. You have to write code (lots of it). You have to reflect on what you write. You have to seek feedback from other people. And you have to read other people's code, make sense of it, and evaluate what's good and bad about it.
 
 Ultimately, you have to assess whether the views and techniques in this book are applicable to you and your situation or not.
+
+Refer to this book as you would to a map. A map can't tell you everything about the terrain you're going to travel through, nor can it prepare you for everything you might encounter on the journey. But it can help you orient yourself—that is, figure out where you are and where you might go next.
+
+## I Have No Grand Unified Theory
+
+As you read through the chapters in this book—especially the {{link 36Views Views}} in first section, on {{link SoftwareDevelopment/index.html SoftwareDevelopment}}—you will probably have trouble piecing them together. It may be hard to see what I'm driving at. "What's the big picture?" you'll wonder. "What is his grand unified theory?"
+
+I have no grand theory. I don't believe there can be one. All I have are enough different ways to look at software systems that I can build ad-hoc mental models of the *actual systems that are in front of me*, and that is enough. My goal is not to "solve" software development, but simply to create good software. I don't need a grand unified theory for that.
+
+Therefore, as you read the chapters, don't worry too much about fitting them together. Instead, try to relate each one to your own experience. The sooner you can get a feel for how my views and techniques play out in the real world, the sooner you will be able to apply them effectively.
+
+## Why "Process to Processes?"
+
+The title of this book refers to the two kinds of process that bookend software development. On one end, we have the _development process_ that people go through as they learn about the system, make changes, and observe the results. On the other end, we have the _computational processes_ that run on computers—the things that are listed by the `ps` command on Unix systems.
+
+This book will give you a complete picture of what happens during software development. It maps paths that lead all the way from one "process" to the other—and back again.

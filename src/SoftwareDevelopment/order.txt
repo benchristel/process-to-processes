@@ -7,6 +7,7 @@ Exploration.md
 # CodeIsAnAsset.md
 Forces.md
 Tension.md
+Centers.md
 Design.md
 Controllability.md
 DifferentiationNotAccretion.md
@@ -17,6 +18,7 @@ ProcessNotAProject.md
 #   a common search strategy is to try many hypothetical/possible solutions and see what works out
 Semilattice.md
 LivingSystemNotAnArtifact.md
+Wholeness.md
 LifeAndDeathOfSystems.md
 # - Systems can be stable (self-sustaining) or unstable (prone to collapse or replacement)
 #    - Caveat: instability of the parts sometimes contributes to stability of the whole!
@@ -51,6 +53,7 @@ PositiveFeedbackLoops.md
 # - View: Positive Feedback Loops Work Both Ways
 #   - With incremental changes, a catch-22 can become a virtuous cycle
 
+AlignmentTrap.md
 Trust.md
 ToolsNotRules.md
 TwoKindsOfWork.md

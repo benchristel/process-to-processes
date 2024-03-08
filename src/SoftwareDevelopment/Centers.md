@@ -1,3 +1,5 @@
+# View: Centers
+
 [[ChristopherAlexander]]'s idea of a _center_ is kind of hard to grasp.
 
 The best example I can come up with is a whirlpool.
@@ -13,6 +15,21 @@ A center has an identity; we can point to a center and say "that one", and we ca
 > [[Life]] is a pattern of immense complexity. And what you call “yourself,” as a living organism—say, I am my whole body, at the very least—now what is that body? That body is recognizable, and I recognize my friends when I meet them again (with luck), and you recognize me. Although the last time any of you saw me, I was absolutely something entirely different from what I am now. Just as the flame of a candle is never a constant. A flame of a candle is a stream of hot gas. Only, you say “the flame of the candle” as if it were a constant. Well, it is a recognizably constant pattern: the spear-shaped outline of the flame and its coloration is a constant pattern. But in exactly the same way, we are all constant patterns, and that’s all we are; the only thing constant about us at all is the doing rather than the being. It’s the way we behave, the way we dance. Only there’s no “we” that dances, there’s just the dancing. Just as the flame is the streaming of hot gas, just as a whirlpool in a river is a whirling of streaming water. There is no thing that whirlpools, there is the whirlpool.
 >
 > —[Alan Watts](https://alanwatts.org/transcripts/the-myopic-view-of-the-world-we-as-organism/)
+
+<!--
+## Are Centers Objectively Real?
+
+In other words, do centers exist "out there," in the world, or only in our minds? Are they a feature of reality, or a concept that we superimpose on our perceptions of reality, in order to make sense of them?
+
+I've pondered this question a bit. Maybe you're wondering about it too. My current thinking is that the question, as it stands, is meaningless, and there can be no answer until we decide what the question means.
+
+Believe it or not, our notions of "subjective" and "objective" are culturally relative. We make the distinction
+because it's often useful to us as we move through our society. It helps us model how other people are likely to behave,
+and how their behavior is likely to be different from and similar to our own. But it's fundamentally a made-up notion.
+
+So if you are wondering "are centers objectively real," I would reply with a question: why do you want to know? What will the answer enable you to do?
+
+-->
 
 ## Geometry of Centers
 
