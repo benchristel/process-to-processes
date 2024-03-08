@@ -57,7 +57,18 @@ body {
   line-height: 160%;
   font-weight: 500;
   font-size-adjust: 0.5;
-  font-size: 17px;
+}
+
+@media print {
+  body {
+    font-size: 10pt;
+  }
+}
+
+@media screen {
+  body {
+    font-size: 17px;
+  }
 }
 
 article {
