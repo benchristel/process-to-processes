@@ -10,6 +10,7 @@ Improving the system might mean writing code, but it might also mean:
 - Configuring your development environment to make your work easier
 - Rethinking how your team prioritizes and assigns tasks
 - Studying the business domain you're working in
+- Talking to stakeholders to clarify feature priorities
 - Setting up a recurring meeting
 - Canceling a meeting that's no longer useful
 

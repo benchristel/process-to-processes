@@ -113,7 +113,7 @@ The other 98% is not idle time. It's where the real work happens. That 98% consi
 - Figuring out how to make it do that
 - Communicating what you've figured out to other people
 
-All that _figuring out_ is what software developers are paid to do. The stuff that developers figure out constitutes their employer's software <abbr title="intellectual property">IP</abbr>. It's a large part of what makes one software company more valuable than another. It's imperative, therefore, that developers pass on what they learn to others ({{link PairProgramming}}), so their knowledge isn't lost when they switch teams or companies.
+All that _figuring out_ is what software developers are paid to do. The stuff that developers figure out constitutes their employer's software <abbr title="intellectual property">IP</abbr>. Their collective body of knowledge is a large part of what makes one software company more valuable than another. It's imperative, therefore, that developers pass on what they learn to others ({{link PairProgramming}}), so their knowledge isn't lost when they switch teams or companies.
 
 _Figuring out_ doesn't happen entirely in your head. It's usually a dialogue between you and the machine. You read some code. You have an idea. You write some code. It doesn't work the way you thought it would. You figure out why it doesn't work, and you learn something. You try again and again until you get the results you expect.
 

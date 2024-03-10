@@ -85,7 +85,27 @@ Simply breaking up code into arbitrary chunks isn't helpful—it's counterproduc
 
 ## Caveats
 
+Paragraphs work best as a code organization technique when there's only one obvious way of grouping things. In the example above, we grouped exports from the same file together into a paragraph. But another dimension is type exports versus value exports, and we could have organized the code along those lines instead, like this:
+
+```ts
+export { Text } from "./display/Text"
+export { Theme } from "./display/Theme"
+export { MovablePoint } from "./interaction/MovablePoint"
+export { useMovablePoint } from "./interaction/useMovablePoint"
+
+export type { TextProps, CardinalDirection } from "./display/Text"
+export type { Filled, Stroked } from "./display/Theme"
+export type { MovablePointProps } from "./interaction/MovablePoint"
+export type {
+  ConstraintFunction,
+  UseMovablePoint,
+  UseMovablePointArguments,
+} from "./interaction/useMovablePoint"
+```
+
+In this example, it doesn't matter much which way we organize the code; we can get the information we want with either structure. But in more complicated situations, paragraphs don't cut it. TODO: example.
+
 ## Related Techniques
 
-- {{link ArrangeActAssert}} is a specific application of this technique
+- {{link ArrangeActAssert}} and {{link ExtractTransformLoad}} are specific applications of this technique
 - {{link ScopingBlocks}} is often a good follow-up to this technique

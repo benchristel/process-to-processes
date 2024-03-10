@@ -1,5 +1,13 @@
 # Technique: 36 Views
 
+<div class="summary-block">
+
+How do we make sense of a complex software system?
+
+How can we communicate our understanding to others?
+
+</div>
+
 The "36 Views" technique is a way to make sense of a complex topic, by approaching it from many different, complementary angles.
 
 The name is a reference to the series of paintings ["36 Views of Mount Fuji"](https://en.wikipedia.org/wiki/Thirty-six_Views_of_Mount_Fuji) by Hokusai.
@@ -10,11 +18,11 @@ There is an analogy to be made to [multiview projection](https://en.wikipedia.or
 
 See also: Mike Caulfield's idea of [Choral Explanations](https://hapgood.us/2016/05/13/choral-explanations/), and [Bohr's principle of complementarity](https://en.wikipedia.org/wiki/Complementarity_(physics)).
 
-## Contrast to Mental Models
+## Views Versus Models
 
-A _mental model_ is a holistic understanding of some part of the world. Mental models are what allows us to make predictions about the future. They let us mentally simulate what the system will do in response to some outside stimulus or change.
+A _mental model_ is a holistic understanding of a system. Mental models are what allow us to make predictions about the future. They let us simulate the system in our heads, and imagine what it will do in response to some outside stimulus or change.
 
-The downside of mental models is that they can never be fully explicated or communicated from person to person—a point that Peter Naur makes well in his essay "Programming as Theory Building." He uses the word **theory** where I use "mental model", but it's the same idea.
+A weakness of mental models is that they can never be fully explicated or communicated from person to person—a point that Peter Naur makes well in his essay ["Programming as Theory Building."](https://gwern.net/doc/cs/algorithm/1985-naur.pdf) He uses the word **theory** where I use "mental model", but it's the same idea.
 
 Indeed, I would go so far as to say that a mental model is not _built_, but _grown_. It is rooted in a particular mind, developed through the interaction of that mind with the world, and can never be moved.
 
