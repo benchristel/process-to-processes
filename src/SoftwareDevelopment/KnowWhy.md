@@ -11,6 +11,8 @@ I think this is an *obvious* position because its opposite—the idea that we sh
 
 I consider these non-answers because they don't address the intent of the question. _What benefit_ are you hoping to secure by doing this particular thing in this particular way?
 
+"Benefit" means "benefit for a _person_." Who benefits? When? How?
+
 The reason I feel it's important to have a good answer to this question is that if we don't know why we're doing something, we can't assess how well it's working, or whether something else might work better. Change becomes unthinkable, and improvement impossible.
 
 Now, I don't blame the folks who don't know why they're doing things. Before I got into the habit of asking myself "why?" all the time, I did a lot of things without being able to articulate the reasons. And when I started to build the habit, it was quite uncomfortable, because it forced me to face the fact that I often didn't know why I did certain things.
