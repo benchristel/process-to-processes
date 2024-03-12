@@ -1,4 +1,4 @@
-# View: Exploration, Not Production
+# View: Programming as Exploration
 
 <div class="summary-block">
 
