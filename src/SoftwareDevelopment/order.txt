@@ -13,7 +13,7 @@ CodeIsForHumans.md
 Exploration.md
 # CodeIsAnAsset.md
 Forces.md
-Tension.md
+Conflict.md
 Centers.md
 Design.md
 Controllability.md
