@@ -64,7 +64,7 @@ isArray(f)?f:[f]),patch=(r,t)=>((r=O(r.parentNode,r,r.vdom||U
 
 <cite>Source: [Superfine, by Jorge Bucaran](https://github.com/jorgebucaran/superfine)</cite>
 
-This code is about as terse as it can be while still fulfilling its purpose. Other things equal, code with fewer characters should be faster to type and faster for the machine to load and parse. In that since, this code is "optimal".
+This code is about as terse as it can be while still fulfilling its purpose. Other things equal, code with fewer characters should be faster to type and faster for the machine to load and parse. In that sense, this code is "optimal".
 
 The fact that our code *doesn't* look like this "optimal" example implies that programming is *not* typing,
 and we *don't* write code primarily for the machine. Of course, every programmer already knows this, but

@@ -16,7 +16,7 @@ If you can't see wholeness, you're doomed to thrash between micro-optimizations 
 
 Wholeness can often be enhanced by:
 
-- Making implicit (latent) centers implicit, by giving them a definite identity and structure.
+- Making implicit (latent) centers explicit, by giving them a definite identity and structure.
 - Making weak but important centers stronger, by creating and arranging other centers within and around them to reinforce them
 - Making strong but unimportant centers weaker (by indirection / decoupling?)
 

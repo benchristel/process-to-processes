@@ -25,7 +25,7 @@ constraint that pushes the {{link SoftwareSystem system}} to develop in a certai
 direction. Not all forces are equally strong—they have a magnitude. Forces can push in the same direction and add together,
 or they can oppose each other and cancel out.
 
-A system changes as long the forces acting on it do not sum to zero. If the forces sum to zero, the system will . Another way of viewing this is that any stable structures that emerge in the system are there because they effectively balance the forces currently acting on them.
+A system changes as long the forces within it do not sum to zero. If the forces sum to zero, the system will remain in a steady state. Any stable structures that emerge in a system are there because they effectively balance the local forces currently acting on them.
 
 Examples of forces:
 
