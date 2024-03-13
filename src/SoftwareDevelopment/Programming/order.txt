@@ -1,6 +1,8 @@
 Production.html
+Translation.html
 Thinking.html
+DynamicUnity.html
 Exploration.html
 FiguringThingsOut.html
-CodeIsForHumans.html
-
+Science.html
+Repair.html
