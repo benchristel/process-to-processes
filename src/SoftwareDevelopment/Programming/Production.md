@@ -18,7 +18,15 @@ Specifically, the "programming is production" view leads us to believe:
 - Myth: if we revisit and rework code, that's a problem, since it means we made a mistake in our work the first time.
 - Myth: if coding could be automated, software companies could fire all the programmers and save tons of money!
 
-These myths impair the effectiveness of software teams that act as if they're true. If you make decisions based on the flawed model of the world they suggest, you'll get worse results than if you used a more accurate model. So let's debunk the myths.
+These myths have a grain of truth in them—as long as the following assumptions hold:
+
+- Programmers are writing machine code.
+- Each programmer works on an independent program or part of a program, and no coordination between programmers is necessary.
+- Customers will purchase the software for an upfront lump sum. They will make purchasing decisions based on the list of features in the marketing brochure.
+
+Suffice it to say that while these assumptions may have been valid in certain contexts in, say, the 1950s, they are almost never true today. The production view of programming is a relic of an earlier era. It is woefully inadequate to describe what goes on in modern software development.
+
+When modern software teams act as if these myths are true, their effectiveness is impaired. If you make decisions based on the flawed model of the world they suggest, you'll get worse results than if you used a more accurate model. So let's debunk the myths.
 
 ## Can Programmer Productivity Be Measured in Lines of Code?
 
