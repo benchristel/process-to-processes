@@ -13,6 +13,7 @@ Specifically, the "programming is production" view leads us to believe:
 - Myth: we can measure programmer productivity by counting lines of code (or, less perniciously, features completed).
 - Myth: more code = more features = more value. As long as mountains of useful code are piling up, things are going well.
 - Myth: we can make a project go faster by adding more programmers (i.e. more workers to the assembly line). After all, 10 people can type more words per day than 5 people.
+- Myth: coding is the bulk of the work in programming; therefore it's important to make detailed plans before starting a project, in order to minimize the time we spend coding.
 - Myth: if we delete code, that's a problem, since it means we're throwing away completed work.
 - Myth: if we revisit and rework code, that's a problem, since it means we made a mistake in our work the first time.
 - Myth: if coding could be automated, software companies could fire all the programmers and save tons of money!
