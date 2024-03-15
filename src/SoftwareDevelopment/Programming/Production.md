@@ -30,6 +30,19 @@ When modern software teams act as if these myths are true, their effectiveness i
 
 ## Can Programmer Productivity Be Measured in Lines of Code?
 
+You will get what you reward—this is {{link GoodhartsLaw}}. If programmers are given incentives to produce more code, they'll find a way to produce more code, whether that actually creates value for the business or not.
+
+The idea that programming is mostly typing code is flatly contradicted by data from real projects. I was once on an ambitious project that tasked 80 programmers with rewriting half a million lines of code in a new programming language. Over the course of more than two years, we spent an estimated 8000 programmer-days on the project, ending up with about 700,000 lines of code in the new language. You might think that a rewrite project—simply translating from one programming language to another—would have a high proportion of time spent typing, yet 700,000 lines in 8,000 days works out to less than 90 lines per programmer-day. This equates to a typing speed of about 2 words per minute. Of course, we were not abysmally slow typists. Instead, this apparently slow "production" speed resulted from two causes:
+
+- We spent only a small about of time each day with our fingers on the keys—maybe an hour, occasionally two. The rest of the time was spent reading code and communicating with coworkers.
+- Much of what we typed did not end up in the codebase—because programming is {{link FiguringThingsOut}}.
+
+> As developers, we’re not paid for what we do. We’re paid for what we know how to do. Our limitation is how much we can know. You can tell, because we don’t sit there typing all day, and most of what we type, we delete.
+>
+> —<cite>Jessica Kerr, ["Shaving the Golden Yak"](https://www.youtube.com/watch?v=10Foa_lulK4&t=1213s)</cite>
+
+It is clear to everyone who studies it that programming productivity is not a matter of typing speed. There is something else going on when we program.
+
 ## Does More Code Mean More Value?
 
 If the code is never released to anyone, it has no value. The {{link TimeValueOfMoney}} implies that we should release new features as soon as they are ready.
@@ -37,6 +50,30 @@ If the code is never released to anyone, it has no value. The {{link TimeValueOf
 Features are valuable not just because they are useful to someone today, but because they bring in information about how we might make the software even more useful tomorrow. By watching people use the software we've built, we learn things that are impossible to learn in any other way. It behooves us to get these insights as early as possible.
 
 ## Does Adding More Programmers to a Project Make It Go Faster?
+
+Software projects are not infinitely parallelizable. Usually the number of "tracks" of work that can proceed in parallel is quite small. Adding more programmers beyond this limit does nothing.
+
+Moreover, programmers working in parallel need to coordinate their efforts to some degree. This leads to Brooks' Law: increasing communication overhead means that adding more programmers to a late project makes it later.
+
+{{link PairProgramming}} provides a way to double the number of programmers on a project and finish it in ~60% of the time (TODO: source). However, a big part of the speedup comes not from increasing "productivity" in the sense of producing code, but from eliminating handoffs (e.g. for code review).
+
+The bottleneck on programming is learning, not typing—{{link Programming/FiguringThingsOut}}. Ten people can't learn something faster than one person can.
+
+## But What If We Plan Better?
+
+It's tempting to try to overcome the finite parallelizability of software projects by planning all the coding work upfront. If only we had a perfect plan that detailed exactly what code needed to be written, we could dole out each module or file to a separate programmer and be done coding in record time!
+
+Give up on this idea. A perfect plan for what to code _is_ code, in the sense of being just as formal and precise as the code that would run on a machine. And to the extent that the plan is _less_ formal than the code being planned, there is room for mistakes which would have to be fixed by the programmers—the very thing the plan purports to avoid. A plan has the additional disadvantage that you can't actually run it, test it, or debug it. Typecheckers and other formal tools do not work on it. A detailed plan thus has all the disadvantages of code, with none of the advantages.
+
+Because of this, a detailed plan is unlikely to work as written. John Gall put it this way:
+
+> A complex system designed from scratch never works, and cannot be patched up to make it work. You have to start over, beginning with a working simple system.
+>
+> —<cite>John Gall, _Systemantics_</cite>
+
+Remember: typing code is not the bottleneck. So don't ask yourself "how can we minimize coding time," but rather "how can we make something valuable as quickly as possible?" The fastest way to get a perfect plan is to skip the detailed upfront planning and start experimenting with code. Get a simple system working—{{link WalkingSkeleton}}, {{link MakeItRunMakeItRight}}—and evolve from there.
+
+As I once said to my teammates: "by the time we're done planning, the code will already be written!"
 
 ## Is Deleting Code a Sin?
 
