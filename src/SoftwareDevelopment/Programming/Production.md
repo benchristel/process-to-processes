@@ -41,6 +41,10 @@ The idea that programming is mostly typing code is flatly contradicted by data f
 >
 > —<cite>Jessica Kerr, ["Shaving the Golden Yak"](https://www.youtube.com/watch?v=10Foa_lulK4&t=1213s)</cite>
 
+Sometimes, programmers design code to minimize the amount of typing required to make changes. If we take seriously the idea that programming is mostly not typing, then minimizing typing
+should hardly ever be our overriding concern. The desire to reduce the mechanical effort of changing code often leads to strange antipatterns like tautological tests that can never fail
+(the tests update themselves when the code changes, saving us time!) and misapplication of the {{link DontRepeatYourself}} principle, e.g. DRYing out type declarations.
+
 It is clear to everyone who studies it that programming productivity is not a matter of typing speed. There is something else going on when we program.
 
 ## Does More Code Mean More Value?
