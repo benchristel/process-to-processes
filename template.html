@@ -26,10 +26,11 @@
 			}
 
 			.container {
-				box-sizing: content-box;
+				min-height: 100vh;
 				margin-inline: auto;
-				max-width: var(--body-width);
+				max-width: calc(var(--body-width) + 2 * var(--page-margin));
 				padding: 0.25in var(--page-margin);
+				box-shadow: 0 0 30px #0001;
 			}
 			
 			a {
