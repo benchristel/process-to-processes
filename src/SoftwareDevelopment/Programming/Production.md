@@ -75,7 +75,11 @@ Remember: typing code is not the bottleneck. So don't ask yourself "how can we m
 
 As I once said to my teammates: "by the time we're done planning, the code will already be written!"
 
-## Is Deleting Code a Sin?
+## Is Deleting Code Wasteful?
+
+Authors cut text from their drafts ruthlessly. If a sentence isn't pulling its weight, it has to go. I'm sure you wouldn't want to read the disjecta of your favorite novel, so why keep code around when it's no longer useful?
+
+A rough draft isn't waste. It's an essential part of getting to the final draft.
 
 ## Is Re-coding a Sign of Incompetence?
 
