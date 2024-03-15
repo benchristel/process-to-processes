@@ -71,6 +71,7 @@
 			.navbar > nav {
 				display: flex;
 				flex-direction: row;
+				align-items: baseline;
 				justify-content: space-between;
 				flex-wrap: wrap;
 				padding-inline: var(--body-margin)
@@ -184,6 +185,15 @@
 				font-weight: bold;
 				font-family: 'Gentium Book Plus'
 			}
+			#edit-link {
+				font-size: 14px;
+				text-decoration: none;
+				padding-inline: 0;
+				color: #888;
+			}
+			#edit-link:hover {
+				background: transparent;
+			}
 		</style>
 		<link rel="stylesheet" href="/assets/typography.css">
 		<link rel="stylesheet" href="/assets/syntax.css">
@@ -207,7 +217,9 @@
 
 			<footer class="navbar">
 				<nav>
-					<div></div>
+					<div>
+						<a id="edit-link"></a>
+					</div>
 					<div class="paging">
 						{{prev}}<div class="divider"></div>{{next}}
 					</div>
@@ -216,6 +228,7 @@
 		</div>
 		<script src="/assets/smartquotes.js"></script>
 		<script>smartquotes()</script>
+		<script src="/assets/edit-link.js"></script>
 		<script>
 document.onkeydown = (e) => {
 	switch (e.key) {
