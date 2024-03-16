@@ -1,4 +1,4 @@
-# View: The Dynamic Unity
+# View: Programming as Dialogue
 
 The problems with the preceding views of programming flow from a common source: they assume that the programmer is the thinker, the doer, the unmoved mover, and that the program is inert, unintelligent matter that the programmer shapes as a potter shapes clay. They assume that cause and effect flow in one direction only—from the programmer to the program.
 

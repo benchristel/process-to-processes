@@ -3,7 +3,7 @@
 The "production" view positions *typing code* as the central, defining activity of programming.
 
 Typing is the *sine qua non* of software development: if no code is written, software ain't gonna happen.
-But it's misguided to *equate* programming with typing.
+But it's misguided to *equate* programming with typing. There's a lot more to it than that.
 
 Here's a simple thought experiment: estimate the number of programmer-hours that went into the codebase you work on.
 Now count the lines of code, with a command like `find src -type f | xargs wc -l`. How long would it take you
