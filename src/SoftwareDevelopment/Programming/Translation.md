@@ -1,10 +1,12 @@
 # View: Programming as Translation
 
-"Okay," you might be saying, "clearly figuring stuff out is a big part of what software developers do, but just because you have something figured out in the abstract doesn't mean it's trivial to write the code that will actually make it real. Doesn't that imply coding is still a big part of the effort? And if someone else has already figured out what the software should do, what's there left for the programmers to do but translate it into code?"
+The *translation view* uses natural language translation (e.g. translating Chinese to English) as a metaphor for programming. Programmers are like translators who take program "requirements" in one language (the human language of their clients) and translate them into another language (the language of the computer).
 
-I have the impression that nontechnical people tend to think of programming as a kind of translation process, in which one takes human-language requirements and translates them into code that can be understood by a machine. This perception is reinforced in people who have tried programming once or twice, and have found that it's devilishly difficult to get the computer to do anything but spit out a cryptic error message. If even one character is out of place, the program often won't even run.
+The translation view is often used to teach programming to beginners, who can understand the step-by-step instructions for an algorithm in English but don't yet know how to phrase them in code. The translation view breaks down, however, when we are working on systems larger than a single, simple algorithm.
 
-To beginners, coding syntax seems like the hard part of programming. But it's actually the easy part. The real work begins only _after_ you have mastered syntax, and can reliably get your programs to run. Then you encounter hard questions like:
+I have the impression that nontechnical people tend to think of all programming as being the same kind of translation process taught in introductory programing courses. To them, translating feature requests into the machine's language seems like it must be the hard part of programming—the thing programmers are paid so much to do. This perception is reinforced in people who have tried programming once or twice, and have found that it's devilishly difficult to get the computer to do anything but spit out a cryptic error message. If even one character is out of place, the program often won't even run.
+
+Although, to beginners, coding syntax seems like the hard part of programming, it's actually the easy part. The real work begins only _after_ you have mastered syntax, and can reliably get your programs to run. Then you encounter hard questions like:
 
 - What do I actually want this program to do?
 - How can I tell if this program will do what I want in all circumstances?
