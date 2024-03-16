@@ -1,8 +1,25 @@
 Programming as Production
 
-- data entry / typing
+The "production" view positions *typing code* as the central, defining activity of programming.
 
-the idea that code is valuable, and we should minimize changes to it isn't wrong, but...
+Typing is the *sine qua non* of software development: if no code is written, software ain't gonna happen.
+But it's misleading at best to equate programming with typing. The production view beguiles us
+into believing several myths about programming:
+
+- **Myth 1:** we can measure programmer productivity by counting lines of code.
+- **Myth 2:** more code = more features = more value. As long as mountains of useful code are piling up, the project is going well.
+- **Myth 3:** we can make a project go faster by adding more programmers (i.e. more workers to the assembly line). After all, 10 people can type more words per day than 5 people.
+- **Myth 4:** coding is the bulk of the work in programming; therefore it's important to make detailed plans up front, in order to minimize the time spent coding.
+- **Myth 5:** if we delete code, that's a problem, since it means we're throwing away completed work.
+- **Myth 6:** if we revisit and rework code, that's a problem, since it means we made a mistake the first time around.
+- **Myth 7:** if coding could be automated, software companies could fire all the programmers and save tons of money!
+
+The most pernicious thing about these myths is that there's a grain of truth in each one that makes it difficult to completely reject.
+For example, myth 6 seems to echo the received wisdom that we should design code to minimize the size and spread of future changes to it. In itself, this advice isn't bad, but if we see it from the production view, we're likely to misinterpret it. The reason we want to minimize code change is *not* so we can spend less time typing, as the production view would have us believe.
+
+Therefore, rather than try to debunk these myths, I will present alternative views of programming in the chapters that follow. It's only by using *all* the views that we can build a comprehensive mental model of what programming is.
+
+
 when it comes from the production view, it can be destructive.
 in order to be productive, it needs to come from a different place - a different view.
 
