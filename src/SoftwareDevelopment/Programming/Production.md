@@ -87,6 +87,8 @@ A rough draft isn't waste. It's an essential part of getting to the final draft.
 
 ## Is Re-coding a Sign of Incompetence?
 
+Reworking code is equivalent to writing new code and deleting the old, so the points above apply to this myth too. Revising code is part of the development process; dialog with the machine, where the computer helps us see and correct our mistakes as we go, is the fastest way to get working software.
+
 ## Can Programming Be Automated?
 
 The programmer's task used to be equated with that of punching holes in paper tape. In the 1940s, it seemed that "programming," so defined, was about to be automated. "Automatic programming" systems would punch the holes based on an abstract (assembly language) description of the algorithm, rendering human programmers obsolete. David Parnas describes this exciting vision of the future:
