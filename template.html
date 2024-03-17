@@ -153,10 +153,17 @@
 				border-bottom: 1px solid var(--light-ink);
 			}
 			blockquote {
-				margin: 1em 0;
+				margin: 2em 0;
 				padding: 0 2em;
-				border-block: 1px solid var(--light-ink);
+				border-inline-start: 6px double var(--pencil);
 				font-style: italic;
+			}
+			blockquote cite {
+				display: block;
+				padding-inline-start: 3em;
+			}
+			blockquote cite:before {
+				content: '— ';
 			}
 			pre {
 				--padding-size: 16px;
