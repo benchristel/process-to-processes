@@ -2,44 +2,36 @@
 
 Yet another view is that the main task of programming is figuring things out. That is, collecting information, making inferences and deductions, forming hypotheses, testing them, and summarizing the results in a way that someone else can understand.
 
-> Software development is an exercise in learning.
->
-> —[[DaveFarley]] (https://www.youtube.com/watch?v=v21jg8wb1eU&t=949s)
-
-> If we set things up to maximize learning instead of production, the value produced goes way way up.
->
-> —[[KentBeck]] (https://www.youtube.com/watch?v=guycIP56YeY&t=14m15s)
-
-> Software is what we learned along the way.
->
-> —[Jim Nielsen](https://blog.jim-nielsen.com/2023/software-is-what-we-learned-along-the-way/)
-
-> Software is the insights of the development team made manifest.
->
-> —Baldur Bjarnason
-
-> It can be argued that development of any kind is essentially a learning process and that it is primarily dependent on a network of information flows.
->
-> —Kenneth Boulding, _Economics as a Science_ (https://en.wikipedia.org/wiki/Infosphere)
-
-Software development is not just (or even mainly) writing code. If it were, it would go many times faster than it does. You can demonstrate this to yourself with a thought experiment. First, estimate how many person-hours of work have gone into the codebase you work on. Then count the lines of code (with something like `find src -type f | xargs wc -l`) and calculate how long it would take you to type that much text (15 lines per minute is a conservative estimate). I predict the ratio will be above 50:1. In other words, less than 2% of a team's time is spent typing the code that goes into production.
-
-> As developers, we're not paid for what we do. We're paid for what we _know how_ to do. Our limitation is how much we can know. You can tell, because we don't sit there typing all day, and most of what we type, we delete.
->
-> —[[JessicaKerr]] (https://www.youtube.com/watch?v=10Foa_lulK4&t=1213s)
-
-The other 98% is not idle time. It's where the real work happens. That 98% consists of:
+In short, programming consists of:
 
 - Figuring out how the software currently works
 - Figuring out what it should do differently
 - Figuring out how to make it do that
 - Communicating what you've figured out to other people
 
-All that _figuring out_ is what software developers are paid to do. The stuff that developers figure out constitutes their employer's software <abbr title="intellectual property">IP</abbr>. Their collective body of knowledge is a large part of what makes one software company more valuable than another. It's imperative, therefore, that developers pass on what they learn to others ({{link PairProgramming}}), so their knowledge isn't lost when they switch teams or companies.
+> Software development is an exercise in learning.
+>
+> <cite>Dave Farley, ["How to Estimate Software Development Time"](https://www.youtube.com/watch?v=v21jg8wb1eU&t=949s)</cite>
 
-_Figuring out_ doesn't happen entirely in your head. It's usually a dialogue between you and the machine. You read some code. You have an idea. You write some code. It doesn't work the way you thought it would. You figure out why it doesn't work, and you learn something. You try again and again until you get the results you expect.
+> If we set things up to maximize learning instead of production, the value produced goes way way up.
+>
+> <cite>Kent Beck [(video)](https://www.youtube.com/watch?v=guycIP56YeY&t=14m15s)</cite>
+
+> Software is what we learned along the way.
+>
+> <cite>[Jim Nielsen](https://blog.jim-nielsen.com/2023/software-is-what-we-learned-along-the-way/)</cite>
+
+> Software is the insights of the development team made manifest.
+>
+> <cite>Baldur Bjarnason</cite>
+
+All that _figuring out_ is what software developers are paid to do. The stuff that developers figure out constitutes their employer's software <abbr title="intellectual property">IP</abbr>. Their collective body of knowledge is a large part of what makes one software company more valuable than another. It's imperative, therefore, that developers pass on what they learn to others (e.g. by {{link PairProgramming}}), so their knowledge isn't lost when they switch teams or companies.
+
+_Figuring out_ doesn't happen entirely in your head. It's usually a {{link Dialogue}} between you and the machine. You read some code. You have an idea. You write some code. It doesn't work the way you thought it would. You figure out why it doesn't work, and you learn something. You try again and again until you get the results you expect.
 
 This process might look inefficient, but inefficiency is relative. It's only inefficient if something else would be _more_ efficient. In general, typing is cheap, computers are fast, our brains are slow and limited (see: {{link SoftwareDevelopment/Humans}}), and coding mistakes are easy to undo as long as we catch them quickly. For all of these reasons, performing experiments in the codebase is often the fastest way to learn what will and won't work.
+
+<!--
 
 ## Alternative Title: Programming as Exploration
 
@@ -125,7 +117,7 @@ Though we might like to have a map before we start exploring, we can't make an a
 
 ### Is programming translation?
 
-<!-- TODO: retitle to "Is design separable from coding?" -->
+TODO: retitle to "Is design separable from coding?"
 
 "Okay," you might be saying, "clearly figuring stuff out is a big part of what software developers do, but just because you have something figured out in the abstract doesn't mean it's trivial to write the code that will actually make it real. Doesn't that imply coding is still a big part of the effort? And if someone else has already figured out what the software should do, what's there left for the programmers to do but translate it into code?"
 
@@ -145,13 +137,12 @@ _If_ you could somehow separate the work of figuring stuff out from the work of 
 
 However, the tasks of design and coding _cannot_ be separated, because, as I stated earlier, the most efficient design process we know of involves a tight feedback loop between the designer and the machine, and code is part of that loop. The specific technologies used also impose constraints on the evolution of the software which are hard to predict in advance. Therefore, the engineers—the people who figure stuff out—must be coders, and the coders must be engineers.
 
-
-<!--
 Of course, this rather silly example merely illustrates what every programmer
 already knows—that maintaining an intellectual grasp of the program is the programmer's
 overwhelming concern, to which the correct behavior of the program is secondary. Still, it seems to me that although this is something that "everyone knows", we often find it difficult to articulate.
--->
 
 ## Alternative Title: Programming as Scientific Discovery
 
 (maybe leave this one for the TDD chapter)
+
+-->
