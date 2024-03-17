@@ -16,8 +16,6 @@ In this book, I use the 36 Views technique to investigate complex topics. Each v
 
 There is an analogy to be made to [multiview projection](https://en.wikipedia.org/wiki/Multiview_projection), in which a multidimensional object is presented via several projections into a lower-dimensional space.
 
-See also: Mike Caulfield's idea of [Choral Explanations](https://hapgood.us/2016/05/13/choral-explanations/), and [Bohr's principle of complementarity](https://en.wikipedia.org/wiki/Complementarity_(physics)).
-
 ## Views Versus Models
 
 A _mental model_ is a holistic understanding of a system. Mental models are what allow us to make predictions about the future. They let us simulate the system in our heads, and imagine what it will do in response to some outside stimulus or change.
