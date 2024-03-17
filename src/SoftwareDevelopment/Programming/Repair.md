@@ -9,9 +9,9 @@ In this view, programming is about fixing {{link Mismatch}}es that impede {{link
 The story of how repair happens goes something like this:
 
 - Our protagonist, a human, wants to do something
-- The system they're in doesn't let them do that thing easily. Something about it is frustrating or hard to use.
+- The system they're in doesn't let them do that thing comfortably. Something about it is frustrating or alienating.
 - A designer (or sometimes an engineer) notices our protagonist's plight.
-- They change something to make the frustration/friction go away. That is, they *repair* the system. It's like oiling the chain of an old bicycle.
+- They change something to make the frustration/alienation go away. That is, they *repair* the system. It's like oiling the chain of an old bicycle.
 - Our protagonist is happy because now it's easier to do the thing.
 
 Note that, when I talk refer to _the {{link SoftwareSystem}}_ in this book, I don't mean a program or application. I mean the much bigger system that encompasses software, computers, and the people who use and maintain them. Within this larger system, an act of "repair" might involve creating a whole new application to solve a particular user need.
