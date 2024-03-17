@@ -14,7 +14,14 @@ The name is a reference to the series of paintings ["36 Views of Mount Fuji"](ht
 
 In this book, I use the 36 Views technique to investigate complex topics. Each view illuminates some aspect of the topic while obscuring others.
 
-There is an analogy to be made to [multiview projection](https://en.wikipedia.org/wiki/Multiview_projection), in which a multidimensional object is presented via several projections into a lower-dimensional space.
+This is analogous to [multiview projection](https://en.wikipedia.org/wiki/Multiview_projection), a drafting technique in which a multidimensional object is presented via several projections into a lower-dimensional space.
+
+<figure style="max-width: 400px" >
+
+![](3D_projection_views.png)
+
+<figcaption>Orthographic multiview projection of a simple house, showing the plan and two elevations. From <i>Radford's Mechanical Drawing</i> (1912).</figcaption>
+</figure>
 
 ## Views Versus Models
 
