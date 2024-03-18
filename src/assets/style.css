@@ -163,6 +163,13 @@ blockquote {
   font-style: italic;
 }
 
+blockquote.pullquote {
+  color: #841;
+  font-size: 1.5rem;
+  line-height: 140%;
+  border: none;
+}
+
 blockquote cite {
   display: block;
   padding-inline-start: 3em;

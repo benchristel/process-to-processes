@@ -21,6 +21,17 @@ The "repair" view stands in stark contrast to the {{link Production}} view of pr
 When we see programming as repair, programmer productivity is revealed to be a multifaceted, ambiguous, messy concept. It's a bit like trying to measure the productivity of doctors or therapists.
 If you talk to a therapist about the problems in your life, you might try to quantify their "productivity" by saying "well, they helped me with this problem and this problem and this problem, so that's three problems they fixed." But that's silly. What is happening in therapy is not that specific problems are getting "solved," but that you, as a whole person, are *healing*. Human problems tend to be more interrelated than not, and software is all about solving human problems. Our task as programmers is not to make *the software*, in isolation, "better" in some abstract sense, but to make *the whole human-software system* better for the humans in it.
 
+<blockquote class="pullquote">
+
+Our task as programmers is not to make the software, in isolation, “better” in some abstract sense, but to make the whole human-software system better for the humans in it.
+
+</blockquote>
+
+This applies to all software development activities at all levels of scale.
+
+- {{link Refactoring}} makes code easier to understand and change for the programmers in the system.
+- ... TODO fill in the rest of this list
+
 There are ways to project quantifications onto the results of programming (e.g. counting the number of {{link Feature "Features"}} or {{link StoryPoints}} completed) but these quantifications are artificial. The more fundamental idea is that the system *as a whole* is *qualitatively* changed by every act of programming. This implies that every change to the program should improve *the whole* — see {{link Wholeness}}.
 
 I think a lot of software would be better off if its stewards adopted a repair-based mindset. How often have you fallen in love with a software tool when it was new and fast and just what you needed, only to grow to dislike it as its creators saddled it with more and more features? Seeing programming as repair, not {{link Production}}, might help stave off featuritis. When designing software, we should ask not "what features should we add" but "how can we heal the system?"
