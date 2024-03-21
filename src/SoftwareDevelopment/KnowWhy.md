@@ -26,3 +26,7 @@ Now, I don't blame the folks who don't know why they're doing things. Before I g
 Fortunately, finding out why you do something isn't that hard. Just stop doing it, and you'll soon learn what, if anything, it was giving you. Doing this at work carries some risk, of course, so I recommend using {{link PersonalProjects}} as laboratories for this purpose.
 
 In an organization without {{link PsychologicalSafety}}, being publicly honest about why you do what you do can feel like you're putting your reputation on the line. Hopefully you can at least be honest with some of your fellow programmers. If even that isn't the case where you work, then I don't know if this book can help you. You should probably look for a different job.
+
+## Technique: Explain Why
+
+A companion technique: if you're requesting changes in a code review, explain why. You owe it to the author to describe how the changes you're asking them to make will benefit someone. If you can't explain why you want the changes, don't ask for them. By requesting changes that are likely to seem arbitrary, you risk alienating your coworker—{{link LifeAndDeathOfSystems}}.
