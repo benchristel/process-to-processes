@@ -1,4 +1,4 @@
-# Conclusion: Code is for Humans
+# View: Code is for Humans
 
 <div class="summary-block">
 

@@ -4,7 +4,11 @@ The problems with the preceding views of programming flow from a common source: 
 
 I'm not going to say this assumption is _wrong_, because views aren't right or wrong, only helpful or unhelpful. So I'll just say: it's unhelpful. It doesn't help us make sense of what is going on when we're programming, and that should be reason enough to discard it.
 
-The {{link SoftwareSystem}} we're in shapes our thoughts and constrains our actions. Code begets ideas for more code. Richard Feynmann put it this way:
+The {{link SoftwareSystem}} we're in acts on us as much as we act on it. Existing code shapes our thoughts and constrains our actions. A system can even energize us or depress us — {{link Life}}.
+
+More basically: the system contains *information*. It encodes, in its structure, all the knowledge that went into its creation. You could almost say the system itself *knows stuff*. As the system grows in complexity it comes to know more than any one of its maintainers. If we don't know how to coax that information out of it, the system will always outwit us.
+
+Code begets ideas for more code. The structure of the system accommodates certain changes better than others. Richard Feynmann put it this way:
 
 TODO: move this quote
 

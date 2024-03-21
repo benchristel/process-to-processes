@@ -1,5 +1,6 @@
 36Views.md
 Programming
+InformationFlows.md
 Computation.md
 StructureAndBehavior.md
 SoftwareSystem.md
