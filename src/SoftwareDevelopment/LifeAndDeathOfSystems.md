@@ -6,6 +6,10 @@
 
 Being stuck in a dying system is no fun!
 
+dying systems can be kept on life support by an influx of money, or heroic feats.
+
+living systems can be killed by the clumsiness or malice of some larger system.
+
 ## Technique: Relative Life as a Design Heuristic
 
 - The rational part of your brain is slow, expensive, and weak. ({{link SoftwareDevelopment/Humans.html "Humans, Not Humanoids"}})
@@ -17,3 +21,16 @@ Being stuck in a dying system is no fun!
 - ...but we also have to confirm that our snap judgments are reasonable, e.g. by asking "who benefits"?
 - When we can be honest with ourselves about which of two situations feels more alive or dead, the difference is often immediately obvious. Although a feeling of relative aliveness is no guarantee that a solution is good, and needs confirmation from rational processes, a feeling of relative deadness is a good enough reason to reject a solution.
 - We can also automate a lot of judgments about the software components of the system, e.g. with tests, types, and linters.
+
+## The Feeling of Deathly Morphology
+
+alienation - "feeling like a cog in a machine"
+
+- "Apparently it wants me to do X? I'm not sure why, but I'll do it."
+- "Ugh, why is this so hard?"
+
+alienation leads to a loss of agency, and disengagement. Alienated workers stop thinking and stop caring. They become emotionally uninvested in the results of their work. They try to get work off their plate and make it someone else's problem as quickly as possible.
+
+To counter alienation - use {{link SharedOwnership}} (facilitated by {{link PairProgramming}}). Early in their life, alienating systems are often {{link KnowledgeSilo}}s where one person is the keeper of the keys. But when that person leaves the company or moves on to other projects, the system can keep going with _no one_ who really understands it or feels ownership of it. Such a system will keep on causing suffering until it dies. 
+
+implications for both team work and software UX design
