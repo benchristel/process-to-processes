@@ -1,5 +1,9 @@
 # Technique: Know Why
 
+> Step 1 is to say, "I am solving **this** problem. The problem is X and therefore we're going to do Y." I have seen so much software made where no one ever said that. No one ever wrote that down. And then we have a whole system, and no one ever said what problem it's supposed to solve. If we're not solving problems, I have no idea why we're in this room.
+>
+> <cite>[Rich Hickey](https://benchristel.github.io/yt/#https://www.youtube.com/watch?v=f84n5oFoZBc)</cite>
+
 I'll start from what I think is a fairly obvious but actually radical position: that when we're developing software, we ought to do things for reasons. Whenever we do an activity, we should know why we're doing it—why it benefits us.
 
 I think this is an *obvious* position because its opposite—the idea that we should go out of our way to do things without any reason—is absurd (see {{link OccamsRazor}}). I think it is a *radical* position because in reality, when I ask programmers and others involved in software development why they're doing a particular thing, I often get non-answers:

@@ -6,7 +6,7 @@ DohertyThreshold.md
 AutomaticDevSetup.md
 ReproducibleBuild.md
 DevEnvironment.md
-400MsFeedback.md
+400MillisecondFeedback.md
 PassiveFeedback.md
 CallYourShot.md
 ReadmeDrivenDesign.md
