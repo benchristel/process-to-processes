@@ -1,0 +1,12 @@
+Goods.html
+Principles.html
+36Views.html
+Techniques.html
+# - a technique solves a problem in a situation
+# - context-dependent - use your judgment about when to apply
+# - Principle: Judgment
+# - TODO: rename to "pattern" or something else?
+KnowWhy.html
+ExplainWhy.html
+ToolsNotRules.html
+Trust.html

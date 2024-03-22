@@ -8,3 +8,7 @@ ContinuousDeployment.html
 ContinuousDelivery.html
 ContinuousRelease.html
 DemoUI.html
+
+!unspecified
+CanonicalLibrary.html
+ExploratoryTesting.html
