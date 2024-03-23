@@ -4,6 +4,7 @@
   - _Extreme Programming Explained_, 2nd ed.
   - _Test Driven Development By Example_
 - Christopher Alexander:
+  - _Notes on the Synthesis of Form_
   - _The Timeless Way of Building_
   - _A Pattern Language_
   - _The Nature of Order_
@@ -15,3 +16,7 @@
   - ["Making Badass Developers"](https://www.youtube.com/watch?v=FKTxC9pl-WM)
   - _Badass: Making Users Awesome_
 - Peter Naur: ["Programming as Theory Building"](https://gwern.net/doc/cs/algorithm/1985-naur.pdf)
+
+---
+
+- _Systemantics_

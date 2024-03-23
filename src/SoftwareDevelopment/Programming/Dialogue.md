@@ -8,7 +8,7 @@ The {{link SoftwareSystem}} we're in acts on us as much as we act on it. Existin
 
 More basically: the system contains *information*. It encodes, in its structure, all the knowledge that went into its creation. You could almost say the system itself *knows stuff*. As the system grows in complexity it comes to know more than any one of its maintainers. If we don't know how to coax that information out of it, the system will always outwit us.
 
-Code begets ideas for more code. The structure of the system accommodates certain changes better than others. Richard Feynmann put it this way:
+Code begets ideas for more code. The structure of the system accommodates certain changes better than others. Richard Feynman put it this way:
 
 TODO: move this quote
 
@@ -20,7 +20,7 @@ TODO: move this quote
 >
 > However, for psychological reasons, in order to guess new theories, these two things are very far from equivalent. Because one gives a man different ideas than the other. By putting the theory in a certain kind of framework, you get an idea of what to change.
 >
-> <cite>[Richard Feynmann, "Knowing versus Understanding"](https://benchristel.github.io/yt/#https://www.youtube.com/watch?v=NM-zWTU7X-k)</cite>
+> <cite>[Richard Feynman, "Knowing versus Understanding"](https://benchristel.github.io/yt/#https://www.youtube.com/watch?v=NM-zWTU7X-k)</cite>
 
 
 We can see software development as a {{link Computation}}, which is largely {{link ComputationalIrreducibility ComputationallyIrreducible}}, meaning that the fastest way to find out the outcome of a decision is to watch it play out in the real world.

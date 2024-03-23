@@ -226,3 +226,10 @@ footer.navbar {
 #edit-link:hover {
   background: transparent;
 }
+
+@supports (aspect-ratio: 1/1) {
+  iframe[src*=youtube] {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}

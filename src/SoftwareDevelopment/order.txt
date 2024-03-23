@@ -1,10 +1,7 @@
-36Views.md
 Programming
-InformationFlows.md
 Computation.md
 StructureAndBehavior.md
 SoftwareSystem.md
-Humans.md
 IncrementalChange.md
 # Systems contain causal loops. A causes B causes A. Or A depends on B depends on A.
 # Change is hard because it runs into these causal loops. We want to address problem A,

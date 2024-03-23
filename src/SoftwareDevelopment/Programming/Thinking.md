@@ -12,4 +12,4 @@ This doesn't mean you shouldn't plan the broad strokes of what you're going to d
 
 ## Further Resources
 
-<iframe width="600" height="338" src="https://www.youtube-nocookie.com/embed/f84n5oFoZBc?rel=0&iv_load_policy=3"></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/f84n5oFoZBc?rel=0&iv_load_policy=3"></iframe>
