@@ -1,5 +1,9 @@
 # Empiricism
 
+This book describes an empirical approach to software — that is, one based on observation and experience, rather than made-up images of how things should be. The empirical thread runs throughout the book, showing up explicitly in techniques like {{link ExplainWhy}}, {{link FundamentalProcess}}, {{link TestDrivenDevelopment}}, {{link WalkingSkeleton}}, and {{link ExploratoryTesting}}, and in views like {{link FiguringThingsOut}} and {{link Controllability}}.
+
+Often, people assume that empirical methods only apply to what can be quantified, and that anything unquantifiable is only a matter of opinion. I hope to show that this is far from true. We can apply empirical thinking to unquantifiable matters quite easily, using {{link RelativeAssessment}} of changes made by {{link SmallSteps}}.
+
 ## The Scientific Method
 
 It's a sad commentary on the state of the U.S. education system that I feel the need to explain the scientific method in a book for technology professionals. Yet, given that I myself only grokked the topic after reading [a Harry Potter fanfic about it](https://hpmor.com/), it probably warrants explication.
