@@ -7,9 +7,11 @@ The code examples are mostly in JavaScript and TypeScript. However, the programm
 - An interpreter or fast, incremental compiler
 - Higher-order first-class functions
 - Some degree of late-binding (e.g. dynamic dispatch, function pointers, mutability)
+- A convenient, performant implementation of immutable data structures
 - Algebraic types
 - A sane package manager for installing dependencies
 - Coroutines or generator functions
 - Exceptions
 
-If you work primarily in a language that lacks most of these features, proceed with caution.
+I have successfully applied the techniques in this book in Ruby, Java, JavaScript, TypeScript, Go, Scala, and C++.
+If you work in a language very different from any of these, proceed with caution.

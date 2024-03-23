@@ -33,6 +33,8 @@ Our primary goal in software development must be to create a healthy system. Oth
 
 alienation - "feeling like a cog in a machine"
 
+the world "alien" comes from the Latin _alia_, meaning "other". An alienating system is one that makes you feel like an outsider. _Keep out_ you can almost hear it saying. _You do not belong here. You are only a visitor. Do not question the order of things._
+
 - "Apparently it wants me to do X? I'm not sure why, but I'll do it."
 - "Ugh, why is this so hard?"
 

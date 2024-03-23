@@ -1,7 +1,6 @@
-Goods.html
+Techniques.html
 Principles.html
 36Views.html
-Techniques.html
 # - a technique solves a problem in a situation
 # - context-dependent - use your judgment about when to apply
 # - Principle: Judgment
