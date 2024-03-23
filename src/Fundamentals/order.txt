@@ -6,7 +6,12 @@ Techniques.html
 # - context-dependent - use your judgment about when to apply
 # - Principle: Judgment
 # - TODO: rename to "pattern" or something else?
+Empiricism.html
+NullHypothesis.html
+NaiveProgramming.html
+Judgment.html
 KnowWhy.html
 ExplainWhy.html
 ToolsNotRules.html
 Trust.html
+ProgrammingDevelopmentEngineering.md

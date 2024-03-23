@@ -10,6 +10,13 @@ dying systems can be kept on life support by an influx of money, or heroic feats
 
 living systems can be killed by the clumsiness or malice of some larger system.
 
+## Software Gardening
+
+A healthy system is like a healthy garden: it produces lots of value, sustainably. When a system becomes unhealthy
+it produces less value, and may even start to die. An unhealthy system needs to be propped up by expensive interventions (think pesticides and fertilizers) just to keep going.
+
+Our primary goal in software development must be to create a healthy system. Otherwise, we will be forever overpaying for underwhelming results.
+
 ## Technique: Relative Life as a Design Heuristic
 
 - The rational part of your brain is slow, expensive, and weak. ({{link SoftwareDevelopment/Humans.html "Humans, Not Humanoids"}})
