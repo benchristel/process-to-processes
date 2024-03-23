@@ -1,4 +1,4 @@
-# Caveat Lector
+# Limitations and Warnings
 
 ## I Have No Grand Unified Theory
 
