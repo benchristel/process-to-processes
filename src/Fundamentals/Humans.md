@@ -13,7 +13,7 @@ Yet it can't be a personal problem, because everyone has these same "faults". It
 
 Watch Kathy's talk. It's well worth your time.
 
-<iframe src="https://www.youtube-nocookie.com/embed/FKTxC9pl-WM?rel=0&iv_load_policy=3"></iframe>
+<youtube-embed videoid="FKTxC9pl-WM"></youtube-embed>
 
 ## All One Tank
 

@@ -22,6 +22,6 @@ Also note that theories do not describe how things "really are." If you believe 
 
 Richard Feynman's entertaining description of the scientific method is well worth the 10 minutes it will take to hear:
 
-<iframe src="https://www.youtube-nocookie.com/embed/EYPapE-3FRw?rel=0&iv_load_policy=3"></iframe>
+<youtube-embed videoid="EYPapE-3FRw"></youtube-embed>
 
 ## Applying the Scientific Method to Programming
