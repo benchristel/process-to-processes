@@ -9,3 +9,5 @@
   - Create cost-effective ways of verifying that the software is doing what you meant it to do.
   - Maintain control—intellectual and actual—over the software. This means knowing what it does, knowing what effect
     any given change will have, and being able to make and integrate changes in a timely way.
+
+<!-- see also: https://en.wikipedia.org/wiki/Controllability -->

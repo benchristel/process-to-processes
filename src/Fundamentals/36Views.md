@@ -23,7 +23,7 @@ A weakness of mental models is that they can never be fully explicated or commun
 
 Indeed, I would go so far as to say that a mental model is not _built_, but _grown_. It is rooted in a particular mind, developed through the interaction of that mind with the world, and can never be moved.
 
-Because we can't directly communicate our mental models to each other, we need views. Views are more teachable than mental models—we can explain how to obtain them, draw pictures representing them, and so forth. The downside of views is that, in general, no single view presents a comprehensive picture of the system it describes. But by combining many complementary views together, we can form working mental models much more easily.
+Because we can't directly communicate our mental models to each other, we need views. Views are more teachable than mental models—we can explain how to obtain them, draw pictures representing them, and so forth. The downside of views is that, in general, no single view presents a comprehensive picture of the system it describes. But by combining many complementary views together, we can form working mental models much more easily. <!-- Possibly related: https://en.wikipedia.org/wiki/Semantic_view_of_theories and https://en.wikipedia.org/wiki/Scientific_theory#Differences_between_theory_and_model -->
 
 ## Examples of Views in This Book
 

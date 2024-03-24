@@ -1,6 +1,6 @@
 Techniques.html
 Principles.html
-36Views.html
+Views.html
 # - a technique solves a problem in a situation
 # - context-dependent - use your judgment about when to apply
 # - Principle: Judgment
@@ -12,6 +12,7 @@ Judgment.html
 KnowWhy.html
 ExplainWhy.html
 ToolsNotRules.html
+36Views.html
 Trust.html
 ProgrammingDevelopmentEngineering.md
 SystemsComplexityAndBootstrapping.md

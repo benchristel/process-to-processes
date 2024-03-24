@@ -29,11 +29,17 @@ First, note that in step 2, we want to create the _simplest_ hypothesis that fit
 
 It's always possible to complicate a hypothesis, e.g. by tacking on extra ideas that don't affect the result. [Russell's teapot](https://en.wikipedia.org/wiki/Russell's_teapot) is a humorous example. There is thus no limit to how complex we can make a hypothesis, but there is a limit to how simple we can make it if it is to account for all the observed facts. Maintaining simplicity is necessary to avoid going down theoretical rabbit-trails. In any case, the opposite approach—seeking to make hypotheses as complex as possible—is absurd.
 
+<!--
+
 Einstein put it this way:
 
 > The supreme goal of all theory is to make the irreducible basic elements as simple and as few as possible without having to surrender the adequate representation of a single datum of experience.
 >
 > <cite>[Albert Einstein, "On the Method of Theoretical Physics"](https://www.jstor.org/stable/184387)</cite>
+
+TODO: Einstein wasn't talking about hypotheses when he said this, but about the fundamental elements of a theory, i.e. those not deduced from other elements. Is there a better quote about simplicity?
+
+-->
 
 Second, note that at no point in the scientific process do we ever prove that a hypothesis is *true*. Experiments can never prove a hypothesis right—they can only prove it wrong. A theory is simply a hypothesis that has withstood so many diverse experiments that we feel confident using it for consequential matters. Thus, the answers we get from the scientific method are never quite final—but they are very useful.
 
