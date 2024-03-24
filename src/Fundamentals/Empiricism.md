@@ -6,9 +6,9 @@ Often, people assume that empirical methods only apply to what can be quantified
 
 ## The Scientific Method
 
-It's a sad commentary on the state of the U.S. education system that I feel the need to explain the scientific method in a book for technology professionals. Yet, given that I myself only grokked the topic after reading [a Harry Potter fanfic about it](https://hpmor.com/), it probably warrants explication.
+It's a sad commentary on the state of the U.S. education system that I feel the need to explain the scientific method in a book for technology professionals. Yet, given that I myself had to learn it from [a Harry Potter fanfic](https://hpmor.com/), it is probably worth spending some words on.
 
-The purpose of science is to develop **theories** (or _models_) of how things work. The purpose of a theory is to make predictions. A good theory is one that lets us predict what the results of an action will be. Having good, predictive theories about a system is essential if you want to *use* that system for something. Without a theory of the system, you have no basis for planning your actions on it, because you have no way of predicting what the results of those actions might be.
+The purpose of science is to develop **theories** (or _models_) of how things work. The purpose of a theory is to make predictions. A good theory is one that lets us predict the results of our actions. Having good, predictive theories about a system is essential if you want to *use* that system for something. Without a theory of the system, you have no basis for planning your actions within it, because you have no way of predicting what the results of those actions might be.
 
 The formal scientific method is not the only way of getting theories. Theories that are good enough to be practical can be developed without it. However, the formal method increases the precision of the theories we can create.
 
@@ -20,12 +20,31 @@ The method works like this:
 4. Do experiments to try to prove that your hypothesis is, in fact, wrong. To do an experiment, first use your hypothesis to predict the result of some action. Then do the action and see if the result is what you predicted. If the result does not agree with the prediction, the hypothesis is wrong (assuming you really performed the action you thought you did).
 5. Once you've succeeded in disproving the hypothesis, go back to step 2 and repeat.
 
-Note that at no point do we ever prove that a hypothesis is *true*. Experiments can never prove a hypothesis right—they can only prove it wrong. A theory is simply a hypothesis that has withstood so many diverse experiments that we feel confident using it for consequential matters. Thus, the answers we get from the scientific method are never quite final—but they are very useful.
+A few points about this process warrant further comment:
 
-Also note that theories do not describe how things "really are." If you believe that they do, you will be very confused by theories like the wave-particle duality of light. The truth is not that light is somehow both a wave and a particle, but that waves and particles are _models_ that relate the behavior of light to that of sound waves and billiard balls. Each of these models is effective in different circumstances.
+First, note that in step 2, we want to create the _simplest_ hypothesis that fits the facts. We do this for a couple reasons:
+
+- Simple hypotheses are easier to understand than complex ones.
+- Simple hypotheses are easier to disprove than complex ones. The whole process can go faster when we make simple hypotheses.
+
+It's always possible to complicate a hypothesis, e.g. by tacking on extra ideas that don't affect the result. [Russell's teapot](https://en.wikipedia.org/wiki/Russell's_teapot) is a humorous example. There is thus no limit to how complex we can make a hypothesis, but there is a limit to how simple we can make it if it is to account for all the observed facts. Maintaining simplicity is necessary to avoid going down theoretical rabbit-trails. In any case, the opposite approach—seeking to make hypotheses as complex as possible—is absurd.
+
+Einstein put it this way:
+
+> The supreme goal of all theory is to make the irreducible basic elements as simple and as few as possible without having to surrender the adequate representation of a single datum of experience.
+>
+> <cite>[Albert Einstein, "On the Method of Theoretical Physics"](https://www.jstor.org/stable/184387)</cite>
+
+Second, note that at no point in the scientific process do we ever prove that a hypothesis is *true*. Experiments can never prove a hypothesis right—they can only prove it wrong. A theory is simply a hypothesis that has withstood so many diverse experiments that we feel confident using it for consequential matters. Thus, the answers we get from the scientific method are never quite final—but they are very useful.
+
+Third, note that the purpose of a theory is only to make predictions. Theories do not describe how things "really are." If you believe that they do, you will be very confused by theories like the wave-particle duality of light. The truth is not that light is somehow both a wave and a particle, but that waves and particles are _models_ that relate the behavior of light to that of ocean waves and billiard balls. Each of these models is effective in different circumstances. But neither model, nor even a combination of the two, should be mistaken for the real thing.
+
+> <!--timestamp 4:38--> At first, light was seen to behave very much like a rain of particles. Then with further research it was clear that this was not right but that light actually behaved like waves. And then, in the 20th century, on further research it appeared that light actually behaved, in many ways again, like particles. This growing confusion was resolved in 1925 or '26, with the advent of the correct equations for quantum mechanics. Now we know how electrons and light behave — but what can I call it? I can't say "they behave like a particle-wave" or "they behave in typical quantum-mechanical manner." There isn't any word for it. If I say they behave like particles, I give the wrong impression — or if I say they behave like waves. They behave in their own inimitable way. They behave in a way that is like nothing you have ever seen before.
+>
+> <cite>Richard Feynman, ["Probability and Uncertainty: The Quantum Mechanical View of Nature"](https://archive.org/details/probabilityanduncertaintythequantummechanicalviewofnature/probabilityanduncertaintythequantummechanicalviewofnaturereel1.mov)</cite>
+
+## Further Resources
 
 Richard Feynman's entertaining description of the scientific method is well worth the 10 minutes it will take to hear:
 
 <youtube-embed videoid="EYPapE-3FRw"></youtube-embed>
-
-## Applying the Scientific Method to Programming
