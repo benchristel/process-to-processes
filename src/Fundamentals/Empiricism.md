@@ -20,14 +20,18 @@ The method works like this:
 4. Do experiments to try to prove that your hypothesis is, in fact, wrong. To do an experiment, first use your hypothesis to predict the result of some action. Then do the action and see if the result is what you predicted. If the result does not agree with the prediction, the hypothesis is wrong (assuming you really performed the action you thought you did).
 5. Once you've succeeded in disproving the hypothesis, go back to step 2 and repeat.
 
+(Note that I am glossing over the use of statistical methods in science — I assume that each experiment can definitively reject a hypothesis. That simplification works for our context. In this book, our experiments will be definitive.)
+
 A few points about this process warrant further comment:
 
-First, note that in step 2, we want to create the _simplest_ hypothesis that fits the facts. We do this for a couple reasons:
+First, note that in step 2, we want to create the _simplest_ hypothesis that fits the facts (a kind of {{link NullHypothesis}}). We do this for a couple reasons:
 
 - Simple hypotheses are easier to understand than complex ones.
 - Simple hypotheses are easier to disprove than complex ones. The whole process can go faster when we make simple hypotheses.
 
-It's always possible to complicate a hypothesis, e.g. by tacking on extra ideas that don't affect the result. [Russell's teapot](https://en.wikipedia.org/wiki/Russell's_teapot) is a humorous example. There is thus no limit to how complex we can make a hypothesis, but there is a limit to how simple we can make it if it is to account for all the observed facts. Maintaining simplicity is necessary to avoid going down theoretical rabbit-trails. In any case, the opposite approach—seeking to make hypotheses as complex as possible—is absurd.
+It's always possible to complicate a hypothesis, e.g. by tacking on extra ideas that don't affect the result. [Russell's teapot](https://en.wikipedia.org/wiki/Russell's_teapot) is a humorous example. There is thus no limit to how complex we can make a hypothesis, but there is a limit to how simple we can make it if it is to account for all the observed facts. Maintaining simplicity is necessary to avoid going down theoretical rabbit-trails. In any case, the opposite approach—seeking to make hypotheses as complex as possible—is absurd. In science, as in computing, we always look for ways to simplify things — though we must also be on the lookout for reasons to complicate them.
+
+<blockquote class="pullquote"><p>Look for ways to simplify things, and for reasons to complicate them.</p></blockquote>
 
 <!--
 
@@ -41,13 +45,19 @@ TODO: Einstein wasn't talking about hypotheses when he said this, but about the 
 
 -->
 
-Second, note that at no point in the scientific process do we ever prove that a hypothesis is *true*. Experiments can never prove a hypothesis right—they can only prove it wrong. A theory is simply a hypothesis that has withstood so many diverse experiments that we feel confident using it for consequential matters. Thus, the answers we get from the scientific method are never quite final—but they are very useful.
+Second, note that at no point in the scientific process do we ever prove that a hypothesis is *true*. Experiments can never prove a hypothesis right—they can only prove it wrong. A theory is simply a hypothesis that has withstood so many diverse experiments that we feel confident relying on it for consequential matters. Thus, the answers we get from the scientific method are never quite final—but they are very useful.
 
-Third, note that the purpose of a theory is only to make predictions. Theories do not describe how things "really are." If you believe that they do, you will be very confused by theories like the wave-particle duality of light. The truth is not that light is somehow both a wave and a particle, but that waves and particles are _models_ that relate the behavior of light to that of ocean waves and billiard balls. Each of these models is effective in different circumstances. But neither model, nor even a combination of the two, should be mistaken for the real thing.
+Third, note that the purpose of a theory is only to make predictions. Theories do not describe how things "really are," out there in the world beyond our direct perception. If you believe that they do, you will be very confused by theories like the wave-particle duality of light. The truth is not that light is somehow both a wave and a particle, but that waves and particles are _models_ that relate the behavior of light to that of ocean waves and billiard balls. Each of these models is effective in different circumstances. But neither model, nor even a combination of the two, should be mistaken for the real thing.
 
 > <!--timestamp 4:38--> At first, light was seen to behave very much like a rain of particles. Then with further research it was clear that this was not right but that light actually behaved like waves. And then, in the 20th century, on further research it appeared that light actually behaved, in many ways again, like particles. This growing confusion was resolved in 1925 or '26, with the advent of the correct equations for quantum mechanics. Now we know how electrons and light behave — but what can I call it? I can't say "they behave like a particle-wave" or "they behave in typical quantum-mechanical manner." There isn't any word for it. If I say they behave like particles, I give the wrong impression — or if I say they behave like waves. They behave in their own inimitable way. They behave in a way that is like nothing you have ever seen before.
 >
 > <cite>Richard Feynman, ["Probability and Uncertainty: The Quantum Mechanical View of Nature"](https://archive.org/details/probabilityanduncertaintythequantummechanicalviewofnature/probabilityanduncertaintythequantummechanicalviewofnaturereel1.mov)</cite>
+
+The map is not the territory. Every model has limits to its fidelity, and we have to understand those limits to use the model well. Otherwise, we'll be like Derek Zoolander confronting an architectural model — "what is this, a center for ants?" Or, when you were a child, did you ever try to smell a photograph of a flower? 
+
+When I say "model" I want you to think of a little mechanical toy, like a wind-up car.
+
+TODO: get Christopher Alexander quote about Descartes.
 
 ## Further Resources
 
