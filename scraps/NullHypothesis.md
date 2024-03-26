@@ -1,0 +1,11 @@
+# Null Hypotheses
+
+In a scientific experiment, the **null hypothesis** is the claim that there is no significant difference between two conditions (as far as the variable measured by the experiment is concerned). For example, if we wanted to do an experiment to determine whether people who drink two cups of coffee per day earn more money than people who drink only one, the null hypothesis would be that there is no effect—that the two-cup people make no more or less than the one-cup people.
+
+The term "null hypothesis" sounds rather erudite, but informal null hypotheses are all around us in daily life. Any time we assume that some uniformity exists in the world, we are adopting a null hypothesis. For example, if I look out the window and see that it's raining in my backyard, I immediately assume that it's raining in my front yard too. That's a null hypothesis, because it assumes (as is generally true) that what is observed in one place will also be  observed in nearby places. Of course, I might look out the front window and see that it's actually sunny there. In that case, I've refuted the null hypothesis by experiment.
+
+In the presence of an existing theory, a null hypothesis may make specific and interesting predictions. For example, if I am doing an experiment to see how a potato will accelerate when dropped from the Eiffel Tower, and I already have a theory that says that gravitational acceleration near Earth's surface is 9.8 meters per second per second, the null hypothesis is that the potato will accelerate at 9.8 meters per second per second. I may never have dropped a potato anywhere in France before, but before I do the experiment I have no reason to believe it will be any different from dropping any other object anywhere else on Earth.
+
+Why is any of this relevant for software development? When we're examining the behavior of a software system—say, to debug it or test it, or simply to learn how to use it as an end user—we are essentially doing science.
+
+A null hypothesis is {{link Simple}}.

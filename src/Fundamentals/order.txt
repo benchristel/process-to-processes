@@ -6,13 +6,10 @@ Views.html
 # - Principle: Judgment
 # - TODO: rename to "pattern" or something else?
 Empiricism.html
-NullHypothesis.html
-NaiveProgramming.html
 Judgment.html
 KnowWhy.html
 ExplainWhy.html
 ToolsNotRules.html
-36Views.html
 Trust.html
 ProgrammingDevelopmentEngineering.md
 SystemsComplexityAndBootstrapping.md
