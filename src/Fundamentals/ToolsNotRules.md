@@ -1,4 +1,4 @@
-# Tools, Not Rules
+# View: Tools, Not Rules
 
 There is no right way to program. There are only ways that are better or worse in different circumstances, and circumstances change all the time. Moment to moment, even.
 

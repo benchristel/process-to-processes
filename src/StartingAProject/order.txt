@@ -19,3 +19,5 @@ ContinuousIntegration.md
 SemiAutomatedRelease.md
 HumanInTheLoop.md
 MakingCodeVsShippingCode.md
+InceptionMeeting.md
+EntrypointDocument.md

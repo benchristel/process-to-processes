@@ -1,4 +1,4 @@
-# View: Living Systems, Dying Systems
+# View: The Life and Death of Systems
 
 - Systems can be stable (self-sustaining) or unstable (prone to collapse or replacement)
     - Caveat: instability of the parts sometimes contributes to stability of the whole!

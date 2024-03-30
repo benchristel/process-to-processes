@@ -11,8 +11,6 @@ They do the same thing as the "Prev" and "Next" links.
 
 This is an early early draft and I would love to get your feedback on it. Send it to <a href="mailto:benchristel@gmail.com">benchristel@gmail.com</a>.
 
----
-
 ## Table of Contents
 
 {{toc --include-latent}}
