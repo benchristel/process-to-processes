@@ -80,6 +80,7 @@ So, all useful models and pictures of the world have limits. Part of using them 
 ## Further Resources
 
 - [Eliezer Yudkowsky, _Harry Potter and the Methods of Rationality_](https://hpmor.com/)
+- Robert Pirsig, _Zen and the Art of Motorcycle Maintenance_
 
 Richard Feynman's entertaining description of the scientific method is well worth the 10 minutes it will take to hear:
 
