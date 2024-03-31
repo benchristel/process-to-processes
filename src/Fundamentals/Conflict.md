@@ -2,7 +2,7 @@
 
 <div class="summary-block">
 
-What happens when {{link SoftwareDevelopment/Force forces}} pull us in conflicting directions?
+What happens when {{link Forces}} pull us in conflicting directions?
 
 </div>
 
