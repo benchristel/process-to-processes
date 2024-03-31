@@ -10,10 +10,11 @@ Judgment.html
 KnowWhy.html
 ExplainWhy.html
 ToolsNotRules.html
+Humans.md
 Systems.md
 InformationFlows.md
 Centers.md
 Forces.md
-Humans.md
+Conflict.md
 LifeAndDeathOfSystems.md
 Trust.html

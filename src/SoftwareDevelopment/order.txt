@@ -13,9 +13,7 @@ IncrementalChange.md
 CodeIsForHumans.md
 Exploration.md
 # CodeIsAnAsset.md
-Forces.md
 Conflict.md
-Centers.md
 Design.md
 Controllability.md
 DifferentiationNotAccretion.md
