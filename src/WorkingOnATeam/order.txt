@@ -1,3 +1,10 @@
+Teams.html
+# a team is a group of people with a common goal
+Projects.html
+# thinking of software "projects" lead to gold-plating and scope creep
+# - "we might not get another chance so we have to make it perfect now!"
+# - if you react to projects this way, you are rewarding the organization for bad behavior
+# - just do the project and don't let scope creep. If people are dissatisfied with the results, advocate for incremental dev.
 ContinuousIntegration.html
 # CI does NOT mean you are constantly releasing new software to users/customers.
 # The decision to release software should remain in the hands of those who own the software—the business people.
