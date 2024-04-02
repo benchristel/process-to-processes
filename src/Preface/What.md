@@ -2,9 +2,11 @@
 
 This book is for software developers who want to make better things in better ways.
 
+It covers all aspects of software development, from tiny details of code all the way up to team structure, project management, and user experience design.
+
 If you are interested in making software that is kinder, sturdier, more deeply felt, and better fit to your hand, eye, and mind, this book is for you. 
 
-If you don't care that much about software _per se_, but just want to feel less stressed at work, I think you'll also find something of value here.
+If you just want to feel less stressed at work, I think you'll also find something of value here.
 
 This book will give you:
 
@@ -14,10 +16,13 @@ This book will give you:
 
 ...all in service of providing **mutually beneficial goods** to you, your clients, your teammates, and the users of your software:
 
-- Software that does what you meant it to do
-- ...that is satisfying to work on
-- ...and can be improved at a steady, predictable pace.
+- Software that does what you meant it to do,
+- that is satisfying to work on
+- and can be improved at a steady, predictable pace,
+- profitably,
+- forever.
 
+<!--
 ## Goods
 
 - Good: **Meeting Expectations**
@@ -31,6 +36,8 @@ This book will give you:
   - we want to be able to keep doing this indefinitely
 
 These goals are supported by sub-goals and instrumental goods which are scattered throughout the text.
+
+-->
 
 ## Why "Process to Processes?"
 
