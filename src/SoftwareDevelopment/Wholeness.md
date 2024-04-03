@@ -23,3 +23,10 @@ Wholeness can often be enhanced by:
 ## How Centers Strengthen Each Other
 
 Alternative titles: Fifteen Properties of Living Structure; the Structure of Seredipity
+
+## Examples from Music
+
+- a jam session has a wholeness
+- musicians can improvise together by respecting the wholeness of the jam and applying structure-preserving transformations to evolve it
+- if one person tries to impose their own structure, to be deliberately "creative," the thing goes off the rails.
+- c.f. _Ainulindalë_
