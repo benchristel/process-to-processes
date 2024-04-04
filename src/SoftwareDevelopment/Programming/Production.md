@@ -31,3 +31,7 @@ The most pernicious thing about these myths is that there's a grain of truth in 
 For example, myth 6 seems to echo the received wisdom that we should design code to minimize the size and spread of future changes to it. In itself, this advice isn't bad, but if we see it from the production view, we're likely to misinterpret it. The reason we want to minimize code change is *not* so we can spend less time typing, as the production view would have us believe.
 
 Therefore, rather than try to debunk these myths, I will present alternative views of programming in the chapters that follow. It's only by using *all* the views that we can build a comprehensive mental model of what programming is.
+
+## Progress and Momentum
+
+Framing programming as production can feel good. When we measure our accomplishments in terms of tickets closed, lines of code written, or commits to version control, we can look back at our history of activity and feel like we've _done_ something. That feeling of accomplishment gives us energy to do the next thing.
