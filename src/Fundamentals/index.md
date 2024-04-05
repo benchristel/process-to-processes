@@ -2,7 +2,7 @@
 
 The subsequent sections of this book will interest different audiences. Programmers may want to start with {{link ChangingOneFunction/index "Changing Code Within One Function"}}; managers with {{link WorkingOnATeam/index "Working on a Team"}}; UX designers with {{link UserInterfaces}}. However, everyone should first read this section, **Fundamentals**. Otherwise, the rest of the book will probably be inscrutable.
 
-We'll start with an overview of the types of information you'll find in this book — {{link Techniques}}, {{link Principles}}, and {{link Views}}.
+We'll start with an overview of the types of information you'll find in this book — {{link Techniques}}, {{link Principles}}, and {{link Fundamentals/Views Views}}.
 
 Then we'll dig into the foundations of empirical software development: {{link Empiricism}} informed by {{link Judgment}}, an ability to {{link ExplainWhy}} we do things, and a healthy irreverence toward tools, techniques, and methods — {{link ToolsNotRules}}.
 
