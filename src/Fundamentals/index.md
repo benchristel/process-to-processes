@@ -8,7 +8,7 @@ Then we'll dig into the foundations of empirical software development: {{link Em
 
 Next, we will look at the constraints that shape every software project, starting with our own inherent limitations and abilities ({{link Fundamentals/Humans "Humans, Not Humanoids"}}). We'll learn to see our human-computer {{link Fundamentals/Systems Systems}} as {{link InformationFlows}} among {{link Centers}}, and we'll see how friction in those information flows reveals {{link Conflict}} between the {{link Forces}} that shape the system.
 
-Finally, we will see that whatever distress we experience at work is simply the subjective experience of this objective conflict between forces. And we will see that this subjective distress is an indicator of the system's inability to sustain itself — {{link LifeAndDeath "The Life and Death of Systems"}}.
+Finally, we will see that whatever distress we experience at work is simply the subjective experience of this objective conflict between forces. And we will see that this subjective distress is an indicator of the system's inability to sustain itself — {{link LifeAndDeath "The Life and Death of Systems"}}. To keep our system alive and thriving, we need {{link Adaptation}} of every part to its context. In a complex system, though, well-adapted parts cannot be planned top-down; they must be designed and built locally, with involvement from the people using them. To get adaptation, therefore, we need {{link Autonomy}}.
 
 The task of software development, so described, might seem dismally difficult. But there's a light at the end of the tunnel: a way of healing a failing system in spite of seemingly intractable complexity. The way forward begins by building {{link Trust}}.
 
