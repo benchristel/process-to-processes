@@ -17,4 +17,6 @@ Centers.md
 Forces.md
 Conflict.md
 LifeAndDeathOfSystems.md
+Adaptation.md
+Autonomy.md
 Trust.html
