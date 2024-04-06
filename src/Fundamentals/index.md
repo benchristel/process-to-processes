@@ -24,23 +24,6 @@ How can we gain the skills we need to do this? We can't take years off to study.
 
 The Gordian knot may seem firmly tied, but there is a loose end we can pull at. The reality is that we already have a certain amount of autonomy — in the act of typing code, if nothing else. We can use that to bootstrap the system to higher levels of autonomy, by improving what we can and reliably delivering results. Success earns {{link Trust}}; we can turn increased trust into increased autonomy. As we grow in our abilities, untangling larger and larger loops of the system, our transformations will extend to architecture, team structure, project management, user interface design — and perhaps beyond.
 
-<!--
-The journey is a long one, and there are no safe shortcuts, but I hope you'll find it delightful and rewarding rather than tedious.-->
-<!--
-We need to start by building {{link Trust}}, and we need to start with tiny
-
-Though there are no shortcuts to the shining city on the hill, there is a way forward. It begins by steadily and incrementally building {{link Trust}} in your relationships with your coworkers. Start with tiny changes. Start with yourself and your code. Once you trust yourself, engage your teammates. Work in larger and larger loops
-
-The way forward might seem dismally difficult. But there's a light at the end of the tunnel: a way of healing a failing system in spite of seemingly intractable complexity. The way forward begins by building {{link Trust}}.
-
-Expertise and vision are, of course, packaged in this book as {{link Techniques}} and {{link Fundamentals/Views Views}}, so we have come full circle.
-
-Finally, we will see that whatever distress we experience at work is simply the subjective experience of this objective conflict between forces. And we will see that this subjective distress is an indicator of the system's inability to sustain itself — {{link LifeAndDeath "The Life and Death of Systems"}}. To keep our system alive and thriving, we need {{link Adaptation}} of every part to its context. In a complex system, though, well-adapted parts cannot be planned top-down; they must be designed and built locally, with involvement from the people using them. To get adaptation, therefore, we need {{link Autonomy}}.
-
-The task of software development, so described, might seem dismally difficult. But there's a light at the end of the tunnel: a way of healing a failing system in spite of seemingly intractable complexity. The way forward begins by building {{link Trust}}.
-
--->
-
 ## Table of Contents
 
 {{toc --include-latent}}
