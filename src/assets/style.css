@@ -175,6 +175,7 @@ blockquote.pullquote {
   font-size: 1.5rem;
   line-height: 140%;
   border: none;
+  text-align: center;
 }
 
 blockquote cite {

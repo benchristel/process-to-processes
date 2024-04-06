@@ -16,7 +16,9 @@ InformationFlows.md
 Centers.md
 Forces.md
 Conflict.md
-LifeAndDeathOfSystems.md
 Adaptation.md
+FastFeedback.md
+SmallSteps.md
+Feeling.md
 Autonomy.md
 Trust.html

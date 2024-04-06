@@ -8,9 +8,38 @@ Then we'll dig into the foundations of empirical software development: {{link Em
 
 Next, we will look at the constraints that shape every software project, starting with our own inherent limitations and abilities ({{link Fundamentals/Humans "Humans, Not Humanoids"}}). We'll learn to see our human-computer {{link Fundamentals/Systems Systems}} as {{link InformationFlows}} among {{link Centers}}, and we'll see how friction in those information flows reveals {{link Conflict}} between the {{link Forces}} that shape the system.
 
+We'll then turn our attention to the process of improving the system. A healthy system runs smoothly and efficiently; healing the system means removing resistance from {{link InformationFlows}}. To do this, we must find ways to resolve the {{link Conflict Conflicts}} between {{link Forces}}. But this requires very fine {{link Adaptation}} of every part of the system to its context, and that is difficult to achieve. The forces involved are usually so numerous and interrelated that analytical approaches to balancing them are prohibitively expensive.
+
+The solution is to leverage one of our {{link Fundamentals/Humans Human}} strengths: the massively parallel data-processing ability we call {{link Feeling}}. By _taking part_ in the system — by actually being _in_ an information flow, or else working very closely with the people who _are_ in it — we can immediately sense the pain points. If we can then prototype changes to the system and experience the results more or less immediately — {{link SmallSteps}}, {{link FastFeedback}} — we can start to improve things very quickly.
+
+To be able to do this — and to do it over and over, rapidly enough to keep up with the system as it evolves — the people who are actually _in_ an information flow must be empowered to improve it. In other words, we need {{link Autonomy}}, the freedom to "think globally and act locally."
+
+But of course autonomy isn't enough. We also need the skills and wisdom to act effectively, and avoid damaging the system. Otherwise, autonomy will only sow chaos. Autonomy does not mean "move fast and break things," as Mark Zuckerberg memorably put it. Rather, we want to move gracefully and mend things.
+
+<blockquote class="pullquote">
+<p>Move gracefully and mend things.</p>
+</blockquote>
+
+How can we gain the skills we need to do this? We can't take years off to study. We have to learn on the job. But we also can't transform our workplaces from zero to "full autonomy" overnight. If, by some miracle, we manage to convince our employers to let us do so, we'll almost certainly make a mess, and they won't give us a second chance.
+
+The Gordian knot may seem firmly tied, but there is a loose end we can pull at. The reality is that we already have a certain amount of autonomy — in the act of typing code, if nothing else. We can use that to bootstrap the system to higher levels of autonomy, by improving what we can and reliably delivering results. Success earns {{link Trust}}; we can turn increased trust into increased autonomy. As we grow in our abilities, untangling larger and larger loops of the system, our transformations will extend to architecture, team structure, project management, user interface design — and perhaps beyond.
+
+<!--
+The journey is a long one, and there are no safe shortcuts, but I hope you'll find it delightful and rewarding rather than tedious.-->
+<!--
+We need to start by building {{link Trust}}, and we need to start with tiny
+
+Though there are no shortcuts to the shining city on the hill, there is a way forward. It begins by steadily and incrementally building {{link Trust}} in your relationships with your coworkers. Start with tiny changes. Start with yourself and your code. Once you trust yourself, engage your teammates. Work in larger and larger loops
+
+The way forward might seem dismally difficult. But there's a light at the end of the tunnel: a way of healing a failing system in spite of seemingly intractable complexity. The way forward begins by building {{link Trust}}.
+
+Expertise and vision are, of course, packaged in this book as {{link Techniques}} and {{link Fundamentals/Views Views}}, so we have come full circle.
+
 Finally, we will see that whatever distress we experience at work is simply the subjective experience of this objective conflict between forces. And we will see that this subjective distress is an indicator of the system's inability to sustain itself — {{link LifeAndDeath "The Life and Death of Systems"}}. To keep our system alive and thriving, we need {{link Adaptation}} of every part to its context. In a complex system, though, well-adapted parts cannot be planned top-down; they must be designed and built locally, with involvement from the people using them. To get adaptation, therefore, we need {{link Autonomy}}.
 
 The task of software development, so described, might seem dismally difficult. But there's a light at the end of the tunnel: a way of healing a failing system in spite of seemingly intractable complexity. The way forward begins by building {{link Trust}}.
+
+-->
 
 ## Table of Contents
 
