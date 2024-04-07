@@ -1,4 +1,4 @@
-# Empiricism
+# Principle: Empiricism
 
 This book describes an empirical approach to software — that is, one based on observation and experience, rather than made-up images of how things should be. The empirical thread runs throughout the book, showing up explicitly in techniques like {{link ExplainWhy}}, {{link FundamentalProcess}}, {{link TestDrivenDevelopment}}, {{link WalkingSkeleton}}, and {{link ExploratoryTesting}}, and in views like {{link FiguringThingsOut}} and {{link Controllability}}.
 

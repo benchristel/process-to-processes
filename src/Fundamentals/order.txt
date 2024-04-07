@@ -7,8 +7,7 @@ Views.html
 # - TODO: rename to "pattern" or something else?
 Empiricism.html
 Judgment.html
-KnowWhy.html
-ExplainWhy.html
+SayWhy.html
 ToolsNotRules.html
 Humans.md
 Systems.md
