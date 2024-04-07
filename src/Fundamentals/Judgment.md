@@ -2,7 +2,7 @@
 
 No one can tell you exactly how to do your job. If they could, your job would be automated, and it would cease to be yours. The key reason to keep {{link Fundamentals/Humans Humans}} around in a software development system is that they are capable of exercising good judgment in complex, uncertain, high-risk environments.
 
-Judgment goes hand in hand with {{link Autonomy}}. You're paid to make decisions your managers can't make well—because you have information they don't. By its nature, management sets high-level goals — which often appear to be in {{link Conflict}} with one another — and leaves it to individuals to sort out how to satisfy those goals in the way best suited to each context where they apply. Judgment means weighing tradeoffs and, where possible, finding designs that transcend the conflicts between {{link Forces}}.
+Judgment goes hand in hand with {{link Autonomy}}. You're paid to make decisions your managers can't make well—because you have information they don't. By its nature, management sets high-level goals — which often appear to be in {{link Conflict}} with one another — and leaves it to individuals to sort out how to satisfy those goals in context-sensitive ways. Judgment means weighing tradeoffs between {{link Forces}} and, where possible, finding designs that transcend tradeoffs.
 
 Richard Cook put it this way:
 
