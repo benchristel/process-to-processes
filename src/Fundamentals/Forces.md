@@ -45,6 +45,27 @@ to be different. Instead of pushing ourselves to hit arbitrary, artificial targe
 Say we're working on improving the performance of our software. If we don't have metrics or targets, how do we know when to stop? Easy: we stop when we no longer feel a net force pushing us to change. We stop
 when the cost of further action outweighs the benefit.
 
+## Example: URLs of Pages In This Book
+
+Forces:
+
+1. I want to be able to easily add, rename, and reorganize chapters
+2. I want to be able to easily link between chapters
+3. I don't want those links to break
+4. I don't want to have to write a huge amount of custom code to make linking work
+5. I want my URLs to be short, human-readable, pronounceable, and memorable, for a whole host of reasons.
+6. Readers might want the ability to permalink to a page within the book — e.g. to bookmark a page, or link from their own website to a page.
+7. Readers might be using assistive technology like screen readers, or web browsers that differ from mine in ways that are hard to predict. To make sure the links work for them, I should use standard HTML `<a>` elements, rather than doing something fancy with JavaScript.
+8. When I'm editing the book, I want to be able to find the file I want to change.
+
+- I could create stable URLs by assigning each page a unique, random ID that never changes. This would satisfy forces 1, 3, 6, and 7. Editing would be a pain (8) because all my files would have meaningless names. Creating links between files (2) would be annoying for the same reason. I could of course write more code, in the form of specialized tools, to work around these problems (4), but I'd like to avoid that.
+
+I guessed that (6) wasn't much of a concern because, at least early on in the writing of the book, few people would link to it, and even fewer would link to specific pages. (Later, analytics data bore this out—all traffic was coming from my newsletter or search engines. Note however, that I had to take a risk and choose a URL format before I could collect any analytics data!)
+
+(TODO: write about the link macro in mdsite)
+
+In summary, the process of making even this very simple decision was, by necessity, intuition-driven, risk-laden, context-dependent, and iterative. I could and did look at other websites to see how they solved this problem, but there was no single "best practice" I could unthinkingly adopt.
+
 ## Forces Acting on Code
 
 Good code is **correct**, **efficient**, **verifiable**, **portable**, and **instructive**. Each of these virtues can be viewed as a force that pushes the centers in the code toward particular shapes and arrangements.
