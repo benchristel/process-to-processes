@@ -2,6 +2,8 @@
 
 This book describes an empirical approach to software — that is, one based on observation and experience, rather than made-up images of how things should be. The empirical thread runs throughout the book, showing up explicitly in techniques like {{link ExplainWhy}}, {{link FundamentalProcess}}, {{link TestDrivenDevelopment}}, {{link WalkingSkeleton}}, and {{link ExploratoryTesting}}, and in views like {{link FiguringThingsOut}} and {{link Controllability}}.
 
+The "empiricism" principle prompts us to ask "how might we test our assumptions? How might we find out we're wrong faster?"
+
 ## Empirical &ne; Quantified
 
 Often, people assume that empirical methods only apply to what can be quantified, and that anything unquantifiable cannot be measured or improved. I hope to show in this book that this is far from true. We can apply empirical thinking to unquantifiable matters quite easily, using {{link RelativeAssessment}} of changes made by {{link SmallSteps}}.

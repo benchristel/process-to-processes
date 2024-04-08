@@ -1,6 +1,6 @@
 # View: Judgment
 
-Our work as software developers involves us in some of the most complex deterministic logical systems that have ever existed. The essence of our job is to find ways of solving problems using deterministic mechanisms that can operate without continual human intervention. We find it tempting, therefore, to imagine that there might be an algorithm for software development itself: input requirements, turn the crank, and software comes out. The "Judgment" view helps us see why no such algorithm can exist.
+Our work as software developers involves us in some of the most complex deterministic logical systems that have ever existed. The essence of our job is to find ways of solving problems using abstract mechanisms that can operate without continual human intervention. We find it tempting, therefore, to imagine that there might be an algorithm for software development itself: input requirements, turn the crank, and software comes out. The "Judgment" view helps us see why no such algorithm can exist.
 
 No one can tell you exactly how to do your job. If they could, your job would be automated, and it would cease to be yours. The key reason to keep {{link Fundamentals/Humans Humans}} around in a software development system is that they are capable of exercising good judgment in complex, uncertain, high-risk environments.
 
@@ -17,6 +17,8 @@ Richard Cook put it this way:
 > <cite>[Richard I. Cook, MD, "How Complex Systems Fail"](https://how.complexsystems.fail/)</cite>
 
 What this means is that good judgment is a key attribute of any software engineer. Judgment is _what we do_ — it is, almost by definition, the part of our work that cannot be automated.
+
+TODO: relate judgment to empiricism / the scientific method
 
 ## Further Reading
 
