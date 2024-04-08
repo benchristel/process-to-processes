@@ -1,10 +1,6 @@
 Techniques.html
 Principles.html
 Views.html
-# - a technique solves a problem in a situation
-# - context-dependent - use your judgment about when to apply
-# - Principle: Judgment
-# - TODO: rename to "pattern" or something else?
 Empiricism.html
 Judgment.html
 SayWhy.html
