@@ -60,3 +60,7 @@ This process of self-discovery is frustrating and humbling at first. But it lead
 you can simply fix the problems that _really_ exist, and are _really_ important to you, one at a time. You'll be open to many more ways of doing things, and won't feel the need to put down anyone else's programming style,
 because you'll see that everything is a good idea in its proper context.
 -->
+
+## "Personal" Projects at work
+
+What if you don't have time outside of work to write code? You might be able to get the benefits of the Personal Projects technique at work by using a {{link MakingApp}} as a testing ground for new approaches.
