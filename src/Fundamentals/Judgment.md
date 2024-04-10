@@ -20,6 +20,10 @@ What this means is that good judgment is a key attribute of any software enginee
 
 TODO: relate judgment to empiricism / the scientific method
 
+## Work-To-Rule
+
+What happens when people stop exercising judgment and just follow rules? This isn't a thought experiment; it's something that actually happens. It's called a work-to-rule strike.
+
 ## Further Reading
 
 - [GeePaw Hill, "The Judgment Premise"](https://www.geepawhill.org/2020/12/22/the-judgment-premise/)
