@@ -51,3 +51,11 @@ alienation leads to a loss of agency, and disengagement. Alienated workers stop 
 To counter alienation - use {{link SharedOwnership}} (facilitated by {{link PairProgramming}}). Early in their life, alienating systems are often {{link KnowledgeSilo}}s where one person is the keeper of the keys. But when that person leaves the company or moves on to other projects, the system can keep going with _no one_ who really understands it or feels ownership of it. Such a system will keep on causing suffering until it dies.
 
 implications for both team work and software UX design
+
+## What Happens When A Team Of People Realizes Feeling Is Universal
+
+Christopher Alexander observed that feeling, in this sense, is not based on idiosyncratic opinions, but is mostly the same from person to person.
+
+When a whole team of people realizes that their feelings are all mostly the same, there is a kind of dramatic gelling that happens. They begin to trust each other, and to collaborate — not in a perfunctory, "my manager wants me to be collaborative" kind of way, but really, _truly_ to collaborate. They get interested in each others' ideas. They start having open dialogue and making decisions as a group. They start learning from each other. They become an unstoppable force.
+
+This is how the great cathedrals of Europe were built — a process that took generations and was the life's work of countless laborers and craftsmen. They were built by people who knew that their feeling was all the same.
