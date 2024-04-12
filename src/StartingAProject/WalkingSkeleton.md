@@ -1,4 +1,4 @@
-# Technique: Start with a Walking Skeleton
+# Technique: Start with a Walking Skeleton ✥
 
 Summary: A tiny, featureless, yet "complete" and working whole. A walking skeleton is a hilariously overbuilt "hello world" app that includes all the scaffolding on which you will hang your real functionality.
 

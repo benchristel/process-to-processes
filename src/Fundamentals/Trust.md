@@ -1,4 +1,4 @@
-# Technique: Build Trust
+# Technique: Build Trust ✥
 
 <div class="summary-block">
 

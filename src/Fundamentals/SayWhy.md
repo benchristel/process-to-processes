@@ -1,4 +1,4 @@
-# Technique: Say Why
+# Technique: Say Why ✥
 
 The "Say Why" technique is a way to:
 
