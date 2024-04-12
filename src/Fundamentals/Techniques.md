@@ -6,6 +6,19 @@ This book consists mainly of **techniques** for software development. A techniqu
 - ...to solve a problem or pursue an opportunity
 - ...in a particular context.
 
+<details>
+<summary>Examples of techniques in this book</summary>
+
+- {{link SayWhy "Say Why"}}
+- {{link Trust "Build Trust"}}
+- {{link PersonalProjects "Play with Personal Projects"}}
+- {{link WalkingSkeleton "Start with a Walking Skeleton"}}
+- {{link PairDelimiters "Pair Delimiters"}}
+
+<!-- TODO: generate this list (by annotating principles with tags?) -->
+
+</details>
+
 ## Tools, Not Rules
 
 A common mistake is to confuse techniques with "best practices" — things you should always (or almost always)

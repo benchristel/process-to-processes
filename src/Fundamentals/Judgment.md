@@ -2,11 +2,21 @@
 
 Our work as software developers involves us in some of the most complex deterministic logical systems that have ever existed. The essence of our job is to find ways of solving problems using abstract mechanisms that can operate without continual human intervention. We find it tempting, therefore, to imagine that there might be an algorithm for software development itself: input requirements, turn the crank, and software comes out. The "Judgment" view helps us see why no such algorithm can exist.
 
-No one can tell you exactly how to do your job. If they could, your job would be automated, and it would cease to be yours. The key reason to keep {{link Fundamentals/Humans Humans}} around in a software development system is that they are capable of exercising good judgment in complex, uncertain, high-risk environments.
+The truth is, no one can tell you exactly how to do your job. If they could, your job would be automated, and it would cease to be yours. The key reason to keep {{link Fundamentals/Humans Humans}} around in a software development system is that they are capable of exercising good judgment in complex, uncertain, high-risk environments.
 
-Judgment goes hand in hand with {{link Autonomy}}. You're paid to make decisions your managers can't make well—because you have information they don't. By its nature, management sets high-level goals — which often appear to be in {{link Conflict}} with one another — and leaves it to individuals to sort out how to satisfy those goals in context-sensitive ways. Judgment means weighing tradeoffs between {{link Forces}} and, where possible, finding designs that transcend tradeoffs.
+Judgment goes hand in hand with {{link Autonomy}}. You're paid to make decisions your managers can't make well—because you have information they don't. Again, there isn't really any way to get around this. If your manager could define exactly how your job should be done, they'd either do it themselves or hire someone to automate it. Thus, the nature of management is to set high-level goals, and let individuals figure out how to satisfy them in context-sensitive ways. **Judgment** is our term for the act of weighing tradeoffs between {{link Forces}} and, where possible, finding designs that transcend tradeoffs.
 
-Richard Cook put it this way:
+The application of judgment isn't a one-and-done task. It's a continuous process of keeping the system healthy while looking out for the unexpected. Judgment means observing and responding in real time. It's like driving.
+
+> Driving is not about getting the car going in the right direction. Driving is about constantly paying attention, making a little correction this way, a little correction that way.
+>
+> —Kent Beck, _Extreme Programming Explained_, 2nd ed. p. 11
+
+<!--
+The multidimensional nature of business means that the goals management sets are often in {{link Conflict}} with one another, and the fog of war makes it impossible to know in advance exactly how tradeoffs between them should be struck. Management therefore leaves it to individuals to sort out how to satisfy business goals in context-sensitive ways. 
+-->
+
+Richard Cook noted that complex, hazardous systems (hospitals, power plants, transportation systems) rely on the continuous application of judgment to steer them away from disaster.
 
 > [A]ll practitioner actions are actually gambles, that is, acts that take place in the face of uncertain outcomes. The degree of uncertainty may change from moment to moment. That practitioner actions are gambles appears clear after accidents; in general, post hoc analysis regards these gambles as poor ones. But the converse: that successful outcomes are also the result of gambles; is not widely appreciated.
 >
@@ -16,9 +26,11 @@ Richard Cook put it this way:
 >
 > <cite>[Richard I. Cook, MD, "How Complex Systems Fail"](https://how.complexsystems.fail/)</cite>
 
-What this means is that good judgment is a key attribute of any software engineer. Judgment is _what we do_ — it is, almost by definition, the part of our work that cannot be automated.
+All of this means that good judgment is a key attribute of any software engineer. Judgment is _what we do_ — it is, almost by definition, the part of our work that cannot be automated.
 
+<!--
 TODO: relate judgment to empiricism / the scientific method
+-->
 
 ## Work-To-Rule
 
