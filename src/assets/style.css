@@ -29,12 +29,6 @@ html, body {
   padding: var(--container-top-padding) var(--page-margin) var(--container-bottom-padding);
 }
 
-@media screen {
-  .container {
-    box-shadow: 0 0 30px #0001, inset 1px 0 #fff, inset -1px 0 #fff;
-  }
-}
-
 a {
   text-decoration-color: #0004;
   text-underline-offset: 3px;
@@ -54,27 +48,11 @@ a:not(.mdsite-broken-link):is(:hover, :focus-visible) {
   }
 
   .container {
-    background-color: #f9f5e9;
+    box-shadow: 0 0 30px #0001, inset 1px 0 #fff, inset -1px 0 #fff;
     border-inline: 1px solid var(--pencil);
+    background-color: #f9f5e9;
   }
-}
 
-@media print {
-  .navbar {
-    display: none;
-  }
-}
-
-@media (max-width: 740px) {
-  :root {
-    --page-margin: 0;
-    --wide-indent: 1em;
-    --container-top-padding: 0;
-    --container-bottom-padding: 0;
-  }
-}
-
-@media screen {
   details {
     box-shadow: 0 5px 8px #0001;
     border: 1px solid var(--pencil);
@@ -92,6 +70,21 @@ a:not(.mdsite-broken-link):is(:hover, :focus-visible) {
     content: "(click to show/hide)";
     font-size: 0.9rem;
     color: var(--faded);
+  }
+}
+
+@media print {
+  .navbar {
+    display: none;
+  }
+}
+
+@media (max-width: 740px) {
+  :root {
+    --page-margin: 0;
+    --wide-indent: 1em;
+    --container-top-padding: 0;
+    --container-bottom-padding: 0;
   }
 }
 
