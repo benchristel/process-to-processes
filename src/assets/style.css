@@ -11,8 +11,10 @@
   --container-bottom-padding: 120px; /* overridden on mobile */
   --nav-link-inline-padding: 9px;
   --ink: #101820;
+  --faded: #10182099;
   --light-ink: #20222450;
   --pencil: #20222420;
+  --yellow: #fdf1b7;
 }
 
 html, body {
@@ -70,6 +72,27 @@ a:not(.mdsite-broken-link):is(:hover, :focus-visible) {
     --wide-indent: 1em;
     --container-top-padding: 0;
     --container-bottom-padding: 0;
+  }
+}
+
+@media screen {
+  details {
+    box-shadow: 0 5px 8px #0001;
+    border: 1px solid var(--pencil);
+    background: var(--yellow);
+    padding: 0.5em;
+  }
+
+  details > summary {
+    cursor: pointer;
+  }
+
+  details > summary::after {
+    display: inline-block;
+    margin-inline-start: 0.7em;
+    content: "(click to show/hide)";
+    font-size: 0.9rem;
+    color: var(--faded);
   }
 }
 
@@ -226,7 +249,7 @@ footer.navbar {
   font-size: 14px;
   text-decoration: none;
   padding-inline: 0;
-  color: var(--light-ink);
+  color: var(--faded);
 }
 
 #edit-link:hover {
