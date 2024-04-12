@@ -32,9 +32,13 @@ All of this means that good judgment is a key attribute of any software engineer
 TODO: relate judgment to empiricism / the scientific method
 -->
 
-## Work-To-Rule
+## Work-to-Rule
 
 What happens when people stop exercising judgment and just follow rules? This isn't a thought experiment; it's something that actually happens. It's called a work-to-rule strike.
+
+In a work-to-rule strike, workers do only and exactly what they're told. They also make sure to comply with any procedures or rules set by the company, _especially_ if those rules don't make any sense for their context. The result is predictable: productivity grinds to a halt.
+
+Work-to-rule strikes are an effective form of labor action precisely because judgment is the essence of human work, and companies cannot function without it.
 
 ## Further Reading
 
