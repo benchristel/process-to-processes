@@ -14,7 +14,6 @@
   --faded: #10182099;
   --light-ink: #20222450;
   --pencil: #20222420;
-  --yellow: #fdf1b7;
 }
 
 html, body {
@@ -79,7 +78,7 @@ a:not(.mdsite-broken-link):is(:hover, :focus-visible) {
   details {
     box-shadow: 0 5px 8px #0001;
     border: 1px solid var(--pencil);
-    background: var(--yellow);
+    background: #fff;
     padding: 0.5em;
   }
 
