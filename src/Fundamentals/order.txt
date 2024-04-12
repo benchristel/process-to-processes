@@ -4,7 +4,6 @@ Views.html
 Empiricism.html
 Judgment.html
 SayWhy.html
-ToolsNotRules.html
 Humans.md
 Systems.md
 InformationFlows.md

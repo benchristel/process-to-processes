@@ -4,7 +4,7 @@ The subsequent sections of this book will interest different audiences. Programm
 
 We'll start with an overview of the types of information you'll find in this book — {{link Techniques}}, {{link Principles}}, and {{link Fundamentals/Views Views}}.
 
-Then we'll dig into the foundations of empirical software development: {{link Empiricism}} informed by {{link Judgment}}, an ability to {{link SayWhy ExplainWhy}} we do things, and a healthy irreverence toward tools, techniques, and methods — {{link ToolsNotRules}}.
+Then we'll dig into the foundations of empirical software development: {{link Empiricism}} informed by {{link Judgment}}, an ability to {{link SayWhy ExplainWhy}} we do things, and a healthy irreverence toward tools, techniques, and methods — [ToolsNotRules](Techniques.html#tools-not-rules).
 
 Next, we will look at the constraints that shape every software project, starting with our own inherent limitations and abilities ({{link Fundamentals/Humans "Humans, Not Humanoids"}}). We'll learn to see our human-computer {{link Fundamentals/Systems Systems}} as {{link InformationFlows}} among {{link Centers}}, and we'll see how friction in those information flows reveals {{link Conflict}} between the {{link Forces}} that shape the system.
 
