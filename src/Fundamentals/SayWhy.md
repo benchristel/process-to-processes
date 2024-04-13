@@ -30,7 +30,7 @@ Now, I don't blame the folks who don't know why they're doing things. Before I g
 
 Fortunately, finding out why you do something isn't that hard. Just stop doing it, and you'll soon learn what, if anything, it was giving you. Doing this at work carries some risk, of course, so I recommend using {{link PersonalProjects}} as laboratories for this purpose.
 
-In an organization without {{link PsychologicalSafety}}, being publicly honest about why you do what you do can feel like you're putting your reputation on the line. Hopefully you can at least be honest with some of your fellow programmers. If even that isn't the case where you work, then I don't know if this book can help you. You should probably look for a different job.
+In an organization without {{link PsychologicalSafety}}, being publicly honest about why you do what you do can feel like you're putting your reputation on the line. Saying "I write automated tests so I can catch my programming mistakes faster" implies that you make mistakes, and that you have a hard time detecting them without tests. Hopefully you can at least be honest with some of your fellow programmers. If even that isn't the case where you work, then I don't know if this book can help you. You should probably look for a different job.
 
 ## Code Review
 

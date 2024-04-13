@@ -28,9 +28,9 @@ If you treat techniques as "best practices," you're likely to fall into the same
 
 ## Choosing Techniques
 
-Which technique should you apply at any given moment? As I will explain in the chapter on {{link Judgment}}, answering this question is the essence of your job as a software developer, but this book can help in a few ways.
+Which technique should you apply at any given moment? As I will explain in the chapter on {{link Judgment}}, answering this question is the essence of a software developer's job, and there's only so much guidance I can give you. Still, this book can help in a few ways.
 
 First, I have marked the chapter headings of "default" techniques with a star (✥). I recommend trying these techniques out, and discarding them only when you have demonstrated that they don't apply to your situation.
 
-Second, the principles and views in this book can help you evaluate each technique in your context to figure out if it applies. This approach is made intellectually tractable by having a diverse array of techniques committed to memory. Once you've practiced the techniques in this book, relevant techniques will pop effortlessly into your mind whenever you see a problem or an opportunity. Your job then becomes to apply the technique (or in some cases, just to imagine applying it) and to {{link Judgment Judge}} the costs and benefits. If the benefits outweigh the costs, use the technique; if not, don't.
+Second, the principles and views in this book can help you evaluate each technique in your context to figure out if it applies. This approach becomes intellectually tractable once you have a diverse array of techniques committed to memory. Once you've practiced the techniques in this book, relevant techniques will pop effortlessly into your mind whenever you see a problem or an opportunity. Your job then becomes to apply the technique (or in some cases, just to imagine applying it) and to {{link Judgment Judge}} the costs and benefits. If the benefits outweigh the costs, use the technique; if not, don't.
 
