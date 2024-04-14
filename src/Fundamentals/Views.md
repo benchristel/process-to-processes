@@ -1,5 +1,9 @@
 # Views
 
+> Point of view is worth 80 IQ points.
+>
+> —[Alan Kay](https://quoteinvestigator.com/2018/05/29/pov/)
+
 Supporting the {{link Techniques}} in this book are a number of **views**. A view is a way of looking at things. To put it another way, a view is what you see when you look at some part of the world from a particular metaphorical angle.
 
 Views matter because they give us an effective way of seeing. Like an architect's plan, a view describes the world in terms that clarify how we might act on it via techniques.
