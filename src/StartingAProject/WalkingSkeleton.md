@@ -21,3 +21,7 @@ Move: create a "hello world" app that uses the architecture and tools appropriat
 - editor configuration
 - frontend/backend interaction
 - database
+
+## Further Reading
+
+- https://matklad.github.io/2024/03/22/basic-things.html
