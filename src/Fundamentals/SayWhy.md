@@ -32,6 +32,10 @@ Fortunately, finding out why you do something isn't that hard. Just stop doing i
 
 In an organization without {{link PsychologicalSafety}}, being publicly honest about why you do what you do can feel like you're putting your reputation on the line. Saying "I write automated tests so I can catch my programming mistakes faster" implies that you make mistakes, and that you have a hard time detecting them without tests. Hopefully you can at least be honest with some of your fellow programmers. If even that isn't the case where you work, then I don't know if this book can help you. You should probably look for a different job.
 
+## Corrolary: Ask Why
+
+Someone says "A is better than B" but doesn't say what they mean by "better"? Ask what they mean. So many technical discussions devolve into people talking past each other because each is guessing at what the other really wants.
+
 ## Code Review
 
 If you're requesting changes in a code review, explain why. You owe it to the author to describe how the changes you're asking them to make will benefit someone. If you can't explain why you want the changes, don't ask for them. By requesting changes that are likely to seem arbitrary, you risk alienating your coworker—{{link LifeAndDeathOfSystems}}.
