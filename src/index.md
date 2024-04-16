@@ -11,6 +11,8 @@ They do the same thing as the "Prev" and "Next" links.
 
 This is an early early draft and I would love to get your feedback on it. Send it to <a href="mailto:benchristel@gmail.com">benchristel@gmail.com</a>.
 
+You can subscribe to [bensguide.substack.com](https://bensguide.substack.com) to get notified when new chapters are available.
+
 ## Table of Contents
 
 {{toc --include-latent}}
