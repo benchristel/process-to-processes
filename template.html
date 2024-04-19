@@ -6,11 +6,386 @@
 		<meta name="description" content="Process to Processes: a guide to empirical software development by Ben Christel."/>
 		<meta name="author" content="Ben Christel"/>
 		<link rel="icon" href="/assets/favicon.ico">
-		<link rel="stylesheet" href="/assets/style.css">
-		<link rel="stylesheet" href="/assets/typography.css">
 		<link rel="stylesheet" href="/assets/syntax.css">
-		<script src="/assets/youtube-embed.js"></script>
 	</head>
+	<style>
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --body-width: 8in;
+  --page-margin: 1in;
+  --body-margin: 16px;
+  --wide-indent: 2em;
+  --container-top-padding: 0.25in; /* overridden on mobile */
+  --container-bottom-padding: 120px; /* overridden on mobile */
+  --nav-link-inline-padding: 9px;
+  --ink: #101820;
+  --faded: #10182099;
+  --light-ink: #20222450;
+  --pencil: #20222420;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+}
+
+.container {
+  min-height: 100vh;
+  margin-inline: auto;
+  max-width: calc(var(--body-width) + 2 * var(--page-margin));
+  padding: var(--container-top-padding) var(--page-margin) var(--container-bottom-padding);
+}
+
+a {
+  text-decoration-color: #0004;
+  text-underline-offset: 3px;
+  text-decoration-skip: none;
+}
+
+a:not(.mdsite-broken-link):is(:hover, :focus-visible) {
+  background: #0000000b;
+}
+
+@media screen {
+  body {
+    background: #f0e8d0 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' viewBox='0 0 700 700' width='700' height='700'%3E%3Cdefs%3E%3Cfilter id='nnnoise-filter' x='-20%25' y='-20%25' width='140%25' height='140%25' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='4' seed='15' stitchTiles='stitch' x='0%25' y='0%25' width='100%25' height='100%25' result='turbulence'%3E%3C/feTurbulence%3E%3CfeSpecularLighting surfaceScale='8' specularConstant='1.2' specularExponent='20' lighting-color='%23ffffff' x='0%25' y='0%25' width='100%25' height='100%25' in='turbulence' result='specularLighting'%3E%3CfeDistantLight azimuth='3' elevation='100'%3E%3C/feDistantLight%3E%3C/feSpecularLighting%3E%3C/filter%3E%3C/defs%3E%3Crect width='700' height='700' fill='%23f8f8f8'%3E%3C/rect%3E%3Crect width='700' height='700' fill='%23ffffff' filter='url(%23nnnoise-filter)'%3E%3C/rect%3E%3C/svg%3E");
+    background-blend-mode: multiply;
+    margin: 0 auto;
+    overflow-y: scroll;
+  }
+
+  .container {
+    box-shadow: 0 0 30px #0001, inset 1px 0 #fff, inset -1px 0 #fff;
+    border-inline: 1px solid var(--pencil);
+    background-color: #f9f5e9;
+  }
+
+  details {
+    box-shadow: 0 5px 8px #0001;
+    border: 1px solid var(--pencil);
+    background: #fff;
+    padding: 0.5em;
+  }
+
+  details > summary {
+    cursor: pointer;
+  }
+
+  details > summary::after {
+    display: inline-block;
+    margin-inline-start: 0.7em;
+    content: "(click to show/hide)";
+    font-size: 0.9rem;
+    color: var(--faded);
+  }
+}
+
+@media print {
+  .navbar {
+    display: none;
+  }
+}
+
+@media (max-width: 740px) {
+  :root {
+    --page-margin: 0;
+    --wide-indent: 1em;
+    --container-top-padding: 0;
+    --container-bottom-padding: 0;
+  }
+}
+
+.navbar > nav {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-inline: var(--body-margin)
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.6em var(--nav-link-inline-padding);
+  white-space: nowrap;
+}
+
+.paging {
+  margin-inline: calc(-1 * var(--nav-link-inline-padding));
+}
+
+.paging > .divider {
+  display: none;
+}
+
+.paging > .divider:not(:first-child):not(:last-child) {
+  display: inline-block;
+  content: "";
+  vertical-align: middle;
+  height: 20px;
+  border-left: 1px solid var(--light-ink);
+}
+
+.breadcrumb a {
+  padding: 0.6em 0;
+}
+
+.breadcrumb a:not(:last-child)::after {
+  display: inline-block;
+  padding: 0 0.3em 0 0.3em;
+  color: var(--light-ink);
+  content: "/";
+}
+
+article {
+  padding: 0 16px;
+}
+
+article h1 {
+  font-size: 200%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5em;
+  margin-left: -0.06em;
+  line-height: 120%;
+  font-weight: 550;
+}
+
+figure {
+  display: block;
+  margin: 2em auto;
+  padding: 0 1em;
+  text-align: center;
+}
+
+img {
+  display: block;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow:
+    -6px -6px #fff, -6px 6px #fff, 6px -6px #fff, 6px 6px #fff,
+    -7px -7px #eee, -7px 7px #eee, 7px -7px #eee, 7px 7px #eee;
+  margin: 1em auto;
+  max-width: 100%;
+}
+
+figcaption {
+  font-size: 14px;
+  line-height: 140%;
+  margin: 1em 0;
+}
+
+nav, hr, h1, h2, h3, h4, h5, h6 {
+  clear: both;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid var(--light-ink);
+}
+
+blockquote {
+  margin: 2em 0;
+  padding: 0 var(--wide-indent);
+  border-inline-start: 6px double var(--pencil);
+  font-style: italic;
+}
+
+blockquote.pullquote {
+  color: #841;
+  font-size: 1.5rem;
+  line-height: 140%;
+  border: none;
+  text-align: center;
+}
+
+blockquote cite {
+  display: block;
+  padding-inline-start: 3em;
+}
+
+blockquote cite:before {
+  content: '— ';
+}
+
+pre {
+  --padding-size: 16px;
+  margin-inline: calc(0px - var(--padding-size));
+  border: 1px solid var(--pencil);
+  border-radius: 3px;
+  overflow: auto;
+  background: #fff8;
+  padding: var(--padding-size);
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.mdsite-broken-link {
+  color: #a00;
+  cursor: not-allowed;
+}
+
+header.navbar {
+  border-bottom: 1px solid var(--light-ink);
+}
+
+footer.navbar {
+  margin-top: 2em;
+  border-top: 1px solid var(--light-ink);
+}
+
+.summary-block {
+  border-block: 3px double var(--light-ink);
+  padding: 0 16px;
+  margin-inline: -16px;
+  font-style: italic;
+  font-weight: bold;
+  font-family: 'Gentium Book Plus'
+}
+
+#edit-link {
+  font-size: 14px;
+  text-decoration: none;
+  padding-inline: 0;
+  color: var(--faded);
+}
+
+#edit-link:hover {
+  background: transparent;
+}
+
+youtube-embed {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+youtube-embed iframe {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: 'fallback';
+  src: local('Georgia'), local('Times New Roman'), local(Times);
+  ascent-override: 75%;
+  descent-override: 0%;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Gentium Book Plus';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/gh/benchristel/process-to-processes@3123535bb2/src/assets/GentiumBookPlus-Regular.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gentium Cached';
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/gh/benchristel/process-to-processes@3123535bb2/src/assets/GentiumBookPlus-Italic.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gentium Cached';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/gh/benchristel/process-to-processes@3123535bb2/src/assets/GentiumBookPlus-Bold.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gentium Cached';
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/gh/benchristel/process-to-processes@3123535bb2/src/assets/GentiumBookPlus-BoldItalic.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gentium Cached';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/GentiumBookPlus-Regular.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gentium Fast';
+  font-style: italic;
+  font-weight: 400;
+  src: url(/assets/GentiumBookPlus-Italic.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gentium Fast';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/GentiumBookPlus-Bold.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gentium Fast';
+  font-style: italic;
+  font-weight: 700;
+  src: url(/assets/GentiumBookPlus-BoldItalic.ttf);
+  font-display: swap;
+}
+
+body {
+  font-family: Georgia, serif;
+  line-height: 160%;
+  font-weight: 500;
+  font-size-adjust: 0.5;
+}
+
+@media print {
+  body {
+    font-size: 10pt;
+  }
+}
+
+@media screen {
+  body {
+    font-size: 17px;
+  }
+}
+
+article {
+  color: var(--ink);
+  text-shadow: 0 1px #fff8;
+}
+
+article :is(h1, h2, h3, h4, h5, h6) {
+  font-family: 'Gentium Cached', 'Gentium Fast', 'fallback';
+}
+
+b, strong {
+  font-family: 'Gentium Cached', 'Gentium Fast', 'fallback';
+  font-weight: 660;
+  letter-spacing: 0.01em;
+}
+
+pattern {
+  color: #400;
+  font-variant: small-caps;
+  font-weight: 566;
+  letter-spacing: 0.02em;
+}
+	</style>
 	<body>
 		<div class="container">
 			<header class="navbar">
@@ -54,6 +429,7 @@ document.onkeydown = (e) => {
 }
 
 		</script>
+		<script src="/assets/youtube-embed.js"></script>
 		<script data-goatcounter="https://process2processes.goatcounter.com/count"
 async src="https://gc.zgo.at/count.js"></script>
 		<script src="/assets/print.js"></script>
