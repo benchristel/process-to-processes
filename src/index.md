@@ -1,15 +1,19 @@
-# Process to Processes
+<div class="title-block">
+  <h1 class="title">Process to Processes</h1>
 
-<span style="font-size: 130%;font-weight:500;font-style:italic">
-A Guide to Empirical Software Development
-</span>
+  <div class="subtitle">A guide to empirical software development</div>
 
-A work in progress by [Ben Christel](https://github.com/benchristel)
+  <div style="text-align:center;font-size:2rem;margin-block:3rem;">✥</div>
+
+  <div style="text-align:center"><a href="https://github.com/benchristel">Ben Christel</a></div>
+</div>
 
 NOTE: you can use the left and right arrow keys to navigate between pages of this book.
 They do the same thing as the "Prev" and "Next" links.
 
-This is an early early draft and I would love to get your feedback on it. Send it to <a href="mailto:benchristel@gmail.com">benchristel@gmail.com</a>.
+This is an early early draft and I would love to get your feedback on it. Send it to:
+
+<div style="text-align:center">&lt;<a href="mailto:ben.christel@gmail.com">ben.christel@gmail.com</a>&gt;</div>
 
 You can subscribe to [bensguide.substack.com](https://bensguide.substack.com) to get notified when new chapters are available.
 
