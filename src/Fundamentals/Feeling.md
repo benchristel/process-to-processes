@@ -25,6 +25,18 @@ it produces less value, and may even start to die. An unhealthy system needs to 
 
 Our primary goal in software development must be to create a healthy system. Otherwise, we will be forever overpaying for underwhelming results.
 
+## Being in an Information Flow
+
+> When we published the pattern language for the Peruvian houses, people in Peru said that our pattern language and our houses we designed from the pattern language were a more accurate reflection of Peruvian reality than even the Peruvian architects had managed.
+>
+> People wondered how we did it. But it was really very simple, and we did nothing more than I have just described. We identified the centers by getting so deeply into the situation that we could feel, _in our own bodies_, just which ones needed to be there.
+>
+> The essential technique in the observation of centers, in any social situation, and in any culture, is to allow the feelings to generate themselves, inside _you_. You have to say, "What would I do if I were one of the people living here, what would it be like for me?" thus inserting yourself into the situation, and then using your own common sense and feelings as a measuring instrument.
+>
+> Of course you must always check with people, explicitly. You cannot assume you are right. You have to check. On the other hand, checking doesn't mean just do what people say; their own sense of what is involved can also be in error. One must always go to the root, asking what is likely to create the most life, and maintaining a cautious skepticism, even while pursuing these difficult and soul-searching questions.
+>
+> <cite>Christopher Alexander, _The Process of Creating Life_ p. 352</cite>
+
 ## Technique: Relative Life as a Design Heuristic
 
 - The rational part of your brain is slow, expensive, and weak. ({{link SoftwareDevelopment/Humans.html "Humans, Not Humanoids"}})
