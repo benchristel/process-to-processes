@@ -23,8 +23,8 @@
   --nav-link-inline-padding: 9px;
   --ink: #101820;
   --faded: #10182099;
-  --light-ink: #20222450;
-  --pencil: #20222420;
+  --light-ink: #1245;
+  --pencil: #0282;
   --redletter: #841;
 }
 
@@ -62,6 +62,12 @@ a:not(.mdsite-broken-link):is(:hover, :focus-visible) {
   .container {
     border-inline: 1px solid var(--pencil);
     background-color: #fffdf5;
+  }
+
+  article .title-block {
+    border-block: 8px solid #008;
+    box-shadow: inset -1px 0 var(--light-ink), inset 1px 0 var(--light-ink);
+    background: white;
   }
 
   details {
@@ -145,6 +151,7 @@ article {
   padding: 0 16px;
   text-align: justify;
   hyphens: auto;
+  color: var(--ink);
 }
 
 article h1 {
@@ -155,11 +162,8 @@ article h1 {
 
 article .title-block {
   margin: 2rem auto;
-  border-block: 8px solid #008;
-  box-shadow: inset -1px 0 var(--light-ink), inset 1px 0 var(--light-ink);
   padding: 6rem 1rem 8rem;
   max-width: 4in;
-  background: white;
 }
 
 article h1.title {
@@ -204,10 +208,6 @@ figcaption {
   font-size: 14px;
   line-height: 140%;
   margin: 1em 0;
-}
-
-nav, hr, h1, h2, h3, h4, h5, h6 {
-  clear: both;
 }
 
 hr {
@@ -270,8 +270,6 @@ footer.navbar {
   padding: 0 16px;
   margin-inline: -16px;
   font-style: italic;
-  font-weight: bold;
-  font-family: 'Gentium Book Plus'
 }
 
 #edit-link {
@@ -299,50 +297,9 @@ youtube-embed iframe {
   height: 100%;
 }
 
-@font-face {
-  font-family: 'fallback';
-  src: local('Georgia'), local('Times New Roman'), local(Times);
-  ascent-override: 75%;
-  descent-override: 0%;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'Gentium Cached';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/gh/benchristel/process-to-processes@3123535bb2b2c56cefbaf299dcc8aa42600b095b/src/assets/GentiumBookPlus-Regular.ttf);
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gentium Cached';
-  font-style: italic;
-  font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/gh/benchristel/process-to-processes@3123535bb2b2c56cefbaf299dcc8aa42600b095b/src/assets/GentiumBookPlus-Italic.ttf);
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gentium Cached';
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://cdn.jsdelivr.net/gh/benchristel/process-to-processes@3123535bb2b2c56cefbaf299dcc8aa42600b095b/src/assets/GentiumBookPlus-Bold.ttf);
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gentium Cached';
-  font-style: italic;
-  font-weight: 700;
-  src: url(https://cdn.jsdelivr.net/gh/benchristel/process-to-processes@3123535bb2b2c56cefbaf299dcc8aa42600b095b/src/assets/GentiumBookPlus-BoldItalic.ttf);
-  font-display: swap;
-}
-
 body {
   font-family: Georgia, serif;
   line-height: 160%;
-  font-weight: 500;
   font-size-adjust: 0.5;
 }
 
@@ -352,23 +309,6 @@ body {
   }
 }
 
-@media screen {
-  body {
-    font-size: 16px;
-  }
-}
-
-article {
-  color: var(--ink);
-  text-shadow: 0 1px #fff8;
-}
-
-pattern {
-  color: #400;
-  font-variant: small-caps;
-  font-weight: 566;
-  letter-spacing: 0.02em;
-}
 	</style>
 	<body>
 		<div class="container">
