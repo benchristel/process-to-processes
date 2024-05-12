@@ -14,11 +14,13 @@
 }
 
 :root {
-  --body-width: 8in;
-  --page-margin: 1in;
-  --body-margin: 16px;
+  --body-width: 7in;
+  --page-margin: 0.75in;
+  --page-vertical-inset: 0.25in;
+  --page-border: 1px solid var(--light-ink);
+  --body-margin: 10px;
   --wide-indent: 2em;
-  --container-top-padding: 0.25in; /* overridden on mobile */
+  --container-top-padding: 0.5in; /* overridden on mobile */
   --container-bottom-padding: 120px; /* overridden on mobile */
   --nav-link-inline-padding: 9px;
   --ink: #101820;
@@ -35,7 +37,7 @@ html, body {
 }
 
 .container {
-  min-height: 100vh;
+  min-height: calc(100vh - 2 * var(--page-vertical-inset));
   margin-inline: auto;
   max-width: calc(var(--body-width) + 2 * var(--page-margin));
   padding: var(--container-top-padding) var(--page-margin) var(--container-bottom-padding);
@@ -53,15 +55,15 @@ a:not(.mdsite-broken-link):is(:hover, :focus-visible) {
 
 @media screen {
   body {
-    background: hsl(48, 90%, 91%);
-    background-blend-mode: multiply;
+    background: hsl(210, 50%, 80%);
     margin: 0 auto;
     overflow-y: scroll;
   }
 
   .container {
-    border-inline: 1px solid var(--pencil);
-    background-color: #fffdf5;
+    border: var(--page-border);
+    margin-block: var(--page-vertical-inset);
+    background-color: #fbfbfb;
   }
 
   article .title-block {
@@ -99,6 +101,8 @@ a:not(.mdsite-broken-link):is(:hover, :focus-visible) {
 @media (max-width: 740px) {
   :root {
     --page-margin: 0;
+    --page-vertical-inset: 0;
+    --page-border: none;
     --wide-indent: 1em;
     --container-top-padding: 0;
     --container-bottom-padding: 0;
@@ -148,7 +152,7 @@ nav a {
 }
 
 article {
-  padding: 0 16px;
+  padding: 0 var(--body-margin);
   color: var(--ink);
 }
 
@@ -178,10 +182,6 @@ article .subtitle {
 
 article h2 {
   font-size: 120%;
-}
-
-article p + p {
-  text-indent: 2.5em;
 }
 
 figure {
