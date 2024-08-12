@@ -15,3 +15,7 @@ We often find situations in software development where one force is pulling the 
 If the opposing forces cancel out perfectly, then the net effect on the system's development may be zero—no change. Even so, to someone inside the {{link SoftwareDevelopment/SoftwareSystem "software system"}}, the presence of equal opposing forces feels quite different from the absence of forces. Conflict is stressful.
 
 One way to view **software design** is that it gives us a way of breaking the gridlock between conflicting forces. Imagine busting the rust off a crank so it can turn freely. That's what good design feels like. A well-designed system arranges things so the forces that were previously butting heads can now slide easily past each other.
+
+## Further Reading
+
+- ["Is Overcoming Inner Conflict the Key to Happiness?"](https://www.khanacademy.org/partner-content/wi-phi/xd226e27a:democracy/xd226e27a:is-overcoming-inner-conflict-the-key-to-happiness/v/is-overcoming-inner-conflict-the-key-to-happiness) on Khan Academy
