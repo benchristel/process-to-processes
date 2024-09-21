@@ -6,6 +6,8 @@ These views will help explain why this book spends so much time on the "soft," n
 
 In this view, a vast system of people, processes, computers, and code creates value for your employer. We can think of this system — people and computers together — almost as a living, growing being.
 
+TODO: [quote Adam Savage "my shop is a machine"](https://youtu.be/QCcIdfIdfD0)
+
 The system is driven by flows of money. It continues to work because the people who make it work continue to get paid. The system can afford to pay them because customers are willing to pay _it_ to keep doing what it does.
 
 What does the system do that customers find so valuable? Assuming the system is a software company, it gets information to where the customers want it.
