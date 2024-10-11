@@ -87,3 +87,7 @@ So, all useful models and pictures of the world have limits. Part of using them 
 Richard Feynman's entertaining description of the scientific method is well worth the 10 minutes it will take to hear:
 
 <youtube-embed videoid="EYPapE-3FRw"></youtube-embed>
+
+Adam Savage's explanation is inspiring too:
+
+<youtube-embed videoid="v6JPhkWg_ok"></youtube-embed>
