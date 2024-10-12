@@ -78,11 +78,15 @@ a:not(.mdsite-broken-link):is(:hover, :focus-visible) {
     box-shadow: 0 2px 3px #0003;
     border: 1px solid var(--pencil);
     background: #fff;
-    padding: 0.5em;
+    padding: 0;
   }
 
   details > summary {
     cursor: pointer;
+    padding: 0.5em;
+    border-block-end: 1px solid var(--pencil);
+    /* hide the border-block-end when the details are collapsed */
+    margin-block-end: -1px;
   }
 
   details > summary::after {
