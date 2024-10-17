@@ -1,3 +1,7 @@
+FirstTestAtAnExistingBoundary.md
+# it happens to the best of us - we write the code, unit test it, but forget to wire it up to anything.
+# The way to prevent this is by first writing a failing test at an existing boundary, above the place
+# where your new code will hook in. That way, you can't forget to close the circuit.
 ChangeTogetherLiveTogether.md
 CallGraph.md
 Processes.md
