@@ -33,8 +33,13 @@ SimplicityAndOccamsRazor.md
 ReproduceBugs.md
 AutomatedTests.md
 #   - Notice: some functions are harder to test than others. Why do you think that is? Do you notice any patterns?
-
-
+SimpleTypesUniformBehavior.md
+# A function like doSomething(callback: () => unknown) guarantees uniform behavior w.r.t. callback.
+# The only sensible thing this function can do with callback is call it.
+# "downside": you have to call it like doSomething(() => {}) if you don't care about the callback.
+# It might seem more convenient to have doSomething(callback?: undefined | (() => unknown)).
+# However, a function with an optional arg might special-case undefined. Using the simpler param type
+# communicates a guarantee of uniform behavior.
 
 !unspecified
 Steps.html
