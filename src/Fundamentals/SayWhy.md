@@ -17,6 +17,7 @@ I think this is an *obvious* position because its opposite—the idea that we sh
 - "It's a best practice."
 - "We have to do it this way."
 - "We have a tool that does this, so why not use it?"
+- "It seemed like a good idea at the time."
 
 I consider these non-answers because they don't address the intent of the question. _What benefit_ are you hoping to secure by doing this particular thing in this particular way?
 
