@@ -40,3 +40,9 @@ Someone says "A is better than B" but doesn't say what they mean by "better"? As
 ## Code Review
 
 If you're requesting changes in a code review, explain why. You owe it to the author to describe how the changes you're asking them to make will benefit someone. If you can't explain why you want the changes, don't ask for them. By requesting changes that are likely to seem arbitrary, you risk alienating your coworker—{{link LifeAndDeathOfSystems}}.
+
+---
+
+> Always motivate, always say why. Never forget to say why. Because if you explain the rationale for a decision, it not only increases the hearer's understanding, and makes them more likely to adhere or comply, but it also shares criteria with them with which to evaluate the decision and its importance.
+>
+> —[tigerbeetle](https://github.com/tigerbeetle/tigerbeetle/blob/main/docs/TIGER_STYLE.md)
