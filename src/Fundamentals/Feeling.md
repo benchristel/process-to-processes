@@ -37,6 +37,10 @@ Our primary goal in software development must be to create a healthy system. Oth
 >
 > <cite>Christopher Alexander, _The Process of Creating Life_ p. 352</cite>
 
+> I think one of the most important things, for me anyway, when building something from the ground up like that is, as quickly as possible, getting the program to a state that you, the programmer, can use it. Even a little bit. Because that tells you where to go next in a really visceral way.
+> 
+> —Jamie Zawinski
+
 ## Technique: Relative Life as a Design Heuristic
 
 - The rational part of your brain is slow, expensive, and weak. ({{link SoftwareDevelopment/Humans.html "Humans, Not Humanoids"}})
